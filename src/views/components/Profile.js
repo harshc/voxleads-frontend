@@ -1,0 +1,105 @@
+import React from "react";
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardBody,
+  FormGroup,
+  Form,
+  Input,
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
+import UserHeader from "components/Headers/UserHeader.js";
+
+const Profile = () => {
+  return (
+    <>
+      <UserHeader />
+      <Container className="mt--7" fluid>
+        <Row>
+          <Col xl="4">
+            <Card className="card-profile shadow">
+              <CardBody className="pt-0 pt-md-4">
+                <div className="text-center">
+                  <h3>User Details</h3>
+                  <p>
+                    Update additional information such as phone number or company details below.
+                  </p>
+                </div>
+              </CardBody>
+            </Card>
+          </Col>
+          <Col xl="8">
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Edit Profile</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <Button
+                      color="primary"
+                      href="#pablo"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Save
+                    </Button>
+                  </Col>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                <Form>
+                  <h6 className="heading-small text-muted mb-4">
+                    User Information
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-company"
+                          >
+                            Company Name
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-company"
+                            placeholder="Company Name"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-phone"
+                          >
+                            Phone Number
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-phone"
+                            placeholder="Phone Number"
+                            type="tel"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                </Form>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+};
+
+export default Profile;

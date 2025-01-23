@@ -17,6 +17,7 @@
 */
 
 // reactstrap components
+import React, { useState } from "react";
 import {
   Button,
   Card,
@@ -31,8 +32,39 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../../firebase-config";
 
 const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      setSuccess(`Account created for ${userCredential.user.email}`);
+      setError("");
+    } catch (err) {
+      setError(err.message);
+      setSuccess("");
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      alert(`Signed in as ${user.displayName}`);
+    } catch (error) {
+      alert(`Error: ${error.message}`);
+    }
+  };
+
   return (
     <>
       <Col lg="6" md="8">
@@ -43,31 +75,14 @@ const Register = () => {
             </div>
             <div className="text-center">
               <Button
-                className="btn-neutral btn-icon mr-4"
-                color="default"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                <span className="btn-inner--icon">
-                  <img
-                    alt="..."
-                    src={
-                      require("../../assets/img/icons/common/github.svg")
-                        .default
-                    }
-                  />
-                </span>
-                <span className="btn-inner--text">Github</span>
-              </Button>
-              <Button
                 className="btn-neutral btn-icon"
                 color="default"
                 href="#pablo"
-                onClick={(e) => e.preventDefault()}
+                onClick={handleGoogleSignIn}
               >
                 <span className="btn-inner--icon">
                   <img
-                    alt="..."
+                    alt="Google"
                     src={
                       require("../../assets/img/icons/common/google.svg")
                         .default
@@ -82,7 +97,7 @@ const Register = () => {
             <div className="text-center text-muted mb-4">
               <small>Or sign up with credentials</small>
             </div>
-            <Form role="form">
+            <Form role="form" onSubmit={handleRegister}>
               <FormGroup>
                 <InputGroup className="input-group-alternative mb-3">
                   <InputGroupAddon addonType="prepend">
@@ -103,7 +118,9 @@ const Register = () => {
                   <Input
                     placeholder="Email"
                     type="email"
-                    autoComplete="new-email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </InputGroup>
               </FormGroup>
@@ -118,6 +135,9 @@ const Register = () => {
                     placeholder="Password"
                     type="password"
                     autoComplete="new-password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </InputGroup>
               </FormGroup>
@@ -149,8 +169,10 @@ const Register = () => {
                   </div>
                 </Col>
               </Row>
+              {error && <div className="text-danger">{error}</div>}
+              {success && <div className="text-success">{success}</div>}
               <div className="text-center">
-                <Button className="mt-4" color="primary" type="button">
+                <Button className="mt-4" color="primary" type="submit">
                   Create account
                 </Button>
               </div>
