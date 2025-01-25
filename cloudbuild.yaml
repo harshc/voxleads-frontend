@@ -14,6 +14,9 @@ steps:
   entrypoint: 'gcloud'
   args: ['app', 'deploy', '--quiet']
 
+options:
+  logging: CLOUD_LOGGING_ONLY 
+
 # Specify the App Engine service account if necessary
 substitutions:
   _APP_ENGINE_SERVICE_ACCOUNT: 'cloudbuild@voxleads-api-stg-bv7a.iam.gserviceaccount.com'
