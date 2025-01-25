@@ -1,0 +1,13 @@
+runtime: nodejs18  # Use the appropriate Node.js runtime version
+instance_class: F2  # Specify instance class
+
+env_variables:
+  NODE_ENV: production  # Set environment variables
+
+handlers:
+- url: /static
+  static_dir: build/static
+
+- url: /.*
+  static_files: build/index.html
+  upload: build/index.html

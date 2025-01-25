@@ -33,7 +33,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { signInWithEmailAndPassword, signInWithRedirect, getRedirectResult } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithRedirect, getRedirectResult, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import {auth, db, googleProvider } from "../../firebase-config";
@@ -50,7 +50,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      await saveUserData(userCredential.user);
+      // await saveUserData(userCredential.user);
       navigate("/user-profile"); // Redirect to the details form
     } catch (err) {
       setError(err.message);
@@ -59,10 +59,18 @@ const Login = () => {
 
   const handleGoogleLogin = async () => {
     try {
+
+        signInWithPopup(auth, googleProvider).then((result) => {
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          const user = credential.user;
+        });
       console.log("Initiating Google login...");
       const result = await signInWithRedirect(auth, googleProvider);
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      const user = credential.user;
       console.log("Google login successful:", result.user);
-      navigate("/user-profile"); // Redirect to the details form
     } catch (err) {
       setError(err.message);
     }
@@ -78,19 +86,13 @@ const Login = () => {
   };
 
   useEffect(() => {
-    const handleRedirectResult = async () => {
-      try {
-        const result = await getRedirectResult(auth);
-        if (result) {
-          console.log("Login successful:", result.user);
-          // Navigate to the profile page after successful login
-          navigate("/user-profile");
-        }
-      } catch (err) {
-        console.error("Error handling redirect result:", err);
-        setError(err.message);
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigate("/admin/user-profile"); // Redirect to the details form
+      } else {
+        navigate("/auth/login");
       }
-    };
+    });
   });
 
 
