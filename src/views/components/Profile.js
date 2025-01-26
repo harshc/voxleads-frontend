@@ -90,6 +90,58 @@ const Profile = () => {
                         </FormGroup>
                       </Col>
                     </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-fname"
+                          >
+                            First Name
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-fname"
+                            placeholder="First Name"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-lname"
+                          >
+                            Last Name
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-lname"
+                            placeholder="Last Name"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-email"
+                          >
+                            Email
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-email"
+                            placeholder="Email"
+                            type="email"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
                   </div>
                   <hr className="my-4" />
                 </Form>
