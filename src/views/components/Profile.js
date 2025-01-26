@@ -33,32 +33,32 @@ const Profile = () => {
       <Container className="mt--7" fluid>
         <Row>
           <Col xl="4">
-            <Card className="card-profile shadow">
+            <Card className="card-profile shadow sticky-top">
               <CardBody className="pt-0 pt-md-4">
                 <div className="">
                   <ul className="d-flex p-4 list-unstyled">
                     <li>
                       <a href="#" className="icon-link px-4 py-2">
-                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-seam"></use></svg>
+                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-account"></use></svg>
                         Account Information
                       </a>
                     </li>
                     <li>
                       <a href="#" className="icon-link px-4 py-2">
-                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-seam"></use></svg>
+                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-billing"></use></svg>
                         Billing Information
                       </a>
                     </li>
                     <li>
                       <a href="#" className="icon-link px-4 py-2">
-                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-seam"></use></svg>
+                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-password"></use></svg>
                         Change Password
                       </a>
                     </li>
                     <li>
                       <a href="#" className="icon-link px-4 py-2">
-                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-seam"></use></svg>
-                        Notifications
+                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-history-billing"></use></svg>
+                        Billing History
                       </a>
                     </li>
                   </ul>
@@ -71,148 +71,22 @@ const Profile = () => {
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
-                    <h3 className="mb-0">Edit Profile</h3>
+                    <h3 className="mb-0">Account Profile</h3>
                   </Col>
                   <Col className="text-right" xs="4">
                     <Button
                       color="primary"
-                      href="#pablo"
+                      href="#"
                       onClick={(e) => e.preventDefault()}
                       size="sm"
                     >
-                      Save
+                      Update
                     </Button>
                   </Col>
                 </Row>
               </CardHeader>
               <CardBody>
                 <Form>
-                  <h6 className="heading-small text-muted mb-4">
-                    Company Information
-                  </h6>
-                  <div className="pl-lg-4">
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-company"
-                          >
-                            Company Name
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-company"
-                            placeholder="Company Name"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-cphone"
-                          >
-                            Company Phone Number
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-cphone"
-                            placeholder="Phone Number"
-                            type="tel"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg="12">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-address"
-                          >
-                            Company Address
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-address"
-                            placeholder="Address"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      </Row>
-                      <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-ccity"
-                          >
-                            City
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-ccity"
-                            placeholder="City"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-cstate"
-                          >
-                            State / Province
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-cstate"
-                            placeholder="State / Province"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-ccountry"
-                          >
-                            Country
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-ccountry"
-                            placeholder="Country"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="input-czip"
-                          >
-                            Zip / Postal Code
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="input-czip"
-                            placeholder="Zip / Postal Code"
-                            type="email"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                  </div>
-                  <hr className="my-4" />
                   <h6 className="heading-small text-muted mb-4">
                     User Information
                   </h6>
@@ -222,13 +96,13 @@ const Profile = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="input-fname"
+                            htmlFor="uFirstName"
                           >
                             First Name
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="input-fname"
+                            id="uFirstName"
                             placeholder="First Name"
                             type="text"
                           />
@@ -238,13 +112,13 @@ const Profile = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="input-lname"
+                            htmlFor="uLastName"
                           >
                             Last Name
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="input-lname"
+                            id="uLastName"
                             placeholder="Last Name"
                             type="text"
                           />
@@ -256,13 +130,13 @@ const Profile = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="input-email"
+                            htmlFor="uEmail"
                           >
                             Email
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="input-email"
+                            id="uEmail"
                             placeholder="Email"
                             type="email"
                           />
@@ -272,159 +146,471 @@ const Profile = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="input-phone"
+                            htmlFor="uPhone"
                           >
                             Phone Number
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="input-phone"
+                            id="uPhone"
                             placeholder="Phone Number"
                             type="tel"
                           />
                         </FormGroup>
                       </Col>
                     </Row>
-                    <hr className="my-4" />
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    User Address
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uAddress1"
+                          >
+                            Street Address
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uAddress1"
+                            placeholder="House number and street name"
+                            type="text"
+                          />
+                        </FormGroup>
+                        <FormGroup>
+                          <Input
+                            className="form-control-alternative"
+                            id="uAddress2"
+                            placeholder="Apartment, suite, unit, etc. (optional)"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uCity"
+                          >
+                            Town / City
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uCity"
+                            placeholder="City"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uStateProv"
+                          >
+                            State / Province
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uStateProv"
+                            placeholder="State / Province"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uCountry"
+                          >
+                            Country
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uCountry"
+                            placeholder="Country"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uZipPostal"
+                          >
+                            Zip / Postal Code
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uZipPostal"
+                            placeholder="Zip / Postal Code"
+                            type="email"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <div class="btn-group" role="group" aria-label="Same address for billing">
+                        <input type="checkbox" class="btn-check" id="userAddressBilling" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="userAddressBilling">Use the same address for billing</label>
+                      </div>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                </Form>
+              </CardBody>
+            </Card>
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Account Password</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <Button
+                      color="primary"
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Update
+                    </Button>
+                  </Col>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                <Form>
+                  <h6 className="heading-small text-muted mb-4">
+                    Update Password
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uPass"
+                          >
+                            Current Password
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uPass"
+                            placeholder="Enter your current password"
+                            type="password"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="newPass"
+                          >
+                            New Password
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="newPass"
+                            placeholder="Enter a new password"
+                            type="password"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="newPass2"
+                          >
+                            Re-Enter New Password
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="newPass2"
+                            placeholder="Re-enter the new password"
+                            type="tel"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    Google Auth Login
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="12">
+                        <div>... add google auth login connection ...</div>
+                      </Col>
+                    </Row>
                   </div>
                 </Form>
               </CardBody>
             </Card>
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Billing Information</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <Button
+                      color="primary"
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Update
+                    </Button>
+                  </Col>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                <Form>
+                  <h6 className="heading-small text-muted mb-4">
+                    Credit Card Information
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <label className="form-control-label" htmlFor="credit-card-number">Card Number</label>
+                          <input type="text" 
+                            className="form-control-alternative" 
+                            autocomplete="off" 
+                            autocorrect="off"
+                            autocapitalize="none" spellcheck="false"
+                            name="credit-card-number" 
+                            id="credit-card-number"
+                            maxlength="22">
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label className="form-control-label" htmlFor="expiration">Expiration Date</label>
+                          <input type="text" 
+                            autocomplete="off" 
+                            autocorrect="off" 
+                            autocapitalize="none"
+                            spellcheck="false" 
+                            className="form-control-alternative"
+                            name="expiration" 
+                            id="expiration"
+                            placeholder="MM / YYYY" 
+                            maxlength="7">
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label className="form-control-label" htmlFor="cvv">Security Code </label>
+                          <input type="text" 
+                            autocomplete="off" 
+                            autocorrect="off" 
+                            autocapitalize="none"
+                            spellcheck="false" 
+                            className="form-control-alternative"
+                            name="cvv" 
+                            id="cvv" 
+                            maxlength="4">
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <label className="form-control-label" htmlFor="ccName">Name on the Credit Card</label>
+                          <input type="text" 
+                            className="form-control-alternative" 
+                            autocomplete="off" 
+                            autocorrect="off"
+                            autocapitalize="none" spellcheck="false"
+                            name="ccName" 
+                            id="ccName">
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    Billing Address
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <div class="btn-group" role="group" aria-label="Same address as profile">
+                        <input type="checkbox" class="btn-check" id="userAddressBilling" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="userAddressBilling">Use the same address as profile</label>
+                      </div>
+                    </Row>
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uAddress1"
+                          >
+                            Street Address
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uAddress1"
+                            placeholder="House number and street name"
+                            type="text"
+                          />
+                        </FormGroup>
+                        <FormGroup>
+                          <Input
+                            className="form-control-alternative"
+                            id="uAddress2"
+                            placeholder="Apartment, suite, unit, etc. (optional)"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uCity"
+                          >
+                            Town / City
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uCity"
+                            placeholder="City"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uStateProv"
+                          >
+                            State / Province
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uStateProv"
+                            placeholder="State / Province"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uCountry"
+                          >
+                            Country
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uCountry"
+                            placeholder="Country"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="uZipPostal"
+                          >
+                            Zip / Postal Code
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="uZipPostal"
+                            placeholder="Zip / Postal Code"
+                            type="email"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                </Form>
+              </CardBody>
+            </Card>
+            <hr className="my-4" />
           </Col>
         </Row>
         <Row>
+            <hr className="my-4" />
+            <p>begin new page blocks</p>
+        </Row>
+        <Row>
           <div className="col">
-            <Card className="shadow">
-              <CardHeader className="border-0">
-                <h3 className="mb-0">Card tables</h3>
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <h3 className="mb-0">Billing History</h3>
               </CardHeader>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
-                    <th scope="col">Project</th>
-                    <th scope="col">Budget</th>
+                    <th scope="col">Invoice ID</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Amount</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Users</th>
-                    <th scope="col">Completion</th>
-                    <th scope="col" />
+                    <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <div
+                          className="avatar rounded-circle mr-3">
                           <img
                             alt="..."
                             src={require("../../assets/img/theme/bootstrap.jpg")}
                           />
-                        </a>
+                        </div>
                         <Media>
                           <span className="mb-0 text-sm">
-                            Argon Design System
+                            Invoice #123456
                           </span>
                         </Media>
                       </Media>
                     </th>
-                    <td>$2,500 USD</td>
+                    <td>Jan. 22, 2025</td>         
+                    <td>
+                      <div className="invoice-amount">
+                        $1,111.11
+                      </div>
+                    </td>
                     <td>
                       <Badge color="" className="badge-dot mr-4">
                         <i className="bg-warning" />
                         pending
                       </Badge>
                     </td>
-                    <td>
-                      <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip742438047"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-1-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip742438047"
-                        >
-                          Ryan Tompson
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip941738690"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-2-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip941738690"
-                        >
-                          Romina Hadid
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip804044742"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-3-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip804044742"
-                        >
-                          Alexander Smith
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip996637554"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip996637554"
-                        >
-                          Jessica Doe
-                        </UncontrolledTooltip>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <span className="mr-2">60%</span>
-                        <div>
-                          <Progress
-                            max="100"
-                            value="60"
-                            barClassName="bg-danger"
-                          />
-                        </div>
-                      </div>
-                    </td>
                     <td className="text-right">
                       <UncontrolledDropdown>
                         <DropdownToggle
@@ -435,26 +621,20 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i className="fas fa-ellipsis-v" />
+                          <i class="bi bi-arrow-down-right-circle-fill"></i>
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
                             href="#pablo"
                             onClick={(e) => e.preventDefault()}
                           >
-                            Action
+                            View Invoice
                           </DropdownItem>
                           <DropdownItem
                             href="#pablo"
                             onClick={(e) => e.preventDefault()}
                           >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
+                            Download Invoice
                           </DropdownItem>
                         </DropdownMenu>
                       </UncontrolledDropdown>
@@ -463,117 +643,30 @@ const Profile = () => {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <div className="avatar rounded-circle mr-3">
                           <img
                             alt="..."
-                            src={require("../../assets/img/theme/angular.jpg")}
+                            src={require("../../assets/img/theme/bootstrap.jpg")}
                           />
-                        </a>
+                        </div>
                         <Media>
                           <span className="mb-0 text-sm">
-                            Angular Now UI Kit PRO
+                            Invoice #123453
                           </span>
                         </Media>
                       </Media>
                     </th>
-                    <td>$1,800 USD</td>
+                    <td>Jan. 20, 2025</td>         
                     <td>
-                      <Badge color="" className="badge-dot">
+                      <div className="invoice-amount">
+                        $1,111.11
+                      </div>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot mr-4">
                         <i className="bg-success" />
-                        completed
+                        Approved
                       </Badge>
-                    </td>
-                    <td>
-                      <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip746418347"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-1-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip746418347"
-                        >
-                          Ryan Tompson
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip102182364"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-2-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip102182364"
-                        >
-                          Romina Hadid
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip406489510"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-3-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip406489510"
-                        >
-                          Alexander Smith
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip476840018"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip476840018"
-                        >
-                          Jessica Doe
-                        </UncontrolledTooltip>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <span className="mr-2">100%</span>
-                        <div>
-                          <Progress
-                            max="100"
-                            value="100"
-                            barClassName="bg-success"
-                          />
-                        </div>
-                      </div>
                     </td>
                     <td className="text-right">
                       <UncontrolledDropdown>
@@ -585,26 +678,20 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i className="fas fa-ellipsis-v" />
+                          <i class="bi bi-arrow-down-right-circle-fill"></i>
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
                             href="#pablo"
                             onClick={(e) => e.preventDefault()}
                           >
-                            Action
+                            View Invoice
                           </DropdownItem>
                           <DropdownItem
                             href="#pablo"
                             onClick={(e) => e.preventDefault()}
                           >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
+                            Download Invoice
                           </DropdownItem>
                         </DropdownMenu>
                       </UncontrolledDropdown>
@@ -613,115 +700,30 @@ const Profile = () => {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
+                        <div className="avatar rounded-circle mr-3">
                           <img
                             alt="..."
-                            src={require("../../assets/img/theme/sketch.jpg")}
+                            src={require("../../assets/img/theme/bootstrap.jpg")}
                           />
-                        </a>
+                        </div>
                         <Media>
-                          <span className="mb-0 text-sm">Black Dashboard</span>
+                          <span className="mb-0 text-sm">
+                            Invoice #123453
+                          </span>
                         </Media>
                       </Media>
                     </th>
-                    <td>$3,150 USD</td>
+                    <td>Jan. 20, 2025</td>         
+                    <td>
+                      <div className="invoice-amount">
+                        $1,111.11
+                      </div>
+                    </td>
                     <td>
                       <Badge color="" className="badge-dot mr-4">
                         <i className="bg-danger" />
-                        delayed
+                        Failed
                       </Badge>
-                    </td>
-                    <td>
-                      <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip753056318"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-1-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip753056318"
-                        >
-                          Ryan Tompson
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip441753266"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-2-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip441753266"
-                        >
-                          Romina Hadid
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip188462246"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-3-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip188462246"
-                        >
-                          Alexander Smith
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip621168444"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip621168444"
-                        >
-                          Jessica Doe
-                        </UncontrolledTooltip>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <span className="mr-2">72%</span>
-                        <div>
-                          <Progress
-                            max="100"
-                            value="72"
-                            barClassName="bg-danger"
-                          />
-                        </div>
-                      </div>
                     </td>
                     <td className="text-right">
                       <UncontrolledDropdown>
@@ -733,326 +735,20 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i className="fas fa-ellipsis-v" />
+                          <i class="bi bi-arrow-down-right-circle-fill"></i>
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
                             href="#pablo"
                             onClick={(e) => e.preventDefault()}
                           >
-                            Action
+                            View Invoice
                           </DropdownItem>
                           <DropdownItem
                             href="#pablo"
                             onClick={(e) => e.preventDefault()}
                           >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("../../assets/img/theme/react.jpg")}
-                          />
-                        </a>
-                        <Media>
-                          <span className="mb-0 text-sm">
-                            React Material Dashboard
-                          </span>
-                        </Media>
-                      </Media>
-                    </th>
-                    <td>$4,400 USD</td>
-                    <td>
-                      <Badge color="" className="badge-dot">
-                        <i className="bg-info" />
-                        on schedule
-                      </Badge>
-                    </td>
-                    <td>
-                      <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip875258217"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-1-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip875258217"
-                        >
-                          Ryan Tompson
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip834416663"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-2-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip834416663"
-                        >
-                          Romina Hadid
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip372449339"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-3-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip372449339"
-                        >
-                          Alexander Smith
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip108714769"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip108714769"
-                        >
-                          Jessica Doe
-                        </UncontrolledTooltip>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <span className="mr-2">90%</span>
-                        <div>
-                          <Progress
-                            max="100"
-                            value="90"
-                            barClassName="bg-info"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">
-                        <a
-                          className="avatar rounded-circle mr-3"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            src={require("../../assets/img/theme/vue.jpg")}
-                          />
-                        </a>
-                        <Media>
-                          <span className="mb-0 text-sm">
-                            Vue Paper UI Kit PRO
-                          </span>
-                        </Media>
-                      </Media>
-                    </th>
-                    <td>$2,200 USD</td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        <i className="bg-success" />
-                        completed
-                      </Badge>
-                    </td>
-                    <td>
-                      <div className="avatar-group">
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip664029969"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-1-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip664029969"
-                        >
-                          Ryan Tompson
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip806693074"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-2-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip806693074"
-                        >
-                          Romina Hadid
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip844096937"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-3-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip844096937"
-                        >
-                          Alexander Smith
-                        </UncontrolledTooltip>
-                        <a
-                          className="avatar avatar-sm"
-                          href="#pablo"
-                          id="tooltip757459971"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                          />
-                        </a>
-                        <UncontrolledTooltip
-                          delay={0}
-                          target="tooltip757459971"
-                        >
-                          Jessica Doe
-                        </UncontrolledTooltip>
-                      </div>
-                    </td>
-                    <td>
-                      <div className="d-flex align-items-center">
-                        <span className="mr-2">100%</span>
-                        <div>
-                          <Progress
-                            max="100"
-                            value="100"
-                            barClassName="bg-success"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Another action
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Something else here
+                            Download Invoice
                           </DropdownItem>
                         </DropdownMenu>
                       </UncontrolledDropdown>
