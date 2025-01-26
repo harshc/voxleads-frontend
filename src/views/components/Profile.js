@@ -39,25 +39,21 @@ const Profile = () => {
                   <ul className="d-flex p-4 list-unstyled">
                     <li>
                       <a href="#" className="icon-link px-4 py-2">
-                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-account"></use></svg>
                         Account Information
                       </a>
                     </li>
                     <li>
                       <a href="#" className="icon-link px-4 py-2">
-                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-billing"></use></svg>
                         Billing Information
                       </a>
                     </li>
                     <li>
                       <a href="#" className="icon-link px-4 py-2">
-                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-password"></use></svg>
                         Change Password
                       </a>
                     </li>
                     <li>
                       <a href="#" className="icon-link px-4 py-2">
-                        <svg class="bi" aria-hidden="true"><use xlink:href="#box-history-billing"></use></svg>
                         Billing History
                       </a>
                     </li>
@@ -261,7 +257,7 @@ const Profile = () => {
                     </Row>
                     <Row>
                       <div class="btn-group" role="group" aria-label="Same address for billing">
-                        <input type="checkbox" class="btn-check" id="userAddressBilling" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="userAddressBilling" />
                         <label class="btn btn-outline-primary" for="userAddressBilling">Use the same address for billing</label>
                       </div>
                     </Row>
@@ -398,7 +394,7 @@ const Profile = () => {
                             autocapitalize="none" spellcheck="false"
                             name="credit-card-number" 
                             id="credit-card-number"
-                            maxlength="22">
+                            maxlength="22" />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -415,7 +411,7 @@ const Profile = () => {
                             name="expiration" 
                             id="expiration"
                             placeholder="MM / YYYY" 
-                            maxlength="7">
+                            maxlength="7" />
                         </FormGroup>
                       </Col>
                       <Col lg="6">
@@ -429,7 +425,7 @@ const Profile = () => {
                             className="form-control-alternative"
                             name="cvv" 
                             id="cvv" 
-                            maxlength="4">
+                            maxlength="4" />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -455,7 +451,7 @@ const Profile = () => {
                   <div className="pl-lg-4">
                     <Row>
                       <div class="btn-group" role="group" aria-label="Same address as profile">
-                        <input type="checkbox" class="btn-check" id="userAddressBilling" autocomplete="off">
+                        <input type="checkbox" class="btn-check" id="userAddressBilling" autocomplete="off" />
                         <label class="btn btn-outline-primary" for="userAddressBilling">Use the same address as profile</label>
                       </div>
                     </Row>
