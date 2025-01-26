@@ -53,7 +53,7 @@ const Profile = () => {
               <CardBody>
                 <Form>
                   <h6 className="heading-small text-muted mb-4">
-                    User Information
+                    Company Information
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
@@ -77,19 +77,111 @@ const Profile = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="input-phone"
+                            htmlFor="input-cphone"
                           >
-                            Phone Number
+                            Company Phone Number
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="input-phone"
+                            id="input-cphone"
                             placeholder="Phone Number"
                             type="tel"
                           />
                         </FormGroup>
                       </Col>
                     </Row>
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-address"
+                          >
+                            Company Address
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-address"
+                            placeholder="Address"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      </Row>
+                      <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-ccity"
+                          >
+                            City
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-ccity"
+                            placeholder="City"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-cstate"
+                          >
+                            State / Province
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-cstate"
+                            placeholder="State / Province"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="3">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-ccountry"
+                          >
+                            Country
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-ccountry"
+                            placeholder="Country"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-czip"
+                          >
+                            Zip / Postal Code
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-czip"
+                            placeholder="Zip / Postal Code"
+                            type="email"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    User Information
+                  </h6>
+                  <div className="pl-lg-4">
                     <Row>
                       <Col lg="6">
                         <FormGroup>
@@ -141,9 +233,24 @@ const Profile = () => {
                           />
                         </FormGroup>
                       </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-phone"
+                          >
+                            Phone Number
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="input-phone"
+                            placeholder="Phone Number"
+                            type="tel"
+                          />
+                        </FormGroup>
+                      </Col>
                     </Row>
                   </div>
-                  <hr className="my-4" />
                 </Form>
               </CardBody>
             </Card>
