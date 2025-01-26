@@ -292,7 +292,6 @@ const Profile = () => {
             </Card>
           </Col>
         </Row>
-
         <Row>
           <div className="col">
             <Card className="shadow">
