@@ -575,66 +575,191 @@ const Centers = () => {
                                 <option value="3">...</option>
                             </select>
                           </div>
-                          </FormGroup>
-                          <FormGroup>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="12">
+                        <FormGroup>
                           <div className="input-group">
-                            <span className="input-group-text">Monday</span>
-                            <input type="text" placeholder="Open" id="ccMondayOpen2" aria-label="Open" className="form-control-alternative" />
-                            <input type="text" placeholder="Close" id="ccMondayClose2" aria-label="Close" className="form-control-alternative" />
+                            <label className="input-group-text">Tuesday</label>
+                            <select className="form-control-alternative form-control" id="ccTuesdayOpen">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control" id="ccTuesdayClose">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
                           </div>
                         </FormGroup>
                       </Col>
                       <Col lg="12">
                         <FormGroup>
                           <div className="input-group">
-                            <span className="input-group-text">Tuesday</span>
-                            <input type="text" placeholder="Open" id="ccTuesdayOpen" aria-label="Open" className="form-control-alternative" />
-                            <input type="text" placeholder="Close" id="ccTuesdayClose" aria-label="Close" className="form-control-alternative" />
+                            <label className="input-group-text">Wednesday</label>
+                            <select className="form-control-alternative form-control" id="ccWednesdayOpen">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control" id="ccWednesdayClose">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
                           </div>
                         </FormGroup>
                       </Col>
                       <Col lg="12">
                         <FormGroup>
                           <div className="input-group">
-                            <span className="input-group-text">Wednesday</span>
-                            <input type="text" placeholder="Open" id="ccWednesdayOpen" aria-label="Open" className="form-control-alternative" />
-                            <input type="text" placeholder="Close" id="ccWednesdayClose" aria-label="Close" className="form-control-alternative" />
+                            <label className="input-group-text">Thursday</label>
+                            <select className="form-control-alternative form-control" id="ccThursdayOpen">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control" id="ccThursdayClose">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
                           </div>
                         </FormGroup>
                       </Col>
                       <Col lg="12">
                         <FormGroup>
                           <div className="input-group">
-                            <span className="input-group-text">Thursday</span>
-                            <input type="text" placeholder="Open" id="ccThursdayOpen" aria-label="Open" className="form-control-alternative" />
-                            <input type="text" placeholder="Close" id="ccThursdayClose" aria-label="Close" className="form-control-alternative" />
+                            <label className="input-group-text">Friday</label>
+                            <select className="form-control-alternative form-control" id="ccFridayOpen">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control" id="ccFridayClose">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
                           </div>
                         </FormGroup>
                       </Col>
                       <Col lg="12">
                         <FormGroup>
                           <div className="input-group">
-                            <span className="input-group-text">Friday</span>
-                            <input type="text" placeholder="Open" id="ccFridayOpen" aria-label="Open" className="form-control-alternative" />
-                            <input type="text" placeholder="Close" id="ccFridayClose" aria-label="Close" className="form-control-alternative" />
+                            <label className="input-group-text">Saturday</label>
+                            <select className="form-control-alternative form-control" id="ccSaturdayOpen">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control" id="ccSaturdayClose">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
                           </div>
                         </FormGroup>
                       </Col>
                       <Col lg="12">
                         <FormGroup>
                           <div className="input-group">
-                            <span className="input-group-text">Saturday</span>
-                            <input type="text" placeholder="Open" id="ccSaturdayOpen" aria-label="Open" className="form-control-alternative" />
-                            <input type="text" placeholder="Close" id="ccSaturdayClose" aria-label="Close" className="form-control-alternative" />
-                          </div>
-                        </FormGroup>
-                      </Col>
-                      <Col lg="12">
-                        <FormGroup>
-                          <div className="input-group">
-                            <span className="input-group-text">Sunday</span>
-                            <input type="text" placeholder="Open" id="ccSundayOpen" aria-label="Open" className="form-control-alternative" />
-                            <input type="text" placeholder="Close" id="ccSundayClose" aria-label="Close" className="form-control-alternative" />
+                            <label className="input-group-text">Sunday</label>
+                            <select className="form-control-alternative form-control" id="ccSundayOpen">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control" id="ccSundayClose">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
                           </div>
                         </FormGroup>
                       </Col>
