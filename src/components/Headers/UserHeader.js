@@ -44,33 +44,6 @@ const UserHeader = () => {
         }}
       >
         <span className="mask bg-gradient-default opacity-8" />
-        <Container className="d-none d-flex align-items-center" fluid>
-          <Row>
-            <Col lg="7" md="10">
-              <h1 className="display-2 text-white">Hello {user.name}</h1>
-              <p className="text-white mt-0 mb-5">
-                This is your profile page. 
-              </p>
-              <Button
-                color="info"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Edit profile
-              </Button>
-            </Col>
-            <Col lg="5" md="2">
-              <div className="text-center">
-                <img
-                  alt="Profile"
-                  className="rounded-circle"
-                  style={{ width: "150px", height: "150px" }}
-                  src={user.photo}
-                />
-              </div>
-            </Col>
-          </Row>
-        </Container>
       </div>
     </>
   );
