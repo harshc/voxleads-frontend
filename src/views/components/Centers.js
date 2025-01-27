@@ -225,7 +225,7 @@ const Centers = () => {
                                 UTC-5
                             </div>
                           </div>
-                          <div className="fs-6">Current time is: 14:36:34</div>
+                          <div className="text-sm">Current time is: 14:36:34</div>
                         </div>
                       </Col>
                     </Row>
@@ -807,7 +807,7 @@ const Centers = () => {
                       </div>
                     </td>
                     <td>
-                      <Badge color="" className="badge-dot mr-4">
+                      <Badge color="" className="badge-dot">
                         <i className="bg-success" />
                         Live
                       </Badge>
@@ -882,10 +882,32 @@ const Centers = () => {
                       </div>
                     </td>
                     <td>
-                      <Badge color="" className="badge-dot mr-4">
+                      <Badge color="" className="badge-dot">
                         <i className="bg-success" />
                         Completed
                       </Badge>
+                    </td>
+                    <td>
+                      <div className="avatar-group">
+                        <a
+                          className="avatar avatar-sm"
+                          href="#pablo"
+                          id="tooltip996637554"
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          <img
+                            alt="..."
+                            className="rounded-circle"
+                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                          />
+                        </a>
+                        <UncontrolledTooltip
+                          delay={0}
+                          target="tooltip996637554"
+                        >
+                          Sara Doe
+                        </UncontrolledTooltip>
+                      </div>
                     </td>
                     <td className="text-center">
                       <UncontrolledDropdown>
@@ -935,10 +957,32 @@ const Centers = () => {
                       </div>
                     </td>
                     <td>
-                      <Badge color="" className="badge-dot mr-4">
+                      <Badge color="" className="badge-dot">
                         <i className="bg-danger" />
                         Failed
                       </Badge>
+                    </td>
+                    <td>
+                      <div className="avatar-group">
+                        <a
+                          className="avatar avatar-sm"
+                          href="#pablo"
+                          id="tooltip996637554"
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          <img
+                            alt="..."
+                            className="rounded-circle"
+                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                          />
+                        </a>
+                        <UncontrolledTooltip
+                          delay={0}
+                          target="tooltip996637554"
+                        >
+                          Sara Doe
+                        </UncontrolledTooltip>
+                      </div>
                     </td>
                     <td className="text-center">
                       <UncontrolledDropdown>
