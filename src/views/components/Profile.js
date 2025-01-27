@@ -573,13 +573,6 @@ const Profile = () => {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <div
-                          className="avatar rounded-circle mr-3">
-                          <img
-                            alt="..."
-                            src={require("../../assets/img/theme/bootstrap.jpg")}
-                          />
-                        </div>
                         <Media>
                           <span className="mb-0 text-sm">
                             Invoice #123456
@@ -609,7 +602,7 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i className="bi bi-arrow-down-right-circle-fill"></i>
+                          <i className="fas fa-angle-right" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
@@ -631,12 +624,6 @@ const Profile = () => {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <div className="avatar rounded-circle mr-3">
-                          <img
-                            alt="..."
-                            src={require("../../assets/img/theme/bootstrap.jpg")}
-                          />
-                        </div>
                         <Media>
                           <span className="mb-0 text-sm">
                             Invoice #123453
@@ -666,7 +653,7 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i className="bi bi-arrow-down-right-circle-fill"></i>
+                          <i className="fas fa-angle-right" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
@@ -688,12 +675,6 @@ const Profile = () => {
                   <tr>
                     <th scope="row">
                       <Media className="align-items-center">
-                        <div className="avatar rounded-circle mr-3">
-                          <img
-                            alt="..."
-                            src={require("../../assets/img/theme/bootstrap.jpg")}
-                          />
-                        </div>
                         <Media>
                           <span className="mb-0 text-sm">
                             Invoice #123453
@@ -723,7 +704,7 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i className="bi bi-arrow-down-right-circle-fill"></i>
+                          <i className="fas fa-angle-right" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
@@ -798,10 +779,6 @@ const Profile = () => {
               </CardFooter>
             </Card>
           </Col>
-        </Row>
-        <Row>
-            <hr className="my-4" />
-            <p>begin new page blocks</p>
         </Row>
       </Container>
     </>
