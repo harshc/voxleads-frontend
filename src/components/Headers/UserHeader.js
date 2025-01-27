@@ -37,14 +37,14 @@ const UserHeader = () => {
       <div
         className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
         style={{
-          minHeight: "600px",
+          minHeight: "50px",
           // backgroundImage: `url(${require("../../assets/img/theme/profile-cover.jpg")})`,
           backgroundSize: "cover",
           backgroundPosition: "center top",
         }}
       >
         <span className="mask bg-gradient-default opacity-8" />
-        <Container className="d-flex align-items-center" fluid>
+        <Container className="d-none d-flex align-items-center" fluid>
           <Row>
             <Col lg="7" md="10">
               <h1 className="display-2 text-white">Hello {user.name}</h1>
