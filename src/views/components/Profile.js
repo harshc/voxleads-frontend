@@ -86,7 +86,7 @@ const Profile = () => {
                     User Information
                   </h6>
                   <div className="pl-lg-4">
-                    <Row>
+                    <Row className="my-4">
                       <Col lg="6">
                         <div>
                           <div className="form-control-label">
@@ -108,7 +108,7 @@ const Profile = () => {
                         </div>
                       </Col>
                     </Row>
-                    <Row>
+                    <Row className="my-4">
                       <Col lg="6">
                         <div>
                           <div className="form-control-label">
@@ -136,22 +136,19 @@ const Profile = () => {
                     User Address
                   </h6>
                   <div className="pl-lg-4">
-                    <Row>
+                    <Row className="my-4">
                       <Col lg="12">
                         <div>
                           <div className="form-control-label">
                             Address
                           </div>
                           <div>
-                            123 Calle 38 Norte
-                          </div>
-                          <div>
-                            Lotte 345
+                            Unit 22 - 123 Calle 38 Norte
                           </div>
                         </div>
                       </Col>
                     </Row>
-                    <Row>
+                    <Row className="my-4">
                       <Col lg="6">
                         <div>
                           <div className="form-control-label">
@@ -173,7 +170,7 @@ const Profile = () => {
                         </div>
                       </Col>
                     </Row>
-                    <Row>
+                    <Row className="my-4">
                       <Col lg="6">
                         <div>
                           <div className="form-control-label">
@@ -715,7 +712,9 @@ const Profile = () => {
                       <Media className="align-items-center">
                         <Media>
                           <span className="mb-0 text-sm">
-                            Invoice #123456
+                            <a href="#">
+                              Invoice #123453
+                            </a>
                           </span>
                         </Media>
                       </Media>
@@ -742,7 +741,7 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i className="fas fa-angle-right" />
+                          <i className="fas fa-angle-down" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
@@ -766,7 +765,9 @@ const Profile = () => {
                       <Media className="align-items-center">
                         <Media>
                           <span className="mb-0 text-sm">
-                            Invoice #123453
+                            <a href="#">
+                              Invoice #123453
+                            </a>
                           </span>
                         </Media>
                       </Media>
@@ -786,14 +787,14 @@ const Profile = () => {
                     <td className="text-center">
                       <UncontrolledDropdown>
                         <DropdownToggle
-                          className="btn-icon-only text-light"
+                          className="btn-icon-only"
                           href="#pablo"
                           role="button"
                           size="sm"
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i className="fas fa-angle-right" />
+                          <i className="fas fa-angle-down" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
@@ -817,7 +818,9 @@ const Profile = () => {
                       <Media className="align-items-center">
                         <Media>
                           <span className="mb-0 text-sm">
-                            Invoice #123453
+                            <a href="#">
+                              Invoice #123453
+                            </a>
                           </span>
                         </Media>
                       </Media>
@@ -837,14 +840,14 @@ const Profile = () => {
                     <td className="text-center">
                       <UncontrolledDropdown>
                         <DropdownToggle
-                          className="btn-icon-only text-light"
+                          className="btn-icon-only"
                           href="#pablo"
                           role="button"
                           size="sm"
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i className="fas fa-angle-right" />
+                          <i className="fas fa-angle-down" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
