@@ -225,7 +225,7 @@ const Centers = () => {
                                 UTC-5
                             </div>
                           </div>
-                          <div className="text-sm">Current time is: 14:36:34</div>
+                          <div className="text-xs">Current time is: 14:36:34</div>
                         </div>
                       </Col>
                     </Row>
@@ -536,14 +536,14 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <label className="input-group-text" for="ccTimeZone">Time Zone</label>
-                            <select className="form-control-alternative form-control" id="ccTimeZone">
+                            <select className="form-control-alternative form-control mx-2" id="ccTimeZone">
                                 <option selected>Choose one</option>
                                 <option value="1">UTC-0</option>
                                 <option value="2">UTC-1</option>
                                 <option value="3">...</option>
                             </select>
                           </div>
-                          <span>Default Time Zone is set to UTC-0</span>
+                          <span className="text-xs">Default Time Zone is set to UTC-0</span>
                         </FormGroup>
                       </Col>
                     </Row>
@@ -552,7 +552,7 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <label className="input-group-text">Monday</label>
-                            <select className="form-control-alternative form-control" id="ccMondayOpen">
+                            <select className="form-control-alternative form-control mx-2" id="ccMondayOpen">
                                 <option selected>Select opening time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -564,7 +564,7 @@ const Centers = () => {
                                 <option value="3">03:30</option>
                                 <option value="3">...</option>
                             </select>
-                            <select className="form-control-alternative form-control" id="ccMondayClose">
+                            <select className="form-control-alternative form-control mx-2" id="ccMondayClose">
                                 <option selected>Select closing time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -583,7 +583,7 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <label className="input-group-text">Tuesday</label>
-                            <select className="form-control-alternative form-control" id="ccTuesdayOpen">
+                            <select className="form-control-alternative form-control mx-2" id="ccTuesdayOpen">
                                 <option selected>Select opening time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -595,7 +595,7 @@ const Centers = () => {
                                 <option value="3">03:30</option>
                                 <option value="3">...</option>
                             </select>
-                            <select className="form-control-alternative form-control" id="ccTuesdayClose">
+                            <select className="form-control-alternative form-control mx-2" id="ccTuesdayClose">
                                 <option selected>Select closing time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -614,7 +614,7 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <label className="input-group-text">Wednesday</label>
-                            <select className="form-control-alternative form-control" id="ccWednesdayOpen">
+                            <select className="form-control-alternative form-control mx-2" id="ccWednesdayOpen">
                                 <option selected>Select opening time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -626,7 +626,7 @@ const Centers = () => {
                                 <option value="3">03:30</option>
                                 <option value="3">...</option>
                             </select>
-                            <select className="form-control-alternative form-control" id="ccWednesdayClose">
+                            <select className="form-control-alternative form-control mx-2" id="ccWednesdayClose">
                                 <option selected>Select closing time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -645,7 +645,7 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <label className="input-group-text">Thursday</label>
-                            <select className="form-control-alternative form-control" id="ccThursdayOpen">
+                            <select className="form-control-alternative form-control mx-2" id="ccThursdayOpen">
                                 <option selected>Select opening time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -657,7 +657,7 @@ const Centers = () => {
                                 <option value="3">03:30</option>
                                 <option value="3">...</option>
                             </select>
-                            <select className="form-control-alternative form-control" id="ccThursdayClose">
+                            <select className="form-control-alternative form-control mx-2" id="ccThursdayClose">
                                 <option selected>Select closing time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -676,7 +676,7 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <label className="input-group-text">Friday</label>
-                            <select className="form-control-alternative form-control" id="ccFridayOpen">
+                            <select className="form-control-alternative form-control mx-2" id="ccFridayOpen">
                                 <option selected>Select opening time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -688,7 +688,7 @@ const Centers = () => {
                                 <option value="3">03:30</option>
                                 <option value="3">...</option>
                             </select>
-                            <select className="form-control-alternative form-control" id="ccFridayClose">
+                            <select className="form-control-alternative form-control mx-2" id="ccFridayClose">
                                 <option selected>Select closing time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -707,7 +707,7 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <label className="input-group-text">Saturday</label>
-                            <select className="form-control-alternative form-control" id="ccSaturdayOpen">
+                            <select className="form-control-alternative form-control mx-2" id="ccSaturdayOpen">
                                 <option selected>Select opening time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -719,7 +719,7 @@ const Centers = () => {
                                 <option value="3">03:30</option>
                                 <option value="3">...</option>
                             </select>
-                            <select className="form-control-alternative form-control" id="ccSaturdayClose">
+                            <select className="form-control-alternative form-control mx-2" id="ccSaturdayClose">
                                 <option selected>Select closing time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -738,7 +738,7 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <label className="input-group-text">Sunday</label>
-                            <select className="form-control-alternative form-control" id="ccSundayOpen">
+                            <select className="form-control-alternative form-control mx-2" id="ccSundayOpen">
                                 <option selected>Select opening time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -750,7 +750,7 @@ const Centers = () => {
                                 <option value="3">03:30</option>
                                 <option value="3">...</option>
                             </select>
-                            <select className="form-control-alternative form-control" id="ccSundayClose">
+                            <select className="form-control-alternative form-control mx-2" id="ccSundayClose">
                                 <option selected>Select closing time</option>
                                 <option value="1">00:00</option>
                                 <option value="2">00:30</option>
@@ -771,6 +771,645 @@ const Centers = () => {
                 </Form>
               </CardBody>
             </Card>
+            <hr className="my-4" />
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Agents</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <Button
+                      color="primary"
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Add New
+                    </Button>
+                  </Col>
+                </Row>
+              </CardHeader>
+              <CardBody className="d-flex">
+                <Col lg="12" xl="6">
+                    <Card className="card-stats mb-4 mb-xl-0">
+                        <CardBody>
+                            <Row>
+                            <div className="col">
+                                <CardTitle
+                                tag="h2"
+                                className="text-uppercase font-weight-bold mb-0"
+                                >
+                                Sara Doe
+                                </CardTitle>
+                            </div>
+                            <Col className="col-auto">
+                                <div className="company_logo icon icon-shape rounded-circle shadow">
+                                  <img
+                                    alt="..."
+                                    className="rounded-circle"
+                                    src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                  />
+                                </div>
+                            </Col>
+                            </Row>
+                            <p className="mt-3 mb-0 text-sm">
+                                <a href="#">
+                                  View Agent Details
+                                </a>
+                            </p>
+                        </CardBody>
+                    </Card>
+                </Col>
+                <Col lg="12" xl="6">
+                    <Card className="card-stats mb-4 mb-xl-0">
+                        <CardBody>
+                            <Row>
+                            <div className="col">
+                                <CardTitle
+                                tag="h2"
+                                className="text-uppercase font-weight-bold mb-0"
+                                >
+                                John Doe
+                                </CardTitle>
+                            </div>
+                            <Col className="col-auto">
+                                <div className="company_logo icon icon-shape rounded-circle shadow">
+                                  <img
+                                    alt="..."
+                                    className="rounded-circle"
+                                    src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                  />
+                                </div>
+                            </Col>
+                            </Row>
+                            <p className="mt-3 mb-0 text-sm">
+                                <a href="#">
+                                  View Agent Details
+                                </a>
+                            </p>
+                        </CardBody>
+                    </Card>
+                </Col>
+              </CardBody>
+            </Card>
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Agent Profile</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <Button
+                      color="primary"
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Edit
+                    </Button>
+                  </Col>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                  <h6 className="heading-small text-muted mb-4">
+                    Agent Information
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row className="my-4">
+                      <Col lg="12">
+                        <div>
+                          <div className="form-control-label">
+                            Sara Doe
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="my-4">
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            sara_doe@email.com
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            (555) 123-4567
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="my-4">
+                      <Col lg="12">
+                        <div>
+                          <div className="form-control-label">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    Company Assigned To
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="12">
+                        <div>
+                          <div className="form-control-label">
+                            Company_Name
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    Working Hours
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row className="my-4">
+                      <Col lg="12">
+                        <div>
+                          <div className="align-items-center d-flex mb-2">
+                            <div>Time Zone:</div>
+                            <div className="form-control-label px-2">
+                                UTC-5
+                            </div>
+                          </div>
+                          <div className="text-xs">Current time is: 14:36:34</div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="my-4">
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex align-items-center">
+                          <div>Monday:</div>
+                          <div className="form-control-label px-2">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label px-2">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex align-items-center">
+                          <div>Tuesday:</div>
+                          <div className="form-control-label px-2">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label px-2">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex align-items-center">
+                          <div>Wednesday:</div>
+                          <div className="form-control-label px-2">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label px-2">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex align-items-center">
+                          <div>Thursday:</div>
+                          <div className="form-control-label px-2">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label px-2">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex align-items-center">
+                          <div>Friday:</div>
+                          <div className="form-control-label px-2">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label px-2">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex align-items-center">
+                          <div>Saturday:</div>
+                          <div className="form-control-label px-2">
+                            9:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label px-2">
+                            15:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex align-items-center">
+                          <div>Sunday:</div>
+                          <div className="form-control-label px-2">
+                            10:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label px-2">
+                            15:00
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+              </CardBody>
+            </Card>
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Edit Agent Profile</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <Button
+                      color="primary"
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Update
+                    </Button>
+                  </Col>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                <Form>
+                  <h6 className="heading-small text-muted mb-4">
+                    Agent Information
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="agFirstName"
+                          >
+                            First Name
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="agFirstName"
+                            placeholder="First Name"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="agLastName"
+                          >
+                            Last Name
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="agLastName"
+                            placeholder="Last Name"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="agBio"
+                          >
+                            Company Description
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="agBio"
+                            placeholder="Add a custom bio..."
+                            type="textarea"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="12">
+                        <FormGroup>
+                          <div className="input-group b-flex align-items-center mb-3">
+                            <div className="form-control-label pr-2">
+                              Profile Photo
+                            </div>
+                            <input type="file" className="form-control-alternative" id="agProfileImg" />
+                            <label className="input-group-text" for="agProfileImg">Upload</label>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    Agent <> Company
+                  </h6>
+                  <p>Assign an Agent to one or several companies.</p>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <div class="btn-group" role="group" aria-label="Assign Agent to Companies">
+                            <input type="checkbox" class="btn-check" id="btncheck1" />
+                            <label class="btn btn-outline-primary" for="btncheck1">Company_Name</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck2" />
+                            <label class="btn btn-outline-primary" for="btncheck2">Company_Name1</label>
+
+                            <input type="checkbox" class="btn-check" id="btncheck3" />
+                            <label class="btn btn-outline-primary" for="btncheck3">Company_Name2</label>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="agLastName"
+                          >
+                            Last Name
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="agLastName"
+                            placeholder="Last Name"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    Working Hours
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text" for="agTimeZone">Time Zone</label>
+                            <select className="form-control-alternative form-control mx-2" id="ccTimeZone">
+                                <option selected>Choose one</option>
+                                <option value="1">UTC-0</option>
+                                <option value="2">UTC-1</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                          <span className="text-xs">Default Time Zone is set to UTC-0</span>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text">Monday</label>
+                            <select className="form-control-alternative form-control mx-2" id="agMondayStart">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control mx-2" id="agMondayEnd">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="12">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text">Tuesday</label>
+                            <select className="form-control-alternative form-control mx-2" id="agTuesdayStart">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control mx-2" id="agTuesdayEnd">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="12">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text">Wednesday</label>
+                            <select className="form-control-alternative form-control mx-2" id="agWednesdayStart">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control mx-2" id="agWednesdayEnd">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="12">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text">Thursday</label>
+                            <select className="form-control-alternative form-control mx-2" id="agThursdayStart">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control mx-2" id="agThursdayEnd">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="12">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text">Friday</label>
+                            <select className="form-control-alternative form-control mx-2" id="agFridayStart">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control mx-2" id="agFridayEnd">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="12">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text">Saturday</label>
+                            <select className="form-control-alternative form-control mx-2" id="agSaturdayStart">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control mx-2" id="agSaturdayEnd">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="12">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text">Sunday</label>
+                            <select className="form-control-alternative form-control mx-2" id="agSundayStart">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control mx-2" id="agSundayEnd">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                </Form>
+              </CardBody>
+            </Card>
+            <hr className="my-4" />
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
