@@ -17,7 +17,7 @@
 */
 import Index from "views/Index.js";
 import Profile from "views/components/Profile.js";
-import Profile from "views/components/Centers.js";
+import Centers from "views/components/Centers.js";
 import Maps from "views/components/Maps.js";
 import Register from "views/components/Register.js";
 import Login from "views/components/Login.js";
