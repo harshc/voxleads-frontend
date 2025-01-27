@@ -82,8 +82,8 @@ const Centers = () => {
                   </Col>
                 </Row>
               </CardHeader>
-              <CardBody>
-                <Col xl="6">
+              <CardBody className="d-flex">
+                <Col lg="12" xl="6">
                     <Card className="card-stats mb-4 mb-xl-0">
                         <CardBody>
                             <Row>
@@ -109,7 +109,7 @@ const Centers = () => {
                         </CardBody>
                     </Card>
                 </Col>
-                <Col xl="6">
+                <Col lg="12" xl="6">
                     <Card className="card-stats mb-4 mb-xl-0">
                         <CardBody>
                             <Row>
@@ -134,7 +134,7 @@ const Centers = () => {
                             </p>
                         </CardBody>
                     </Card>
-                </Col>
+                </Col>   
               </CardBody>
             </Card>
             <hr className="my-4" />
@@ -161,7 +161,7 @@ const Centers = () => {
                     Company Information
                   </h6>
                   <div className="pl-lg-4">
-                    <Row>
+                    <Row className="my-4">
                       <Col lg="12">
                         <div>
                           <div className="form-control-label">
@@ -170,7 +170,7 @@ const Centers = () => {
                         </div>
                       </Col>
                     </Row>
-                    <Row>
+                    <Row className="my-4">
                       <Col lg="6">
                         <div>
                           <div className="form-control-label">
@@ -186,7 +186,7 @@ const Centers = () => {
                         </div>
                       </Col>
                     </Row>
-                    <Row>
+                    <Row className="my-4">
                       <Col lg="12">
                         <div>
                           <div className="form-control-label">
@@ -206,6 +206,109 @@ const Centers = () => {
                         <div>
                           <div className="form-control-label">
                             Suite 11 - 123 StreetName Blvd., CityName, StateName, CountryName, ZipCode
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    Operating Hours
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row className="my-4">
+                      <Col lg="12">
+                        <div>
+                          <div>Time Zone:</div>
+                          <div className="form-control-label">
+                            UTC-5
+                          </div>
+                          <div>Current time is: 14:36:34</div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="my-4">
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex">
+                          <div>Monday:</div>
+                          <div className="form-control-label">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex">
+                          <div>Tuesday:</div>
+                          <div className="form-control-label">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex">
+                          <div>Wednesday:</div>
+                          <div className="form-control-label">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex">
+                          <div>Thursday:</div>
+                          <div className="form-control-label">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex">
+                          <div>Friday:</div>
+                          <div className="form-control-label">
+                            8:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label">
+                            17:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex">
+                          <div>Saturday:</div>
+                          <div className="form-control-label">
+                            9:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label">
+                            15:00
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="12" className="my-2">
+                        <div className="d-flex">
+                          <div>Sunday:</div>
+                          <div className="form-control-label">
+                            10:00
+                          </div>
+                          <div>-</div>
+                          <div className="form-control-label">
+                            15:00
                           </div>
                         </div>
                       </Col>
@@ -429,9 +532,9 @@ const Centers = () => {
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <div className="input-group mb-3">
+                          <div className="input-group">
                             <label className="input-group-text" for="ccTimeZone">Time Zone</label>
-                            <select className="form-select" id="ccTimeZone">
+                            <select className="form-control-alternative form-control" id="ccTimeZone">
                                 <option selected>Choose one</option>
                                 <option value="1">UTC-0</option>
                                 <option value="2">UTC-1</option>
@@ -446,9 +549,38 @@ const Centers = () => {
                       <Col lg="12">
                         <FormGroup>
                           <div className="input-group">
+                            <label className="input-group-text">Monday</label>
+                            <select className="form-control-alternative form-control" id="ccMondayOpen">
+                                <option selected>Select opening time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                            <select className="form-control-alternative form-control" id="ccMondayClose">
+                                <option selected>Select closing time</option>
+                                <option value="1">00:00</option>
+                                <option value="2">00:30</option>
+                                <option value="3">01:00</option>
+                                <option value="3">01:30</option>
+                                <option value="3">02:00</option>
+                                <option value="3">02:30</option>
+                                <option value="3">03:00</option>
+                                <option value="3">03:30</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                          </FormGroup>
+                          <FormGroup>
+                          <div className="input-group">
                             <span className="input-group-text">Monday</span>
-                            <input type="text" placeholder="Open" id="ccMondayOpen" aria-label="Open" className="form-control-alternative" />
-                            <input type="text" placeholder="Close" id="ccMondayClose" aria-label="Close" className="form-control-alternative" />
+                            <input type="text" placeholder="Open" id="ccMondayOpen2" aria-label="Open" className="form-control-alternative" />
+                            <input type="text" placeholder="Close" id="ccMondayClose2" aria-label="Close" className="form-control-alternative" />
                           </div>
                         </FormGroup>
                       </Col>
@@ -533,7 +665,9 @@ const Centers = () => {
                       <Media className="align-items-center">
                         <Media>
                           <span className="mb-0 text-sm">
-                            Call #123456
+                            <a href="#">
+                              Call #123456
+                            </a>
                           </span>
                         </Media>
                       </Media>
@@ -584,7 +718,9 @@ const Centers = () => {
                       <Media className="align-items-center">
                         <Media>
                           <span className="mb-0 text-sm">
-                            Call #123456
+                            <a href="#">
+                              Call #123456
+                            </a>
                           </span>
                         </Media>
                       </Media>
@@ -635,7 +771,9 @@ const Centers = () => {
                       <Media className="align-items-center">
                         <Media>
                           <span className="mb-0 text-sm">
-                            Call #123456
+                            <a href="#">
+                              Call #123456
+                            </a>
                           </span>
                         </Media>
                       </Media>
