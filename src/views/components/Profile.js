@@ -256,9 +256,9 @@ const Profile = () => {
                       </Col>
                     </Row>
                     <Row>
-                      <div class="btn-group" role="group" aria-label="Same address for billing">
-                        <input type="checkbox" class="btn-check" id="userAddressBilling" />
-                        <label class="btn btn-outline-primary" for="userAddressBilling">Use the same address for billing</label>
+                      <div className="btn-group" role="group" aria-label="Same address for billing">
+                        <input type="checkbox" className="btn-check" id="userAddressBilling" />
+                        <label className="btn btn-outline-primary" for="userAddressBilling">Use the same address as billing</label>
                       </div>
                     </Row>
                   </div>
@@ -439,7 +439,7 @@ const Profile = () => {
                             autocorrect="off"
                             autocapitalize="none" spellcheck="false"
                             name="ccName" 
-                            id="ccName">
+                            id="ccName" />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -450,9 +450,9 @@ const Profile = () => {
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
-                      <div class="btn-group" role="group" aria-label="Same address as profile">
-                        <input type="checkbox" class="btn-check" id="userAddressBilling" autocomplete="off" />
-                        <label class="btn btn-outline-primary" for="userAddressBilling">Use the same address as profile</label>
+                      <div className="btn-group" role="group" aria-label="Same address as profile">
+                        <input type="checkbox" className="btn-check" id="userAddressBilling" autocomplete="off" />
+                        <label className="btn btn-outline-primary" for="userAddressBilling">Use the same address as profile</label>
                       </div>
                     </Row>
                     <Row>
@@ -617,7 +617,7 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i class="bi bi-arrow-down-right-circle-fill"></i>
+                          <i className="bi bi-arrow-down-right-circle-fill"></i>
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
@@ -674,7 +674,7 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i class="bi bi-arrow-down-right-circle-fill"></i>
+                          <i className="bi bi-arrow-down-right-circle-fill"></i>
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
@@ -731,7 +731,7 @@ const Profile = () => {
                           color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          <i class="bi bi-arrow-down-right-circle-fill"></i>
+                          <i className="bi bi-arrow-down-right-circle-fill"></i>
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
                           <DropdownItem
