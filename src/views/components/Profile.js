@@ -36,24 +36,24 @@ const Profile = () => {
             <Card className="card-profile shadow sticky-top">
               <CardBody className="pt-0 pt-md-4">
                 <div className="">
-                  <ul className="d-flex p-4 list-unstyled">
+                  <ul className="list-unstyled">
                     <li>
-                      <a href="#" className="icon-link px-4 py-2">
+                      <a href="#" className="d-flex icon-link px-4 py-2">
                         Account Information
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="icon-link px-4 py-2">
-                        Billing Information
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="icon-link px-4 py-2">
+                      <a href="#" className="d-flex icon-link px-4 py-2">
                         Change Password
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="icon-link px-4 py-2">
+                      <a href="#" className="d-flex icon-link px-4 py-2">
+                        Billing Information
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="d-flex icon-link px-4 py-2">
                         Billing History
                       </a>
                     </li>
@@ -555,14 +555,6 @@ const Profile = () => {
               </CardBody>
             </Card>
             <hr className="my-4" />
-          </Col>
-        </Row>
-        <Row>
-            <hr className="my-4" />
-            <p>begin new page blocks</p>
-        </Row>
-        <Row>
-          <div className="col">
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <h3 className="mb-0">Billing History</h3>
@@ -607,7 +599,7 @@ const Profile = () => {
                         pending
                       </Badge>
                     </td>
-                    <td className="text-right">
+                    <td className="text-center">
                       <UncontrolledDropdown>
                         <DropdownToggle
                           className="btn-icon-only text-light"
@@ -664,7 +656,7 @@ const Profile = () => {
                         Approved
                       </Badge>
                     </td>
-                    <td className="text-right">
+                    <td className="text-center">
                       <UncontrolledDropdown>
                         <DropdownToggle
                           className="btn-icon-only text-light"
@@ -721,7 +713,7 @@ const Profile = () => {
                         Failed
                       </Badge>
                     </td>
-                    <td className="text-right">
+                    <td className="text-center">
                       <UncontrolledDropdown>
                         <DropdownToggle
                           className="btn-icon-only text-light"
@@ -805,7 +797,11 @@ const Profile = () => {
                 </nav>
               </CardFooter>
             </Card>
-          </div>
+          </Col>
+        </Row>
+        <Row>
+            <hr className="my-4" />
+            <p>begin new page blocks</p>
         </Row>
       </Container>
     </>
