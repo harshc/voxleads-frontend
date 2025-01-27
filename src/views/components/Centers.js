@@ -783,6 +783,7 @@ const Centers = () => {
                     <th scope="col">Date</th>
                     <th scope="col">Minutes</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Agent</th>
                     <th scope="col">Actions</th>
                   </tr>
                 </thead>
@@ -810,6 +811,28 @@ const Centers = () => {
                         <i className="bg-success" />
                         Live
                       </Badge>
+                    </td>
+                    <td>
+                      <div className="avatar-group">
+                        <a
+                          className="avatar avatar-sm"
+                          href="#pablo"
+                          id="tooltip996637554"
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          <img
+                            alt="..."
+                            className="rounded-circle"
+                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                          />
+                        </a>
+                        <UncontrolledTooltip
+                          delay={0}
+                          target="tooltip996637554"
+                        >
+                          Sara Doe
+                        </UncontrolledTooltip>
+                      </div>
                     </td>
                     <td className="text-center">
                       <UncontrolledDropdown>
