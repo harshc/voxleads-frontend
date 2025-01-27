@@ -26,7 +26,7 @@ import {
 } from "reactstrap";
 import UserHeader from "components/Headers/UserHeader.js";
 
-const Profile = () => {
+const Centers = () => {
   return (
     <>
       <UserHeader />
@@ -569,4 +569,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Centers;
