@@ -219,95 +219,97 @@ const Centers = () => {
                     <Row className="my-4">
                       <Col lg="12">
                         <div>
-                          <div>Time Zone:</div>
-                          <div className="form-control-label">
-                            UTC-5
+                          <div className="align-items-center d-flex mb-2">
+                            <div>Time Zone:</div>
+                            <div className="form-control-label px-2">
+                                UTC-5
+                            </div>
                           </div>
-                          <div>Current time is: 14:36:34</div>
+                          <div className="fs-6">Current time is: 14:36:34</div>
                         </div>
                       </Col>
                     </Row>
                     <Row className="my-4">
                       <Col lg="12" className="my-2">
-                        <div className="d-flex">
+                        <div className="d-flex align-items-center">
                           <div>Monday:</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             8:00
                           </div>
                           <div>-</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             17:00
                           </div>
                         </div>
                       </Col>
                       <Col lg="12" className="my-2">
-                        <div className="d-flex">
+                        <div className="d-flex align-items-center">
                           <div>Tuesday:</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             8:00
                           </div>
                           <div>-</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             17:00
                           </div>
                         </div>
                       </Col>
                       <Col lg="12" className="my-2">
-                        <div className="d-flex">
+                        <div className="d-flex align-items-center">
                           <div>Wednesday:</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             8:00
                           </div>
                           <div>-</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             17:00
                           </div>
                         </div>
                       </Col>
                       <Col lg="12" className="my-2">
-                        <div className="d-flex">
+                        <div className="d-flex align-items-center">
                           <div>Thursday:</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             8:00
                           </div>
                           <div>-</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             17:00
                           </div>
                         </div>
                       </Col>
                       <Col lg="12" className="my-2">
-                        <div className="d-flex">
+                        <div className="d-flex align-items-center">
                           <div>Friday:</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             8:00
                           </div>
                           <div>-</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             17:00
                           </div>
                         </div>
                       </Col>
                       <Col lg="12" className="my-2">
-                        <div className="d-flex">
+                        <div className="d-flex align-items-center">
                           <div>Saturday:</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             9:00
                           </div>
                           <div>-</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             15:00
                           </div>
                         </div>
                       </Col>
                       <Col lg="12" className="my-2">
-                        <div className="d-flex">
+                        <div className="d-flex align-items-center">
                           <div>Sunday:</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             10:00
                           </div>
                           <div>-</div>
-                          <div className="form-control-label">
+                          <div className="form-control-label px-2">
                             15:00
                           </div>
                         </div>
@@ -413,12 +415,12 @@ const Centers = () => {
                       </Col>
                       <Col lg="12">
                         <FormGroup>
-                          <div className="input-group mb-3">
-                            <div className="form-control-label">
+                          <div className="input-group b-flex align-items-center mb-3">
+                            <div className="form-control-label pr-2">
                               Company Logo
                             </div>
-                            <input type="file" className="form-control-alternative" id="ccinputLogoFile" />
-                            <label className="input-group-text" for="ccinputLogoFile">Upload</label>
+                            <input type="file" className="form-control-alternative" id="ccLogoFile" />
+                            <label className="input-group-text" for="ccLogoFile">Upload</label>
                           </div>
                         </FormGroup>
                       </Col>
