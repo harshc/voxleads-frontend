@@ -314,7 +314,7 @@ const Centers = () => {
                             <div className="form-control-label">
                               Company Logo
                             </div>
-                            <input type="file" className="form-control-alternative" id="ccinputLogoFile">
+                            <input type="file" className="form-control-alternative" id="ccinputLogoFile" />
                             <label className="input-group-text" for="ccinputLogoFile">Upload</label>
                           </div>
                         </FormGroup>
@@ -447,8 +447,8 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <span className="input-group-text">Monday</span>
-                            <input type="text" placeholder="Open" id="ccMondayOpen" aria-label="Open" className="form-control-alternative">
-                            <input type="text" placeholder="Close" id="ccMondayClose" aria-label="Close" className="form-control-alternative">
+                            <input type="text" placeholder="Open" id="ccMondayOpen" aria-label="Open" className="form-control-alternative" />
+                            <input type="text" placeholder="Close" id="ccMondayClose" aria-label="Close" className="form-control-alternative" />
                           </div>
                         </FormGroup>
                       </Col>
@@ -456,8 +456,8 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <span className="input-group-text">Tuesday</span>
-                            <input type="text" placeholder="Open" id="ccTuesdayOpen" aria-label="Open" className="form-control-alternative">
-                            <input type="text" placeholder="Close" id="ccTuesdayClose" aria-label="Close" className="form-control-alternative">
+                            <input type="text" placeholder="Open" id="ccTuesdayOpen" aria-label="Open" className="form-control-alternative" />
+                            <input type="text" placeholder="Close" id="ccTuesdayClose" aria-label="Close" className="form-control-alternative" />
                           </div>
                         </FormGroup>
                       </Col>
@@ -465,8 +465,8 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <span className="input-group-text">Wednesday</span>
-                            <input type="text" placeholder="Open" id="ccWednesdayOpen" aria-label="Open" className="form-control-alternative">
-                            <input type="text" placeholder="Close" id="ccWednesdayClose" aria-label="Close" className="form-control-alternative">
+                            <input type="text" placeholder="Open" id="ccWednesdayOpen" aria-label="Open" className="form-control-alternative" />
+                            <input type="text" placeholder="Close" id="ccWednesdayClose" aria-label="Close" className="form-control-alternative" />
                           </div>
                         </FormGroup>
                       </Col>
@@ -474,8 +474,8 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <span className="input-group-text">Thursday</span>
-                            <input type="text" placeholder="Open" id="ccThursdayOpen" aria-label="Open" className="form-control-alternative">
-                            <input type="text" placeholder="Close" id="ccThursdayClose" aria-label="Close" className="form-control-alternative">
+                            <input type="text" placeholder="Open" id="ccThursdayOpen" aria-label="Open" className="form-control-alternative" />
+                            <input type="text" placeholder="Close" id="ccThursdayClose" aria-label="Close" className="form-control-alternative" />
                           </div>
                         </FormGroup>
                       </Col>
@@ -483,8 +483,8 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <span className="input-group-text">Friday</span>
-                            <input type="text" placeholder="Open" id="ccFridayOpen" aria-label="Open" className="form-control-alternative">
-                            <input type="text" placeholder="Close" id="ccFridayClose" aria-label="Close" className="form-control-alternative">
+                            <input type="text" placeholder="Open" id="ccFridayOpen" aria-label="Open" className="form-control-alternative" />
+                            <input type="text" placeholder="Close" id="ccFridayClose" aria-label="Close" className="form-control-alternative" />
                           </div>
                         </FormGroup>
                       </Col>
@@ -492,8 +492,8 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <span className="input-group-text">Saturday</span>
-                            <input type="text" placeholder="Open" id="ccSaturdayOpen" aria-label="Open" className="form-control-alternative">
-                            <input type="text" placeholder="Close" id="ccSaturdayClose" aria-label="Close" className="form-control-alternative">
+                            <input type="text" placeholder="Open" id="ccSaturdayOpen" aria-label="Open" className="form-control-alternative" />
+                            <input type="text" placeholder="Close" id="ccSaturdayClose" aria-label="Close" className="form-control-alternative" />
                           </div>
                         </FormGroup>
                       </Col>
@@ -501,8 +501,8 @@ const Centers = () => {
                         <FormGroup>
                           <div className="input-group">
                             <span className="input-group-text">Sunday</span>
-                            <input type="text" placeholder="Open" id="ccSundayOpen" aria-label="Open" className="form-control-alternative">
-                            <input type="text" placeholder="Close" id="ccSundayClose" aria-label="Close" className="form-control-alternative">
+                            <input type="text" placeholder="Open" id="ccSundayOpen" aria-label="Open" className="form-control-alternative" />
+                            <input type="text" placeholder="Close" id="ccSundayClose" aria-label="Close" className="form-control-alternative" />
                           </div>
                         </FormGroup>
                       </Col>
