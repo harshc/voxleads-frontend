@@ -76,6 +76,143 @@ const Profile = () => {
                       onClick={(e) => e.preventDefault()}
                       size="sm"
                     >
+                      Edit
+                    </Button>
+                  </Col>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                  <h6 className="heading-small text-muted mb-4">
+                    User Information
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            First Name
+                          </div>
+                          <div>
+                            John
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            Last Name
+                          </div>
+                          <div>
+                            Doe
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            Email
+                          </div>
+                          <div>
+                            johndoe@mail.com
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            Phone Number
+                          </div>
+                          <div>
+                            (555) 123-4567
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    User Address
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="12">
+                        <div>
+                          <div className="form-control-label">
+                            Address
+                          </div>
+                          <div>
+                            123 Calle 38 Norte
+                          </div>
+                          <div>
+                            Lotte 345
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            City
+                          </div>
+                          <div>
+                            Playa del Carmen
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            State / Province
+                          </div>
+                          <div>
+                            Quintana Roo
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            Country
+                          </div>
+                          <div>
+                            Mexico
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            Zip / Postal Code
+                          </div>
+                          <div>
+                            71002
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+              </CardBody>
+            </Card>
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Account Profile</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <Button
+                      color="primary"
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
                       Update
                     </Button>
                   </Col>
@@ -267,6 +404,7 @@ const Profile = () => {
               </CardBody>
             </Card>
             <hr className="my-4" />
+            <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
@@ -338,7 +476,7 @@ const Profile = () => {
                             className="form-control-alternative"
                             id="newPass2"
                             placeholder="Re-enter the new password"
-                            type="tel"
+                            type="password"
                           />
                         </FormGroup>
                       </Col>
@@ -358,6 +496,7 @@ const Profile = () => {
                 </Form>
               </CardBody>
             </Card>
+            <hr className="my-4" />
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
@@ -451,8 +590,8 @@ const Profile = () => {
                   <div className="pl-lg-4">
                     <Row>
                       <div className="btn-group" role="group" aria-label="Same address as profile">
-                        <input type="checkbox" className="btn-check" id="userAddressBilling" autocomplete="off" />
-                        <label className="btn btn-outline-primary" for="userAddressBilling">Use the same address as profile</label>
+                        <input type="checkbox" className="btn-check" id="userAddressBilling2" />
+                        <label className="btn btn-outline-primary" for="userAddressBilling2">Use the same address as profile</label>
                       </div>
                     </Row>
                     <Row>
@@ -554,6 +693,7 @@ const Profile = () => {
                 </Form>
               </CardBody>
             </Card>
+            <hr className="my-4" />
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
