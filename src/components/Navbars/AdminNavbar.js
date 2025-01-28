@@ -15,7 +15,10 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { auth } from "../../firebase-config";
+
 // reactstrap components
 import {
   DropdownMenu,
@@ -35,6 +38,26 @@ import {
 } from "reactstrap";
 
 const AdminNavbar = (props) => {
+  const location = useLocation();
+  const [user, setUser] = useState({ name: "", photo: "" });
+
+  useEffect(() => {
+    const stateUser = location.state;
+    const currentUser = auth.currentUser;
+
+    if (stateUser) {
+      setUser({
+        name: stateUser.name || "No Name",
+        photo: stateUser.photoURL || require("../../assets/img/icons/common/google.svg").default,
+      });
+    } else if (currentUser) {
+      setUser({
+        name: currentUser.displayName || "No Name",
+        photo: currentUser.photoURL || require("../../assets/img/icons/common/google.svg").default,
+      });
+    }
+  }, [location]);
+
   return (
     <>
       <Navbar className="navbar-top navbar-dark" expand="md" id="navbar-main">
@@ -63,13 +86,13 @@ const AdminNavbar = (props) => {
                 <Media className="align-items-center">
                   <span className="avatar avatar-sm rounded-circle">
                     <img
-                      alt="..."
-                      src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                      alt="User"
+                      src={user.photo}
                     />
                   </span>
                   <Media className="ml-2 d-none d-lg-block">
                     <span className="mb-0 text-sm font-weight-bold">
-                      Jessica Jones
+                      {user.name}
                     </span>
                   </Media>
                 </Media>
