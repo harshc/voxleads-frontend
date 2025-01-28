@@ -805,7 +805,7 @@ const Centers = () => {
                                 </CardTitle>
                             </div>
                             <Col className="col-auto">
-                                <div className="company_logo avatar avatar-sm rounded-circle shadow">
+                                <div className="company_logo avatar avatar-lg rounded-circle shadow">
                                   <img
                                     alt="..."
                                     className="rounded-circle"
@@ -835,7 +835,7 @@ const Centers = () => {
                                 </CardTitle>
                             </div>
                             <Col className="col-auto">
-                                <div className="company_logo avatar avatar-sm rounded-circle shadow">
+                                <div className="company_logo avatar avatar-lg rounded-circle shadow">
                                   <img
                                     alt="..."
                                     className="rounded-circle"
@@ -904,18 +904,18 @@ const Centers = () => {
                       </Col>
                     </Row>
                     <Row className="my-4">
-                      <Col lg="8">
+                      <Col lg="9">
                         <div>
                           <div className="form-control-label">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                           </div>
                         </div>
                       </Col>
-                      <Col lg="4">
-                          <div className="company_logo avatar rounded-circle shadow">
+                      <Col lg="3">
+                          <div className="company_logo rounded-circle shadow">
                             <img
                               alt="..."
-                              className="rounded-circle"
+                              className="rounded-circle img-fluid mx-auto"
                               src={require("../../assets/img/theme/team-4-800x800.jpg")}
                             />
                           </div>
@@ -1111,7 +1111,7 @@ const Centers = () => {
                             className="form-control-label"
                             htmlFor="agBio"
                           >
-                            Company Description
+                            Agent Bio
                           </label>
                           <Input
                             className="form-control-alternative"
