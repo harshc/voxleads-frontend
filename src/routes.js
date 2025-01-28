@@ -44,14 +44,14 @@ var routes = [
   {
     path: "/call-centers",
     name: "Call Centers",
-    icon: "ni ni-bullet-list-6 text-green",
+    icon: "ni ni-bullet-list-67 text-green",
     component: <Centers />,
     layout: "/admin",
   },
   {
     path: "/client-list",
     name: "Client List",
-    icon: "ni ni-bullet-list-6 text-blue",
+    icon: "ni ni-bullet-list-67 text-blue",
     component: <Clients />,
     layout: "/admin",
   },
