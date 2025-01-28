@@ -262,7 +262,7 @@ const Clients = () => {
                   <Table className="align-items-center table-flush" responsive>
                     <thead className="thead-light">
                       <tr>
-                        <th scope="col">Item/th>
+                        <th scope="col">Item</th>
                         <th scope="col">Qty</th>
                         <th scope="col">Rate</th>
                         <th scope="col">Amount</th>
