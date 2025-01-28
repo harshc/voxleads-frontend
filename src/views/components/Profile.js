@@ -1,5 +1,7 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+
+import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { auth } from "../../firebase-config";
 // reactstrap components
 import {
   Button,
@@ -31,7 +33,27 @@ import UserHeader from "components/Headers/UserHeader.js";
 const Profile = () => {
   const location = useLocation();
   const { state } = location || {};
-  const { name, email, photoUrl, phoneNumber } = state || {};
+  const [user, setUser] = useState({ name: "", photo: "", email: "" });
+  
+  useEffect(() => {
+    const stateUser = location.state;
+    const currentUser = auth.currentUser;
+
+    if (stateUser) {
+      setUser({
+        name: stateUser.name || "No Name",
+        photo: stateUser.photoURL || require("../../assets/img/icons/common/google.svg").default,
+        email: stateUser.email || "No Email",
+      });
+    } else if (currentUser) {
+      setUser({
+        name: currentUser.displayName || "No Name",
+        photo: currentUser.photoURL || require("../../assets/img/icons/common/google.svg").default,
+        email: currentUser.email || "No Email",
+      });
+    }
+  }, [location]);
+  
 
   return (
     <>
@@ -96,10 +118,10 @@ const Profile = () => {
                       <Col lg="6">
                         <div>
                           <div className="form-control-label">
-                            First Name
+                            Name
                           </div>
                           <div>
-                            John
+                            {user.name}
                           </div>
                         </div>
                       </Col>
@@ -121,7 +143,7 @@ const Profile = () => {
                             Email
                           </div>
                           <div>
-                            johndoe@mail.com
+                            {user.email}
                           </div>
                         </div>
                       </Col>
