@@ -1,6 +1,7 @@
 // File: UserDetails.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const UserDetails = () => {
     const [name, setName] = useState("");
@@ -14,13 +15,13 @@ const UserDetails = () => {
         try {
         // Save client details
         const clientData = { name, company, phone, email };
-        // const response = await axios.post("http://localhost:8000/", clientData); // Backend API
-        // console.log("Client created:", response.data);
-
+        const response = await axios.post("/clients", clientData); // Backend API
+        console.log("Client created:", response.data);
+        navigate("/profile", { state: {clientId: response.data.clientId}});
         // Redirect to Stripe Checkout or handle in-page payment
         //navigate("/payment", { state: { clientId: response.data.id } });
         } catch (error) {
-        //  console.error("Error creating client:", error.response.data);
+            console.error("Error creating client:", error.response.data);
         }
 };
 

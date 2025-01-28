@@ -29,7 +29,7 @@ const UserHeader = () => {
     if(currentUser) {
       setUser({
         name: currentUser.displayName || "No Name", 
-        photo: currentUser.photoURL || require("../../assets/img/icons/common/google.svg")});
+        photo: currentUser.photoURL || require("../../assets/img/icons/common/google.svg").default});
     }
   }, []);
   return (

@@ -1,4 +1,6 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+// reactstrap components
 import {
   Button,
   Card,
@@ -27,6 +29,10 @@ import {
 import UserHeader from "components/Headers/UserHeader.js";
 
 const Profile = () => {
+  const location = useLocation();
+  const { state } = location || {};
+  const { name, email, photoUrl, phoneNumber } = state || {};
+
   return (
     <>
       <UserHeader />

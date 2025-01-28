@@ -51,7 +51,7 @@ const Login = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       // await saveUserData(userCredential.user);
-      navigate("/user-profile"); // Redirect to the details form
+      navigate("/admin/user-profile"); // Redirect to the details form
     } catch (err) {
       setError(err.message);
     }
@@ -59,18 +59,19 @@ const Login = () => {
 
   const handleGoogleLogin = async () => {
     try {
-
-        signInWithPopup(auth, googleProvider).then((result) => {
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
-          const user = credential.user;
-        });
       console.log("Initiating Google login...");
-      const result = await signInWithRedirect(auth, googleProvider);
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = credential.user;
-      console.log("Google login successful:", result.user);
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      console.log("Google login successful:", user);
+      const userInfo = {
+        name: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        phoneNumber: user.phoneNumber
+      };
+      
+      //const credential = GoogleAuthProvider.credentialFromResult(result);
+      navigate("/admin/user-profile", {state: userInfo});
     } catch (err) {
       setError(err.message);
     }
@@ -86,14 +87,13 @@ const Login = () => {
   };
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        navigate("/admin/user-profile"); // Redirect to the details form
-      } else {
-        navigate("/auth/login");
+        navigate("/user-profile");
       }
     });
-  });
+    return () => unsubscribe();
+  }, [navigate]);
 
 
   return (

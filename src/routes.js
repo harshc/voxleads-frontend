@@ -25,6 +25,7 @@ import Login from "views/components/Login.js";
 import Tables from "views/components/Tables.js";
 import Icons from "views/components/Icons.js";
 import UserDetails from "views/components/UserDetails";
+import UserHeader from "components/Headers/UserHeader";
 
 var routes = [
   {
@@ -38,7 +39,12 @@ var routes = [
     path: "/user-profile",
     name: "User Profile",
     icon: "ni ni-single-02 text-yellow",
-    component: <Profile />,
+    component: (
+      <>
+       <UserHeader />
+       <Profile />
+      </>
+    ),
     layout: "/admin",
   },
   {

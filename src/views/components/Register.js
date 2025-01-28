@@ -33,21 +33,32 @@ import {
   Col,
 } from "reactstrap";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "../../firebase-config";
+import { signInWithEmailAndPassword, signInWithRedirect, getRedirectResult, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {auth, db, googleProvider } from "../../firebase-config";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
+  
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      const userInfo = {
+        name: user.displayName || "New User",
+        email: user.email,
+        photoURL: user.photoURL || "",
+        phoneNumber: user.phoneNumber || ""
+      };
       setSuccess(`Account created for ${userCredential.user.email}`);
       setError("");
+      navigate("/admin/user-profile", {state: userInfo});
     } catch (err) {
       setError(err.message);
       setSuccess("");
@@ -57,11 +68,26 @@ const Register = () => {
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      const result = await signInWithPopup(auth, provider);
+      const provider = new GoogleAuthProvider();
+      console.log("Initiating Google login...");
+      const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
-      alert(`Signed in as ${user.displayName}`);
+
+      console.log("Google login successful:", user);
+      const userInfo = {
+        name: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        phoneNumber: user.phoneNumber
+      };
+      setSuccess(`Signed in as ${user.displayName}`);
+      setError("");
+
+      navigate("/admin/user-profile", {state: userInfo});
+      
     } catch (error) {
-      alert(`Error: ${error.message}`);
+      setError(`Error: ${error.message}`);
+      setSuccess("");
     }
   };
 
