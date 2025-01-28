@@ -27,13 +27,18 @@ import Tables from "views/components/Tables.js";
 import Icons from "views/components/Icons.js";
 import UserDetails from "views/components/UserDetails";
 import UserHeader from "components/Headers/UserHeader";
+import ProtectedRoute from "components/ProtectedRoutes";
 
 var routes = [
   {
     path: "/index",
     name: "Dashboard",
     icon: "ni ni-tv-2 text-primary",
-    component: <Index />,
+    component: (
+      <ProtectedRoute>
+        <Index />
+      </ProtectedRoute>
+    ),
     layout: "/admin",
   },
   {
@@ -41,10 +46,12 @@ var routes = [
     name: "User Profile",
     icon: "ni ni-single-02 text-yellow",
     component: (
-      <>
-       <UserHeader />
-       <Profile />
-      </>
+      <ProtectedRoute>
+        <>
+          <UserHeader />
+          <Profile />
+        </>
+      </ProtectedRoute>
     ),
     layout: "/admin",
   },
@@ -52,28 +59,44 @@ var routes = [
     path: "/call-centers",
     name: "Call Centers",
     icon: "ni ni-bullet-list-67 text-green",
-    component: <Centers />,
+    component: (
+      <ProtectedRoute>
+        <Centers />
+      </ProtectedRoute>
+    ),
     layout: "/admin",
   },
   {
     path: "/leads",
     name: "Leads",
     icon: "ni ni-bullet-list-67 text-blue",
-    component: <Leads />,
+    component: (
+      <ProtectedRoute>
+        <Leads />
+      </ProtectedRoute>
+    ),
     layout: "/admin",
   },
   {
     path: "/client-list",
     name: "Client List",
     icon: "ni ni-bullet-list-67 text-info",
-    component: <Clients />,
+    component: (
+      <ProtectedRoute>
+        <Clients />
+      </ProtectedRoute>
+    ),
     layout: "/admin",
   },
   {
     path: "/tables",
     name: "Tables",
     icon: "ni ni-bullet-list-67 text-red",
-    component: <Tables />,
+    component: (
+      <ProtectedRoute>
+        <Tables />
+      </ProtectedRoute>
+    ),
     layout: "/admin",
   },
   {
@@ -91,4 +114,68 @@ var routes = [
     layout: "/auth",
   },
 ];
+
+// var routes = [
+//   {
+//     path: "/index",
+//     name: "Dashboard",
+//     icon: "ni ni-tv-2 text-primary",
+//     component: <Index />,
+//     layout: "/admin",
+//   },
+//   {
+//     path: "/user-profile",
+//     name: "User Profile",
+//     icon: "ni ni-single-02 text-yellow",
+//     component: (
+//       <>
+//         <UserHeader />
+//         <Profile />
+//       </>
+//     ),
+//     layout: "/admin",
+//   },
+//   {
+//     path: "/call-centers",
+//     name: "Call Centers",
+//     icon: "ni ni-bullet-list-67 text-green",
+//     component: <Centers />,
+//     layout: "/admin",
+//   },
+//   {
+//     path: "/leads",
+//     name: "Leads",
+//     icon: "ni ni-bullet-list-67 text-blue",
+//     component: <Leads />,
+//     layout: "/admin",
+//   },
+//   {
+//     path: "/client-list",
+//     name: "Client List",
+//     icon: "ni ni-bullet-list-67 text-info",
+//     component: <Clients />,
+//     layout: "/admin",
+//   },
+//   {
+//     path: "/tables",
+//     name: "Tables",
+//     icon: "ni ni-bullet-list-67 text-red",
+//     component: <Tables />,
+//     layout: "/admin",
+//   },
+//   {
+//     path: "/login",
+//     name: "Login",
+//     icon: "ni ni-key-25 text-info",
+//     component: <Login />,
+//     layout: "/auth",
+//   },
+//   {
+//     path: "/register",
+//     name: "Register",
+//     icon: "ni ni-circle-08 text-pink",
+//     component: <Register />,
+//     layout: "/auth",
+//   },
+// ];
 export default routes;

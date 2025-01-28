@@ -15,9 +15,11 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Add useNavigate
 import React, { useEffect, useState } from "react";
-import { auth } from "../../firebase-config";
+import { auth } from "../../firebase-config"; // Import signOut from Firebase
+import { signOut } from "firebase/auth";
+
 
 // reactstrap components
 import {
@@ -39,7 +41,9 @@ import {
 
 const AdminNavbar = (props) => {
   const location = useLocation();
-  const [user, setUser] = useState({ name: "", photo: "" });
+  const [user, setUser] = useState({ name: "", photo: "" });  
+  const navigate = useNavigate(); // Initialize navigate
+
 
   useEffect(() => {
     const stateUser = location.state;
@@ -57,6 +61,15 @@ const AdminNavbar = (props) => {
       });
     }
   }, [location]);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth); // Sign out from Firebase
+      navigate("/auth/login"); // Redirect to the login page
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
 
   return (
     <>
@@ -118,7 +131,7 @@ const AdminNavbar = (props) => {
                   <span>Support</span>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                <DropdownItem href="#pablo" onClick={handleLogout}>
                   <i className="ni ni-user-run" />
                   <span>Logout</span>
                 </DropdownItem>
