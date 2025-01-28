@@ -422,7 +422,25 @@ const Centers = () => {
                           />
                         </FormGroup>
                       </Col>
-                      <Col lg="12">
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="ccWebsite"
+                          >
+                            Company Website
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="ccWebsite"
+                            placeholder="https://your_website.com"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
                         <FormGroup>
                           <div className="input-group b-flex align-items-center mb-3">
                             <div className="form-control-label pr-2">
@@ -954,6 +972,46 @@ const Centers = () => {
                   </div>
                   <hr className="my-4" />
                   <h6 className="heading-small text-muted mb-4">
+                    Agent Language Information
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row className="my-4">
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            Laguage
+                          </div>
+                          <div>
+                            English (US)
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="my-4">
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            Voice Selected
+                          </div>
+                          <div>
+                            Option 1 (Female)
+                          </div>
+                        </div>
+                      </Col>
+                      <Col lg="6">
+                        <div>
+                          <div className="form-control-label">
+                            Accent
+                          </div>
+                          <div>
+                            American (USA)
+                          </div>
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
                     Company Assigned To
                   </h6>
                   <div className="pl-lg-4">
@@ -1160,6 +1218,61 @@ const Centers = () => {
                             <input type="file" className="form-control-alternative" id="agProfileImg" />
                             <label className="input-group-text" for="agProfileImg">Upload</label>
                           </div>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted mb-4">
+                    Agent Voice & Language
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text" for="agLanguage">Language</label>
+                            <select className="form-control-alternative form-control mx-2" id="agLanguage">
+                                <option selected>Choose one</option>
+                                <option value="1">English</option>
+                                <option value="2">Spanish</option>
+                                <option value="2">French</option>
+                                <option value="2">Hindi</option>
+                                <option value="2">Mandarin</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                          <span className="text-xs">Default Time Zone is set to UTC-0</span>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text" for="agVoice">Voice Style</label>
+                            <select className="form-control-alternative form-control mx-2" id="agVoice">
+                                <option selected>Select one...</option>
+                                <option value="1">Vocie 1 (Female)</option>
+                                <option value="2">Voice 2 (Male)</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text" for="agAccent">Accent</label>
+                            <select className="form-control-alternative form-control mx-2" id="agAccent">
+                                <option selected>Choose one</option>
+                                <option value="1">American (USA)</option>
+                                <option value="2">British (UK)</option>
+                                <option value="2">Indian (INDIA)</option>
+                                <option value="3">...</option>
+                            </select>
+                          </div>
+                          <span className="text-xs">Default Time Zone is set to UTC-0</span>
                         </FormGroup>
                       </Col>
                     </Row>
