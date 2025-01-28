@@ -60,24 +60,22 @@ const Clients = () => {
           <Col xl="8">
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
-                <h3 className="mb-0">Client List</h3>
-              </CardHeader>
-              <Row className="align-items-center">
+                <Row className="align-items-center">
                   <Col xs="8">
                     <h3 className="mb-0">Client List</h3>
                   </Col>
                   <Col className="text-right" xs="4">
-                    <div>
+                    <Button
                       color="primary"
                       href="#"
                       onClick={(e) => e.preventDefault()}
                       size="sm"
-                    </div>
-                    <Button>
+                    >
                       Add New
                     </Button>
                   </Col>
                 </Row>
+              </CardHeader>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
