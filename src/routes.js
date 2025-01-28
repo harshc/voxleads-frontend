@@ -62,7 +62,7 @@ var routes = [
     component: <Leads />,
     layout: "/admin",
   },
-  
+  {
     path: "/client-list",
     name: "Client List",
     icon: "ni ni-bullet-list-67 text-info",

@@ -72,7 +72,8 @@ const Clients = () => {
                       href="#"
                       onClick={(e) => e.preventDefault()}
                       size="sm"
-                    >
+                    </div>
+                    <Button>
                       Add New
                     </Button>
                   </Col>
