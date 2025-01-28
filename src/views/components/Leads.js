@@ -60,24 +60,22 @@ const Leads = () => {
           <Col xl="8">
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
-                <h3 className="mb-0">Leads</h3>
-              </CardHeader>
-              <Row className="align-items-center">
-                  <Col xs="8">
-                    <h3 className="mb-0">Client List</h3>
-                  </Col>
-                  <Col className="text-right" xs="4">
-                    <div>
-                      color="primary"
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      size="sm"
-                    </div>
-                    <Button>
-                      Add New
+                <Row className="align-items-center">
+                    <Col xs="8">
+                    <h3 className="mb-0">Leads</h3>
+                    </Col>
+                    <Col className="text-right" xs="4">
+                    <Button
+                        color="primary"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                    >
+                        Add New
                     </Button>
-                  </Col>
+                    </Col>
                 </Row>
+              </CardHeader>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
@@ -480,8 +478,31 @@ const Leads = () => {
                       </Col>
                     </Row>
                   </div>
-                  <hr className="my-4" />
               </CardBody>
+              <CardFooter className="py-4">
+                <Row className="align-items-center">
+                    <Col xs="8">
+                    <Button
+                        color="danger"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                    >
+                        Delete Lead
+                    </Button>
+                    </Col>
+                    <Col className="text-right" xs="4">
+                    <Button
+                        color="primary"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                    >
+                        Edit
+                    </Button>
+                    </Col>
+                </Row>
+              </CardFooter>
             </Card>
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
@@ -497,7 +518,7 @@ const Leads = () => {
                       onClick={(e) => e.preventDefault()}
                       size="sm"
                     >
-                      Update
+                      Save
                     </Button>
                   </Col>
                 </Row>
@@ -718,9 +739,386 @@ const Leads = () => {
                       </Col>
                     </Row>
                   </div>
-                  <hr className="my-4" />
                 </Form>
               </CardBody>
+              <CardFooter className="py-4">
+                <Row className="align-items-center">
+                    <Col xs="8">
+                    <Button
+                        color="danger"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                    >
+                        Cancel
+                    </Button>
+                    </Col>
+                    <Col className="text-right" xs="4">
+                    <Button
+                        color="primary"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                    >
+                        Save
+                    </Button>
+                    </Col>
+                </Row>
+              </CardFooter>
+            </Card>
+            <hr className="my-4" />
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                    <Col xs="8">
+                    <h3 className="mb-0">Groups/Segments</h3>
+                    </Col>
+                    <Col className="text-right" xs="4">
+                    <Button
+                        color="primary"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                    >
+                        Add New
+                    </Button>
+                    </Col>
+                </Row>
+              </CardHeader>
+              <Table className="align-items-center table-flush" responsive>
+                <thead className="thead-light">
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Leads</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <Media className="align-items-center">
+                        <span className="mb-0 text-sm">
+                          <a href="#">
+                            123
+                          </a>
+                        </span>
+                      </Media>
+                    </th>
+                    <td>
+                      <div>
+                        Group Name
+                      </div>
+                    </td>         
+                    <td>
+                      <Badge color="" className="badge-dot">
+                        <i className="bg-success" />
+                        Published
+                      </Badge>
+                    </td>
+                    <td>
+                      <div>
+                        3435
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <UncontrolledDropdown>
+                        <DropdownToggle
+                          className="btn-icon-only"
+                          href="#pablo"
+                          role="button"
+                          size="sm"
+                          color=""
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          <i className="fas fa-angle-down" />
+                        </DropdownToggle>
+                        <DropdownMenu className="dropdown-menu-arrow" right>
+                          <DropdownItem
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            View Group
+                          </DropdownItem>
+                          <DropdownItem
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            Delete Group
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </UncontrolledDropdown>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <Media className="align-items-center">
+                        <span className="mb-0 text-sm">
+                          <a href="#">
+                            123
+                          </a>
+                        </span>
+                      </Media>
+                    </th>
+                    <td>
+                      <div>
+                        Group Name
+                      </div>
+                    </td>         
+                    <td>
+                      <Badge color="" className="badge-dot">
+                        <i className="bg-warning" />
+                        Pending
+                      </Badge>
+                    </td>
+                    <td>
+                      <div>
+                        43
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <UncontrolledDropdown>
+                        <DropdownToggle
+                          className="btn-icon-only"
+                          href="#pablo"
+                          role="button"
+                          size="sm"
+                          color=""
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          <i className="fas fa-angle-down" />
+                        </DropdownToggle>
+                        <DropdownMenu className="dropdown-menu-arrow" right>
+                          <DropdownItem
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            View Group
+                          </DropdownItem>
+                          <DropdownItem
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            Delete Group
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </UncontrolledDropdown>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <Media className="align-items-center">
+                        <span className="mb-0 text-sm">
+                          <a href="#">
+                            123
+                          </a>
+                        </span>
+                      </Media>
+                    </th>
+                    <td>
+                      <div>
+                        Group Name
+                      </div>
+                    </td>         
+                    <td>
+                      <Badge color="" className="badge-dot">
+                        <i className="bg-danger" />
+                        Draft
+                      </Badge>
+                    </td>
+                    <td>
+                      <div>
+                        86
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <UncontrolledDropdown>
+                        <DropdownToggle
+                          className="btn-icon-only"
+                          href="#pablo"
+                          role="button"
+                          size="sm"
+                          color=""
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          <i className="fas fa-angle-down" />
+                        </DropdownToggle>
+                        <DropdownMenu className="dropdown-menu-arrow" right>
+                          <DropdownItem
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            View Group
+                          </DropdownItem>
+                          <DropdownItem
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            Delete Group
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </UncontrolledDropdown>
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
+              <CardFooter className="py-4">
+                <nav aria-label="...">
+                  <Pagination
+                    className="pagination justify-content-end mb-0"
+                    listClassName="justify-content-end mb-0"
+                  >
+                    <PaginationItem className="disabled">
+                      <PaginationLink
+                        href="#pablo"
+                        onClick={(e) => e.preventDefault()}
+                        tabIndex="-1"
+                      >
+                        <i className="fas fa-angle-left" />
+                        <span className="sr-only">Previous</span>
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem className="active">
+                      <PaginationLink
+                        href="#pablo"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        1
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink
+                        href="#pablo"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        2 <span className="sr-only">(current)</span>
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink
+                        href="#pablo"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        3
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink
+                        href="#pablo"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        <i className="fas fa-angle-right" />
+                        <span className="sr-only">Next</span>
+                      </PaginationLink>
+                    </PaginationItem>
+                  </Pagination>
+                </nav>
+              </CardFooter>
+            </Card>
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Edit Group/Segment</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <Button
+                      color="primary"
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Save
+                    </Button>
+                  </Col>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                <Form>
+                  <h6 className="heading-small text-muted mb-4">
+                    Group Information
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="gsName"
+                          >
+                            Group/Segment Name
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="gsName"
+                            placeholder="Name Your Group"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <div className="input-group">
+                            <label className="input-group-text" for="gsStatus">Status</label>
+                            <select className="form-control-alternative form-control mx-2" id="gsStatus">
+                                <option selected>Select one...</option>
+                                <option value="1">Published</option>
+                                <option value="2">Pending</option>
+                                <option value="2">Draft</option>
+                            </select>
+                          </div>
+                          <span className="text-xs">Default Time Zone is set to UTC-0</span>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="gsDescription"
+                          >
+                            Group Description
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="gsDescription"
+                            placeholder="Add notes about this lead."
+                            type="textarea"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                </Form>
+              </CardBody>
+              <CardFooter className="py-4">
+                <Row className="align-items-center">
+                    <Col xs="8">
+                    <Button
+                        color="danger"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                    >
+                        Cancel
+                    </Button>
+                    </Col>
+                    <Col className="text-right" xs="4">
+                    <Button
+                        color="primary"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                    >
+                        Save
+                    </Button>
+                    </Col>
+                </Row>
+              </CardFooter>
             </Card>
             <hr className="my-4" />
           </Col>
