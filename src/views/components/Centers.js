@@ -1127,7 +1127,7 @@ const Centers = () => {
                   </div>
                   <hr className="my-4" />
                   <h6 className="heading-small text-muted mb-4">
-                    Agent <> Company
+                    Agent &#10238; Company
                   </h6>
                   <p>Assign an Agent to one or several companies.</p>
                   <div className="pl-lg-4">
