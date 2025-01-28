@@ -532,6 +532,25 @@ const Leads = () => {
                     <Row>
                       <Col lg="6">
                         <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="leadStatus"
+                            >
+                              Group/Segment Name
+                            </label>
+                            <select className="form-control-alternative form-control mx-2" id="leadStatus">
+                                <option selected>Select one...</option>
+                                <option value="1">Published</option>
+                                <option value="2">Pending</option>
+                                <option value="2">Draft</option>
+                                <option value="2">Flagged</option>
+                            </select>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
                           <label
                             className="form-control-label"
                             htmlFor="leadFirstName"
@@ -1061,16 +1080,18 @@ const Leads = () => {
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <div className="input-group">
-                            <label className="input-group-text" for="gsStatus">Status</label>
+                            <label
+                              className="form-control-label"
+                              htmlFor="gsStatus"
+                            >
+                              Group/Segment Name
+                            </label>
                             <select className="form-control-alternative form-control mx-2" id="gsStatus">
                                 <option selected>Select one...</option>
                                 <option value="1">Published</option>
                                 <option value="2">Pending</option>
                                 <option value="2">Draft</option>
                             </select>
-                          </div>
-                          <span className="text-xs">Default Time Zone is set to UTC-0</span>
                         </FormGroup>
                       </Col>
                     </Row>
