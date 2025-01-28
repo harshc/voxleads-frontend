@@ -942,8 +942,8 @@ const Profile = () => {
               </CardHeader>
               <CardBody>
                   <div>
-                    <Row className="my-4 d-flex">
-                      <Col lg="6">
+                    <Row className="my-4 d-flex justify-content-between">
+                      <Col lg="4">
                         <div>
                           <div className="form-control-label">
                             VoxLeads
@@ -954,21 +954,22 @@ const Profile = () => {
                           </div>
                         </div>
                       </Col>
-                      <Col lg="6" className="text-right">
+                      <Col lg="4" className="text-right">
                         <div>
                           <div className="form-control-label">
                             Billed to: John Doe
                           </div>
                           <div>
-                            <p>4006 Locust View Drive</p>
-                            <p>San Francisco CA</p>
-                            <p>California</p>
+                            <p className="mb-0">4006 Locust View Drive</p>
+                            <p className="mb-0">San Francisco CA</p>
+                            <p className="mb-0">California</p>
+                            <p className="mb-0">90210</p>
                           </div>
                         </div>
                       </Col>
                     </Row>
-                    <Row className="my-4">
-                      <Col lg="6">
+                    <Row className="my-4 d-flex justify-content-between">
+                      <Col lg="4">
                         <div>
                           <div className="form-control-label">
                             Invoice #
@@ -978,7 +979,7 @@ const Profile = () => {
                           </div>
                         </div>
                       </Col>
-                      <Col lg="6">
+                      <Col lg="4" className="text-right>
                         <div>
                           <div className="form-control-label">
                             Invoice Date
@@ -1007,9 +1008,9 @@ const Profile = () => {
                     <tr>
                         <th scope="row">
                         <Media className="align-items-center">
-                            <span className="mb-0 text-sm">
+                          <span className="mb-0 text-sm">
                             Agent minutes
-                            </span>
+                          </span>
                         </Media>
                         </th>
                         <td>4000</td>         
