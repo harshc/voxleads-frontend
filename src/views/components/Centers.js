@@ -1161,6 +1161,25 @@ const Centers = () => {
                     <Row>
                       <Col lg="6">
                         <FormGroup>
+                            <label
+                              className="form-control-label"
+                              htmlFor="agStatus"
+                            >
+                              Status
+                            </label>
+                            <select className="form-control-alternative form-control" id="agStatus">
+                                <option selected>Choose one...</option>
+                                <option value="1">Active</option>
+                                <option value="2">Pending</option>
+                                <option value="2">Offline</option>
+                                <option value="3">...</option>
+                            </select>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
                           <label
                             className="form-control-label"
                             htmlFor="agFirstName"
@@ -1224,16 +1243,20 @@ const Centers = () => {
                   </div>
                   <hr className="my-4" />
                   <h6 className="heading-small text-muted mb-4">
-                    Agent Voice & Language
+                    Voice & Language Options
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <div className="input-group">
-                            <label className="input-group-text" for="agLanguage">Language</label>
-                            <select className="form-control-alternative form-control mx-2" id="agLanguage">
-                                <option selected>Choose one</option>
+                            <label
+                              className="form-control-label"
+                              htmlFor="agLanguage"
+                            >
+                              Language
+                            </label>
+                            <select className="form-control-alternative form-control" id="agLanguage">
+                                <option selected>Select one...</option>
                                 <option value="1">English</option>
                                 <option value="2">Spanish</option>
                                 <option value="2">French</option>
@@ -1241,38 +1264,41 @@ const Centers = () => {
                                 <option value="2">Mandarin</option>
                                 <option value="3">...</option>
                             </select>
-                          </div>
-                          <span className="text-xs">Default Time Zone is set to UTC-0</span>
                         </FormGroup>
                       </Col>
                     </Row>
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <div className="input-group">
-                            <label className="input-group-text" for="agVoice">Voice Style</label>
-                            <select className="form-control-alternative form-control mx-2" id="agVoice">
+                            <label
+                              className="form-control-label"
+                              htmlFor="agVoice"
+                            >
+                              Voice
+                            </label>
+                            <select className="form-control-alternative form-control" id="agVoice">
                                 <option selected>Select one...</option>
                                 <option value="1">Vocie 1 (Female)</option>
                                 <option value="2">Voice 2 (Male)</option>
                                 <option value="3">...</option>
                             </select>
-                          </div>
                         </FormGroup>
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <div className="input-group">
-                            <label className="input-group-text" for="agAccent">Accent</label>
-                            <select className="form-control-alternative form-control mx-2" id="agAccent">
-                                <option selected>Choose one</option>
+                            <label
+                              className="form-control-label"
+                              htmlFor="agAccent"
+                            >
+                              Voice
+                            </label>
+                            <select className="form-control-alternative form-control" id="agAccent">
+                                <option selected>Select one...</option>
                                 <option value="1">American (USA)</option>
                                 <option value="2">British (UK)</option>
                                 <option value="2">Indian (INDIA)</option>
                                 <option value="3">...</option>
                             </select>
-                          </div>
-                          <span className="text-xs">Default Time Zone is set to UTC-0</span>
                         </FormGroup>
                       </Col>
                     </Row>
@@ -1286,15 +1312,15 @@ const Centers = () => {
                     <Row>
                       <Col lg="12">
                         <FormGroup>
-                          <div class="btn-group" role="group" aria-label="Assign Agent to Companies">
-                            <input type="checkbox" class="btn-check" id="btncheck1" />
-                            <label class="btn btn-outline-primary" for="btncheck1">Company_Name</label>
+                          <div className="btn-group" role="group" aria-label="Assign Agent to Companies">
+                            <input type="checkbox" className="btn-check" id="btncheck1" />
+                            <label className="btn btn-outline-primary" for="btncheck1">Company_Name</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck2" />
-                            <label class="btn btn-outline-primary" for="btncheck2">Company_Name1</label>
+                            <input type="checkbox" className="btn-check" id="btncheck2" />
+                            <label className="btn btn-outline-primary" for="btncheck2">Company_Name1</label>
 
-                            <input type="checkbox" class="btn-check" id="btncheck3" />
-                            <label class="btn btn-outline-primary" for="btncheck3">Company_Name2</label>
+                            <input type="checkbox" className="btn-check" id="btncheck3" />
+                            <label className="btn btn-outline-primary" for="btncheck3">Company_Name2</label>
                           </div>
                         </FormGroup>
                       </Col>
