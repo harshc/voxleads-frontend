@@ -62,6 +62,21 @@ const Clients = () => {
               <CardHeader className="bg-white border-0">
                 <h3 className="mb-0">Client List</h3>
               </CardHeader>
+              <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Client List</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <div>
+                      color="primary"
+                      href="#"
+                      onClick={(e) => e.preventDefault()}
+                      size="sm"
+                    >
+                      Add New
+                    </Button>
+                  </Col>
+                </Row>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
@@ -89,7 +104,7 @@ const Clients = () => {
                       </div>
                     </td>         
                     <td>
-                      <Badge color="" className="badge-dot mr-4">
+                      <Badge color="" className="badge-dot">
                         <i className="bg-success" />
                         Active
                       </Badge>
@@ -144,7 +159,7 @@ const Clients = () => {
                       </div>
                     </td>         
                     <td>
-                      <Badge color="" className="badge-dot mr-4">
+                      <Badge color="" className="badge-dot">
                         <i className="bg-warning" />
                         Unsubscribed
                       </Badge>
@@ -199,7 +214,7 @@ const Clients = () => {
                       </div>
                     </td>         
                     <td>
-                      <Badge color="" className="badge-dot mr-4">
+                      <Badge color="" className="badge-dot">
                         <i className="bg-danger" />
                         Flagged
                       </Badge>
