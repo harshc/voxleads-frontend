@@ -805,7 +805,7 @@ const Centers = () => {
                                 </CardTitle>
                             </div>
                             <Col className="col-auto">
-                                <div className="company_logo icon icon-shape rounded-circle shadow">
+                                <div className="company_logo avatar avatar-sm rounded-circle shadow">
                                   <img
                                     alt="..."
                                     className="rounded-circle"
@@ -835,7 +835,7 @@ const Centers = () => {
                                 </CardTitle>
                             </div>
                             <Col className="col-auto">
-                                <div className="company_logo icon icon-shape rounded-circle shadow">
+                                <div className="company_logo avatar avatar-sm rounded-circle shadow">
                                   <img
                                     alt="..."
                                     className="rounded-circle"
@@ -904,12 +904,21 @@ const Centers = () => {
                       </Col>
                     </Row>
                     <Row className="my-4">
-                      <Col lg="12">
+                      <Col lg="8">
                         <div>
                           <div className="form-control-label">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                           </div>
                         </div>
+                      </Col>
+                      <Col lg="4">
+                          <div className="company_logo avatar rounded-circle shadow">
+                            <img
+                              alt="..."
+                              className="rounded-circle"
+                              src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                            />
+                          </div>
                       </Col>
                     </Row>
                   </div>
@@ -1144,22 +1153,6 @@ const Centers = () => {
                             <input type="checkbox" class="btn-check" id="btncheck3" />
                             <label class="btn btn-outline-primary" for="btncheck3">Company_Name2</label>
                           </div>
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="agLastName"
-                          >
-                            Last Name
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="agLastName"
-                            placeholder="Last Name"
-                            type="text"
-                          />
                         </FormGroup>
                       </Col>
                     </Row>
