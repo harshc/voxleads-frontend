@@ -26,7 +26,7 @@ import {
 } from "reactstrap";
 import UserHeader from "components/Headers/UserHeader.js";
 
-const Clients = () => {
+const Leads = () => {
   return (
     <>
       <UserHeader />
@@ -39,12 +39,12 @@ const Clients = () => {
                   <ul className="list-unstyled">
                     <li>
                       <a href="#" className="d-flex icon-link px-4 py-2">
-                        Client List
+                        All Leads
                       </a>
                     </li>
                     <li>
                       <a href="#" className="d-flex icon-link px-4 py-2">
-                        Groups
+                        Lead Groups
                       </a>
                     </li>
                     <li>
@@ -60,7 +60,7 @@ const Clients = () => {
           <Col xl="8">
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
-                <h3 className="mb-0">Client List</h3>
+                <h3 className="mb-0">Leads</h3>
               </CardHeader>
               <Row className="align-items-center">
                   <Col xs="8">
@@ -100,7 +100,7 @@ const Clients = () => {
                     </th>
                     <td>
                       <div>
-                        Client Name
+                        Lead Name
                       </div>
                     </td>         
                     <td>
@@ -155,7 +155,7 @@ const Clients = () => {
                     </th>
                     <td>
                       <div>
-                        Client Name
+                        Lead Name
                       </div>
                     </td>         
                     <td>
@@ -210,7 +210,7 @@ const Clients = () => {
                     </th>
                     <td>
                       <div>
-                        Client Name
+                        Lead Name
                       </div>
                     </td>         
                     <td>
@@ -313,7 +313,7 @@ const Clients = () => {
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
-                    <h3 className="mb-0">Client Profile</h3>
+                    <h3 className="mb-0">Lead Profile</h3>
                   </Col>
                   <Col className="text-right" xs="4">
                     <Button
@@ -331,13 +331,13 @@ const Clients = () => {
                   <div className="d-flex justify-content-between mb-4">
                     <div>
                       <h6 className="heading-small text-muted">
-                        Client Information
+                        Lead Information
                       </h6>
                     </div>
                     <div>
                       <div className="form-check form-switch">
-                        <input className="form-check-input" type="checkbox" role="switch" id="agOnOff" checked />
-                        <label className="form-check-label" for="agOnOff">
+                        <input className="form-check-input" type="checkbox" role="switch" id="leadOnOff" checked />
+                        <label className="form-check-label" for="leadOnOff">
                           <Badge color="" className="badge-dot">
                             <i className="bg-success" />
                             Active
@@ -394,7 +394,7 @@ const Clients = () => {
                     <Row className="my-4">
                       <Col lg="12">
                           <div className="form-control-label">
-                            Client Notes
+                            Lead Notes
                           </div>
                           <div className="form-control-label">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -404,7 +404,7 @@ const Clients = () => {
                   </div>
                   <hr className="my-4" />
                   <h6 className="heading-small text-muted mb-4">
-                    Client Address
+                    Lead Address
                   </h6>
                   <div className="pl-lg-4">
                     <Row className="my-4">
@@ -487,7 +487,7 @@ const Clients = () => {
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
-                    <h3 className="mb-0">Client Profile</h3>
+                    <h3 className="mb-0">Edit Lead Profile</h3>
                   </Col>
                   <Col className="text-right" xs="4">
                     <Button
@@ -504,7 +504,7 @@ const Clients = () => {
               <CardBody>
                 <Form>
                   <h6 className="heading-small text-muted mb-4">
-                    Client Information
+                    Lead Information
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
@@ -512,13 +512,13 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clFirstName"
+                            htmlFor="leadFirstName"
                           >
                             First Name
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clFirstName"
+                            id="leadFirstName"
                             placeholder="First Name"
                             type="text"
                           />
@@ -528,13 +528,13 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clLastName"
+                            htmlFor="leadLastName"
                           >
                             Last Name
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clLastName"
+                            id="leadLastName"
                             placeholder="Last Name"
                             type="text"
                           />
@@ -546,13 +546,13 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clEmail"
+                            htmlFor="leadEmail"
                           >
                             Email
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clEmail"
+                            id="leadEmail"
                             placeholder="Email"
                             type="email"
                           />
@@ -562,13 +562,13 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clPhone"
+                            htmlFor="leadPhone"
                           >
                             Phone Number
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clPhone"
+                            id="leadPhone"
                             placeholder="Phone Number"
                             type="tel"
                           />
@@ -578,7 +578,7 @@ const Clients = () => {
                   </div>
                   <hr className="my-4" />
                   <h6 className="heading-small text-muted mb-4">
-                    Client Address
+                    Lead Address
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
@@ -586,13 +586,13 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clAddress1"
+                            htmlFor="leadAddress1"
                           >
                             Street Address
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clAddress1"
+                            id="leadAddress1"
                             placeholder="House number and street name"
                             type="text"
                           />
@@ -600,7 +600,7 @@ const Clients = () => {
                         <FormGroup>
                           <Input
                             className="form-control-alternative"
-                            id="clAddress2"
+                            id="leadAddress2"
                             placeholder="Apartment, suite, unit, etc. (optional)"
                             type="text"
                           />
@@ -612,13 +612,13 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clCity"
+                            htmlFor="leadCity"
                           >
                             Town / City
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clCity"
+                            id="leadCity"
                             placeholder="City"
                             type="text"
                           />
@@ -628,13 +628,13 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clStateProv"
+                            htmlFor="leadStateProv"
                           >
                             State / Province
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clStateProv"
+                            id="leadStateProv"
                             placeholder="State / Province"
                             type="text"
                           />
@@ -646,13 +646,13 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clCountry"
+                            htmlFor="leadCountry"
                           >
                             Country
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clCountry"
+                            id="leadCountry"
                             placeholder="Country"
                             type="text"
                           />
@@ -662,13 +662,13 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clZipPostal"
+                            htmlFor="leadZipPostal"
                           >
                             Zip / Postal Code
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clZipPostal"
+                            id="leadZipPostal"
                             placeholder="Zip / Postal Code"
                             type="email"
                           />
@@ -680,14 +680,14 @@ const Clients = () => {
                         <FormGroup>
                           <label
                             className="form-control-label"
-                            htmlFor="clNotes"
+                            htmlFor="leadNotes"
                           >
-                            Client Notes
+                            Lead Notes
                           </label>
                           <Input
                             className="form-control-alternative"
-                            id="clNotes"
-                            placeholder="Add client notes..."
+                            id="leadNotes"
+                            placeholder="Add notes about this lead."
                             type="textarea"
                           />
                         </FormGroup>
@@ -696,9 +696,9 @@ const Clients = () => {
                   </div>
                   <hr className="my-4" />
                   <h6 className="heading-small text-muted mb-4">
-                    Client Groups
+                    Lead Groups
                   </h6>
-                  <p>Assign a Client to one or several groups.</p>
+                  <p>Assign a Lead to one or several groups.</p>
                   <div className="pl-lg-4">
                     <Row>
                       <Col lg="12">
@@ -729,4 +729,4 @@ const Clients = () => {
   );
 };
 
-export default Clients;
+export default Leads;

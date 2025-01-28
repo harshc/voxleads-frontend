@@ -18,6 +18,7 @@
 import Index from "views/Index.js";
 import Profile from "views/components/Profile.js";
 import Centers from "views/components/Centers.js";
+import Leads from "views/components/Leads.js";
 import Clients from "views/components/Clients.js";
 import Maps from "views/components/Maps.js";
 import Register from "views/components/Register.js";
@@ -55,9 +56,16 @@ var routes = [
     layout: "/admin",
   },
   {
+    path: "/leads",
+    name: "Leads",
+    icon: "ni ni-bullet-list-67 text-blue",
+    component: <Leads />,
+    layout: "/admin",
+  },
+  
     path: "/client-list",
     name: "Client List",
-    icon: "ni ni-bullet-list-67 text-blue",
+    icon: "ni ni-bullet-list-67 text-info",
     component: <Clients />,
     layout: "/admin",
   },
