@@ -536,13 +536,13 @@ const Leads = () => {
                               className="form-control-label"
                               htmlFor="leadStatus"
                             >
-                              Group/Segment Name
+                              Status
                             </label>
-                            <select className="form-control-alternative form-control mx-2" id="leadStatus">
+                            <select className="form-control-alternative form-control" id="leadStatus">
                                 <option selected>Select one...</option>
-                                <option value="1">Published</option>
+                                <option value="1">Active</option>
                                 <option value="2">Pending</option>
-                                <option value="2">Draft</option>
+                                <option value="2">Unsubscribed</option>
                                 <option value="2">Flagged</option>
                             </select>
                         </FormGroup>
@@ -1084,9 +1084,9 @@ const Leads = () => {
                               className="form-control-label"
                               htmlFor="gsStatus"
                             >
-                              Group/Segment Name
+                              Group Status
                             </label>
-                            <select className="form-control-alternative form-control mx-2" id="gsStatus">
+                            <select className="form-control-alternative form-control" id="gsStatus">
                                 <option selected>Select one...</option>
                                 <option value="1">Published</option>
                                 <option value="2">Pending</option>
