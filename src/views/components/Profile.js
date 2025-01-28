@@ -979,7 +979,7 @@ const Profile = () => {
                           </div>
                         </div>
                       </Col>
-                      <Col lg="4" className="text-right>
+                      <Col lg="4" className="text-right">
                         <div>
                           <div className="form-control-label">
                             Invoice Date
