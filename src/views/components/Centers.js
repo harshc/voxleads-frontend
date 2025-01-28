@@ -187,12 +187,21 @@ const Centers = () => {
                       </Col>
                     </Row>
                     <Row className="my-4">
-                      <Col lg="12">
+                      <Col lg="9">
                         <div>
                           <div className="form-control-label">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                           </div>
                         </div>
+                      </Col>
+                      <Col lg="3">
+                          <div className="company_logo rounded-circle shadow">
+                            <img
+                              alt="..."
+                              className="rounded-circle img-fluid mx-auto"
+                              src={require("../../assets/img/theme/team-1-800x800.jpg")}
+                            />
+                          </div>
                       </Col>
                     </Row>
                   </div>
@@ -797,27 +806,33 @@ const Centers = () => {
                         <CardBody>
                             <Row>
                             <div className="col">
-                                <CardTitle
-                                tag="h2"
-                                className="text-uppercase font-weight-bold mb-0"
-                                >
-                                Sara Doe
-                                </CardTitle>
+                              <CardTitle
+                              tag="h2"
+                              className="text-uppercase font-weight-bold mb-0"
+                              >
+                              Sara Doe
+                              </CardTitle>
+                              <div>
+                                <Badge color="" className="badge-dot">
+                                    <i className="bg-success" />
+                                    Active
+                                </Badge>
+                              </div>
                             </div>
                             <Col className="col-auto">
-                                <div className="company_logo avatar avatar-lg rounded-circle shadow">
-                                  <img
-                                    alt="..."
-                                    className="rounded-circle"
-                                    src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                                  />
-                                </div>
+                              <div className="company_logo avatar avatar-lg rounded-circle shadow">
+                                <img
+                                  alt="..."
+                                  className="rounded-circle"
+                                  src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                />
+                              </div>
                             </Col>
                             </Row>
                             <p className="mt-3 mb-0 text-sm">
-                                <a href="#">
-                                  View Agent Details
-                                </a>
+                              <a href="#">
+                                View Agent Details
+                              </a>
                             </p>
                         </CardBody>
                     </Card>
@@ -874,9 +889,24 @@ const Centers = () => {
                 </Row>
               </CardHeader>
               <CardBody>
-                  <h6 className="heading-small text-muted mb-4">
-                    Agent Information
-                  </h6>
+                  <div className="d-flex justify-content-between mb-4">
+                    <div>
+                      <h6 className="heading-small text-muted">
+                        Agent Information
+                      </h6>
+                    </div>
+                    <div>
+                      <div className="form-check form-switch">
+                        <input className="form-check-input" type="checkbox" role="switch" id="agOnOff" checked />
+                        <label className="form-check-label" for="agOnOff">
+                          <Badge color="" className="badge-dot">
+                            <i className="bg-success" />
+                            Active
+                          </Badge>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                   <div className="pl-lg-4">
                     <Row className="my-4">
                       <Col lg="12">
@@ -1406,7 +1436,17 @@ const Centers = () => {
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
-                <h3 className="mb-0">Call Logs</h3>
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Call Logs</h3>
+                  </Col>
+                  <Col className="text-right" xs="4">
+                    <div>
+                      <h6 className="heading-small text-muted mb-1">304 / 4000 minutes</h6>
+                      <p className="text-sm">Add more minutes</p>
+                    </div>
+                  </Col>
+                </Row>
               </CardHeader>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
@@ -1648,6 +1688,11 @@ const Centers = () => {
                 </tbody>
               </Table>
               <CardFooter className="py-4">
+                <div className="d-flex justify-content-between">
+                <div>
+                  <h6 className="heading-small text-muted mb-1">Lifetime Minutes</h6>
+                  <p className="text-sm">1245 m</p>
+                </div>
                 <nav aria-label="...">
                   <Pagination
                     className="pagination justify-content-end mb-0"
@@ -1698,6 +1743,7 @@ const Centers = () => {
                     </PaginationItem>
                   </Pagination>
                 </nav>
+                </div>
               </CardFooter>
             </Card>
           </Col>
