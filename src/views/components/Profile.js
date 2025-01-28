@@ -531,12 +531,12 @@ const Profile = () => {
                           <label className="form-control-label" htmlFor="credit-card-number">Card Number</label>
                           <input type="text" 
                             className="form-control-alternative" 
-                            autocomplete="off" 
-                            autocorrect="off"
-                            autocapitalize="none" spellcheck="false"
+                            autoComplete="off" 
+                            autoCorrect="off"
+                            autoCapitalize="none" spellCheck="false"
                             name="credit-card-number" 
                             id="credit-card-number"
-                            maxlength="22" />
+                            maxLength="22" />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -545,29 +545,29 @@ const Profile = () => {
                         <FormGroup>
                           <label className="form-control-label" htmlFor="expiration">Expiration Date</label>
                           <input type="text" 
-                            autocomplete="off" 
-                            autocorrect="off" 
-                            autocapitalize="none"
-                            spellcheck="false" 
+                            autoComplete="off" 
+                            autoCorrect="off" 
+                            autoCapitalize="none"
+                            spellCheck="false" 
                             className="form-control-alternative"
                             name="expiration" 
                             id="expiration"
                             placeholder="MM / YYYY" 
-                            maxlength="7" />
+                            maxLength="7" />
                         </FormGroup>
                       </Col>
                       <Col lg="6">
                         <FormGroup>
                           <label className="form-control-label" htmlFor="cvv">Security Code </label>
                           <input type="text" 
-                            autocomplete="off" 
-                            autocorrect="off" 
-                            autocapitalize="none"
-                            spellcheck="false" 
+                            autoComplete="off" 
+                            autoCorrect="off" 
+                            autoCapitalize="none"
+                            spellCheck="false" 
                             className="form-control-alternative"
                             name="cvv" 
                             id="cvv" 
-                            maxlength="4" />
+                            maxLength="4" />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -577,9 +577,9 @@ const Profile = () => {
                           <label className="form-control-label" htmlFor="ccName">Name on the Credit Card</label>
                           <input type="text" 
                             className="form-control-alternative" 
-                            autocomplete="off" 
-                            autocorrect="off"
-                            autocapitalize="none" spellcheck="false"
+                            autoComplete="off" 
+                            autoCorrect="off"
+                            autoCapitalize="none" spellCheck="false"
                             name="ccName" 
                             id="ccName" />
                         </FormGroup>
