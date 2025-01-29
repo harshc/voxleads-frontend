@@ -33,8 +33,8 @@ import {
   Col,
 } from "reactstrap";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { signInWithEmailAndPassword, signInWithRedirect, getRedirectResult, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import {auth, db, googleProvider } from "../../firebase-config";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {auth, googleProvider } from "../../firebase-config";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -66,7 +66,6 @@ const Register = () => {
   };
 
   const handleGoogleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
     try {
       const provider = new GoogleAuthProvider();
       console.log("Initiating Google login...");

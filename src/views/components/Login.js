@@ -30,14 +30,12 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
-  Row,
   Col,
 } from "reactstrap";
-import { signInWithEmailAndPassword, signInWithRedirect, getRedirectResult, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import {auth, db, googleProvider } from "../../firebase-config";
-import { onAuthStateChanged } from "firebase/auth";
 
 const Login = () => {
   const [email, setEmail] = useState("");

@@ -15,6 +15,7 @@ import {
   Col,
 } from "reactstrap";
 import UserHeader from "components/Headers/UserHeader.js";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const [formData, setFormData] = useState({
@@ -31,6 +32,7 @@ const Profile = () => {
   const [userExists, setUserExists] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -82,13 +84,14 @@ const Profile = () => {
       if (currentUser) {
         const userDocRef = doc(db, "users", currentUser.uid);
         await setDoc(userDocRef, formData, { merge: true });
-        alert("Profile updated successfully!");
+        console.log("Profile updated successfully for: ", currentUser.displayName); 
         setUserExists(true);
         setIsEditing(false);
+        console.log("Navigating to /admin/call-centers");
+        navigate("/admin/call-centers");
       }
     } catch (error) {
       console.error("Error updating profile:", error);
-      alert("Failed to update profile. Please try again.");
     }
   };
 

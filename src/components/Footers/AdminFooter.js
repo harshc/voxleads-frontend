@@ -29,11 +29,10 @@ const Footer = () => {
             © {new Date().getFullYear()}{" "}
             <a
               className="font-weight-bold ml-1"
-              href="https://www.creative-tim.com?ref=adr-admin-footer"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Creative Tim
+              Vox Leads 
             </a>
           </div>
         </Col>
@@ -42,15 +41,14 @@ const Footer = () => {
           <Nav className="nav-footer justify-content-center justify-content-xl-end">
             <NavItem>
               <NavLink
-                href="https://www.creative-tim.com?ref=adr-admin-footer"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Creative Tim
+                Vox Leads
               </NavLink>
             </NavItem>
 
-            <NavItem>
+            {/* <NavItem>
               <NavLink
                 href="https://www.creative-tim.com/presentation?ref=adr-admin-footer"
                 rel="noopener noreferrer"
@@ -77,8 +75,8 @@ const Footer = () => {
                 target="_blank"
               >
                 MIT License
-              </NavLink>
-            </NavItem>
+              </NavLink> 
+            </NavItem>*/}
           </Nav>
         </Col>
       </Row>

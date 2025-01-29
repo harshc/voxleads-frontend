@@ -20,9 +20,7 @@ import {
   Pagination,
   PaginationItem,
   PaginationLink,
-  Progress,
   Table,
-  UncontrolledTooltip,
 } from "reactstrap";
 import UserHeader from "components/Headers/UserHeader.js";
 
