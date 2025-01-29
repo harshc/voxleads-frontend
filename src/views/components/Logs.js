@@ -474,10 +474,10 @@ const Logs = () => {
                    <h6 className="heading-small text-muted mb-4">
                      Call Summary
                    </h6>
-                    <Card className="card-stats mb-4 mb-xl-0">
+                    <Card className="card-stats mb-0">
                       <CardBody>
                         <Row>
-                          <div className="col text-sm" style="max-height:400px;overflow-y:scroll;">
+                          <div className="col text-sm">
                             Add chat transcript here...
                           </div>
                         </Row>
