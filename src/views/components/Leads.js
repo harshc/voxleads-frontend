@@ -537,20 +537,24 @@ const Leads = () => {
                     Upload
                   </Button>
                 </Form>
-                <hr className="my-4" />
-                  <div className="d-flex justify-content-between mb-4">
-                    <div>
-                      <h6 className="heading-small text-muted">
-                        Add a single Lead
-                      </h6>
-                    </div>
-                    <div>
-                      <Button color="primary" href="#">
-                        Click Here
-                      </Button>
-                    </div>
-                  </div>
               </CardBody>
+              <CardFooter className="py-4">
+                <Row className="align-items-center">
+                    <Col xs="8">
+                      Add a single Lead
+                    </Col>
+                    <Col className="text-right" xs="4">
+                    <Button
+                        color="primary"
+                        href="#"
+                        onClick={(e) => e.preventDefault()}
+                        size="sm"
+                    >
+                        Click Here
+                    </Button>
+                    </Col>
+                </Row>
+              </CardFooter>
             </Card>
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
