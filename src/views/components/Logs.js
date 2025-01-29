@@ -72,8 +72,8 @@ const Logs = () => {
                   </Col>
                   <Col className="text-right" xs="4">
                     <div>
-                      <h6 className="heading-small text-muted mb-1">304 / 4000 minutes</h6>
-                      <p className="text-sm">Add more minutes</p>
+                      <h6 className="heading-small text-muted mb-0 pb-0">304 / 4000 minutes</h6>
+                      <p className="text-xs mb-0"><a href="#">Add more minutes</a></p>
                     </div>
                   </Col>
                 </Row>
@@ -320,8 +320,8 @@ const Logs = () => {
               <CardFooter className="py-4">
                 <div className="d-flex justify-content-between">
                 <div>
-                  <h6 className="heading-small text-muted mb-1">Lifetime Minutes</h6>
-                  <p className="text-sm">1245 m</p>
+                  <h6 className="heading-small text-muted mb-0 pb-0">Lifetime Minutes</h6>
+                  <p className="text-sm mb-0">1245 m</p>
                 </div>
                 <nav aria-label="...">
                   <Pagination
@@ -376,6 +376,7 @@ const Logs = () => {
                 </div>
               </CardFooter>
             </Card>
+            <hr className="my-4" />
             <Card className="bg-secondary shadow">
                <CardHeader className="bg-white border-0">
                  <Row className="align-items-center">
@@ -447,7 +448,7 @@ const Logs = () => {
                          </div>
                        </Col>
                      </Row>
-                     <Row className="my-4 d-flex justify-content-between">
+                     <Row className="my-4 d-flex justify-content-between pl-lg-4">
                        <Col lg="4">
                          <div>
                            <div className="form-control-label">
