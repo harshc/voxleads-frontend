@@ -161,7 +161,7 @@ const Index = (props) => {
                         <img
                         alt="..."
                         className="rounded-circle"
-                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                        src="https://voxleads-api-stg-bv7a.uc.r.appspot.com/static/media/team-4-800x800.99c612eb60728a5aeeb0.jpg"
                         />
                     </div>
                     </Col>
