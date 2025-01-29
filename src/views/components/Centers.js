@@ -1993,7 +1993,7 @@ const Centers = () => {
                    <Card className="card-stats mb-0">
                       <CardBody>
                         <Row>
-                          <div className="col text-sm">
+                          <Col className="col text-sm">
                             Insert API call summary - simple output
                           </Col>
                         </Row>
