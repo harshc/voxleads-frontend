@@ -325,7 +325,6 @@ const Centers = () => {
                       </Col>
                     </Row>
                   </div>
-                  <hr className="my-4" />
               </CardBody>
             </Card>
             <hr className="my-4" />
@@ -432,13 +431,13 @@ const Centers = () => {
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <div className="input-group b-flex align-items-center mb-3">
-                            <div className="form-control-label pr-2">
-                              Company Logo
-                            </div>
-                            <input type="file" className="form-control-alternative" id="ccLogoFile" />
-                            <label className="input-group-text" for="ccLogoFile">Upload</label>
-                          </div>
+                          <label
+                            className="form-control-label"
+                            htmlFor="ccLogoFile"
+                          >
+                            Company Logo
+                          </label>
+                          <input type="file" className="form-control-alternative" id="ccLogoFile" />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -1132,7 +1131,6 @@ const Centers = () => {
                       </Col>
                     </Row>
                   </div>
-                  <hr className="my-4" />
               </CardBody>
             </Card>
             <hr className="my-4" />
@@ -1166,6 +1164,17 @@ const Centers = () => {
                                 <option value="2">Offline</option>
                                 <option value="3">...</option>
                             </select>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="agProfileImg"
+                          >
+                            Profile Photo
+                          </label>
+                          <input type="file" className="form-control-alternative" id="agProfileImg" />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -1220,17 +1229,6 @@ const Centers = () => {
                           />
                         </FormGroup>
                       </Col>
-                      <Col lg="12">
-                        <FormGroup>
-                          <div className="input-group b-flex align-items-center mb-3">
-                            <div className="form-control-label pr-2">
-                              Profile Photo
-                            </div>
-                            <input type="file" className="form-control-alternative" id="agProfileImg" />
-                            <label className="input-group-text" for="agProfileImg">Upload</label>
-                          </div>
-                        </FormGroup>
-                      </Col>
                     </Row>
                   </div>
                   <hr className="my-4" />
@@ -1282,7 +1280,7 @@ const Centers = () => {
                               className="form-control-label"
                               htmlFor="agAccent"
                             >
-                              Voice
+                              Accent
                             </label>
                             <select className="form-control-alternative form-control" id="agAccent">
                                 <option selected>Select one...</option>
@@ -1304,15 +1302,21 @@ const Centers = () => {
                     <Row>
                       <Col lg="12">
                         <FormGroup>
-                          <div className="btn-group" role="group" aria-label="Assign Agent to Companies">
-                            <input type="checkbox" className="btn-check" id="btncheck1" />
-                            <label className="btn btn-outline-primary" for="btncheck1">Company_Name</label>
-
-                            <input type="checkbox" className="btn-check" id="btncheck2" />
-                            <label className="btn btn-outline-primary" for="btncheck2">Company_Name1</label>
-
-                            <input type="checkbox" className="btn-check" id="btncheck3" />
-                            <label className="btn btn-outline-primary" for="btncheck3">Company_Name2</label>
+                          <div className="d-flex justify-content-around" role="group" aria-label="Assign Agent to Companies">
+                            <div>
+                              <input type="checkbox" className="btn-check" id="btncheck1" />
+                              <label className="btn btn-outline-primary" for="btncheck1">Company_Name</label>
+                            </div>
+                            
+                            <div>
+                              <input type="checkbox" className="btn-check" id="btncheck2" />
+                              <label className="btn btn-outline-primary" for="btncheck2">Company_Name1</label>
+                            </div>
+                            
+                            <div>
+                              <input type="checkbox" className="btn-check" id="btncheck3" />
+                              <label className="btn btn-outline-primary" for="btncheck3">Company_Name2</label>
+                            </div>
                           </div>
                         </FormGroup>
                       </Col>
@@ -1992,8 +1996,8 @@ const Centers = () => {
                    </h6>
                    <Card className="card-stats mb-0">
                       <CardBody>
-                        <Row>
-                          <Col className="col text-sm">
+                        <Row style="max-height:400px;overflow-y:scroll;">
+                          <Col className="text-sm">
                             Insert API call summary - simple output
                           </Col>
                         </Row>
