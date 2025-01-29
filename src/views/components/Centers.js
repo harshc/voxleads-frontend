@@ -791,7 +791,7 @@ const Centers = () => {
                             Save
                         </Button>
                     </Col>
-                    <Col xs="6">
+                    <Col xs="6" className="text-right">
                         <Button color="danger" href="#">
                             Cancel
                         </Button>
@@ -1566,7 +1566,7 @@ const Centers = () => {
                             Save
                         </Button>
                     </Col>
-                    <Col xs="6">
+                    <Col xs="6" className="text-right">
                         <Button color="danger" href="#">
                             Cancel
                         </Button>
@@ -1585,8 +1585,8 @@ const Centers = () => {
                   </Col>
                   <Col className="text-right" xs="4">
                     <div>
-                      <h6 className="heading-small text-muted mb-1">304 / 4000 minutes</h6>
-                      <p className="text-sm">Add more minutes</p>
+                      <h6 className="heading-small text-muted mb-0 pb-0">304 / 4000 minutes</h6>
+                      <p className="text-xs mb-0"><a href="#">Add more minutes</a></p>
                     </div>
                   </Col>
                 </Row>
@@ -1833,8 +1833,8 @@ const Centers = () => {
               <CardFooter className="py-4">
                 <div className="d-flex justify-content-between">
                 <div>
-                  <h6 className="heading-small text-muted mb-1">Lifetime Minutes</h6>
-                  <p className="text-sm">1245 m</p>
+                  <h6 className="heading-small text-muted mb-0 pb-0">Lifetime Minutes</h6>
+                  <p className="text-sm mb-0">1245.57 m</p>
                 </div>
                 <nav aria-label="...">
                   <Pagination
@@ -1911,44 +1911,41 @@ const Centers = () => {
                <CardBody>
                    <div>
                      <Row className="my-4 d-flex justify-content-between">
-                       <Col lg="8">
+                       <Col lg="6">
                          <div>
-                           <div className="form-control-label">
-                             Agent
-                           </div>
                            <Card className="card-stats mb-4 mb-xl-0">
-                                <CardBody>
-                                  <Row>
-                                    <div className="col">
-                                    <CardTitle
-                                    tag="h2"
-                                    className="text-uppercase font-weight-bold mb-0"
-                                    >
-                                    Sara Doe
-                                    </CardTitle>
-                                    <div>
-                                        <Badge color="" className="badge-dot">
-                                            <i className="bg-success" />
-                                            Active
-                                        </Badge>
-                                    </div>
-                                    </div>
-                                    <Col className="col-auto">
-                                    <div className="company_logo avatar avatar-lg rounded-circle shadow">
-                                        <img
-                                        alt="..."
-                                        className="rounded-circle"
-                                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                                        />
-                                    </div>
-                                    </Col>
-                                  </Row>
-                                  <p className="mt-3 mb-0 text-sm">
-                                    <a href="#">
-                                        View Agent Details
-                                    </a>
-                                  </p>
-                                </CardBody>
+                              <CardBody>
+                                <Row>
+                                  <div className="col">
+                                  <CardTitle
+                                  tag="h2"
+                                  className="text-uppercase font-weight-bold mb-0"
+                                  >
+                                  Sara Doe
+                                  </CardTitle>
+                                  <div>
+                                      <Badge color="" className="badge-dot">
+                                          <i className="bg-success" />
+                                          Active
+                                      </Badge>
+                                  </div>
+                                  </div>
+                                  <Col className="col-auto">
+                                  <div className="company_logo avatar avatar-lg rounded-circle shadow">
+                                      <img
+                                      alt="..."
+                                      className="rounded-circle"
+                                      src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                      />
+                                  </div>
+                                  </Col>
+                                </Row>
+                                <p className="mt-1 mb-0 text-sm">
+                                  <a href="#">
+                                      View Agent Details
+                                  </a>
+                                </p>
+                              </CardBody>
                             </Card>
                          </div>
                        </Col>
@@ -1993,11 +1990,15 @@ const Centers = () => {
                    <h6 className="heading-small text-muted mb-4">
                      Call Summary
                    </h6>
-                   <CardBody>
-                     <div>
-                       Insert API call summary - simple output 
-                     </div>
-                   </CardBody>
+                   <Card className="card-stats mb-0">
+                      <CardBody>
+                        <Row>
+                          <div className="col text-sm">
+                            Insert API call summary - simple output
+                          </Col>
+                        </Row>
+                      </CardBody>
+                  </Card>
                </CardBody>
             </Card>
           </Col>
