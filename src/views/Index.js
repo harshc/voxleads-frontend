@@ -36,6 +36,11 @@ import {
   Container,
   Row,
   Col,
+  Form,
+  FormGroup,
+  Input,
+  CardTitle,
+  Badge,
 } from "reactstrap";
 
 // core components
