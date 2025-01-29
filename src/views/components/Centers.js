@@ -335,16 +335,6 @@ const Centers = () => {
                   <Col xs="8">
                     <h3 className="mb-0">Edit Company Profile</h3>
                   </Col>
-                  <Col className="text-right" xs="4">
-                    <Button
-                      color="primary"
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      size="sm"
-                    >
-                      Update
-                    </Button>
-                  </Col>
                 </Row>
               </CardHeader>
               <CardBody>
@@ -795,6 +785,18 @@ const Centers = () => {
                     </Row>
                   </div>
                   <hr className="my-4" />
+                  <Row className="d-flex justify-content-between align-items-center">
+                    <Col xs="6">
+                        <Button color="primary" href="#">
+                            Save
+                        </Button>
+                    </Col>
+                    <Col xs="6">
+                        <Button color="danger" href="#">
+                            Cancel
+                        </Button>
+                    </Col>
+                  </Row>
                 </Form>
               </CardBody>
             </Card>
@@ -1139,16 +1141,6 @@ const Centers = () => {
                 <Row className="align-items-center">
                   <Col xs="8">
                     <h3 className="mb-0">Edit Agent Profile</h3>
-                  </Col>
-                  <Col className="text-right" xs="4">
-                    <Button
-                      color="primary"
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      size="sm"
-                    >
-                      Update
-                    </Button>
                   </Col>
                 </Row>
               </CardHeader>
@@ -1568,6 +1560,18 @@ const Centers = () => {
                     </Row>
                   </div>
                   <hr className="my-4" />
+                  <Row className="d-flex justify-content-between align-items-center">
+                    <Col xs="6">
+                        <Button color="primary" href="#">
+                            Save
+                        </Button>
+                    </Col>
+                    <Col xs="6">
+                        <Button color="danger" href="#">
+                            Cancel
+                        </Button>
+                    </Col>
+                  </Row>
                 </Form>
               </CardBody>
             </Card>
@@ -1884,6 +1888,117 @@ const Centers = () => {
                 </nav>
                 </div>
               </CardFooter>
+            </Card>
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+               <CardHeader className="bg-white border-0">
+                 <Row className="align-items-center">
+                   <Col xs="8">
+                     <h3 className="mb-0">Call #123453</h3>
+                   </Col>
+                   <Col className="text-right" xs="4">
+                     <Button
+                       color="primary"
+                       href="#"
+                       onClick={(e) => e.preventDefault()}
+                       size="sm"
+                     >
+                       Print
+                     </Button>
+                   </Col>
+                 </Row>
+               </CardHeader>
+               <CardBody>
+                   <div>
+                     <Row className="my-4 d-flex justify-content-between">
+                       <Col lg="8">
+                         <div>
+                           <div className="form-control-label">
+                             Agent
+                           </div>
+                           <Card className="card-stats mb-4 mb-xl-0">
+                                <CardBody>
+                                  <Row>
+                                    <div className="col">
+                                    <CardTitle
+                                    tag="h2"
+                                    className="text-uppercase font-weight-bold mb-0"
+                                    >
+                                    Sara Doe
+                                    </CardTitle>
+                                    <div>
+                                        <Badge color="" className="badge-dot">
+                                            <i className="bg-success" />
+                                            Active
+                                        </Badge>
+                                    </div>
+                                    </div>
+                                    <Col className="col-auto">
+                                    <div className="company_logo avatar avatar-lg rounded-circle shadow">
+                                        <img
+                                        alt="..."
+                                        className="rounded-circle"
+                                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                        />
+                                    </div>
+                                    </Col>
+                                  </Row>
+                                  <p className="mt-3 mb-0 text-sm">
+                                    <a href="#">
+                                        View Agent Details
+                                    </a>
+                                  </p>
+                                </CardBody>
+                            </Card>
+                         </div>
+                       </Col>
+                       <Col lg="4" className="text-right">
+                         <div>
+                           <div className="form-control-label">
+                             Call Status
+                           </div>
+                           <div>
+                              <Badge color="" className="badge-dot">
+                                <i className="bg-success" />
+                                Completed
+                              </Badge>
+                           </div>
+                         </div>
+                       </Col>
+                     </Row>
+                     <Row className="my-4 d-flex justify-content-between">
+                       <Col lg="4">
+                         <div>
+                           <div className="form-control-label">
+                             Call Length
+                           </div>
+                           <div>
+                             12:34: m
+                           </div>
+                         </div>
+                       </Col>
+                       <Col lg="4" className="text-right">
+                         <div>
+                           <div className="form-control-label">
+                             Call Date
+                           </div>
+                           <div>
+                             2025-01-27 15:42:11
+                           </div>
+                         </div>
+                       </Col>
+                     </Row>
+                   </div>
+                   <hr className="my-4" />
+                   <h6 className="heading-small text-muted mb-4">
+                     Call Summary
+                   </h6>
+                   <CardBody>
+                     <div>
+                       Insert API call summary - simple output 
+                     </div>
+                   </CardBody>
+               </CardBody>
             </Card>
           </Col>
         </Row>
