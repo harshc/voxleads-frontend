@@ -509,17 +509,55 @@ const Leads = () => {
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
-                    <h3 className="mb-0">Edit Lead Profile</h3>
+                    <h3 className="mb-0">Add New Leads</h3>
                   </Col>
-                  <Col className="text-right" xs="4">
-                    <Button
-                      color="primary"
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      size="sm"
-                    >
-                      Save
-                    </Button>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                <Form>
+                  <h6 className="heading-small text-muted mb-4">
+                    Bulk Upload Leads
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="12">
+                         <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="clUploadcsv"
+                          >
+                            Upload a CSV file
+                          </label>
+                          <Input type="file" className="form-control-alternative" id="clUploadcsv" />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                  <Button color="primary" href="#">
+                    Upload
+                  </Button>
+                </Form>
+                <hr className="my-4" />
+                  <div className="d-flex justify-content-between mb-4">
+                    <div>
+                      <h6 className="heading-small text-muted">
+                        Add a single Lead
+                      </h6>
+                    </div>
+                    <div>
+                      <Button color="primary" href="#">
+                        Click Here
+                      </Button>
+                    </div>
+                  </div>
+              </CardBody>
+            </Card>
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+              <CardHeader className="bg-white border-0">
+                <Row className="align-items-center">
+                  <Col xs="8">
+                    <h3 className="mb-0">Edit Lead Profile</h3>
                   </Col>
                 </Row>
               </CardHeader>
@@ -744,46 +782,29 @@ const Leads = () => {
                     <Row>
                       <Col lg="12">
                         <FormGroup>
-                          <div class="btn-group" role="group" aria-label="Assign Agent to Companies">
-                            <input type="checkbox" class="btn-check" id="btncheck1" />
-                            <label class="btn btn-outline-primary" for="btncheck1">Group_name</label>
-
-                            <input type="checkbox" class="btn-check" id="btncheck2" />
-                            <label class="btn btn-outline-primary" for="btncheck2">Group_name2</label>
-
-                            <input type="checkbox" class="btn-check" id="btncheck3" />
-                            <label class="btn btn-outline-primary" for="btncheck3">Group_name3</label>
+                          <div className="d-flex justify-content-evenly">
+                            <div>
+                              <input type="checkbox" className="btn-check" id="btncheck1" />
+                              <label className="btn btn-outline-primary" for="btncheck1">Group_name</label>
+                            </div>
+                            <div>
+                              <input type="checkbox" className="btn-check" id="btncheck2" />
+                              <label className="btn btn-outline-primary" for="btncheck2">Group_name2</label>
+                            </div>
+                            <div>
+                              <input type="checkbox" className="btn-check" id="btncheck3" />
+                              <label className="btn btn-outline-primary" for="btncheck3">Group_name3</label>
+                            </div>
                           </div>
                         </FormGroup>
                       </Col>
                     </Row>
                   </div>
-                </Form>
-              </CardBody>
-              <CardFooter className="py-4">
-                <Row className="align-items-center">
-                    <Col xs="8">
-                    <Button
-                        color="danger"
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm"
-                    >
-                        Cancel
-                    </Button>
-                    </Col>
-                    <Col className="text-right" xs="4">
-                    <Button
-                        color="primary"
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm"
-                    >
+                    <Button color="primary" href="#">
                         Save
                     </Button>
-                    </Col>
-                </Row>
-              </CardFooter>
+                </Form>
+              </CardBody>
             </Card>
             <hr className="my-4" />
             <hr className="my-4" />
@@ -1043,16 +1064,6 @@ const Leads = () => {
                   <Col xs="8">
                     <h3 className="mb-0">Edit Group/Segment</h3>
                   </Col>
-                  <Col className="text-right" xs="4">
-                    <Button
-                      color="primary"
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      size="sm"
-                    >
-                      Save
-                    </Button>
-                  </Col>
                 </Row>
               </CardHeader>
               <CardBody>
@@ -1114,32 +1125,11 @@ const Leads = () => {
                       </Col>
                     </Row>
                   </div>
-                </Form>
-              </CardBody>
-              <CardFooter className="py-4">
-                <Row className="align-items-center">
-                    <Col xs="8">
-                    <Button
-                        color="danger"
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm"
-                    >
-                        Cancel
-                    </Button>
-                    </Col>
-                    <Col className="text-right" xs="4">
-                    <Button
-                        color="primary"
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm"
-                    >
+                    <Button color="primary" href="#">
                         Save
                     </Button>
-                    </Col>
-                </Row>
-              </CardFooter>
+                </Form>
+              </CardBody>
             </Card>
             <hr className="my-4" />
           </Col>
