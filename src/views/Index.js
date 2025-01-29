@@ -73,6 +73,115 @@ const Index = (props) => {
                 <Row className="align-items-center">
                   <div className="col">
                     <h6 className="text-uppercase text-light ls-1 mb-1">
+                      Test Call
+                    </h6>
+                    <h2 className="text-white mb-0">Try Our Automated Agent</h2>
+                  </div>
+                  <div className="col">
+                    <Nav className="justify-content-end" pills>
+                      <NavItem>
+                        <NavLink
+                          className={classnames("py-2 px-3", {
+                            active: activeNav === 1,
+                          })}
+                          href="#pablo"
+                          onClick={(e) => toggleNavs(e, 1)}
+                        >
+                          <span className="d-block">Sara</span>
+                        </NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink
+                          className={classnames("py-2 px-3", {
+                            active: activeNav === 2,
+                          })}
+                          data-toggle="tab"
+                          href="#pablo"
+                          onClick={(e) => toggleNavs(e, 2)}
+                        >
+                          <span className="d-block">Online</span>
+                        </NavLink>
+                      </NavItem>
+                    </Nav>
+                  </div>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                <Form>
+                  <h6 className="heading-small text-muted mb-4">
+                    Try a 5 minute call with one of our Agents
+                  </h6>
+                  <div className="pl-lg-4">
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="testPhone"
+                          >
+                            Enter your phone number
+                          </label>
+                          <Input
+                            className="form-control-alternative"
+                            id="testPhone"
+                            placeholder="Your Phone Number"
+                            type="tel"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </div>
+                    <Button color="primary" href="#">
+                      Start Call
+                    </Button>
+                </Form>
+              </CardBody>
+            </Card>
+          </Col>
+          <Col xl="4">
+            <Card className="card-stats mb-4 mb-xl-0">
+                <CardBody>
+                    <Row>
+                    <div className="col">
+                    <CardTitle
+                    tag="h2"
+                    className="text-uppercase font-weight-bold mb-0"
+                    >
+                    Sara Doe
+                    </CardTitle>
+                    <div>
+                        <Badge color="" className="badge-dot">
+                            <i className="bg-success" />
+                            Active
+                        </Badge>
+                    </div>
+                    </div>
+                    <Col className="col-auto">
+                    <div className="company_logo avatar avatar-lg rounded-circle shadow">
+                        <img
+                        alt="..."
+                        className="rounded-circle"
+                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                        />
+                    </div>
+                    </Col>
+                    </Row>
+                    <p className="mt-3 mb-0 text-sm">
+                    <a href="#">
+                        View Agent Details
+                    </a>
+                    </p>
+                </CardBody>
+            </Card>
+          </Col>
+        </Row>
+        <Row className="mt-5">
+          <Col className="mb-5 mb-xl-0" xl="8">
+            <Card className="bg-gradient-default shadow">
+              <CardHeader className="bg-transparent">
+                <Row className="align-items-center">
+                  <div className="col">
+                    <h6 className="text-uppercase text-light ls-1 mb-1">
                       Overview
                     </h6>
                     <h2 className="text-white mb-0">Sales value</h2>
