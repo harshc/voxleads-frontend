@@ -484,42 +484,7 @@ const Clients = () => {
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
-                    <h3 className="mb-0">Add New Leads</h3>
-                  </Col>
-                </Row>
-              </CardHeader>
-              <CardBody>
-                <Form>
-                  <h6 className="heading-small text-muted mb-4">
-                    Bulk Upload Leads
-                  </h6>
-                  <div className="pl-lg-4">
-                    <Row>
-                      <Col lg="12">
-                         <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="clUploadcsv"
-                          >
-                            Upload a CSV file
-                          </label>
-                          <Input type="file" className="form-control-alternative" id="clUploadcsv" />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                  </div>
-                  <Button color="primary" href="#">
-                    Upload
-                  </Button>
-                </Form>
-              </CardBody>
-            </Card>
-            <hr className="my-4" />
-            <Card className="bg-secondary shadow">
-              <CardHeader className="bg-white border-0">
-                <Row className="align-items-center">
-                  <Col xs="8">
-                    <h3 className="mb-0">Add/Edit Client Profile</h3>
+                    <h3 className="mb-0">Edit Client Profile</h3>
                   </Col>
                 </Row>
               </CardHeader>
@@ -725,7 +690,7 @@ const Clients = () => {
                     <Row>
                       <Col lg="12">
                         <FormGroup>
-                          <div className="d-flex justify-content-evenly">
+                          <div className="d-flex justify-content-around">
                             <div>
                               <input type="checkbox" className="btn-check" id="btncheck1" />
                               <label className="btn btn-outline-primary" for="btncheck1">Group_name</label>
