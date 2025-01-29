@@ -28,6 +28,7 @@ import Icons from "views/components/Icons.js";
 import UserDetails from "views/components/UserDetails";
 import UserHeader from "components/Headers/UserHeader";
 import ProtectedRoute from "components/ProtectedRoutes";
+import Payment from "views/components/Payment";
 
 var routes = [
   {
@@ -109,10 +110,21 @@ var routes = [
   {
     path: "/register",
     name: "Register",
-    icon: "ni ni-circle-08 text-pink",
+    icon: "ni ni-bullet-list-67 text-red",
     component: <Register />,
     layout: "/auth",
   },
+  { 
+    path: "/admin/payment", 
+    name: "Payment",
+    icon: "ni ni-circle-08 text-pink",
+    component: 
+      <ProtectedRoute>
+        <Payment />
+      </ProtectedRoute>,
+    layout: "/admin",
+  }
+
 ];
 
 // var routes = [
