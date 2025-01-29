@@ -20,6 +20,7 @@ import Profile from "views/components/Profile.js";
 import Centers from "views/components/Centers.js";
 import Leads from "views/components/Leads.js";
 import Clients from "views/components/Clients.js";
+import Logs from "views/components/Logs.js";
 import Maps from "views/components/Maps.js";
 import Register from "views/components/Register.js";
 import Login from "views/components/Login.js";
@@ -85,6 +86,17 @@ var routes = [
     component: (
       <ProtectedRoute>
         <Clients />
+      </ProtectedRoute>
+    ),
+    layout: "/admin",
+  },
+  {
+    path: "/logs",
+    name: "Logs",
+    icon: "ni ni-bullet-list-67 text-red",
+    component: (
+      <ProtectedRoute>
+        <Logs />
       </ProtectedRoute>
     ),
     layout: "/admin",

@@ -24,7 +24,7 @@ const Login = () => {
   return (
     <>
       <footer className="footer">
-      <Row className="align-items-center justify-content-xl-between">
+      <Row className="align-items-center justify-content-xl-between vw-100 mx-auto">
         <Col xl="6">
           <div className="copyright text-center text-xl-left text-muted">
             © {new Date().getFullYear()}{" "}
