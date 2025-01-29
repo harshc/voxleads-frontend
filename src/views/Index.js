@@ -85,27 +85,14 @@ const Index = (props) => {
                   <div className="col">
                     <Nav className="justify-content-end" pills>
                       <NavItem>
-                        <NavLink
-                          className={classnames("py-2 px-3", {
-                            active: activeNav === 1,
-                          })}
-                          href="#pablo"
-                          onClick={(e) => toggleNavs(e, 1)}
-                        >
-                          <span className="d-block">Sara</span>
-                        </NavLink>
+                        <div className="py-2 px-3 nav-link">
+                          <span className="d-block">Vox Agent</span>
+                        </div>
                       </NavItem>
                       <NavItem>
-                        <NavLink
-                          className={classnames("py-2 px-3", {
-                            active: activeNav === 2,
-                          })}
-                          data-toggle="tab"
-                          href="#pablo"
-                          onClick={(e) => toggleNavs(e, 2)}
-                        >
+                        <div className="py-2 px-3 nav-link bg-success">
                           <span className="d-block">Online</span>
-                        </NavLink>
+                        </div>
                       </NavItem>
                     </Nav>
                   </div>
@@ -113,15 +100,15 @@ const Index = (props) => {
               </CardHeader>
               <CardBody>
                 <Form>
-                  <h6 className="heading-small text-muted mb-4">
+                  <h6 className="heading text-muted mb-4">
                     Try a 5 minute call with one of our Agents
                   </h6>
-                  <div className="pl-lg-4">
+                  <div>
                     <Row>
                       <Col lg="6">
                         <FormGroup>
                           <label
-                            className="form-control-label"
+                            className="form-control-label text-white"
                             htmlFor="testPhone"
                           >
                             Enter your phone number
