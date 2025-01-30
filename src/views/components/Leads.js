@@ -33,6 +33,10 @@ import { useNavigate } from "react-router-dom";
 const Leads = () => {
   const [clientId, setClientId] = useState(null);
   const [csvData, setCsvData] = useState(null);
+  const [csvFile, setCsvFile] = useState(null); // Store the CSV file
+  const [phoneList, setPhoneList] = useState([]);
+  const [selectedLead, setSelectedLead] = useState(null);
+  const [editMode, setEditMode] = useState(false);
   const expectedHeaders = [
     "first_name",
     "last_name",
@@ -51,24 +55,33 @@ const Leads = () => {
 
   useEffect(() => {
     // Retrieve clientId from localStorage
-    let storedClientId = localStorage.getItem("clientId");
 
-    if (!storedClientId) {
+    if (!clientId) {
       // If localStorage is empty, get the authenticated user from Firebase
       const currentUser = auth.currentUser;
       if (currentUser) {
-        storedClientId = currentUser.uid;
-        localStorage.setItem("clientId", storedClientId); // Store in localStorage for future use
+        setClientId(currentUser.uid);
       }
-    }
-
-    if (storedClientId) {
-      setClientId(storedClientId);
-    } else {
-      navigate("/auth/login")
     }
   }, []);
 
+  useEffect(() => {
+    if (clientId) {
+      fetchPhoneList();
+    }
+  }, [clientId]);  // Runs fetchPhoneList when clientId changes
+  /**
+   * The `handleFileUpload` function in JavaScript validates and parses a CSV file uploaded by the
+   * user.
+   * @param event - The `event` parameter in the `handleFileUpload` function is an event object that is
+   * passed when a file upload event occurs. It contains information about the event, such as the
+   * target element that triggered the event and the files that were uploaded. In this case, we are
+   * accessing the uploaded file
+   * @returns The `handleFileUpload` function is processing a CSV file upload. It checks if the
+   * uploaded file is a CSV file, reads the content of the file, validates the headers, and parses the
+   * data into an array of objects based on the headers. The function returns the parsed data as an
+   * array of objects.
+   */
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (!file) return;
@@ -116,14 +129,20 @@ const Leads = () => {
       }
 
       setCsvData(data);
+      setCsvFile(file);
       console.log("csv file validated successfully")    
     };
 
     reader.readAsText(file);
   };
 
+  /**
+   * The `handleUpload` function is an asynchronous function that handles uploading a CSV file to a
+   * server endpoint and displays success or failure alerts based on the response.
+   * @returns The `handleUpload` function is being returned.
+   */
   const handleUpload = async () => {
-    if (!csvData) {
+    if (!csvData && !csvFile) {
       alert("Please upload a valid CSV file first!");
       return;
     }
@@ -133,24 +152,123 @@ const Leads = () => {
       return;
     }
 
-    try {
-      const response = await api.post(`/clients/${clientId}upload-phone-list`, {
-        method: "POST",
-        body: JSON.stringify({ phone_list: csvData }),
-        headers: { "Content-Type": "application/json" },
-      });
+    const formData = new FormData();
+    formData.append("file", csvFile); 
 
-      const result = await response.json();
+    try {
+      // const response = await api.post(`/clients/${clientId}/upload-phone-list`, {
+      //   method: "POST",
+      //   body: formData,
+      // });
+
+      const response = await api.post(`/clients/${clientId}/upload-phone-list`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        },
+    });
+
+      const result = await response.data;
       if (response.ok) {
-        alert(`Upload successful! ${result.uploaded_count} leads added.`);
+        console.log(`Upload successful! ${result.uploaded_count} leads added.`);
       } else {
-        alert(`Upload failed: ${result.detail}`);
+        console.error(`Upload failed: ${result.detail}`);
       }
     } catch (error) {
-      alert("Error uploading CSV file. Please try again.");
+      console.error("Error uploading CSV file. Please try again.");
     }
   };
 
+  /**
+   * Fetch phone list from API and update the state.
+   */
+  const fetchPhoneList = async () => {
+    try {
+      if (!clientId) {
+        navigate("/auth/login")
+        return;
+      }
+  
+      const response = await api.get(`/clients/${clientId}/phone-list`);
+      const data = await response.data;
+
+      if (Array.isArray(data)) {
+        setPhoneList(data);  // ✅ Ensure `data` is an array before setting state
+      } else {
+        console.error("Unexpected data format:", data);
+      }
+    } catch (error) {
+      console.error("Error fetching phone list:", error);
+  
+      // Check if the error is an API response error (e.g., 404, 500)
+      if (error.response) {
+        console.error(`Failed to fetch phone list: ${error.response.status} ${error.response.statusText}`);
+      } 
+      // Check if it's a network error
+      else if (error.request) {
+        console.error("Network error: Unable to connect to the server. Please check your internet connection.");
+      } 
+      // Other unknown errors
+      else {
+        console.error(`Unexpected error: ${error.message}`);
+      }
+    }
+  };
+
+  const handleRowClick = (lead) => {
+    setSelectedLead(lead);
+    setEditMode(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setSelectedLead({ ...selectedLead, [name]: value });
+  };
+
+  const handleSave = async () => {
+    if (!clientId || !selectedLead) return;
+
+    try {
+      const response = await api.put(`/clients/${clientId}/update-lead`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(selectedLead),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Lead updated successfully!");
+        fetchPhoneList(clientId);
+        setEditMode(false);
+      } else {
+        alert(`Failed to update lead: ${result.detail}`);
+      }
+    } catch (error) {
+      alert("Error updating lead. Please try again.");
+    }
+  };
+
+  const getStatusBadge = (status) => {
+    switch (status.toLowerCase()) {
+      case "active":
+        return "success"; // Green
+      case "pending":
+        return "warning"; // Yellow
+      case "flagged":
+        return "danger"; // Red
+      case "unsubscribed":
+        return "secondary"; // Grey
+      default:
+        return "success"; // Default color
+    }
+  };
+
+  const handleStatusToggle = () => {
+    setSelectedLead((prevLead) => ({
+      ...prevLead,
+      status: prevLead.status === "active" ? "unsubscribed" : "active",
+    }));
+  };
 
   return (
     <>
@@ -201,184 +319,35 @@ const Leads = () => {
                     </Col>
                 </Row>
               </CardHeader>
-              <Table className="align-items-center table-flush" responsive>
-                <thead className="thead-light">
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Phone Numer</th>
-                    <th scope="col">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">
-                        <span className="mb-0 text-sm">
-                          <a href="#">
-                            123
-                          </a>
-                        </span>
-                      </Media>
-                    </th>
-                    <td>
-                      <div>
-                        Lead Name
-                      </div>
-                    </td>         
-                    <td>
-                      <Badge color="" className="badge-dot">
-                        <i className="bg-success" />
-                        Active
-                      </Badge>
-                    </td>
-                    <td>
-                      <div>
-                        (333) 765-4321
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-angle-down" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            View Client
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Delete Client
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">
-                        <span className="mb-0 text-sm">
-                          <a href="#">
-                            123
-                          </a>
-                        </span>
-                      </Media>
-                    </th>
-                    <td>
-                      <div>
-                        Lead Name
-                      </div>
-                    </td>         
-                    <td>
-                      <Badge color="" className="badge-dot">
-                        <i className="bg-warning" />
-                        Unsubscribed
-                      </Badge>
-                    </td>
-                    <td>
-                      <div>
-                        (333) 765-4321
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-angle-down" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            View Client
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Delete Client
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">
-                        <span className="mb-0 text-sm">
-                          <a href="#">
-                            123
-                          </a>
-                        </span>
-                      </Media>
-                    </th>
-                    <td>
-                      <div>
-                        Lead Name
-                      </div>
-                    </td>         
-                    <td>
-                      <Badge color="" className="badge-dot">
-                        <i className="bg-danger" />
-                        Flagged
-                      </Badge>
-                    </td>
-                    <td>
-                      <div>
-                        (333) 765-4321
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-angle-down" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            View Client
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Delete Client
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
+              {phoneList.length > 0 ? (
+                <Table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone Number</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {phoneList.map((lead, index) => (
+                      <tr key={index} onClick={() => handleRowClick(lead)} style={{ cursor: "pointer" }}>
+                        <td>{lead.first_name} {lead.last_name}</td>
+                        <td>{lead.email}</td>
+                        <td>{lead.phone_number}</td>
+                        <td>
+                          <Badge color="${getStatusBadge(lead.status)}" className="badge-dot" >
+                            <i className={`bg-${getStatusBadge(lead.status)}`} />
+                            {lead.status}
+                          </Badge>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              ) : (
+                <p>Loading leads...</p>  // ✅ Show loading message if phoneList is empty
+              )}
               <CardFooter className="py-4">
                 <nav aria-label="...">
                   <Pagination
@@ -432,6 +401,235 @@ const Leads = () => {
                 </nav>
               </CardFooter>
             </Card>
+            {selectedLead && (
+              <Card className="bg-secondary shadow">
+                <CardHeader className="bg-white border-0">
+                  <Row className="align-items-center">
+                    <Col xs="8">
+                      <h3 className="mb-0">Lead Details</h3>
+                    </Col>
+                    <Col className="text-right">
+                      {!editMode ? (
+                        <Button color="primary" onClick={() => setEditMode(true)}>
+                          Edit
+                        </Button>
+                      ) : (
+                        <Button color="success" onClick={handleSave}>
+                          Save
+                        </Button>
+                      )}
+                    </Col>
+                  </Row>
+                </CardHeader>
+                <CardBody>
+                  <Form>
+                    {/* Status Toggle */}
+                    <Row className="mb-3">
+                      <Col>
+                        <div className="form-check form-switch">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                            id="leadOnOff"
+                            checked={selectedLead.status === "active"}
+                            onChange={handleStatusToggle}
+                            disabled={!editMode}
+                          />
+                          <label className="form-check-label" htmlFor="leadOnOff">
+                            <Badge color="" className="badge-dot">
+                              <i className={`bg-${getStatusBadge(selectedLead.status)}`} />
+                              {selectedLead.status}
+                            </Badge>
+                          </label>
+                        </div>
+                      </Col>
+                    </Row>
+                    {/* Status Dropdown */}
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label>Status</label>
+                          <Input
+                            type="select"
+                            name="status"
+                            value={selectedLead.status}
+                            onChange={handleInputChange}
+                            disabled={!editMode}
+                          >
+                            <option value="active">Active</option>
+                            <option value="pending">Pending</option>
+                            <option value="flagged">Flagged</option>
+                            <option value="unsubscribed">Unsubscribed</option>
+                          </Input>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+
+                    {/* Personal Details */}
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label>First Name</label>
+                          <Input
+                            type="text"
+                            name="first_name"
+                            value={selectedLead.first_name}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label>Last Name</label>
+                          <Input
+                            type="text"
+                            name="last_name"
+                            value={selectedLead.last_name}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label>Email</label>
+                          <Input
+                            type="email"
+                            name="email"
+                            value={selectedLead.email}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label>Phone Number</label>
+                          <Input
+                            type="text"
+                            name="phone_number"
+                            value={selectedLead.phone_number}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+
+                    {/* Address Fields */}
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <label>Street Address</label>
+                          <Input
+                            type="text"
+                            name="street_address"
+                            value={selectedLead.street_address}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label>City</label>
+                          <Input
+                            type="text"
+                            name="city"
+                            value={selectedLead.city}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label>State</label>
+                          <Input
+                            type="text"
+                            name="state"
+                            value={selectedLead.state}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label>Country</label>
+                          <Input
+                            type="text"
+                            name="country"
+                            value={selectedLead.country}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                          <label>Zip Code</label>
+                          <Input
+                            type="text"
+                            name="zip_code"
+                            value={selectedLead.zip_code}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+
+                    {/* Notes */}
+                    <Row>
+                      <Col lg="12">
+                        <FormGroup>
+                          <label>Notes</label>
+                          <Input
+                            type="textarea"
+                            name="notes"
+                            value={selectedLead.notes}
+                            onChange={handleInputChange}
+                            readOnly={!editMode}
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+
+                    
+
+                    {/* Save Button */}
+                    <Row className="mt-4">
+                      <Col className="text-right">
+                        {!editMode ? (
+                          <Button color="primary" onClick={() => setEditMode(true)}>
+                            Edit
+                          </Button>
+                        ) : (
+                          <Button color="success" onClick={handleSave}>
+                            Save
+                          </Button>
+                        )}
+                      </Col>
+                    </Row>
+                  </Form>
+                </CardBody>
+
+              </Card>
+            )}
+
+{/*             
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
@@ -628,7 +826,7 @@ const Leads = () => {
                     </Col>
                 </Row>
               </CardFooter>
-            </Card>
+            </Card> */}
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
@@ -716,7 +914,7 @@ const Leads = () => {
                               Status
                             </label>
                             <select className="form-control-alternative form-control" id="leadStatus">
-                                <option selected>Select one...</option>
+                                <option defaultValue="0">Select one...</option>
                                 <option value="1">Active</option>
                                 <option value="2">Pending</option>
                                 <option value="2">Unsubscribed</option>
@@ -924,15 +1122,15 @@ const Leads = () => {
                           <div className="d-flex justify-content-evenly">
                             <div>
                               <input type="checkbox" className="btn-check" id="btncheck1" />
-                              <label className="btn btn-outline-primary" for="btncheck1">Group_name</label>
+                              <label className="btn btn-outline-primary" htmlFor="btncheck1">Group_name</label>
                             </div>
                             <div>
                               <input type="checkbox" className="btn-check" id="btncheck2" />
-                              <label className="btn btn-outline-primary" for="btncheck2">Group_name2</label>
+                              <label className="btn btn-outline-primary" htmlFor="btncheck2">Group_name2</label>
                             </div>
                             <div>
                               <input type="checkbox" className="btn-check" id="btncheck3" />
-                              <label className="btn btn-outline-primary" for="btncheck3">Group_name3</label>
+                              <label className="btn btn-outline-primary" htmlFor="btncheck3">Group_name3</label>
                             </div>
                           </div>
                         </FormGroup>
@@ -1237,7 +1435,7 @@ const Leads = () => {
                               Group Status
                             </label>
                             <select className="form-control-alternative form-control" id="gsStatus">
-                                <option selected>Select one...</option>
+                                <option defaultValue="0">Select one...</option>
                                 <option value="1">Published</option>
                                 <option value="2">Pending</option>
                                 <option value="2">Draft</option>
