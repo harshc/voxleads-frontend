@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Card,
@@ -25,8 +25,133 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 import UserHeader from "components/Headers/UserHeader.js";
+import api from "../../services/api";
+import { auth } from "../../firebase-config"; // Import Firebase auth
+import { useNavigate } from "react-router-dom";
+
 
 const Leads = () => {
+  const [clientId, setClientId] = useState(null);
+  const [csvData, setCsvData] = useState(null);
+  const expectedHeaders = [
+    "first_name",
+    "last_name",
+    "email",
+    "phone_number",
+    "notes",
+    "street_address",
+    "city",
+    "state",
+    "country",
+    "zip_code",
+    "status",
+  ];
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Retrieve clientId from localStorage
+    let storedClientId = localStorage.getItem("clientId");
+
+    if (!storedClientId) {
+      // If localStorage is empty, get the authenticated user from Firebase
+      const currentUser = auth.currentUser;
+      if (currentUser) {
+        storedClientId = currentUser.uid;
+        localStorage.setItem("clientId", storedClientId); // Store in localStorage for future use
+      }
+    }
+
+    if (storedClientId) {
+      setClientId(storedClientId);
+    } else {
+      navigate("/auth/login")
+    }
+  }, []);
+
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+    if (!file.name.endsWith(".csv")) {
+      alert("Invalid file format. Please upload a CSV file.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const content = e.target.result.trim();
+      const lines = content.split("\n").map((line) => line.trim());
+
+      if (lines.length < 2) {
+        alert("CSV file is empty or invalid!");
+        return;
+      }
+
+      // Validate headers
+      const headers = lines[0].split(",").map((h) => h.trim().toLowerCase());
+      const missingHeaders = expectedHeaders.filter((header) => !headers.includes(header));
+
+      if (missingHeaders.length > 0) {
+        alert(`Invalid CSV format! Missing headers: ${missingHeaders.join(", ")}`);
+        return;
+      }
+
+      // Parse data
+      const data = lines.slice(1).map((line) => {
+        const values = line.split(",");
+        let obj = {};
+        headers.forEach((header, index) => {
+          obj[header] = values[index]?.trim() || "";
+        });
+
+        return obj;
+      });
+
+      // Ensure required fields are filled
+      for (const row of data) {
+        if (!row.phone_number || !row.first_name || !row.last_name) {
+          alert("Each row must have at least a phone number, first name, and last name!");
+          return;
+        }
+      }
+
+      setCsvData(data);
+      console.log("csv file validated successfully")    
+    };
+
+    reader.readAsText(file);
+  };
+
+  const handleUpload = async () => {
+    if (!csvData) {
+      alert("Please upload a valid CSV file first!");
+      return;
+    }
+
+    if (!clientId) {
+      navigate("/auth/login")
+      return;
+    }
+
+    try {
+      const response = await api.post(`/clients/${clientId}upload-phone-list`, {
+        method: "POST",
+        body: JSON.stringify({ phone_list: csvData }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        alert(`Upload successful! ${result.uploaded_count} leads added.`);
+      } else {
+        alert(`Upload failed: ${result.detail}`);
+      }
+    } catch (error) {
+      alert("Error uploading CSV file. Please try again.");
+    }
+  };
+
+
   return (
     <>
       <UserHeader />
@@ -521,19 +646,29 @@ const Leads = () => {
                   <div className="pl-lg-4">
                     <Row>
                       <Col lg="12">
-                         <FormGroup>
+                        <FormGroup>
                           <label
                             className="form-control-label"
                             htmlFor="clUploadcsv"
                           >
                             Upload a CSV file
                           </label>
-                          <Input type="file" className="form-control-alternative" id="clUploadcsv" />
+                          <Input type="file" 
+                            className="form-control-alternative" 
+                            id="clUploadcsv" 
+                            accept=".csv"
+                            onChange={handleFileUpload}
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
+                    <h6 className="text-muted">Expected CSV Format:</h6>
+                      <pre className="bg-light p-3">
+                        <h6 className="form-control-label mb-4">first_name,last_name,email,phone_number,notes,street_address,city,state,country,zip_code,status</h6>
+                        John,Doe,john.doe@example.com,1234567890,New lead,123 Main St,New York,NY,USA,10001,active
+                      </pre>
                   </div>
-                  <Button color="primary" href="#">
+                  <Button color="primary" href="#" onClick={handleUpload}>
                     Upload
                   </Button>
                 </Form>

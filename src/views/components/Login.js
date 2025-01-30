@@ -49,6 +49,8 @@ const Login = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       // await saveUserData(userCredential.user);
+      localStorage.setItem("clientId", userCredential.user.uid);
+
       navigate("/admin/user-profile"); // Redirect to the details form
     } catch (err) {
       setError(err.message);
@@ -67,6 +69,8 @@ const Login = () => {
         photoURL: user.photoURL,
         phoneNumber: user.phoneNumber
       };
+      localStorage.setItem("clientId", user.uid);
+
       
       //const credential = GoogleAuthProvider.credentialFromResult(result);
       navigate("/admin/user-profile", {state: userInfo});
