@@ -340,7 +340,9 @@ const Leads = () => {
                       </a>
                     </li>
                     <li>
+                      <a href="javascript:void(0)" className="d-flex icon-link px-4 py-2">
                         Lead Groups (coming soon)
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -349,13 +351,12 @@ const Leads = () => {
             <Card className="card-profile shadow mt-4">
               <CardHeader className="bg-secondary">
                 <Row className="align-items-center">
-                  <div className="col">
+                  <Col md="6">
                     <h6 className="text-uppercase text-light ls-1 mb-1">
                       Call Center
                     </h6>
-                    <h2 className="text-white mb-0">Your Automated Agent</h2>
-                  </div>
-                  <div className="col">
+                  </Col>
+                  <Col md="6">
                     <Nav className="justify-content-end" pills>
                       <NavItem>
                         <div className="py-2 px-3 nav-link">
@@ -368,18 +369,20 @@ const Leads = () => {
                         </div>
                       </NavItem>
                     </Nav>
-                  </div>
+                  </Col>
                 </Row>
               </CardHeader>
               <CardBody>
                 <Row>
-                  <Button color="success">
-                    Active Call <span class="badge text-bg-secondary">4:12:43 m</span>
-                  </Button>
+                  <Col>
+                    <Button color="success">
+                      Active Call <span class="badge bg-secondary text-primary ml-4">4:12:43 m</span>
+                    </Button>
+                  </Col>
                 </Row>
                 <Row>
                   <Col lg="6">
-                    <div className="form-control-label text-white">
+                    <div className="form-control-label">
                       145 Leads in the queue
                     </div>
                   </Col>
@@ -390,7 +393,7 @@ const Leads = () => {
                         Start Calling
                     </Button>
                   </Col>
-                  <Col xs="6">
+                  <Col xs="6" className="text-right">
                     <Button color="light" href="#">
                         Call Logs
                     </Button>
@@ -451,10 +454,10 @@ const Leads = () => {
               )}
               <CardFooter className="py-4">
                 <Row className="d-flex justify-content-between align-items-center">
-                  <Col xs="4">
+                  <Col md="4">
                     Showing <span className="font-bold">{indexOfFirstLead+1} - {indexOfLastLead}</span> of {phoneList.length+1}
                   </Col>
-                  <Col xs="8">
+                  <Col md="8">
                     <nav aria-label="...">
                       <Pagination
                         className="pagination justify-content-end mb-0"
@@ -765,6 +768,7 @@ const Leads = () => {
                   </Form>
                 </CardBody>
               </Card>
+              <hr className="my-4" />
             )}
 
             {/*             
