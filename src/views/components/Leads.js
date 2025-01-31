@@ -524,27 +524,28 @@ const Leads = () => {
                     </Col>
                     <Col className="d-flex justify-content-end">
                       <div className="mr-2">
-                      {!editMode ? (
-                        <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
-                          Edit
-                        </Button>
-                      ) : (
-                        <Button color="primary" size="sm" onClick={handleSave}>
-                          Save
-                        </Button>
-                      )}
-                    </div>
-                    <div>
-                      {!editMode ? (
-                        <Button color="light" size="sm" onClick={() => setEditMode(true)}>
-                          Close
-                        </Button>
-                      ) : (
-                        <Button color="light" size="sm" onClick={handleSave}>
-                          Cancel
-                        </Button>
-                      )}
-                    </div>
+                        {!editMode ? (
+                            <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
+                            Edit
+                            </Button>
+                        ) : (
+                            <Button color="primary" size="sm" onClick={handleSave}>
+                            Save
+                            </Button>
+                        )}
+                      </div>
+                      <div>
+                        {!editMode ? (
+                            <Button color="light" size="sm" onClick={() => setEditMode(true)}>
+                            Close
+                            </Button>
+                        ) : (
+                            <Button color="light" size="sm" onClick={handleSave}>
+                            Cancel
+                            </Button>
+                        )}
+                      </div>
+                    </Col>
                   </Row>
                 </CardHeader>
                 <CardBody>
@@ -759,17 +760,14 @@ const Leads = () => {
                             </Button>
                         )}
                         </div>
-                        <div>
-                            
-                        </div>
-                    </Col>
+                      </Col>
                     </Row>
                   </Form>
                 </CardBody>
               </Card>
             )}
 
-{/*             
+            {/* HIDDEN       
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
@@ -966,7 +964,8 @@ const Leads = () => {
                     </Col>
                 </Row>
               </CardFooter>
-            </Card> */}
+            </Card>
+            */}
             <hr className="my-4" />
             <Card id="add-new" className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
