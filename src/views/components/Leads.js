@@ -37,6 +37,9 @@ const Leads = () => {
   const [phoneList, setPhoneList] = useState([]);
   const [selectedLead, setSelectedLead] = useState(null);
   const [editMode, setEditMode] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const leadsPerPage = 10; // Number of leads per page
+
   const expectedHeaders = [
     "first_name",
     "last_name",
@@ -214,6 +217,38 @@ const Leads = () => {
     }
   };
 
+  const indexOfLastLead = currentPage * leadsPerPage;
+  const indexOfFirstLead = indexOfLastLead - leadsPerPage;
+  const currentLeads = phoneList.slice(indexOfFirstLead, indexOfLastLead);
+
+  // Change page
+  const nextPage = () => {
+    if (currentPage < Math.ceil(phoneList.length / leadsPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Calculate total pages
+  const totalPages = Math.ceil(phoneList.length / leadsPerPage);
+  const pageNumbers = [];
+  if (totalPages > 0) {
+    pageNumbers.push(currentPage); // Always show current page
+    if (currentPage > 1) pageNumbers.unshift(currentPage - 1); // Show previous page if available
+    if (currentPage < totalPages) pageNumbers.push(currentPage + 1); // Show next page if available
+  }
+  // Change page
+  const goToPage = (pageNumber) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
   const handleRowClick = (lead) => {
     setSelectedLead(lead);
     setEditMode(false);
@@ -330,7 +365,7 @@ const Leads = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {phoneList.map((lead, index) => (
+                    {currentLeads.map((lead, index) => (
                       <tr key={index} onClick={() => handleRowClick(lead)} style={{ cursor: "pointer" }}>
                         <td>{lead.first_name} {lead.last_name}</td>
                         <td>{lead.email}</td>
@@ -354,44 +389,50 @@ const Leads = () => {
                     className="pagination justify-content-end mb-0"
                     listClassName="justify-content-end mb-0"
                   >
-                    <PaginationItem className="disabled">
+                    <PaginationItem disabled={currentPage === 1}>
                       <PaginationLink
                         href="#pablo"
-                        onClick={(e) => e.preventDefault()}
+                        onClick={(e) => goToPage(currentPage-1)}
                         tabIndex="-1"
                       >
                         <i className="fas fa-angle-left" />
                         <span className="sr-only">Previous</span>
                       </PaginationLink>
                     </PaginationItem>
-                    <PaginationItem className="active">
+                                {/* Page Numbers (Show Only 2 Pages at a Time) */}
+                    {currentPage > 1 && (
+                      <PaginationItem key={currentPage-1}>
+                        <PaginationLink
+                          href="#pablo"
+                          onClick={() => goToPage(currentPage - 1)}>
+                            {currentPage - 1}
+                        </PaginationLink>
+                      </PaginationItem>
+                    )}
+                    <PaginationItem active>
                       <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        1
-                      </PaginationLink>
+                          href="#pablo"
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          {currentPage}
+                        </PaginationLink>
                     </PaginationItem>
+
+                    {currentPage < totalPages && (
                     <PaginationItem>
                       <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        2 <span className="sr-only">(current)</span>
-                      </PaginationLink>
+                          href="#pablo"
+                          onClick={() => goToPage(currentPage + 1)}>
+                            {currentPage + 1}
+                        </PaginationLink>
                     </PaginationItem>
-                    <PaginationItem>
+                    )}
+
+                
+                    <PaginationItem disabled={currentPage >= totalPages}>
                       <PaginationLink
                         href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        3
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
+                        onClick={() => goToPage(currentPage + 1)}
                       >
                         <i className="fas fa-angle-right" />
                         <span className="sr-only">Next</span>
