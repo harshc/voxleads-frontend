@@ -344,9 +344,8 @@ const Leads = () => {
                 </div>
               </CardBody>
             </Card>
-
             <Card className="card-profile shadow mt-4">
-              <CardHeader className="bg-transparent">
+              <CardHeader className="bg-secondary">
                 <Row className="align-items-center">
                   <div className="col">
                     <h6 className="text-uppercase text-light ls-1 mb-1">
@@ -372,28 +371,28 @@ const Leads = () => {
               </CardHeader>
               <CardBody>
                 <Row>
-                    <Button color="success">
-                        Active Call <span class="badge text-bg-secondary">4:12:43 m</span>
+                  <Button color="success">
+                    Active Call <span class="badge text-bg-secondary">4:12:43 m</span>
+                  </Button>
+                </Row>
+                <Row>
+                  <Col lg="6">
+                    <div className="form-control-label text-white">
+                      145 Leads in the queue
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs="6">
+                    <Button color="primary" href="#">
+                        Start Calling
                     </Button>
-                </Row>
-                <Row>
-                    <Col lg="6">
-                        <div className="form-control-label text-white">
-                            145 Leads in the queue
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col xs="6">
-                        <Button color="primary" href="#">
-                            Start Calling
-                        </Button>
-                    </Col>
-                    <Col xs="6">
-                        <Button color="light" href="#">
-                            Call Logs
-                        </Button>
-                    </Col>
+                  </Col>
+                  <Col xs="6">
+                    <Button color="light" href="#">
+                        Call Logs
+                    </Button>
+                  </Col>
                 </Row>
               </CardBody>
             </Card>
@@ -449,11 +448,11 @@ const Leads = () => {
                 </CardBody>
               )}
               <CardFooter className="py-4">
-                <Row className="d-flex justify-content-end align-items-center">
-                  <Col md="4">
+                <Row className="d-flex justify-content-between align-items-center">
+                  <Col xs="4">
                     Showing <span className="font-bold">{indexOfFirstLead+1} - {indexOfLastLead}</span> of {phoneList.length+1}
                   </Col>
-                  <Col md="8">
+                  <Col xs="8">
                     <nav aria-label="...">
                       <Pagination
                         className="pagination justify-content-end mb-0"
@@ -469,7 +468,7 @@ const Leads = () => {
                             <span className="sr-only">Previous</span>
                           </PaginationLink>
                         </PaginationItem>
-                        {/* Page Numbers (Show Only 2 Pages at a Time) */}
+                                    {/* Page Numbers (Show Only 2 Pages at a Time) */}
                         {currentPage > 1 && (
                           <PaginationItem key={currentPage-1}>
                             <PaginationLink
@@ -522,7 +521,7 @@ const Leads = () => {
                     <Col xs="6">
                       <h3 className="mb-0">Lead Details</h3>
                     </Col>
-                    <Col className="d-flex justify-content-end">
+                    <Col className="text-right">
                       <div>
                         {!editMode ? (
                             <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
@@ -536,11 +535,11 @@ const Leads = () => {
                       </div>
                       <div className="ml-2">
                         {!editMode ? (
-                            <Button color="light" size="sm" onClick={() => setEditMode(true)}>
+                            <Button color="light" size="sm">
                             Close
                             </Button>
                         ) : (
-                            <Button color="light" size="sm" onClick={handleSave}>
+                            <Button color="light" size="sm">
                             Cancel
                             </Button>
                         )}
@@ -572,7 +571,6 @@ const Leads = () => {
                         </div>
                       </Col>
                     </Row>
-
                     {/* Status Dropdown */}
                     <Row>
                       <Col lg="6">
@@ -733,32 +731,32 @@ const Leads = () => {
                           />
                         </FormGroup>
                       </Col>
-                    </Row>
+                    </Row>        
 
                     {/* Save/Delete Buttons */}
-                    <Row className="mt-4">                      
+                    <Row className="mt-4">
                       <Col className="d-flex justify-content-end">
                         <div>
-                        {!editMode ? (
-                            <Button color="primary" onClick={() => setEditMode(true)}>
-                            Edit
-                            </Button>
-                        ) : (
-                            <Button color="primary" onClick={handleSave}>
-                            Save
-                            </Button>
-                        )}
+                          {!editMode ? (
+                              <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
+                              Edit
+                              </Button>
+                          ) : (
+                              <Button color="primary" size="sm" onClick={handleSave}>
+                              Save
+                              </Button>
+                          )}
                         </div>
-                        <div>
-                        {!editMode ? (
-                            <Button color="danger" onClick={handleDelete}>
-                            Delete
-                            </Button>
-                        ) : (
-                            <Button color="light">
-                            Cancel
-                            </Button>
-                        )}
+                        <div className="ml-2">
+                          {!editMode ? (
+                              <Button color="light" size="sm" onClick={() => setEditMode(true)}>
+                              Close
+                              </Button>
+                          ) : (
+                              <Button color="light" size="sm" onClick={handleSave}>
+                              Cancel
+                              </Button>
+                          )}
                         </div>
                       </Col>
                     </Row>
@@ -767,7 +765,8 @@ const Leads = () => {
               </Card>
             )}
 
-            {/* HIDDEN       
+            {/*             
+            <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
@@ -963,9 +962,8 @@ const Leads = () => {
                     </Col>
                 </Row>
               </CardFooter>
-            </Card>
-            */}
-            <hr className="my-4" />
+            </Card> */}
+
             <Card id="add-new" className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
@@ -1009,25 +1007,8 @@ const Leads = () => {
                   </Button>
                 </Form>
               </CardBody>
-              <CardFooter className="py-4">
-                {/* <Row className="align-items-center">
-                    <Col xs="8">
-                      Add a single Lead
-                    </Col>
-                    <Col className="text-right" xs="4">
-                    <Button
-                        color="primary"
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm"
-                    >
-                        Click Here
-                    </Button>
-                    </Col>
-                </Row> */}
-              </CardFooter>
             </Card>
-            {/* HIDDEN
+            {/* 
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
