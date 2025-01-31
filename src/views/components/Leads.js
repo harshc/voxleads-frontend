@@ -400,7 +400,7 @@ const Leads = () => {
               <CardFooter className="py-4">
                 <Row className="d-flex justify-content-between align-items-center">
                   <Col xs="4">
-                    Showing <span className="font-bold">1 - 10</span> of 38
+                    Showing <span className="font-bold">{indexOfFirstLead+1} - {indexOfLastLead}</span> of {phoneList.length+1}
                   </Col>
                   <Col xs="8">
                     <nav aria-label="...">
