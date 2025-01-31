@@ -449,7 +449,8 @@ const Leads = () => {
                 </Table>
               ) : (
                 <CardBody className="pt-0 pt-md-4">
-                  <p>Loading leads...</p>  // ✅ Show loading message if phoneList is empty
+                  <p>Loading leads...</p>
+                  <div>You must complete your Profile and Company information before uploading Leads.</div>
                 </CardBody>
               )}
               <CardFooter className="py-4">
@@ -518,8 +519,8 @@ const Leads = () => {
                 </Row>
               </CardFooter>
             </Card>
-            <hr className="my-4" />
             {selectedLead && (
+              <div className="my-4 d-block"></div>
               <Card className="bg-secondary shadow">
                 <CardHeader className="bg-white border-0">
                   <Row className="align-items-center">
@@ -768,7 +769,6 @@ const Leads = () => {
                   </Form>
                 </CardBody>
               </Card>
-              <hr className="my-4" />
             )}
 
             {/*             
@@ -969,7 +969,7 @@ const Leads = () => {
                 </Row>
               </CardFooter>
             </Card> */}
-
+            <hr className="my-4" />
             <Card id="add-new" className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
