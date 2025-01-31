@@ -26,7 +26,6 @@ import Register from "views/components/Register.js";
 import Login from "views/components/Login.js";
 import Tables from "views/components/Tables.js";
 import Icons from "views/components/Icons.js";
-import UserDetails from "views/components/UserDetails";
 import UserHeader from "components/Headers/UserHeader";
 import ProtectedRoute from "components/ProtectedRoutes";
 import Payment from "views/components/Payment";
@@ -80,34 +79,12 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/client-list",
-    name: "Client List",
-    icon: "ni ni-bullet-list-67 text-info",
-    component: (
-      <ProtectedRoute>
-        <Clients />
-      </ProtectedRoute>
-    ),
-    layout: "/admin",
-  },
-  {
     path: "/logs",
     name: "Logs",
     icon: "ni ni-bullet-list-67 text-red",
     component: (
       <ProtectedRoute>
         <Logs />
-      </ProtectedRoute>
-    ),
-    layout: "/admin",
-  },
-  {
-    path: "/tables",
-    name: "Tables",
-    icon: "ni ni-bullet-list-67 text-red",
-    component: (
-      <ProtectedRoute>
-        <Tables />
       </ProtectedRoute>
     ),
     layout: "/admin",

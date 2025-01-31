@@ -187,33 +187,31 @@ const Leads = () => {
   const fetchPhoneList = async () => {
     try {
       if (!clientId) {
-        navigate("/auth/login")
+        navigate("/auth/login");
         return;
       }
   
       const response = await api.get(`/clients/${clientId}/phone-list`);
-      const data = await response.data;
-
-      if (Array.isArray(data)) {
-        setPhoneList(data);  // ✅ Ensure `data` is an array before setting state
+  
+      // Ensure response format is correct
+      if (response.status === 200 && response.data && Array.isArray(response.data.leads)) {
+        setPhoneList(response.data.leads); // ✅ Set the leads array correctly
       } else {
-        console.error("Unexpected data format:", data);
+        console.error("Unexpected response format:", response.data);
+        setPhoneList([]); // Set empty array to prevent crashes
       }
     } catch (error) {
       console.error("Error fetching phone list:", error);
   
-      // Check if the error is an API response error (e.g., 404, 500)
       if (error.response) {
         console.error(`Failed to fetch phone list: ${error.response.status} ${error.response.statusText}`);
-      } 
-      // Check if it's a network error
-      else if (error.request) {
+      } else if (error.request) {
         console.error("Network error: Unable to connect to the server. Please check your internet connection.");
-      } 
-      // Other unknown errors
-      else {
+      } else {
         console.error(`Unexpected error: ${error.message}`);
       }
+  
+      setPhoneList([]); // Prevent undefined state issues
     }
   };
 
@@ -466,7 +464,6 @@ const Leads = () => {
               </CardFooter>
             </Card>
             {selectedLead && (
-              <hr className="my-4" />
               <Card className="bg-secondary shadow">
                 <CardHeader className="bg-white border-0">
                   <Row className="align-items-center">
@@ -485,7 +482,7 @@ const Leads = () => {
                       )}
                     </Col>
                     <Col className="text-right">
-                      <Button color="light" onClick={}>
+                      <Button color="light">
                         Close
                       </Button>
                     </Col>
