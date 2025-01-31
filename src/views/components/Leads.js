@@ -324,9 +324,9 @@ const Leads = () => {
         <Row>
           <Col xl="4" className="mb-4">
             <Card className="card-profile shadow sticky-top">
-              <CardBody className="pt-0 pt-md-4">
+              <CardBody className="pt-4">
                 <div className="">
-                  <ul className="list-unstyled">
+                  <ul className="list-unstyled mb-0">
                     <li>
                       <a href="#" className="d-flex icon-link px-4 py-2">
                         All Leads
@@ -338,12 +338,63 @@ const Leads = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="d-flex icon-link px-4 py-2">
                         Lead Groups (coming soon)
-                      </a>
                     </li>
                   </ul>
                 </div>
+              </CardBody>
+            </Card>
+
+            <Card className="card-profile shadow mt-4">
+              <CardHeader className="bg-transparent">
+                <Row className="align-items-center">
+                  <div className="col">
+                    <h6 className="text-uppercase text-light ls-1 mb-1">
+                      Call Center
+                    </h6>
+                    <h2 className="text-white mb-0">Try Our Automated Agent</h2>
+                  </div>
+                  <div className="col">
+                    <Nav className="justify-content-end" pills>
+                      <NavItem>
+                        <div className="py-2 px-3 nav-link">
+                          <span className="d-block">Vox Agent</span>
+                        </div>
+                      </NavItem>
+                      <NavItem>
+                        <div className="py-2 px-3 ml-2 nav-link bg-success">
+                          <span className="d-block text-white">Online</span>
+                        </div>
+                      </NavItem>
+                    </Nav>
+                  </div>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                <Row>
+                    <Button color="success">
+                        Active Call <span class="badge text-bg-secondary">4:12:43 m</span>
+                    </Button>
+                </Row>
+                <Row>
+                    <Col lg="6">
+                        <div className="form-control-label text-white">
+                        145 Leads in the queue
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="6">
+                        <Button color="primary" href="#">
+                            Start Calling
+                        </Button>
+                    </Col>
+                    <Col xs="6">
+                        <Button color="light" href="#">
+                            Call Logs
+                        </Button>
+                    </Col>
+                </Row>
               </CardBody>
             </Card>
           </Col>
@@ -398,11 +449,11 @@ const Leads = () => {
                 </CardBody>
               )}
               <CardFooter className="py-4">
-                <Row className="d-flex justify-content-between align-items-center">
-                  <Col xs="4">
+                <Row className="d-flex justify-content-end align-items-center">
+                  <Col md="4">
                     Showing <span className="font-bold">{indexOfFirstLead+1} - {indexOfLastLead}</span> of {phoneList.length+1}
                   </Col>
-                  <Col xs="8">
+                  <Col md="8">
                     <nav aria-label="...">
                       <Pagination
                         className="pagination justify-content-end mb-0"
@@ -418,7 +469,7 @@ const Leads = () => {
                             <span className="sr-only">Previous</span>
                           </PaginationLink>
                         </PaginationItem>
-                                    {/* Page Numbers (Show Only 2 Pages at a Time) */}
+                        {/* Page Numbers (Show Only 2 Pages at a Time) */}
                         {currentPage > 1 && (
                           <PaginationItem key={currentPage-1}>
                             <PaginationLink
@@ -464,28 +515,36 @@ const Leads = () => {
               </CardFooter>
             </Card>
             {selectedLead && (
+              <hr className="my-4" />
               <Card className="bg-secondary shadow">
                 <CardHeader className="bg-white border-0">
                   <Row className="align-items-center">
-                    <Col xs="8">
+                    <Col xs="6">
                       <h3 className="mb-0">Lead Details</h3>
                     </Col>
-                    <Col className="text-right">
+                    <Col className="d-flex justify-content-end">
+                      <div className="mr-2">
                       {!editMode ? (
-                        <Button color="primary" onClick={() => setEditMode(true)}>
+                        <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
                           Edit
                         </Button>
                       ) : (
-                        <Button color="success" onClick={handleSave}>
+                        <Button color="primary" size="sm" onClick={handleSave}>
                           Save
                         </Button>
                       )}
-                    </Col>
-                    <Col className="text-right">
-                      <Button color="light">
-                        Close
-                      </Button>
-                    </Col>
+                    </div>
+                    <div>
+                      {!editMode ? (
+                        <Button color="light" size="sm" onClick={() => setEditMode(true)}>
+                          Close
+                        </Button>
+                      ) : (
+                        <Button color="light" size="sm" onClick={handleSave}>
+                          Cancel
+                        </Button>
+                      )}
+                    </div>
                   </Row>
                 </CardHeader>
                 <CardBody>
@@ -512,6 +571,7 @@ const Leads = () => {
                         </div>
                       </Col>
                     </Row>
+
                     {/* Status Dropdown */}
                     <Row>
                       <Col lg="6">
@@ -674,30 +734,38 @@ const Leads = () => {
                       </Col>
                     </Row>
 
-                    
-
                     {/* Save/Delete Buttons */}
                     <Row className="mt-4">                      
-                      <Col className="text-right">
-                      {!editMode ? (
-                        <Button color="primary" onClick={() => setEditMode(true)}>
-                          Edit
-                        </Button>
-                      ) : (
-                        <Button color="success" onClick={handleSave}>
-                          Save
-                        </Button>
-                      )}
-                    </Col>
-                    <Col className="text-right">
-                      <Button color="danger" onClick={handleDelete}>
-                        Delete
-                      </Button>
+                      <Col className="d-flex justify-content-end">
+                        <div>
+                        {!editMode ? (
+                            <Button color="primary" onClick={() => setEditMode(true)}>
+                            Edit
+                            </Button>
+                        ) : (
+                            <Button color="primary" onClick={handleSave}>
+                            Save
+                            </Button>
+                        )}
+                        </div>
+                        <div>
+                        {!editMode ? (
+                            <Button color="danger" onClick={handleDelete}>
+                            Delete
+                            </Button>
+                        ) : (
+                            <Button color="light">
+                            Cancel
+                            </Button>
+                        )}
+                        </div>
+                        <div>
+                            
+                        </div>
                     </Col>
                     </Row>
                   </Form>
                 </CardBody>
-
               </Card>
             )}
 
