@@ -263,25 +263,39 @@ const Leads = () => {
     if (!clientId || !selectedLead) return;
 
     try {
-      const response = await api.put(`/clients/${clientId}/update-lead`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(selectedLead),
-      });
+      const response = await api.put(`/clients/${clientId}/update-lead/${selectedLead.phone_number}`, selectedLead);
 
-      const result = await response.json();
-
-      if (response.ok) {
-        alert("Lead updated successfully!");
+      if (response.status === 200) {
+        console.log("Lead updated successfully!");
         fetchPhoneList(clientId);
         setEditMode(false);
       } else {
-        alert(`Failed to update lead: ${result.detail}`);
+        console.error(`Failed to update lead: ${response.data.detail}`);
       }
     } catch (error) {
-      alert("Error updating lead. Please try again.");
+      console.error(`Error updating lead. Please try again.: ${error.message}`);
     }
   };
+
+  const handleDelete = async (phoneNumber) => {
+    if (!clientId || !selectedLead) return;
+  
+    if (!window.confirm("Are you sure you want to delete this lead?")) return;
+  
+    try {
+      const response = await api.delete(`/clients/${clientId}/delete-lead/${selectedLead.phone_number}`);
+  
+      if (response.status === 200) {
+        console.log("Lead deleted successfully!");
+        fetchPhoneList();  // Refresh the phone list
+      } else {
+        console.error(`Failed to delete lead: ${response.data.detail}`);
+      }
+    } catch (error) {
+      console.error(`Error deleting lead. Please try again. ${error.message}`);
+    }
+  };
+  
 
   const getStatusBadge = (status) => {
     switch (status.toLowerCase()) {
@@ -459,6 +473,11 @@ const Leads = () => {
                           Save
                         </Button>
                       )}
+                    </Col>
+                    <Col className="text-right">
+                      <Button color="danger" onClick={handleDelete}>
+                        Delete
+                      </Button>
                     </Col>
                   </Row>
                 </CardHeader>
@@ -913,7 +932,7 @@ const Leads = () => {
                 </Form>
               </CardBody>
               <CardFooter className="py-4">
-                <Row className="align-items-center">
+                {/* <Row className="align-items-center">
                     <Col xs="8">
                       Add a single Lead
                     </Col>
@@ -927,11 +946,11 @@ const Leads = () => {
                         Click Here
                     </Button>
                     </Col>
-                </Row>
+                </Row> */}
               </CardFooter>
             </Card>
             <hr className="my-4" />
-            <Card className="bg-secondary shadow">
+            {/* <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
@@ -1037,120 +1056,7 @@ const Leads = () => {
                   <h6 className="heading-small text-muted mb-4">
                     Lead Address
                   </h6>
-                  <div className="pl-lg-4">
-                    <Row>
-                      <Col lg="12">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="leadAddress1"
-                          >
-                            Street Address
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="leadAddress1"
-                            placeholder="House number and street name"
-                            type="text"
-                          />
-                        </FormGroup>
-                        <FormGroup>
-                          <Input
-                            className="form-control-alternative"
-                            id="leadAddress2"
-                            placeholder="Apartment, suite, unit, etc. (optional)"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="leadCity"
-                          >
-                            Town / City
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="leadCity"
-                            placeholder="City"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="leadStateProv"
-                          >
-                            State / Province
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="leadStateProv"
-                            placeholder="State / Province"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="leadCountry"
-                          >
-                            Country
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="leadCountry"
-                            placeholder="Country"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="leadZipPostal"
-                          >
-                            Zip / Postal Code
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="leadZipPostal"
-                            placeholder="Zip / Postal Code"
-                            type="email"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg="12">
-                        <FormGroup>
-                          <label
-                            className="form-control-label"
-                            htmlFor="leadNotes"
-                          >
-                            Lead Notes
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="leadNotes"
-                            placeholder="Add notes about this lead."
-                            type="textarea"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                  </div>
+                  
                   <hr className="my-4" />
                   <h6 className="heading-small text-muted mb-4">
                     Lead Groups
@@ -1508,7 +1414,7 @@ const Leads = () => {
                     </Button>
                 </Form>
               </CardBody>
-            </Card>
+            </Card> */}
             <hr className="my-4" />
           </Col>
         </Row>
