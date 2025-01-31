@@ -324,7 +324,7 @@ const Leads = () => {
       <UserHeader />
       <Container className="mt--7" fluid>
         <Row>
-          <Col xl="4">
+          <Col xl="4" className="mb-4">
             <Card className="card-profile shadow sticky-top">
               <CardBody className="pt-0 pt-md-4">
                 <div className="">
@@ -335,13 +335,13 @@ const Leads = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="d-flex icon-link px-4 py-2">
-                        Lead Groups
+                      <a href="#add-new" className="d-flex icon-link px-4 py-2">
+                        Add New
                       </a>
                     </li>
                     <li>
                       <a href="#" className="d-flex icon-link px-4 py-2">
-                        Add New
+                        Lead Groups (coming soon)
                       </a>
                     </li>
                   </ul>
@@ -354,12 +354,12 @@ const Leads = () => {
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                     <Col xs="8">
-                    <h3 className="mb-0">Leads</h3>
+                    <h3 className="mb-0">All Leads</h3>
                     </Col>
                     <Col className="text-right" xs="4">
                     <Button
                         color="primary"
-                        href="#"
+                        href="#add-new"
                         onClick={(e) => e.preventDefault()}
                         size="sm"
                     >
@@ -369,7 +369,7 @@ const Leads = () => {
                 </Row>
               </CardHeader>
               {phoneList.length > 0 ? (
-                <Table>
+                <Table className="align-items-center table-flush table-light table-striped table-hover" responsive>
                   <thead>
                     <tr>
                       <th>Name</th>
@@ -395,68 +395,78 @@ const Leads = () => {
                   </tbody>
                 </Table>
               ) : (
-                <p>Loading leads...</p>  // ✅ Show loading message if phoneList is empty
+                <CardBody className="pt-0 pt-md-4">
+                  <p>Loading leads...</p>  // ✅ Show loading message if phoneList is empty
+                </CardBody>
               )}
               <CardFooter className="py-4">
-                <nav aria-label="...">
-                  <Pagination
-                    className="pagination justify-content-end mb-0"
-                    listClassName="justify-content-end mb-0"
-                  >
-                    <PaginationItem disabled={currentPage === 1}>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => goToPage(currentPage-1)}
-                        tabIndex="-1"
+                <Row className="d-flex justify-content-between align-items-center">
+                  <Col xs="4">
+                    Showing <span className="font-bold">1 - 10</span> of 38
+                  </Col>
+                  <Col xs="8">
+                    <nav aria-label="...">
+                      <Pagination
+                        className="pagination justify-content-end mb-0"
+                        listClassName="justify-content-end mb-0"
                       >
-                        <i className="fas fa-angle-left" />
-                        <span className="sr-only">Previous</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                                {/* Page Numbers (Show Only 2 Pages at a Time) */}
-                    {currentPage > 1 && (
-                      <PaginationItem key={currentPage-1}>
-                        <PaginationLink
-                          href="#pablo"
-                          onClick={() => goToPage(currentPage - 1)}>
-                            {currentPage - 1}
-                        </PaginationLink>
-                      </PaginationItem>
-                    )}
-                    <PaginationItem active>
-                      <PaginationLink
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          {currentPage}
-                        </PaginationLink>
-                    </PaginationItem>
+                        <PaginationItem disabled={currentPage === 1}>
+                          <PaginationLink
+                            href="#pablo"
+                            onClick={(e) => goToPage(currentPage-1)}
+                            tabIndex="-1"
+                          >
+                            <i className="fas fa-angle-left" />
+                            <span className="sr-only">Previous</span>
+                          </PaginationLink>
+                        </PaginationItem>
+                                    {/* Page Numbers (Show Only 2 Pages at a Time) */}
+                        {currentPage > 1 && (
+                          <PaginationItem key={currentPage-1}>
+                            <PaginationLink
+                              href="#pablo"
+                              onClick={() => goToPage(currentPage - 1)}>
+                                {currentPage - 1}
+                            </PaginationLink>
+                          </PaginationItem>
+                        )}
+                        <PaginationItem active>
+                          <PaginationLink
+                              href="#pablo"
+                              onClick={(e) => e.preventDefault()}
+                            >
+                              {currentPage}
+                            </PaginationLink>
+                        </PaginationItem>
 
-                    {currentPage < totalPages && (
-                    <PaginationItem>
-                      <PaginationLink
-                          href="#pablo"
-                          onClick={() => goToPage(currentPage + 1)}>
-                            {currentPage + 1}
-                        </PaginationLink>
-                    </PaginationItem>
-                    )}
+                        {currentPage < totalPages && (
+                        <PaginationItem>
+                          <PaginationLink
+                              href="#pablo"
+                              onClick={() => goToPage(currentPage + 1)}>
+                                {currentPage + 1}
+                            </PaginationLink>
+                        </PaginationItem>
+                        )}
 
-                
-                    <PaginationItem disabled={currentPage >= totalPages}>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={() => goToPage(currentPage + 1)}
-                      >
-                        <i className="fas fa-angle-right" />
-                        <span className="sr-only">Next</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                  </Pagination>
-                </nav>
+
+                        <PaginationItem disabled={currentPage >= totalPages}>
+                          <PaginationLink
+                            href="#pablo"
+                            onClick={() => goToPage(currentPage + 1)}
+                          >
+                            <i className="fas fa-angle-right" />
+                            <span className="sr-only">Next</span>
+                          </PaginationLink>
+                        </PaginationItem>
+                      </Pagination>
+                    </nav>
+                  </Col>
+                </Row>
               </CardFooter>
             </Card>
             {selectedLead && (
+              <hr className="my-4" />
               <Card className="bg-secondary shadow">
                 <CardHeader className="bg-white border-0">
                   <Row className="align-items-center">
@@ -475,8 +485,8 @@ const Leads = () => {
                       )}
                     </Col>
                     <Col className="text-right">
-                      <Button color="danger" onClick={handleDelete}>
-                        Delete
+                      <Button color="light" onClick={}>
+                        Close
                       </Button>
                     </Col>
                   </Row>
@@ -669,19 +679,24 @@ const Leads = () => {
 
                     
 
-                    {/* Save Button */}
-                    <Row className="mt-4">
+                    {/* Save/Delete Buttons */}
+                    <Row className="mt-4">                      
                       <Col className="text-right">
-                        {!editMode ? (
-                          <Button color="primary" onClick={() => setEditMode(true)}>
-                            Edit
-                          </Button>
-                        ) : (
-                          <Button color="success" onClick={handleSave}>
-                            Save
-                          </Button>
-                        )}
-                      </Col>
+                      {!editMode ? (
+                        <Button color="primary" onClick={() => setEditMode(true)}>
+                          Edit
+                        </Button>
+                      ) : (
+                        <Button color="success" onClick={handleSave}>
+                          Save
+                        </Button>
+                      )}
+                    </Col>
+                    <Col className="text-right">
+                      <Button color="danger" onClick={handleDelete}>
+                        Delete
+                      </Button>
+                    </Col>
                     </Row>
                   </Form>
                 </CardBody>
@@ -888,7 +903,7 @@ const Leads = () => {
               </CardFooter>
             </Card> */}
             <hr className="my-4" />
-            <Card className="bg-secondary shadow">
+            <Card id="add-new" className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
@@ -949,8 +964,9 @@ const Leads = () => {
                 </Row> */}
               </CardFooter>
             </Card>
+            {/* 
             <hr className="my-4" />
-            {/* <Card className="bg-secondary shadow">
+            <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
                   <Col xs="8">
@@ -1415,7 +1431,6 @@ const Leads = () => {
                 </Form>
               </CardBody>
             </Card> */}
-            <hr className="my-4" />
           </Col>
         </Row>
       </Container>
