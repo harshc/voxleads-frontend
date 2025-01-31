@@ -519,8 +519,9 @@ const Leads = () => {
                 </Row>
               </CardFooter>
             </Card>
+            <hr className="my-4" />
             {selectedLead && (
-              <div className="my-4 d-block"></div>
+              
               <Card className="bg-secondary shadow">
                 <CardHeader className="bg-white border-0">
                   <Row className="align-items-center">
@@ -969,7 +970,7 @@ const Leads = () => {
                 </Row>
               </CardFooter>
             </Card> */}
-            <hr className="my-4" />
+            <div className="my-4 d-block"></div>
             <Card id="add-new" className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
