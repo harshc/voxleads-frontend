@@ -352,7 +352,7 @@ const Leads = () => {
                     <h6 className="text-uppercase text-light ls-1 mb-1">
                       Call Center
                     </h6>
-                    <h2 className="text-white mb-0">Try Our Automated Agent</h2>
+                    <h2 className="text-white mb-0">Your Automated Agent</h2>
                   </div>
                   <div className="col">
                     <Nav className="justify-content-end" pills>
@@ -379,7 +379,7 @@ const Leads = () => {
                 <Row>
                     <Col lg="6">
                         <div className="form-control-label text-white">
-                        145 Leads in the queue
+                            145 Leads in the queue
                         </div>
                     </Col>
                 </Row>
@@ -451,7 +451,7 @@ const Leads = () => {
               <CardFooter className="py-4">
                 <Row className="d-flex justify-content-end align-items-center">
                   <Col md="4">
-                    Showing <span className="font-bold">{indexOfFirstLead+1} - {indexOfLastLead}</span> of {phoneList.length+1}
+                    Showing <span className="font-bold">{indexOfFirstLead+1} - {indexOfLastLead}</span> of {phoneList.length+1}</span>
                   </Col>
                   <Col md="8">
                     <nav aria-label="...">
@@ -523,7 +523,7 @@ const Leads = () => {
                       <h3 className="mb-0">Lead Details</h3>
                     </Col>
                     <Col className="d-flex justify-content-end">
-                      <div className="mr-2">
+                      <div>
                         {!editMode ? (
                             <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
                             Edit
@@ -534,7 +534,7 @@ const Leads = () => {
                             </Button>
                         )}
                       </div>
-                      <div>
+                      <div className="ml-2">
                         {!editMode ? (
                             <Button color="light" size="sm" onClick={() => setEditMode(true)}>
                             Close
@@ -1028,7 +1028,7 @@ const Leads = () => {
                 </Row> */}
               </CardFooter>
             </Card>
-            {/* 
+            {/* HIDDEN
             <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
