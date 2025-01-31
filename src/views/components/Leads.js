@@ -451,7 +451,7 @@ const Leads = () => {
               <CardFooter className="py-4">
                 <Row className="d-flex justify-content-end align-items-center">
                   <Col md="4">
-                    Showing <span className="font-bold">{indexOfFirstLead+1} - {indexOfLastLead}</span> of {phoneList.length+1}</span>
+                    Showing <span className="font-bold">{indexOfFirstLead+1} - {indexOfLastLead}</span> of {phoneList.length+1}
                   </Col>
                   <Col md="8">
                     <nav aria-label="...">
@@ -514,8 +514,8 @@ const Leads = () => {
                 </Row>
               </CardFooter>
             </Card>
+            <hr className="my-4" />
             {selectedLead && (
-              <hr className="my-4" />
               <Card className="bg-secondary shadow">
                 <CardHeader className="bg-white border-0">
                   <Row className="align-items-center">
@@ -768,7 +768,6 @@ const Leads = () => {
             )}
 
             {/* HIDDEN       
-            <hr className="my-4" />
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
