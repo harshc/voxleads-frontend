@@ -737,8 +737,15 @@ const Leads = () => {
                     </Row>        
 
                     {/* Save/Delete Buttons */}
-                    <Row className="mt-4">
-                      <Col className="d-flex justify-content-end">
+                    <Row className="mt-4 justify-content-between align-items-center">
+                      <Col xs="6" className="">
+                        <div>
+                            <Button color="danger" size="sm" onClick={handleDelete}>
+                            Delete
+                            </Button>
+                        </div>
+                      </Col>
+                      <Col xs="6" className="d-flex justify-content-end">
                         <div>
                           {!editMode ? (
                               <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
@@ -752,11 +759,11 @@ const Leads = () => {
                         </div>
                         <div className="ml-2">
                           {!editMode ? (
-                              <Button color="light" size="sm" onClick={() => setEditMode(true)}>
+                              <Button color="light" size="sm">
                               Close
                               </Button>
                           ) : (
-                              <Button color="light" size="sm" onClick={handleSave}>
+                              <Button color="light" size="sm">
                               Cancel
                               </Button>
                           )}
