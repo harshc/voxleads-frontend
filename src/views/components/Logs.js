@@ -23,6 +23,9 @@ import {
   PaginationLink,
   Progress,
   Table,
+  NavItem,
+  NavLink,
+  Nav,
   UncontrolledTooltip,
 } from "reactstrap";
 import UserHeader from "components/Headers/UserHeader.js";
@@ -35,9 +38,9 @@ const Logs = () => {
         <Row>
           <Col xl="4">
             <Card className="card-profile shadow mb-4">
-              <CardBody className="pt-0 pt-md-4">
+              <CardBody className="pt-4">
                 <div className="">
-                  <ul className="list-unstyled">
+                  <ul className="list-unstyled mb-0">
                     <li>
                       <a href="#" className="d-flex icon-link px-4 py-2">
                         Call Logs
@@ -119,9 +122,51 @@ const Logs = () => {
               </CardHeader>
               <CardBody>
               <Row>
-              <Col lg="6">
-                <h3 className="mb-3">Active Call</h3>
-                <Card className="card-stats mb-4 mb-xl-0 border-success">
+                <Col lg="6">
+                  <h3 className="mb-3">Active Call</h3>
+                  <Card className="card-stats mb-4 mb-xl-0 border-success">
+                      <CardBody>
+                        <Row>
+                          <Col>
+                            <CardTitle
+                            tag="h4"
+                            className="text-uppercase font-weight-bold mb-0"
+                            >
+                                <a href="">Lead_Name</a>
+                            </CardTitle>
+                            <div className="text-sm form-control-label">
+                                +1 (927) 123-4557
+                            </div>
+                          </Col>
+                          <Col className="col-auto">
+                            <div className="company_logo avatar avatar-sm rounded-circle shadow">
+                                <img
+                                alt="..."
+                                className="rounded-circle"
+                                src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                />
+                            </div>
+                          </Col>
+                        </Row>
+                        <Row className="justify-content-between mt-3">
+                          <Col xs="6">
+                            <Badge color="success" className="text-sm text-white bg-success">
+                              03:12:45 m
+                            </Badge>
+                          </Col>
+                          <Col xs="6" className="text-right">
+                            <Badge color="" className="badge-dot">
+                              <i className="bg-success" />
+                              In Progress
+                            </Badge>
+                          </Col>
+                        </Row>
+                      </CardBody>
+                  </Card>
+                </Col>
+                <Col lg="6">
+                  <h3 className="mb-3">Next in Queue</h3>
+                  <Card className="card-stats mb-4 mb-xl-0">
                     <CardBody>
                       <Row>
                         <Col>
@@ -129,10 +174,10 @@ const Logs = () => {
                           tag="h4"
                           className="text-uppercase font-weight-bold mb-0"
                           >
-                              <a href="">Lead_Name</a>
+                          <a href="">Lead_Name</a>
                           </CardTitle>
                           <div className="text-sm form-control-label">
-                              +1 (927) 123-4557
+                            +1 (927) 123-4557
                           </div>
                         </Col>
                         <Col className="col-auto">
@@ -147,64 +192,57 @@ const Logs = () => {
                       </Row>
                       <Row className="justify-content-between mt-3">
                         <Col xs="6">
-                          <Badge color="success" className="text-sm text-white bg-success">
-                            03:12:45 m
+                          <Badge color="light" className="text-sm border">
+                            00:00:00 m
                           </Badge>
                         </Col>
                         <Col xs="6" className="text-right">
-                          <Badge color="" className="badge-dot">
-                            <i className="bg-success" />
-                            In Progress
-                          </Badge>
+                            <Badge color="" className="badge-dot">
+                              <i className="bg-warning" />
+                              Not started
+                            </Badge>
                         </Col>
                       </Row>
                     </CardBody>
-                </Card>
-              </Col>
-              <Col lg="6">
-                <h3 className="mb-3">Next in Queue</h3>
-                <Card className="card-stats mb-4 mb-xl-0">
-                  <CardBody>
-                    <Row>
-                      <Col>
-                        <CardTitle
-                        tag="h4"
-                        className="text-uppercase font-weight-bold mb-0"
-                        >
-                        <a href="">Lead_Name</a>
-                        </CardTitle>
-                        <div className="text-sm form-control-label">
-                          +1 (927) 123-4557
-                        </div>
-                      </Col>
-                      <Col className="col-auto">
-                        <div className="company_logo avatar avatar-sm rounded-circle shadow">
-                            <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                            />
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row className="justify-content-between mt-3">
-                      <Col xs="6">
-                        <Badge color="warning" className="text-sm text-white">
-                          00:00:00 m
-                        </Badge>
-                      </Col>
-                      <Col xs="6" className="text-right">
-                          <Badge color="" className="badge-dot">
-                            <i className="bg-warning" />
-                            Not started
-                          </Badge>
-                      </Col>
-                    </Row>
-                  </CardBody>
-                </Card>
-              </Col>
+                  </Card>
+                </Col>
               </Row>
-              <h3 className="mb-3 mt-4">History</h3>
+              <Row>
+                <Col className="text-right text-sm mt-2">
+                  <a href="#">View upcoming call queue</a>
+                </Col>
+              </Row>
+              <Row className="mb-3 mt-4">
+                <Col>    
+                  <Nav className="justify-content-start" pills>
+                    <NavItem>
+                      <NavLink
+                        className={classnames("py-2 px-3", {
+                          active: activeNav === 1,
+                        })}
+                        href="#"
+                        onClick={(e) => toggleNavs(e, 1)}
+                      >
+                        <span className="d-none d-md-block">Call History</span>
+                        <span className="d-md-none">History</span>
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        className={classnames("py-2 px-3", {
+                          active: activeNav === 2,
+                        })}
+                        data-toggle="tab"
+                        href="#"
+                        onClick={(e) => toggleNavs(e, 2)}
+                      >
+                        <span className="d-none d-md-block">Call Queue</span>
+                        <span className="d-md-none">Queue</span>
+                      </NavLink>
+                    </NavItem>
+                  </Nav>
+                </Col>
+              </Row>
               <Table className="align-items-center table-flush table-light table-striped table-hover table" responsive>
                 <thead className="thead-light">
                   <tr>
