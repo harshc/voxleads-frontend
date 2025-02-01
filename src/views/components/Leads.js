@@ -325,7 +325,7 @@ const Leads = () => {
       <Container className="mt--7" fluid>
         <Row>
           <Col xl="4" className="mb-4">
-            <Card className="card-profile shadow sticky-top">
+            <Card className="card-profile shadow">
               <CardBody className="pt-4">
                 <div className="">
                   <ul className="list-unstyled mb-0">
@@ -351,20 +351,20 @@ const Leads = () => {
             <Card className="card-profile shadow mt-4">
               <CardHeader className="bg-secondary">
                 <Row className="align-items-center">
-                  <Col md="6">
-                    <h6 className="text-uppercase text-light ls-1 mb-1">
+                  <Col xs="3">
+                    <h5 className="text-uppercase ls-1 mb-0">
                       Call Center
-                    </h6>
+                    </h5>
                   </Col>
-                  <Col md="6">
+                  <Col xs="9">
                     <Nav className="justify-content-end" pills>
-                      <NavItem>
-                        <div className="py-2 px-3 nav-link">
+                      <NavItem className="mb-1">
+                        <div className="py-1 px-2 nav-link">
                           <span className="d-block">Vox Agent</span>
                         </div>
                       </NavItem>
-                      <NavItem>
-                        <div className="py-2 px-3 ml-2 nav-link bg-success">
+                      <NavItem className="mb-1">
+                        <div className="py-1 px-2 ml-2 nav-link bg-success">
                           <span className="d-block text-white">Online</span>
                         </div>
                       </NavItem>
@@ -373,21 +373,21 @@ const Leads = () => {
                 </Row>
               </CardHeader>
               <CardBody>
-                <Row>
+                <Row className="mb-4">
                   <Col>
                     <Button color="success">
-                      Active Call <span class="badge bg-secondary text-primary ml-4">4:12:43 m</span>
+                      Active Call <span class="badge bg-secondary text-primary ml-4 text-xs">4:12:43 m</span>
                     </Button>
                   </Col>
                 </Row>
-                <Row>
-                  <Col lg="6">
+                <Row className="mb-4">
+                  <Col>
                     <div className="form-control-label">
                       145 Leads in the queue
                     </div>
                   </Col>
                 </Row>
-                <Row>
+                <Row className="align-items-center">
                   <Col xs="6">
                     <Button color="primary" href="#">
                         Start Calling
@@ -406,10 +406,10 @@ const Leads = () => {
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
-                    <Col xs="8">
+                    <Col xs="6">
                     <h3 className="mb-0">All Leads</h3>
                     </Col>
-                    <Col className="text-right" xs="4">
+                    <Col className="text-right" xs="6">
                     <Button
                         color="primary"
                         href="#add-new"
@@ -455,10 +455,10 @@ const Leads = () => {
               )}
               <CardFooter className="py-4">
                 <Row className="d-flex justify-content-between align-items-center">
-                  <Col md="4">
-                    Showing <span className="font-bold">{indexOfFirstLead+1} - {indexOfLastLead}</span> of {phoneList.length+1}
+                  <Col md="5" className="text-sm">
+                    Showing <strong>{indexOfFirstLead+1} - {indexOfLastLead}</strong> of {phoneList.length+1}
                   </Col>
-                  <Col md="8">
+                  <Col md="7">
                     <nav aria-label="...">
                       <Pagination
                         className="pagination justify-content-end mb-0"
@@ -528,7 +528,7 @@ const Leads = () => {
                     <Col xs="6">
                       <h3 className="mb-0">Lead Details</h3>
                     </Col>
-                    <Col className="text-right">
+                    <Col xs="6" className="d-flex justify-content-end">
                       <div>
                         {!editMode ? (
                             <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
