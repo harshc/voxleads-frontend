@@ -1014,7 +1014,7 @@ const Leads = () => {
                     <h6 className="heading-small text-muted">Expected CSV Format:</h6>
                       <pre className="bg-white text-sm p-3 border">
                         <p className="form-control-label mb-4">first_name,last_name,email,phone_number,notes,street_address,city,state,country,zip_code,status</p>
-                        <p className="mb-0">John,Doe,john.doe@example.com,1234567890,New lead,123 Main St,New York,NY,USA,10001,active</a>
+                        <p className="mb-0">John,Doe,john.doe@example.com,1234567890,New lead,123 Main St,New York,NY,USA,10001,active</p>
                       </pre>
                   </div>
                   <Button color="primary" href="#" onClick={handleUpload}>
