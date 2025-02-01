@@ -368,7 +368,7 @@ const Leads = () => {
                   </Col>
                 </Row>
               </CardHeader>
-              <CardBody>
+              <CardBody className="bg-secondary">
                 <Row className="mb-4">
                   <Col>
                     <Button color="success">
@@ -390,7 +390,7 @@ const Leads = () => {
                     </Button>
                   </Col>
                   <Col xs="6" className="text-right">
-                    <Button color="light" href="#">
+                    <Button color="white" className="border" href="#">
                         Call Logs
                     </Button>
                   </Col>
@@ -418,7 +418,7 @@ const Leads = () => {
                 </Row>
               </CardHeader>
               {phoneList.length > 0 ? (
-                <Table className="align-items-center table-flush table-light table-striped table-hover" responsive>
+                <Table className="align-items-center table-flush table-secondary table-striped table-hover" responsive>
                   <thead>
                     <tr>
                       <th>Name</th>
@@ -1003,13 +1003,18 @@ const Leads = () => {
                             accept=".csv"
                             onChange={handleFileUpload}
                           />
+                          <div className="mt-2 text-sm text-underline">
+                            <a href="#">
+                              Download an examples csv file
+                            </a>
+                          </div>
                         </FormGroup>
                       </Col>
                     </Row>
-                    <h6 className="text-muted">Expected CSV Format:</h6>
-                      <pre className="bg-light p-3">
-                        <h6 className="form-control-label mb-4">first_name,last_name,email,phone_number,notes,street_address,city,state,country,zip_code,status</h6>
-                        John,Doe,john.doe@example.com,1234567890,New lead,123 Main St,New York,NY,USA,10001,active
+                    <h6 className="heading-small text-muted">Expected CSV Format:</h6>
+                      <pre className="bg-white text-sm p-3 border">
+                        <p className="form-control-label mb-4">first_name,last_name,email,phone_number,notes,street_address,city,state,country,zip_code,status</p>
+                        <p className="mb-0">John,Doe,john.doe@example.com,1234567890,New lead,123 Main St,New York,NY,USA,10001,active</a>
                       </pre>
                   </div>
                   <Button color="primary" href="#" onClick={handleUpload}>
