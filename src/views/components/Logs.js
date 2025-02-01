@@ -121,90 +121,90 @@ const Logs = () => {
               <Row>
               <Col lg="6">
                 <h3 className="mb-3">Active Call</h3>
-                <Card className="card-stats mb-4 mb-xl-0">
+                <Card className="card-stats mb-4 mb-xl-0 border-success">
                 <CardBody>
-                    <Row>
+                  <Row>
                     <Col>
-                    <CardTitle
-                    tag="h4"
-                    className="text-uppercase font-weight-bold mb-0"
-                    >
-                    <a href="">Lead_Name</a>
-                    </CardTitle>
-                    <div className="text-sm form-control-label">
-                      +1 (927) 123-4557
-                    </div>
+                      <CardTitle
+                      tag="h4"
+                      className="text-uppercase font-weight-bold mb-0"
+                      >
+                        <a href="">Lead_Name</a>
+                      </CardTitle>
+                      <div className="text-sm form-control-label">
+                        +1 (927) 123-4557
+                      </div>
                     </Col>
                     <Col className="col-auto">
-                    <div className="company_logo avatar avatar-lg rounded-circle shadow">
-                        <img
-                        alt="..."
-                        className="rounded-circle"
-                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                        />
-                    </div>
+                      <div className="company_logo avatar avatar-sm rounded-circle shadow">
+                          <img
+                          alt="..."
+                          className="rounded-circle"
+                          src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                          />
+                      </div>
                     </Col>
-                    </Row>
-                    <Row className="justify-content-between">
-                    <Col xs="6">
-                        <Badge color="success" className="text-sm text-white">
-                            03:12:45 m
-                        </Badge>
-                    </Col>
-                    <Col xs="6" className="text-right">
-                        <Badge color="" className="badge-dot">
-                            <i className="bg-success" />
-                            In Progress
-                        </Badge>
-                    </Col>
-                    </Row>
+                  </Row>
+                  <Row className="justify-content-between mt-3">
+                  <Col xs="6">
+                      <Badge color="success" className="text-sm text-white bg-success">
+                          03:12:45 m
+                      </Badge>
+                  </Col>
+                  <Col xs="6" className="text-right">
+                      <Badge color="" className="badge-dot">
+                          <i className="bg-success" />
+                          In Progress
+                      </Badge>
+                  </Col>
+                  </Row>
                 </CardBody>
                 </Card>
               </Col>
               <Col lg="6">
                 <h3 className="mb-3">Next in Queue</h3>
                 <Card className="card-stats mb-4 mb-xl-0">
-                <CardBody>
+                  <CardBody>
                     <Row>
-                    <Col>
-                    <CardTitle
-                    tag="h4"
-                    className="text-uppercase font-weight-bold mb-0"
-                    >
-                    <a href="">Lead_Name</a>
-                    </CardTitle>
-                    <div className="text-sm form-control-label">
-                      +1 (927) 123-4557
-                    </div>
-                    </Col>
-                    <Col className="col-auto">
-                    <div className="company_logo avatar avatar-lg rounded-circle shadow">
-                        <img
-                        alt="..."
-                        className="rounded-circle"
-                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                        />
-                    </div>
-                    </Col>
+                      <Col>
+                        <CardTitle
+                        tag="h4"
+                        className="text-uppercase font-weight-bold mb-0"
+                        >
+                        <a href="">Lead_Name</a>
+                        </CardTitle>
+                        <div className="text-sm form-control-label">
+                          +1 (927) 123-4557
+                        </div>
+                        </Col>
+                        <Col className="col-auto">
+                        <div className="company_logo avatar avatar-sm rounded-circle shadow">
+                            <img
+                            alt="..."
+                            className="rounded-circle"
+                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                            />
+                        </div>
+                      </Col>
                     </Row>
-                    <Row className="justify-content-between">
-                    <Col xs="6">
-                        <Badge color="light" className="text-sm text-white">
+                    <Row className="justify-content-between mt-3">
+                      <Col xs="6">
+                        <Badge color="warning" className="text-sm text-white">
                             00:00:00 m
                         </Badge>
-                    </Col>
-                    <Col xs="6" className="text-right">
-                        <Badge color="" className="badge-dot">
-                            <i className="bg-warning" />
-                            Not started
-                        </Badge>
-                    </Col>
+                      </Col>
+                      <Col xs="6" className="text-right">
+                          <Badge color="" className="badge-dot">
+                              <i className="bg-warning" />
+                              Not started
+                          </Badge>
+                      </Col>
                     </Row>
-                </CardBody>
+                  </CardBody>
                 </Card>
               </Col>
               </Row>
-              <h3 className="mb-3">History</h3>
+              <h3 className="mb-3 mt-6">History</h3>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
