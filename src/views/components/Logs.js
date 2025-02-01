@@ -34,20 +34,10 @@ const Logs = () => {
       <Container className="mt--7" fluid>
         <Row>
           <Col xl="4">
-            <Card className="card-profile shadow sticky-top">
+            <Card className="card-profile shadow mb-4">
               <CardBody className="pt-0 pt-md-4">
                 <div className="">
                   <ul className="list-unstyled">
-                    <li>
-                      <a href="#" className="d-flex icon-link px-4 py-2">
-                        Company Profiles
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="d-flex icon-link px-4 py-2">
-                        Agents
-                      </a>
-                    </li>
                     <li>
                       <a href="#" className="d-flex icon-link px-4 py-2">
                         Call Logs
@@ -55,29 +45,166 @@ const Logs = () => {
                     </li>
                     <li>
                       <a href="#" className="d-flex icon-link px-4 py-2">
-                        Booking Calendar
+                        Stats
                       </a>
                     </li>
                   </ul>
                 </div>
               </CardBody>
             </Card>
+
+            <Card className="card-stats shadow mb-4">
+                <CardBody>
+                <Row>
+                    <div className="col">
+                    <CardTitle
+                        tag="h5"
+                        className="text-uppercase text-muted mb-0"
+                    >
+                        Call Time
+                    </CardTitle>
+                    <span className="h2 font-weight-bold mb-0">
+                        350 / 4000
+                    </span>
+                    </div>
+                    <Col className="col-auto">
+                    <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i className="fas fa-chart-bar" />
+                    </div>
+                    </Col>
+                </Row>
+                <p className="mt-3 mb-0 text-muted text-sm">
+                  <a href="#">
+                    <span className="text-nowrap">Add more minutes</span>
+                  </a>
+                </p>
+                </CardBody>
+            </Card>
           </Col>
           <Col xl="8">
             <Card className="bg-secondary shadow">
               <CardHeader className="bg-white border-0">
                 <Row className="align-items-center">
-                  <Col xs="8">
+                  <Col xs="5">
                     <h3 className="mb-0">Call Logs</h3>
                   </Col>
-                  <Col className="text-right" xs="4">
-                    <div>
-                      <h6 className="heading-small text-muted mb-0 pb-0">304 / 4000 minutes</h6>
-                      <p className="text-xs mb-0"><a href="#">Add more minutes</a></p>
-                    </div>
+                  <Col className="text-right" xs="7">
+                    <UncontrolledDropdown>
+                        <DropdownToggle
+                          href="#"
+                          role="button"
+                          size="sm"
+                          color=""
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          Select Agent <i className="fas fa-angle-down ml-2" />
+                        </DropdownToggle>
+                        <DropdownMenu className="dropdown-menu-arrow" right>
+                          <DropdownItem
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            Sara Doe
+                          </DropdownItem>
+                          <DropdownItem
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            John Doe
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </UncontrolledDropdown>
                   </Col>
                 </Row>
               </CardHeader>
+              <CardBody>
+              <Row>
+              <Col lg="6">
+                <h3 className="mb-3">Active Call</h3>
+                <Card className="card-stats mb-4 mb-xl-0">
+                <CardBody>
+                    <Row>
+                    <Col>
+                    <CardTitle
+                    tag="h4"
+                    className="text-uppercase font-weight-bold mb-0"
+                    >
+                    <a href="">Lead_Name</a>
+                    </CardTitle>
+                    <div className="text-sm form-control-label">
+                      +1 (927) 123-4557
+                    </div>
+                    </Col>
+                    <Col className="col-auto">
+                    <div className="company_logo avatar avatar-lg rounded-circle shadow">
+                        <img
+                        alt="..."
+                        className="rounded-circle"
+                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                        />
+                    </div>
+                    </Col>
+                    </Row>
+                    <Row className="justify-content-between">
+                    <Col xs="6">
+                        <Badge color="success" className="text-sm text-white">
+                            03:12:45 m
+                        </Badge>
+                    </Col>
+                    <Col xs="6" className="text-right">
+                        <Badge color="" className="badge-dot">
+                            <i className="bg-success" />
+                            In Progress
+                        </Badge>
+                    </Col>
+                    </Row>
+                </CardBody>
+                </Card>
+              </Col>
+              <Col lg="6">
+                <h3 className="mb-3">Next in Queue</h3>
+                <Card className="card-stats mb-4 mb-xl-0">
+                <CardBody>
+                    <Row>
+                    <Col>
+                    <CardTitle
+                    tag="h4"
+                    className="text-uppercase font-weight-bold mb-0"
+                    >
+                    <a href="">Lead_Name</a>
+                    </CardTitle>
+                    <div className="text-sm form-control-label">
+                      +1 (927) 123-4557
+                    </div>
+                    </Col>
+                    <Col className="col-auto">
+                    <div className="company_logo avatar avatar-lg rounded-circle shadow">
+                        <img
+                        alt="..."
+                        className="rounded-circle"
+                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                        />
+                    </div>
+                    </Col>
+                    </Row>
+                    <Row className="justify-content-between">
+                    <Col xs="6">
+                        <Badge color="light" className="text-sm text-white">
+                            00:00:00 m
+                        </Badge>
+                    </Col>
+                    <Col xs="6" className="text-right">
+                        <Badge color="" className="badge-dot">
+                            <i className="bg-warning" />
+                            Not started
+                        </Badge>
+                    </Col>
+                    </Row>
+                </CardBody>
+                </Card>
+              </Col>
+              </Row>
+              <h3 className="mb-3">History</h3>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
                   <tr>
@@ -317,6 +444,7 @@ const Logs = () => {
                   </tr>
                 </tbody>
               </Table>
+              </CardBody>
               <CardFooter className="py-4">
                 <div className="d-flex justify-content-between">
                 <div>
