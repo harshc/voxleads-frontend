@@ -349,10 +349,10 @@ const Leads = () => {
               </CardBody>
             </Card>
             <Card className="card-profile shadow mt-4">
-              <CardHeader className="bg-secondary">
+              <CardHeader className="bg-default">
                 <Row className="align-items-center">
                   <Col xs="6">
-                    <h3 className="mb-0">Call Center</h3>
+                    <h4 className="mb-0 text-white">Call Center</h4>
                   </Col>
                   <Col xs="6" className="d-flex justify-content-end">
                     <div>
