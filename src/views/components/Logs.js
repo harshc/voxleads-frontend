@@ -132,8 +132,8 @@ const Logs = () => {
               </CardHeader>
               <CardBody>
               <Row>
-                <Col className="mb-4 d-flex justify-content-start">
-                  <h3 className="form-control-label">Agent:</h3>
+                <Col className="mb-4 d-flex justify-content-start align-items-center text-lg">
+                  <h3 className="mb-0">Agent:</h3>
                   <div className="ml-2">Sara Doe</div>
                 </Col>
               </Row>
@@ -579,8 +579,8 @@ const Logs = () => {
                </CardHeader>
                <CardBody>
                 <Row>
-                  <Col className="mb-4 d-flex justify-content-start">
-                    <h3 className="form-control-label">Agent:</h3>
+                  <Col className="mb-4 d-flex justify-content-start align-items-center text-lg">
+                    <h3 className="mb-0">Agent:</h3>
                     <div className="ml-2">Sara Doe</div>
                   </Col>
                 </Row>
