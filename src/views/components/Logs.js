@@ -54,9 +54,9 @@ const Logs = () => {
             </Card>
 
             <Card className="card-stats shadow mb-4">
-                <CardBody>
+              <CardBody>
                 <Row>
-                    <div className="col">
+                  <Col>
                     <CardTitle
                         tag="h5"
                         className="text-uppercase text-muted mb-0"
@@ -66,19 +66,19 @@ const Logs = () => {
                     <span className="h2 font-weight-bold mb-0">
                         350 / 4000
                     </span>
-                    </div>
-                    <Col className="col-auto">
-                    <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
-                        <i className="fas fa-chart-bar" />
-                    </div>
-                    </Col>
+                  </Col>
+                  <Col className="col-auto">
+                  <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
+                      <i className="fas fa-chart-bar" />
+                  </div>
+                  </Col>
                 </Row>
                 <p className="mt-3 mb-0 text-muted text-sm">
                   <a href="#">
                     <span className="text-nowrap">Add more minutes</span>
                   </a>
                 </p>
-                </CardBody>
+              </CardBody>
             </Card>
           </Col>
           <Col xl="8">
@@ -90,30 +90,30 @@ const Logs = () => {
                   </Col>
                   <Col className="text-right" xs="7">
                     <UncontrolledDropdown>
-                        <DropdownToggle
+                      <DropdownToggle
+                        href="#"
+                        role="button"
+                        size="sm"
+                        color="primary"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        Select Agent <i className="fas fa-angle-down ml-2" />
+                      </DropdownToggle>
+                      <DropdownMenu className="dropdown-menu-arrow" right>
+                        <DropdownItem
                           href="#"
-                          role="button"
-                          size="sm"
-                          color=""
                           onClick={(e) => e.preventDefault()}
                         >
-                          Select Agent <i className="fas fa-angle-down ml-2" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                            href="#"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Sara Doe
-                          </DropdownItem>
-                          <DropdownItem
-                            href="#"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            John Doe
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
+                          Sara Doe
+                        </DropdownItem>
+                        <DropdownItem
+                          href="#"
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          John Doe
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
                   </Col>
                 </Row>
               </CardHeader>
@@ -123,41 +123,41 @@ const Logs = () => {
                 <h3 className="mb-3">Active Call</h3>
                 <Card className="card-stats mb-4 mb-xl-0 border-success">
                     <CardBody>
-                    <Row>
+                      <Row>
                         <Col>
-                        <CardTitle
-                        tag="h4"
-                        className="text-uppercase font-weight-bold mb-0"
-                        >
-                            <a href="">Lead_Name</a>
-                        </CardTitle>
-                        <div className="text-sm form-control-label">
-                            +1 (927) 123-4557
-                        </div>
+                          <CardTitle
+                          tag="h4"
+                          className="text-uppercase font-weight-bold mb-0"
+                          >
+                              <a href="">Lead_Name</a>
+                          </CardTitle>
+                          <div className="text-sm form-control-label">
+                              +1 (927) 123-4557
+                          </div>
                         </Col>
                         <Col className="col-auto">
-                        <div className="company_logo avatar avatar-sm rounded-circle shadow">
-                            <img
-                            alt="..."
-                            className="rounded-circle"
-                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                            />
-                        </div>
+                          <div className="company_logo avatar avatar-sm rounded-circle shadow">
+                              <img
+                              alt="..."
+                              className="rounded-circle"
+                              src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                              />
+                          </div>
                         </Col>
-                    </Row>
-                    <Row className="justify-content-between mt-3">
-                    <Col xs="6">
-                        <Badge color="success" className="text-sm text-white bg-success">
+                      </Row>
+                      <Row className="justify-content-between mt-3">
+                        <Col xs="6">
+                          <Badge color="success" className="text-sm text-white bg-success">
                             03:12:45 m
-                        </Badge>
-                    </Col>
-                    <Col xs="6" className="text-right">
-                        <Badge color="" className="badge-dot">
+                          </Badge>
+                        </Col>
+                        <Col xs="6" className="text-right">
+                          <Badge color="" className="badge-dot">
                             <i className="bg-success" />
                             In Progress
-                        </Badge>
-                    </Col>
-                    </Row>
+                          </Badge>
+                        </Col>
+                      </Row>
                     </CardBody>
                 </Card>
               </Col>
@@ -176,8 +176,8 @@ const Logs = () => {
                         <div className="text-sm form-control-label">
                           +1 (927) 123-4557
                         </div>
-                        </Col>
-                        <Col className="col-auto">
+                      </Col>
+                      <Col className="col-auto">
                         <div className="company_logo avatar avatar-sm rounded-circle shadow">
                             <img
                             alt="..."
@@ -190,13 +190,13 @@ const Logs = () => {
                     <Row className="justify-content-between mt-3">
                       <Col xs="6">
                         <Badge color="warning" className="text-sm text-white">
-                            00:00:00 m
+                          00:00:00 m
                         </Badge>
                       </Col>
                       <Col xs="6" className="text-right">
                           <Badge color="" className="badge-dot">
-                              <i className="bg-warning" />
-                              Not started
+                            <i className="bg-warning" />
+                            Not started
                           </Badge>
                       </Col>
                     </Row>
@@ -204,7 +204,7 @@ const Logs = () => {
                 </Card>
               </Col>
               </Row>
-              <h3 className="mb-3 mt-6">History</h3>
+              <h3 className="mb-3 mt-4">History</h3>
               <Table className="align-items-center table-flush table-light table-striped table-hover table" responsive>
                 <thead className="thead-light">
                   <tr>
@@ -526,64 +526,63 @@ const Logs = () => {
                <CardBody>
                 <Row>
                     <Col lg="6">
-                        <h3 className="mb-3">Active Call</h3>
                         <Card className="card-stats mb-4 mb-xl-0 border-success">
-                            <CardBody>
+                          <CardBody>
                             <Row>
-                                <Col>
+                              <Col>
                                 <CardTitle
                                 tag="h4"
                                 className="text-uppercase font-weight-bold mb-0"
                                 >
-                                    <a href="">Lead_Name</a>
+                                  <a href="">Lead_Name</a>
                                 </CardTitle>
                                 <div className="text-sm form-control-label">
-                                    +1 (927) 123-4557
+                                  +1 (927) 123-4557
                                 </div>
-                                </Col>
-                                <Col className="col-auto">
+                              </Col>
+                              <Col className="col-auto">
                                 <div className="company_logo avatar avatar-sm rounded-circle shadow">
-                                    <img
-                                    alt="..."
-                                    className="rounded-circle"
-                                    src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                                    />
+                                  <img
+                                  alt="..."
+                                  className="rounded-circle"
+                                  src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                  />
                                 </div>
-                                </Col>
+                              </Col>
                             </Row>
                             <Row className="justify-content-between mt-3">
                             <Col xs="6">
                                 <Badge color="success" className="text-sm text-white bg-success">
-                                    03:12:45 m
+                                  03:12:45 m
                                 </Badge>
                             </Col>
                             <Col xs="6" className="text-right">
-                                <Badge color="" className="badge-dot">
-                                    <i className="bg-success" />
-                                    Completed
-                                </Badge>
+                              <Badge color="" className="badge-dot">
+                                <i className="bg-success" />
+                                Completed
+                              </Badge>
                             </Col>
                             </Row>
-                            </CardBody>
+                          </CardBody>
                         </Card>
                     </Col>
                     <Col lg="6" className="text-right">
-                        <div className="mb-4">
-                           <div className="form-control-label">
-                             Call ID
-                           </div>
-                           <div>
-                             #123453
-                           </div>
+                      <div className="mb-4">
+                         <div className="form-control-label">
+                           Call ID
                          </div>
                          <div>
-                           <div className="form-control-label">
-                             Call Date
-                           </div>
-                           <div>
-                             2025-01-27 12:53:23
-                           </div>
+                           #123453
                          </div>
+                       </div>
+                       <div>
+                         <div className="form-control-label">
+                           Call Date
+                         </div>
+                         <div>
+                           2025-01-27 12:53:23
+                         </div>
+                       </div>
                     </Col>
                 </Row>
                    <hr className="my-4" />
