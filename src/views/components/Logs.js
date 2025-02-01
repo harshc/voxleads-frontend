@@ -755,13 +755,13 @@ const Logs = () => {
           </Col>
         </Row>
         <div aria-live="polite" aria-atomic="true" className="position-relative">
-        <!-- Position it: -->
+        {/*<!-- Position it: -->
         <!-- - `.toast-container` for spacing between toasts -->
         <!-- - `top-0` & `end-0` to position the toasts in the upper right corner -->
-        <!-- - `.p-3` to prevent the toasts from sticking to the edge of the container  -->
+        <!-- - `.p-3` to prevent the toasts from sticking to the edge of the container  -->*/}
         <div className="toast-container top-0 end-0 p-3">
       
-          <!-- Then put toasts within -->
+          {/*<!-- Then put toasts within -->*/}
           <div className="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div className="toast-header">
               <strong className="me-auto">Bootstrap</strong>
