@@ -9,26 +9,25 @@ import {
     EmbeddedCheckout
 } from '@stripe/react-stripe-js';
 import UserHeader from "components/Headers/UserHeader.js";
+import { useNavigate } from "react-router-dom";
 
 // ✅ Load Stripe with your Public Key
 const stripePromise = loadStripe("pk_live_51QhECUI5EzG8iF5emCL9dDrfGPHzWxnp5aEQfmKdNf78gLSF4t4AvG83Pokzolw81MGW651rWhNpNpBdKcRLpCLT00JdGe0f2o");
-const currentUser = auth.currentUser;
-
 
 const Payment = () => {
     const [clientSecret, setClientSecret] = useState(null);
     const currentUser = auth.currentUser; // ✅ Get current user from AuthContext
     const [queueCount, setQueueCount] = useState(5); // Default queue count
     const [loading, setLoading] = useState(true);
-
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         const createCheckoutSession = async () => {
             const currentUser = auth.currentUser;
+            setLoading(true)
             if (!currentUser) {
-                console.error("User is not authenticated.");
-                return;
+                console.log("User is not authenticated.");
+                navigate("/auth/login");
             }
 
             try {

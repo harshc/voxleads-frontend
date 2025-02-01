@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // node.js library that concatenates classes (strings)
 import classnames from "classnames";
 // javascipt plugin for creating charts
@@ -52,10 +52,77 @@ import {
 } from "variables/charts.js";
 
 import Header from "components/Headers/Header.js";
+import api from "../services/api";
+import { auth, db } from "../firebase-config";
+import { doc, getDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const Index = (props) => {
   const [activeNav, setActiveNav] = useState(1);
   const [chartExample1Data, setChartExample1Data] = useState("data1");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [userPhoneNumber, setUserPhoneNumber] = useState("");
+
+
+  const navigate = useNavigate();
+  const isAuthenticated = auth.currentUser !== null;
+  
+  useEffect(() => {
+    if (!isAuthenticated) {
+      console.log("User is not authenticated.");
+      navigate("/auth/login");
+    } else {
+      // Fetch user's phone number from Firestore
+      const fetchUserPhoneNumber = async () => {
+        try {
+          const currentUser = auth.currentUser;
+          if (currentUser) {
+            const userDocRef = doc(db, "users", currentUser.uid);
+            const userDoc = await getDoc(userDocRef);
+            if (userDoc.exists()) {
+              const phone = userDoc.data().phone || "";
+              if (phone) {
+                setUserPhoneNumber(phone);
+              } else {
+                console.error("Error: No registered phone number found. Please update your profile.");
+              }
+              setUserPhoneNumber(userDoc.data().phone || "");
+            }
+          }
+        } catch (error) {
+          console.error("Error fetching user phone number:", error);
+        }
+      };
+      fetchUserPhoneNumber();
+    }
+  }, [isAuthenticated, navigate]);
+
+  const handleTestCall = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+
+    if (!userPhoneNumber) {
+      setMessage("Error: Unable to fetch your registered phone number.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await api.post(`/calls/test-call?phone_number=${encodeURIComponent(userPhoneNumber)}`);
+      const data = await response.json();
+      if (response.ok) {
+        console.log(`Call initiated successfully: ${JSON.stringify(data)}`);
+      } else {
+        console.log(`Error: ${data.detail}`);
+      }
+    } catch (error) {
+      console.error(`Failed to connect to the server. ${error.detail}`);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (window.Chart) {
     parseOptions(Chart, chartOptions());
@@ -99,7 +166,7 @@ const Index = (props) => {
                 </Row>
               </CardHeader>
               <CardBody>
-                <Form>
+                <Form onSubmit={handleTestCall}>
                   <h6 className="heading text-muted mb-4">
                     Try a 5 minute call with one of our Agents
                   </h6>
@@ -111,20 +178,22 @@ const Index = (props) => {
                             className="form-control-label text-white"
                             htmlFor="testPhone"
                           >
-                            Enter your phone number
+                          Your Registered Phone Number
                           </label>
                           <Input
                             className="form-control-alternative"
                             id="testPhone"
                             placeholder="Your Phone Number"
                             type="tel"
+                            value={userPhoneNumber}
+                            readOnly
                           />
                         </FormGroup>
                       </Col>
                     </Row>
                   </div>
-                    <Button color="primary" href="#">
-                      Start Call
+                    <Button color="primary" disabled={loading}>
+                        {loading ? "Calling..." : "Start Call"}
                     </Button>
                 </Form>
               </CardBody>
