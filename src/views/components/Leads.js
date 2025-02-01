@@ -351,24 +351,20 @@ const Leads = () => {
             <Card className="card-profile shadow mt-4">
               <CardHeader className="bg-secondary">
                 <Row className="align-items-center">
-                  <Col xs="3">
-                    <h5 className="text-uppercase ls-1 mb-0">
-                      Call Center
-                    </h5>
+                  <Col xs="6">
+                    <h3 className="mb-0">Call Center</h3>
                   </Col>
-                  <Col xs="9">
-                    <Nav className="justify-content-end" pills>
-                      <NavItem className="mb-1">
-                        <div className="py-1 px-2 nav-link">
-                          <span className="d-block">Vox Agent</span>
-                        </div>
-                      </NavItem>
-                      <NavItem className="mb-1">
-                        <div className="py-1 px-2 ml-2 nav-link bg-success">
-                          <span className="d-block text-white">Online</span>
-                        </div>
-                      </NavItem>
-                    </Nav>
+                  <Col xs="6" className="d-flex justify-content-end">
+                    <div>
+                      <Button color="secondary text-primary" size="sm">
+                        Vox Agent
+                      </Button>
+                    </div>
+                    <div className="ml-2">
+                      <Button color="success" size="sm">
+                        Online
+                      </Button>
+                    </div>
                   </Col>
                 </Row>
               </CardHeader>
