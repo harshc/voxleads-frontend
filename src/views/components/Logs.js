@@ -754,41 +754,6 @@ const Logs = () => {
             </Card>
           </Col>
         </Row>
-        <div aria-live="polite" aria-atomic="true" className="position-relative">
-        {/*<!-- Position it: -->
-        <!-- - `.toast-container` for spacing between toasts -->
-        <!-- - `top-0` & `end-0` to position the toasts in the upper right corner -->
-        <!-- - `.p-3` to prevent the toasts from sticking to the edge of the container  -->*/}
-        <div className="toast-container top-0 end-0 p-3">
-      
-          {/*<!-- Then put toasts within -->*/}
-          <div className="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div className="toast-header">
-              <strong className="me-auto">Bootstrap</strong>
-              <small className="text-body-secondary">just now</small>
-              <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div className="toast-body">
-              See? Just like this.
-            </div>
-          </div>
-      
-          <div className="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div className="toast-header">
-              <strong className="me-auto">Bootstrap</strong>
-              <small className="text-body-secondary">2 seconds ago</small>
-              <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div className="toast-body">
-              Heads up, toasts will stack automatically
-              <div className="mt-2 pt-2 border-top d-flex justify-content-end">
-                <button type="button" className="btn btn-primary btn-sm">Take action</button>
-                <button type="button" className="btn btn-light btn-sm ml-2" data-bs-dismiss="toast">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       </Container>
     </>
   );
