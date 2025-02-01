@@ -134,7 +134,9 @@ const Logs = () => {
               <Row>
                 <Col className="mb-4 d-flex justify-content-start align-items-center text-lg">
                   <h3 className="mb-0">Agent:</h3>
-                  <div className="ml-2">Sara Doe</div>
+                  <div className="ml-2">
+                    <a href="#">Sara Doe</a>
+                  </div>
                 </Col>
               </Row>
               <Row>
@@ -182,7 +184,7 @@ const Logs = () => {
                 </Col>
                 <Col lg="6">
                   <h3 className="mb-3">Next in Queue</h3>
-                  <Card className="card-stats mb-4 mb-xl-0">
+                  <Card className="card-stats mb-0">
                     <CardBody>
                       <Row>
                         <Col>
@@ -215,7 +217,7 @@ const Logs = () => {
                         <Col xs="6" className="text-right">
                             <Badge color="" className="badge-dot">
                               <i className="bg-warning" />
-                              Not started
+                              In Queue
                             </Badge>
                         </Col>
                       </Row>
@@ -259,7 +261,7 @@ const Logs = () => {
                   </Nav>
                 </Col>
               </Row>
-              <Table className="align-items-center table-flush table-light table-striped table-hover table" responsive>
+              <Table className="align-items-center table-flush table-secondary table-striped table-hover" responsive>
                 <thead className="thead-light">
                   <tr>
                     <th scope="col">Call ID</th>
@@ -292,7 +294,7 @@ const Logs = () => {
                     <td>
                       <Badge color="" className="badge-dot">
                         <i className="bg-success" />
-                        Live
+                        In Progress
                       </Badge>
                     </td>
                     <td>
@@ -441,6 +443,81 @@ const Logs = () => {
                     </td>
                     <td>
                       <Badge color="" className="badge-dot">
+                        <i className="bg-warning" />
+                        In Queue
+                      </Badge>
+                    </td>
+                    <td>
+                      <div className="avatar-group">
+                        <a
+                          className="avatar avatar-sm"
+                          href="#pablo"
+                          id="tooltip996637554"
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          <img
+                            alt="..."
+                            className="rounded-circle"
+                            src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                          />
+                        </a>
+                        <UncontrolledTooltip
+                          delay={0}
+                          target="tooltip996637554"
+                        >
+                          Sara Doe
+                        </UncontrolledTooltip>
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      <UncontrolledDropdown>
+                        <DropdownToggle
+                          className="btn-icon-only"
+                          href="#pablo"
+                          role="button"
+                          size="sm"
+                          color=""
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          <i className="fas fa-angle-down" />
+                        </DropdownToggle>
+                        <DropdownMenu className="dropdown-menu-arrow" right>
+                          <DropdownItem
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            View Call Log
+                          </DropdownItem>
+                          <DropdownItem
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            Archive Call Log
+                          </DropdownItem>
+                        </DropdownMenu>
+                      </UncontrolledDropdown>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <Media className="align-items-center">
+                        <Media>
+                          <span className="mb-0 text-sm">
+                            <a href="#">
+                              Call #123456
+                            </a>
+                          </span>
+                        </Media>
+                      </Media>
+                    </th>
+                    <td>2025-01-27 08:26:49</td>         
+                    <td>
+                      <div className="time-amount">
+                        00:00:00 m
+                      </div>
+                    </td>
+                    <td>
+                      <Badge color="" className="badge-dot">
                         <i className="bg-danger" />
                         Failed
                       </Badge>
@@ -500,62 +577,63 @@ const Logs = () => {
               </Table>
               </CardBody>
               <CardFooter className="py-4">
-                <div className="d-flex justify-content-between">
-                <div>
-                  <h6 className="heading-small text-muted mb-0 pb-0">Lifetime Minutes</h6>
-                  <p className="text-sm mb-0">1245 m</p>
-                </div>
-                <nav aria-label="...">
-                  <Pagination
-                    className="pagination justify-content-end mb-0"
-                    listClassName="justify-content-end mb-0"
-                  >
-                    <PaginationItem className="disabled">
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                        tabIndex="-1"
+                <Row className="d-flex justify-content-between align-items-center">
+                  <Col md="5" className="text-sm">
+                    Showing <strong>1 - 10</strong> of 345
+                  </Col>
+                  <Col md="7">
+                    <nav aria-label="...">
+                      <Pagination
+                        className="pagination justify-content-end mb-0"
+                        listClassName="justify-content-end mb-0"
                       >
-                        <i className="fas fa-angle-left" />
-                        <span className="sr-only">Previous</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem className="active">
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        1
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        2 <span className="sr-only">(current)</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        3
-                      </PaginationLink>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <PaginationLink
-                        href="#pablo"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <i className="fas fa-angle-right" />
-                        <span className="sr-only">Next</span>
-                      </PaginationLink>
-                    </PaginationItem>
-                  </Pagination>
-                </nav>
-                </div>
+                        <PaginationItem className="disabled">
+                          <PaginationLink
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                            tabIndex="-1"
+                          >
+                            <i className="fas fa-angle-left" />
+                            <span className="sr-only">Previous</span>
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem className="active">
+                          <PaginationLink
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            1
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            2 <span className="sr-only">(current)</span>
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            3
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink
+                            href="#pablo"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            <i className="fas fa-angle-right" />
+                            <span className="sr-only">Next</span>
+                          </PaginationLink>
+                        </PaginationItem>
+                      </Pagination>
+                    </nav>
+                  </Col>
+                </Row>
               </CardFooter>
             </Card>
             <hr className="my-4" />
@@ -581,12 +659,32 @@ const Logs = () => {
                 <Row>
                   <Col className="mb-4 d-flex justify-content-start align-items-center text-lg">
                     <h3 className="mb-0">Agent:</h3>
-                    <div className="ml-2">Sara Doe</div>
+                    <div className="ml-2">
+                      <a href="#">Sara Doe</a>
+                    </div>
                   </Col>
                 </Row>
                 <Row>
                   <Col lg="6">
-                    <Card className="card-stats mb-4 mb-xl-0 border-success">
+                    <div className="mb-4">
+                       <div className="form-control-label">
+                         Call ID
+                       </div>
+                       <div>
+                         #123453
+                       </div>
+                     </div>
+                     <div>
+                       <div className="form-control-label">
+                         Call Date
+                       </div>
+                       <div>
+                         2025-01-27 12:53:23
+                       </div>
+                     </div>
+                  </Col>
+                  <Col lg="6">
+                    <Card className="card-stats mt-0 mt-lg-4 border-success">
                       <CardBody>
                         <Row>
                           <Col>
@@ -625,24 +723,6 @@ const Logs = () => {
                         </Row>
                       </CardBody>
                     </Card>
-                  </Col>
-                  <Col lg="6" className="text-right">
-                    <div className="mb-4">
-                       <div className="form-control-label">
-                         Call ID
-                       </div>
-                       <div>
-                         #123453
-                       </div>
-                     </div>
-                     <div>
-                       <div className="form-control-label">
-                         Call Date
-                       </div>
-                       <div>
-                         2025-01-27 12:53:23
-                       </div>
-                     </div>
                   </Col>
                 </Row>
                    <hr className="my-4" />
