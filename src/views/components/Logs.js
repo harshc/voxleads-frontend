@@ -1,4 +1,4 @@
-//import React from "react";
+import React from "react";
 import { useState } from "react";
 import classnames from "classnames";
 import {
@@ -132,6 +132,12 @@ const Logs = () => {
                 </Row>
               </CardHeader>
               <CardBody>
+              <Row>
+                <Col className="mb-4 d-flex justify-content-start">
+                  <h3 className="form-control-label">Agent:</h3>
+                  <div className="ml-2">Sara Doe</div>
+                </Col>
+              </Row>
               <Row>
                 <Col lg="6">
                   <h3 className="mb-3">Active Call</h3>
@@ -574,65 +580,71 @@ const Logs = () => {
                </CardHeader>
                <CardBody>
                 <Row>
-                    <Col lg="6">
-                        <Card className="card-stats mb-4 mb-xl-0 border-success">
-                          <CardBody>
-                            <Row>
-                              <Col>
-                                <CardTitle
-                                tag="h4"
-                                className="text-uppercase font-weight-bold mb-0"
-                                >
-                                  <a href="">Lead_Name</a>
-                                </CardTitle>
-                                <div className="text-sm form-control-label">
-                                  +1 (927) 123-4557
-                                </div>
-                              </Col>
-                              <Col className="col-auto">
-                                <div className="company_logo avatar avatar-sm rounded-circle shadow">
-                                  <img
-                                  alt="..."
-                                  className="rounded-circle"
-                                  src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                                  />
-                                </div>
-                              </Col>
-                            </Row>
-                            <Row className="justify-content-between mt-3">
-                            <Col xs="6">
-                                <Badge color="success" className="text-sm text-white bg-success">
-                                  03:12:45 m
-                                </Badge>
-                            </Col>
-                            <Col xs="6" className="text-right">
-                              <Badge color="" className="badge-dot">
-                                <i className="bg-success" />
-                                Completed
-                              </Badge>
-                            </Col>
-                            </Row>
-                          </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6" className="text-right">
-                      <div className="mb-4">
-                         <div className="form-control-label">
-                           Call ID
-                         </div>
-                         <div>
-                           #123453
-                         </div>
+                  <Col className="mb-4 d-flex justify-content-start">
+                    <h3 className="form-control-label">Agent:</h3>
+                    <div className="ml-2">Sara Doe</div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col lg="6">
+                    <Card className="card-stats mb-4 mb-xl-0 border-success">
+                      <CardBody>
+                        <Row>
+                          <Col>
+                            <CardTitle
+                            tag="h4"
+                            className="text-uppercase font-weight-bold mb-0"
+                            >
+                              <a href="">Lead_Name</a>
+                            </CardTitle>
+                            <div className="text-sm form-control-label">
+                              +1 (927) 123-4557
+                            </div>
+                          </Col>
+                          <Col className="col-auto">
+                            <div className="company_logo avatar avatar-sm rounded-circle shadow">
+                              <img
+                              alt="..."
+                              className="rounded-circle"
+                              src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                              />
+                            </div>
+                          </Col>
+                        </Row>
+                        <Row className="justify-content-between mt-3">
+                        <Col xs="6">
+                            <Badge color="success" className="text-sm text-white bg-success">
+                              03:12:45 m
+                            </Badge>
+                        </Col>
+                        <Col xs="6" className="text-right">
+                          <Badge color="" className="badge-dot">
+                            <i className="bg-success" />
+                            Completed
+                          </Badge>
+                        </Col>
+                        </Row>
+                      </CardBody>
+                    </Card>
+                  </Col>
+                  <Col lg="6" className="text-right">
+                    <div className="mb-4">
+                       <div className="form-control-label">
+                         Call ID
                        </div>
                        <div>
-                         <div className="form-control-label">
-                           Call Date
-                         </div>
-                         <div>
-                           2025-01-27 12:53:23
-                         </div>
+                         #123453
                        </div>
-                    </Col>
+                     </div>
+                     <div>
+                       <div className="form-control-label">
+                         Call Date
+                       </div>
+                       <div>
+                         2025-01-27 12:53:23
+                       </div>
+                     </div>
+                  </Col>
                 </Row>
                    <hr className="my-4" />
                    <h6 className="heading-small text-muted mb-4">
