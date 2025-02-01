@@ -142,7 +142,7 @@ const Logs = () => {
               <Row>
                 <Col lg="6">
                   <h3 className="mb-3">Active Call</h3>
-                  <Card className="card-stats mb-4 mb-xl-0 border-success">
+                  <Card className="card-stats mb-4 mb-lg-0 border-success">
                       <CardBody>
                         <Row>
                           <Col>
@@ -640,18 +640,30 @@ const Logs = () => {
             <Card className="bg-secondary shadow">
                <CardHeader className="bg-white border-0">
                  <Row className="align-items-center">
-                   <Col xs="8">
+                   <Col xs="5">
                      <h3 className="mb-0">Call #123453</h3>
                    </Col>
-                   <Col className="text-right" xs="4">
-                    <Button
-                        color="primary"
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        size="sm"
-                    >
-                        Print
-                    </Button>
+                   <Col className="d-flex justify-content-end" xs="7">
+                      <div>
+                        <Button
+                            color="primary"
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                            size="sm"
+                        >
+                            Print
+                        </Button>
+                      </div>
+                      <div className="ml-2">
+                        <Button
+                            color="light"
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                            size="sm"
+                        >
+                            Close
+                        </Button>
+                      </div>
                     </Col>
                  </Row>
                </CardHeader>
@@ -684,7 +696,7 @@ const Logs = () => {
                      </div>
                   </Col>
                   <Col lg="6">
-                    <Card className="card-stats mt-0 mt-lg-4 border-success">
+                    <Card className="card-stats mt-4 mt-lg-0 border-success">
                       <CardBody>
                         <Row>
                           <Col>
