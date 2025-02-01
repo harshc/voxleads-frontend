@@ -368,7 +368,7 @@ const Leads = () => {
                   </Col>
                 </Row>
               </CardHeader>
-              <CardBody className="bg-secondary">
+              <CardBody className="bg-secondary border border-default">
                 <Row className="mb-4">
                   <Col>
                     <Button color="success">
@@ -451,7 +451,7 @@ const Leads = () => {
               )}
               <CardFooter className="py-4">
                 <Row className="d-flex justify-content-between align-items-center">
-                  <Col md="5" className="text-sm">
+                  <Col md="5" className="text-sm mb-3 mb-md-0">
                     Showing <strong>{indexOfFirstLead+1} - {indexOfLastLead}</strong> of {phoneList.length+1}
                   </Col>
                   <Col md="7">
