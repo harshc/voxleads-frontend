@@ -8,6 +8,27 @@ import {
     EmbeddedCheckoutProvider,
     EmbeddedCheckout
 } from '@stripe/react-stripe-js';
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardBody,
+  CardTitle,
+  FormGroup,
+  Form,
+  Input,
+  Container,
+  Row,
+  Col,
+  Badge,
+  CardFooter,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
+  DropdownToggle,
+  Table,
+  UncontrolledTooltip,
+} from "reactstrap";
 import UserHeader from "components/Headers/UserHeader.js";
 import { useNavigate } from "react-router-dom";
 
@@ -57,27 +78,64 @@ const Payment = () => {
     return (
         <>
         <UserHeader/>
-        <div>
-            <h1>Select Your Queue Plan</h1>
+        <Container className="mt--7" fluid>
+          <Row>
+            <Col xl="4" className="mb-4">
 
-            {/* ✅ Queue Selection Options */}
-            <div className="queue-options">
-                <button onClick={() => setQueueCount(5)} className={queueCount === 5 ? "selected" : ""}>
-                    5 Agents - $300/month
-                </button>
-                <button onClick={() => setQueueCount(10)} className={queueCount === 10 ? "selected" : ""}>
-                    10 Agents - $500/month
-                </button>
-                <button onClick={() => setQueueCount(15)} className={queueCount === 15 ? "selected" : ""}>
-                    15 Agents - $800/month
-                </button>
-            </div>
-            <div id="checkout">
-                    <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
-                        <EmbeddedCheckout />
-                    </EmbeddedCheckoutProvider>
-            </div> 
-        </div>
+                <Card className="bg-secondary shadow">
+               <CardHeader className="bg-white border-0">
+                 <Row className="align-items-center">
+                   <Col>
+                     <h1 className="mb-0">Select Your Plan</h1>
+                   </Col>
+                 </Row>
+               </CardHeader>
+               <CardBody>
+                <Row>
+                  <Col className="mb-4">
+                    {/* ✅ Queue Selection Options */}
+                    <div className="queue-options d-flex justify-content-evenly align-items-center">
+                        <Button
+                            color="primary"
+                            onClick={() => setQueueCount(5)}
+                            size="lg"
+                            className={queueCount === 5 ? "selected" : ""}
+                        >
+                            5 Agents - $300/month
+                        </Button>
+                        <Button
+                            color="primary"
+                            onClick={() => setQueueCount(10)}
+                            size="lg"
+                            className={queueCount === 10 ? "selected" : ""}
+                        >
+                            10 Agents - $500/month
+                        </Button>
+                        <Button
+                            color="primary"
+                            onClick={() => setQueueCount(15)}
+                            size="lg"
+                            className={queueCount === 15 ? "selected" : ""
+                        >
+                            15 Agents - $800/month
+                        </Button>
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <div id="checkout">
+                        <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
+                            <EmbeddedCheckout />
+                        </EmbeddedCheckoutProvider>
+                    </div>
+                  </Col>
+                </Row>
+               </CardBody>
+            </Card>
+            </Col>
+          </Row>
+        </Container>
         </>
         );
 };
