@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { auth, db } from "../../firebase-config";
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -96,7 +95,15 @@ const Profile = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <Container className="mt--7" fluid>
+        <Row>
+          <Col>
+            Loading...
+          </Col>
+        </Row>
+      </Container>
+      );
   }
 
   return (
@@ -106,14 +113,15 @@ const Profile = () => {
         <Row>
           {/* Sidebar Cards */}
           <Col xl="4">
-            <Card className="card-profile shadow sticky-top">
+            <Card className="card-profile shadow mb-4 mb-xl-0">
               <CardBody>
-                <ul className="list-unstyled">
+                <ul className="list-unstyled mb-0">
                   <li>
                     <a href="#" className="d-flex icon-link px-4 py-2">
                       Account Information
                     </a>
                   </li>
+                  {/*
                   <li>
                     <a href="#" className="d-flex icon-link px-4 py-2">
                       Change Password
@@ -129,6 +137,7 @@ const Profile = () => {
                       Billing History
                     </a>
                   </li>
+                  */}
                 </ul>
               </CardBody>
             </Card>
