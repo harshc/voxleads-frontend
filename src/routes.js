@@ -99,7 +99,7 @@ var routes = [
       </ProtectedRoute>,
     layout: "/admin",
   },
-  /*{
+  {
     path: "/login",
     name: "Login",
     icon: "ni ni-key-25 text-default",
@@ -112,7 +112,7 @@ var routes = [
     icon: "ni ni-badge text-default",
     component: <Register />,
     layout: "/auth",
-  }*/
+  }
 
 ];
 
