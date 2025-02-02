@@ -80,8 +80,8 @@ const Payment = () => {
         <UserHeader/>
         <Container className="mt--7" fluid>
           <Row>
-            <Col className="mb-4">
-                <Card className="bg-secondary shadow">
+            <Col lg="8" className="mx-auto">
+              <Card className="bg-secondary shadow">
                <CardHeader className="bg-white border-0">
                  <Row className="align-items-center">
                    <Col>
@@ -91,9 +91,9 @@ const Payment = () => {
                </CardHeader>
                <CardBody>
                 <Row>
-                  <Col xl="4" className="mb-4">
+                  <Col className="mb-4">
                     {/* ✅ Queue Selection Options */}
-                    <div className="queue-options d-flex flex-xl-column flex-row justify-content-evenly align-items-start">
+                    <div className="queue-options d-flex justify-content-around align-items-center">
                         <Button
                             color="primary"
                             onClick={() => setQueueCount(5)}
@@ -120,7 +120,7 @@ const Payment = () => {
                         </Button>
                     </div>
                   </Col>
-                  <Col xl="8">
+                  <Col>
                     <div id="checkout">
                         <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
                             <EmbeddedCheckout />
@@ -129,7 +129,7 @@ const Payment = () => {
                   </Col>
                 </Row>
                </CardBody>
-            </Card>
+              </Card>
             </Col>
           </Row>
         </Container>
