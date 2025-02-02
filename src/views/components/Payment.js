@@ -80,8 +80,7 @@ const Payment = () => {
         <UserHeader/>
         <Container className="mt--7" fluid>
           <Row>
-            <Col xl="4" className="mb-4">
-
+            <Col className="mb-4">
                 <Card className="bg-secondary shadow">
                <CardHeader className="bg-white border-0">
                  <Row className="align-items-center">
@@ -92,14 +91,14 @@ const Payment = () => {
                </CardHeader>
                <CardBody>
                 <Row>
-                  <Col className="mb-4">
+                  <Col xl="4" className="mb-4">
                     {/* ✅ Queue Selection Options */}
-                    <div className="queue-options d-flex justify-content-evenly align-items-center">
+                    <div className="queue-options d-flex flex-xl-column flex-row justify-content-evenly align-items-start">
                         <Button
                             color="primary"
                             onClick={() => setQueueCount(5)}
                             size="lg"
-                            className={queueCount === 5 ? "selected" : ""}
+                            className={classnames("my-2 mx-0 mx-xl-2", {queueCount === 5 ? "selected" : ""})}
                         >
                             5 Agents - $300/month
                         </Button>
@@ -107,7 +106,7 @@ const Payment = () => {
                             color="primary"
                             onClick={() => setQueueCount(10)}
                             size="lg"
-                            className={queueCount === 10 ? "selected" : ""}
+                            className={classnames("my-2 mx-0 mx-xl-2", {queueCount === 10 ? "selected" : ""})}
                         >
                             10 Agents - $500/month
                         </Button>
@@ -115,15 +114,13 @@ const Payment = () => {
                             color="primary"
                             onClick={() => setQueueCount(15)}
                             size="lg"
-                            className={queueCount === 15 ? "selected" : ""}
+                            className={classnames("my-2 mx-0 mx-xl-2", {queueCount === 15 ? "selected" : ""})}
                         >
                             15 Agents - $800/month
                         </Button>
                     </div>
                   </Col>
-                </Row>
-                <Row>
-                  <Col>
+                  <Col xl="8">
                     <div id="checkout">
                         <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
                             <EmbeddedCheckout />
