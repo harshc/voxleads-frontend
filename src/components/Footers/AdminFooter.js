@@ -22,10 +22,10 @@ import { Container, Row, Col, Nav, NavItem, NavLink } from "reactstrap";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer bg-gradient-default">
       <Row className="align-items-center justify-content-xl-between">
         <Col xl="6">
-          <div className="copyright text-center text-xl-left text-muted">
+          <div className="copyright text-center text-xl-left text-secondary">
             © {new Date().getFullYear()}{" "}
             <a
               className="font-weight-bold ml-1"
@@ -38,7 +38,7 @@ const Footer = () => {
         </Col>
 
         <Col xl="6">
-          <Nav className="nav-footer justify-content-center justify-content-xl-end">
+          <Nav className="nav-footer justify-content-center justify-content-xl-end text-secondary">
             <NavItem>
               <NavLink
                 rel="noopener noreferrer"
