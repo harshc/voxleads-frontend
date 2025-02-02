@@ -115,7 +115,7 @@ const Payment = () => {
                             color="primary"
                             onClick={() => setQueueCount(15)}
                             size="lg"
-                            className={queueCount === 15 ? "selected" : ""
+                            className={queueCount === 15 ? "selected" : ""}
                         >
                             15 Agents - $800/month
                         </Button>
