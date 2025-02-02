@@ -22,7 +22,7 @@ import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 const Header = () => {
   return (
     <>
-      <div className="header bg-gradient-info pb-8 pt-5 pt-md-8">
+      <div className="header bg-gradient-default pb-8 pt-5 pt-md-8">
         <Container fluid>
           <div className="header-body">
             {/* Card stats */}
@@ -36,23 +36,22 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          Call Time
+                          Call Credits
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">
                           350 / 4000
                         </span>
                       </div>
                       <Col className="col-auto">
-                        <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <div className="icon icon-shape bg-success opacity-5 text-white rounded-circle shadow">
                           <i className="fas fa-chart-bar" />
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
-                      <span className="text-success mr-2">
-                        <i className="fa fa-arrow-up" /> 3.48%
-                      </span>{" "}
-                      <span className="text-nowrap">View Call Logs</span>
+                    <p className="mt-3 mb-0 text-sm">
+                      <span className="text-nowrap">
+                        <a href="#">View Call Logs</a>
+                      </span>
                     </p>
                   </CardBody>
                 </Card>
@@ -66,7 +65,7 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          AI Agents
+                          Agents Online
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">2 / 5</span>
                       </div>
@@ -76,11 +75,10 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
-                      <span className="text-warning mr-2">
-                        <i className="fas fa-chart-pie" />40%
-                      </span>{" "}
-                      <span className="text-nowrap">View my Agents</span>
+                    <p className="mt-3 mb-0 text-sm">
+                      <span className="text-nowrap">
+                        <a href="#">View Agents</a>
+                      </span>
                     </p>
                   </CardBody>
                 </Card>
@@ -99,16 +97,15 @@ const Header = () => {
                         <span className="h2 font-weight-bold mb-0">924</span>
                       </div>
                       <Col className="col-auto">
-                        <div className="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                        <div className="icon icon-shape bg-primary opacity-5 text-white rounded-circle shadow">
                           <i className="fas fa-users" />
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
-                      <span className="text-warning mr-2">
-                        <i className="fas fa-arrow-down" /> 1.10%
-                      </span>{" "}
-                      <span className="text-nowrap">View Leads</span>
+                    <p className="mt-3 mb-0 text-sm">
+                      <span className="text-nowrap">
+                        <a href="#">View Leads</a>
+                      </span>
                     </p>
                   </CardBody>
                 </Card>
@@ -127,16 +124,15 @@ const Header = () => {
                         <span className="h2 font-weight-bold mb-0">12</span>
                       </div>
                       <Col className="col-auto">
-                        <div className="icon icon-shape bg-info text-white rounded-circle shadow">
-                          <i className="fas fa-percent" />
+                        <div className="icon icon-shape bg-default opacity-8 text-white rounded-circle shadow">
+                          <i className="fas fa-calendar" />
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
-                      <span className="text-success mr-2">
-                        <i className="fas fa-arrow-up" /> 12%
-                      </span>{" "}
-                      <span className="text-nowrap">Since last month</span>
+                    <p className="mt-3 mb-0 text-sm">
+                      <span className="text-nowrap">
+                        <a href="#">View Bookings</a>
+                      </span>
                     </p>
                   </CardBody>
                 </Card>
