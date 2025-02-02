@@ -66,10 +66,10 @@ const Payment = () => {
                     5 Agents - $300/month
                 </button>
                 <button onClick={() => setQueueCount(10)} className={queueCount === 10 ? "selected" : ""}>
-                    10 Agents - $500/month
+                    10 Agents - $600/month
                 </button>
                 <button onClick={() => setQueueCount(15)} className={queueCount === 15 ? "selected" : ""}>
-                    15 Agents - $800/month
+                    15 Agents - $900/month
                 </button>
             </div>
             <div id="checkout">

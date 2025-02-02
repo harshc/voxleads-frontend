@@ -161,11 +161,6 @@ const Leads = () => {
     formData.append("file", csvFile); 
 
     try {
-      // const response = await api.post(`/clients/${clientId}/upload-phone-list`, {
-      //   method: "POST",
-      //   body: formData,
-      // });
-
       const response = await api.post(`/clients/${clientId}/upload-phone-list`, formData, {
         headers: {
             'Content-Type': 'multipart/form-data'
@@ -318,6 +313,29 @@ const Leads = () => {
       status: prevLead.status === "active" ? "unsubscribed" : "active",
     }));
   };
+
+  const handleStartCalls = async () => {
+    setLoading(true);
+    setMessage("");
+
+    if (!clientId) {
+      setMessage("Error: Unable to fetch client ID.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await api.post(`/calls/${clientId}/start-calls?agent_count=${encodeURIComponent()}`, {
+        agent_count: phoneList.length,
+      });
+      setMessage(`Client calls initiated successfully: ${JSON.stringify(response.data)}`);
+    } catch (error) {
+      setMessage(`Error: ${error.response?.data?.detail || "Failed to start client calls"}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
   return (
     <>
