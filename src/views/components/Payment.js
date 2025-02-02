@@ -98,7 +98,7 @@ const Payment = () => {
                             color="primary"
                             onClick={() => setQueueCount(5)}
                             size="lg"
-                            className={classnames("my-2 mx-0 mx-xl-2", {queueCount === 5 ? "selected" : ""})}
+                            className={queueCount === 5 ? "selected" : ""}
                         >
                             5 Agents - $300/month
                         </Button>
@@ -106,7 +106,7 @@ const Payment = () => {
                             color="primary"
                             onClick={() => setQueueCount(10)}
                             size="lg"
-                            className={classnames("my-2 mx-0 mx-xl-2", {queueCount === 10 ? "selected" : ""})}
+                            className={queueCount === 10 ? "selected" : ""}
                         >
                             10 Agents - $500/month
                         </Button>
@@ -114,7 +114,7 @@ const Payment = () => {
                             color="primary"
                             onClick={() => setQueueCount(15)}
                             size="lg"
-                            className={classnames("my-2 mx-0 mx-xl-2", {queueCount === 15 ? "selected" : ""})}
+                            className={queueCount === 15 ? "selected" : ""}
                         >
                             15 Agents - $800/month
                         </Button>
