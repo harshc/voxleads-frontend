@@ -16,7 +16,10 @@
 
 */
 /*eslint-disable*/
-import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Add useNavigate
+import React, { useEffect, useState } from "react";
+import { auth } from "../../firebase-config"; // Import signOut from Firebase
+import { signOut } from "firebase/auth";
 import { NavLink as NavLinkRRD, Link } from "react-router-dom";
 // nodejs library to set properties for components
 import { PropTypes } from "prop-types";
@@ -86,6 +89,36 @@ const Sidebar = (props) => {
     });
   };
 
+  const location = useLocation();
+  const [user, setUser] = useState({ name: "", photo: "" });  
+  const navigate = useNavigate(); // Initialize navigate
+
+  useEffect(() => {
+    const stateUser = location.state;
+    const currentUser = auth.currentUser;
+
+    if (stateUser) {
+      setUser({
+        name: stateUser.name || "No Name",
+        photo: stateUser.photoURL || require("../../assets/img/icons/common/google.svg").default,
+      });
+    } else if (currentUser) {
+      setUser({
+        name: currentUser.displayName || "No Name",
+        photo: currentUser.photoURL || require("../../assets/img/icons/common/google.svg").default,
+      });
+    }
+  }, [location]);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth); // Sign out from Firebase
+      navigate("/auth/login"); // Redirect to the login page
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+
   const { bgColor, routes, logo } = props;
   let navbarBrandProps;
   if (logo && logo.innerLink) {
@@ -127,6 +160,7 @@ const Sidebar = (props) => {
         ) : null}
         {/* User */}
         <Nav className="align-items-center d-md-none">
+          {/*
           <UncontrolledDropdown nav>
             <DropdownToggle nav className="nav-link-icon">
               <i className="ni ni-bell-55" />
@@ -142,13 +176,14 @@ const Sidebar = (props) => {
               <DropdownItem>Something else here</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
+          */}
           <UncontrolledDropdown nav>
             <DropdownToggle nav>
               <Media className="align-items-center">
                 <span className="avatar avatar-sm rounded-circle">
                   <img
-                    alt="..."
-                    src={require("../../assets/img/theme/team-1-800x800.jpg")}
+                    alt="User"
+                    src={user.photo}
                   />
                 </span>
               </Media>
@@ -161,6 +196,7 @@ const Sidebar = (props) => {
                 <i className="ni ni-single-02" />
                 <span>My profile</span>
               </DropdownItem>
+              {/*
               <DropdownItem to="/admin/user-profile" tag={Link}>
                 <i className="ni ni-settings-gear-65" />
                 <span>Settings</span>
@@ -173,8 +209,9 @@ const Sidebar = (props) => {
                 <i className="ni ni-support-16" />
                 <span>Support</span>
               </DropdownItem>
+              */}
               <DropdownItem divider />
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+              <DropdownItem href="#" onClick={handleLogout}>
                 <i className="ni ni-user-run" />
                 <span>Logout</span>
               </DropdownItem>
@@ -212,6 +249,7 @@ const Sidebar = (props) => {
             </Row>
           </div>
           {/* Form */}
+          {/*
           <Form className="mt-4 mb-3 d-md-none">
             <InputGroup className="input-group-rounded input-group-merge">
               <Input
@@ -227,6 +265,7 @@ const Sidebar = (props) => {
               </InputGroupAddon>
             </InputGroup>
           </Form>
+          */}
           {/* Navigation */}
           <Nav navbar>{createLinks(routes)}</Nav>
           {/* Divider */}
