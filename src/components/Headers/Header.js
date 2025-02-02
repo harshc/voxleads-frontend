@@ -36,7 +36,7 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          Call Time
+                          Call Credits
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">
                           350 / 4000
@@ -48,9 +48,9 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
+                    <p className="mt-3 mb-0 text-sm">
                       <span className="text-nowrap">
-                        <a href="#">View Call Loga</a>
+                        <a href="#">View Call Logs</a>
                       </span>
                     </p>
                   </CardBody>
@@ -65,7 +65,7 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          AI Agents
+                          Agents Online
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">2 / 5</span>
                       </div>
@@ -75,7 +75,7 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
+                    <p className="mt-3 mb-0 text-sm">
                       <span className="text-nowrap">
                         <a href="#">View Agents</a>
                       </span>
@@ -102,7 +102,7 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
+                    <p className="mt-3 mb-0 text-sm">
                       <span className="text-nowrap">
                         <a href="#">View Leads</a>
                       </span>
@@ -129,7 +129,7 @@ const Header = () => {
                         </div>
                       </Col>
                     </Row>
-                    <p className="mt-3 mb-0 text-muted text-sm">
+                    <p className="mt-3 mb-0 text-sm">
                       <span className="text-nowrap">
                         <a href="#">View Bookings</a>
                       </span>
