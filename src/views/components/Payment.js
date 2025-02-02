@@ -93,33 +93,32 @@ const Payment = () => {
                 <Row>
                   <Col className="mb-4">
                     {/* ✅ Queue Selection Options */}
-                    <div className="queue-options d-flex justify-content-around align-items-center">
+                    <div className="queue-options d-flex justify-content-center align-items-center">
                         <Button
                             color="primary"
                             onClick={() => setQueueCount(5)}
-                            size="lg"
                             className={queueCount === 5 ? "selected" : ""}
                         >
-                            5 Agents - $300/month
+                            5 Agents
                         </Button>
                         <Button
                             color="primary"
                             onClick={() => setQueueCount(10)}
-                            size="lg"
                             className={queueCount === 10 ? "selected" : ""}
                         >
-                            10 Agents - $500/month
+                            10 Agents
                         </Button>
                         <Button
                             color="primary"
                             onClick={() => setQueueCount(15)}
-                            size="lg"
                             className={queueCount === 15 ? "selected" : ""}
                         >
-                            15 Agents - $800/month
+                            15 Agents
                         </Button>
                     </div>
                   </Col>
+                </Row>
+                <Row>
                   <Col>
                     <div id="checkout">
                         <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
