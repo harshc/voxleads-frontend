@@ -33,7 +33,10 @@ import UserHeader from "components/Headers/UserHeader.js";
 import { useNavigate } from "react-router-dom";
 
 // ✅ Load Stripe with your Public Key
-const stripePromise = loadStripe("pk_live_51QhECUI5EzG8iF5emCL9dDrfGPHzWxnp5aEQfmKdNf78gLSF4t4AvG83Pokzolw81MGW651rWhNpNpBdKcRLpCLT00JdGe0f2o");
+// Test Mode
+const stripePromise = loadStripe("pk_test_51QhECUI5EzG8iF5egJVi7t1fD0tru3pRtbc06CEqujq6UFQx199kb8BG2lVqZfjk98TiO8MvD5KTP5hWzFhj0ILR00rttkJyK4");
+// Live Mode
+//const stripePromise = loadStripe("pk_live_51QhECUI5EzG8iF5emCL9dDrfGPHzWxnp5aEQfmKdNf78gLSF4t4AvG83Pokzolw81MGW651rWhNpNpBdKcRLpCLT00JdGe0f2o");
 
 const Payment = () => {
     const [clientSecret, setClientSecret] = useState(null);
