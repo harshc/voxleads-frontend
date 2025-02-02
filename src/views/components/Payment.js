@@ -72,7 +72,7 @@ const Payment = () => {
         };
 
         createCheckoutSession();
-    }, [queueCount]); // ✅ Runs when queue count changes
+    }, [queueCount, navigate]); // ✅ Runs when queue count changes
 
     const options = {
         clientSecret,

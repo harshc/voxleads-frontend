@@ -41,6 +41,8 @@ const Leads = () => {
   const [editMode, setEditMode] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const leadsPerPage = 10; // Number of leads per page
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   const expectedHeaders = [
     "first_name",
@@ -325,9 +327,7 @@ const Leads = () => {
     }
 
     try {
-      const response = await api.post(`/calls/${clientId}/start-calls?agent_count=${encodeURIComponent()}`, {
-        agent_count: phoneList.length,
-      });
+      const response = await api.post(`/calls/${clientId}/start-calls`);
       setMessage(`Client calls initiated successfully: ${JSON.stringify(response.data)}`);
     } catch (error) {
       setMessage(`Error: ${error.response?.data?.detail || "Failed to start client calls"}`);
@@ -403,13 +403,13 @@ const Leads = () => {
                 </Row>
                 <Row className="align-items-center">
                   <Col xs="6">
-                    <Button color="primary" href="#">
+                    <Button color="primary" onClick={handleStartCalls}>
                         Start Calling
                     </Button>
                   </Col>
                   <Col xs="6" className="text-right">
                     <Button color="white" className="border" href="#">
-                        Call Logs
+                        Call Logs [COMING SOON]
                     </Button>
                   </Col>
                 </Row>
