@@ -147,7 +147,7 @@ const Index = (props) => {
                     <h6 className="text-uppercase text-light ls-1 mb-1">
                       Test Call
                     </h6>
-                    <h2 className="text-white mb-0">Try Our Automated Agent</h2>
+                    <h2 className="text-white mb-0">Speak With An Agent</h2>
                   </div>
                   <div className="col">
                     <Nav className="justify-content-end" pills>
@@ -157,7 +157,7 @@ const Index = (props) => {
                         </div>
                       </NavItem>
                       <NavItem>
-                        <div className="py-2 px-3 nav-link bg-success">
+                        <div className="py-2 px-3 ml-2 ml-md-0 nav-link bg-success">
                           <span className="d-block text-white">Online</span>
                         </div>
                       </NavItem>
