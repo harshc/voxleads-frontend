@@ -77,18 +77,24 @@ const Logs = () => {
                         Call Time
                     </CardTitle>
                     <span className="h2 font-weight-bold mb-0">
-                        350 / 4000
+                        350 minutes
+                    </span>
+                    <h5 className="text-uppercase text-muted mb-0 mt-3">
+                        Call Credits
+                    </h5>
+                    <span className="h2 font-weight-bold mb-0">
+                        3650 / 4000
                     </span>
                   </Col>
                   <Col className="col-auto">
-                  <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
+                  <div className="icon icon-shape bg-success opacity-5 text-white rounded-circle shadow">
                       <i className="fas fa-chart-bar" />
                   </div>
                   </Col>
                 </Row>
-                <p className="mt-3 mb-0 text-muted text-sm">
+                <p className="mt-3 mb-0 text-sm">
                   <a href="#">
-                    <span className="text-nowrap">Add more minutes</span>
+                    <span className="text-nowrap">Add more call credits</span>
                   </a>
                 </p>
               </CardBody>
@@ -261,7 +267,7 @@ const Logs = () => {
                   </Nav>
                 </Col>
               </Row>
-              <Table className="align-items-center table-flush table-secondary table-striped table-hover" responsive>
+              <Table className="align-items-center table-flush table-secondary table-striped table-hover border" responsive>
                 <thead className="thead-light">
                   <tr>
                     <th scope="col">Call ID</th>
