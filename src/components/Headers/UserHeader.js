@@ -43,7 +43,7 @@ const UserHeader = () => {
           backgroundPosition: "center top",
         }}
       >
-        <span className="mask bg-gradient-default opacity-8" />
+        <span className="mask bg-gradient-default" />
       </div>
     </>
   );
