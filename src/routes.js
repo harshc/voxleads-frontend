@@ -34,7 +34,7 @@ var routes = [
   {
     path: "/index",
     name: "Dashboard",
-    icon: "ni ni-tv-2 text-primary",
+    icon: "ni ni-app text-default",
     component: (
       <ProtectedRoute>
         <Index />
@@ -45,7 +45,7 @@ var routes = [
   {
     path: "/user-profile",
     name: "User Profile",
-    icon: "ni ni-single-02 text-yellow",
+    icon: "ni ni-single-02 text-default",
     component: (
       <ProtectedRoute>
         <>
@@ -59,7 +59,7 @@ var routes = [
   {
     path: "/call-centers",
     name: "Call Centers",
-    icon: "ni ni-bullet-list-67 text-green",
+    icon: "ni ni-headphones text-default",
     component: (
       <ProtectedRoute>
         <Centers />
@@ -70,7 +70,7 @@ var routes = [
   {
     path: "/leads",
     name: "Leads",
-    icon: "ni ni-bullet-list-67 text-blue",
+    icon: "ni ni-collection text-default",
     component: (
       <ProtectedRoute>
         <Leads />
@@ -81,7 +81,7 @@ var routes = [
   {
     path: "/logs",
     name: "Logs",
-    icon: "ni ni-bullet-list-67 text-red",
+    icon: "ni ni-bullet-list-67 text-default",
     component: (
       <ProtectedRoute>
         <Logs />
@@ -89,30 +89,30 @@ var routes = [
     ),
     layout: "/admin",
   },
-  {
+  { 
+    path: "/admin/payment", 
+    name: "Payment",
+    icon: "ni ni-credit-card text-default",
+    component: 
+      <ProtectedRoute>
+        <Payment />
+      </ProtectedRoute>,
+    layout: "/admin",
+  },
+  /*{
     path: "/login",
     name: "Login",
-    icon: "ni ni-key-25 text-info",
+    icon: "ni ni-key-25 text-default",
     component: <Login />,
     layout: "/auth",
   },
   {
     path: "/register",
     name: "Register",
-    icon: "ni ni-bullet-list-67 text-red",
+    icon: "ni ni-badge text-default",
     component: <Register />,
     layout: "/auth",
-  },
-  { 
-    path: "/admin/payment", 
-    name: "Payment",
-    icon: "ni ni-circle-08 text-pink",
-    component: 
-      <ProtectedRoute>
-        <Payment />
-      </ProtectedRoute>,
-    layout: "/admin",
-  }
+  }*/
 
 ];
 
