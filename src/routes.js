@@ -29,6 +29,7 @@ import Icons from "views/components/Icons.js";
 import UserHeader from "components/Headers/UserHeader";
 import ProtectedRoute from "components/ProtectedRoutes";
 import Payment from "views/components/Payment";
+import Validation from "views/components/Validation";
 
 var routes = [
   {
@@ -96,6 +97,16 @@ var routes = [
     component: 
       <ProtectedRoute>
         <Payment />
+      </ProtectedRoute>,
+    layout: "/admin",
+  },
+  { 
+    path: "/admin/validation", 
+    name: "Payment Validation",
+    icon: "ni ni-credit-card text-default",
+    component: 
+      <ProtectedRoute>
+        <Validation />
       </ProtectedRoute>,
     layout: "/admin",
   },
