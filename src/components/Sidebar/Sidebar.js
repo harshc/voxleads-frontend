@@ -22,6 +22,8 @@ import { auth } from "../../firebase-config"; // Import signOut from Firebase
 import { signOut } from "firebase/auth";
 // nodejs library to set properties for components
 import { PropTypes } from "prop-types";
+import { useAuthState } from 'react-firebase-hooks/auth';
+
 
 // reactstrap components
 import {
@@ -58,6 +60,7 @@ var ps;
 
 const Sidebar = (props) => {
   const [collapseOpen, setCollapseOpen] = useState();
+  const [authUser, authLoading] = useAuthState(auth);
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
@@ -72,20 +75,57 @@ const Sidebar = (props) => {
   };
   // creates the links that appear in the left menu / Sidebar
   const createLinks = (routes) => {
-    return routes.map((prop, key) => {
-      return (
+    if (!authUser) {
+      // Return only auth-related links for non-authenticated users
+      const authRoutes = [
+        {
+          path: "/login",
+          name: "Login",
+          icon: "ni ni-key-25",
+          layout: "/auth"
+        },
+        {
+          path: "/register",
+          name: "Register",
+          icon: "ni ni-circle-08",
+          layout: "/auth"
+        }
+      ];
+
+      return authRoutes.map((route, key) => (
         <NavItem key={key}>
           <NavLink
-            to={prop.layout + prop.path}
+            to={route.layout + route.path}
             tag={NavLinkRRD}
             onClick={closeCollapse}
           >
-            <i className={prop.icon} />
-            {prop.name}
+            <i className={route.icon} />
+            {route.name}
           </NavLink>
         </NavItem>
-      );
-    });
+      ));
+    }
+
+    // Filter out auth routes for authenticated users
+    const authenticatedRoutes = routes.filter(
+      route => 
+        !route.path.includes("login") && 
+        !route.path.includes("register") &&
+        (route.showInSidebar !== false) // Show if showInSidebar is true or undefined
+    );
+
+    return authenticatedRoutes.map((prop, key) => (
+      <NavItem key={key}>
+        <NavLink
+          to={prop.layout + prop.path}
+          tag={NavLinkRRD}
+          onClick={closeCollapse}
+        >
+          <i className={prop.icon} />
+          {prop.name}
+        </NavLink>
+      </NavItem>
+    ));
   };
 
   const location = useLocation();
@@ -266,40 +306,25 @@ const Sidebar = (props) => {
           </Form>
           */}
           {/* Navigation */}
-          <Nav navbar>{createLinks(routes)}</Nav>
+          <Nav navbar>
+            {createLinks(routes)}
+            {authUser && (
+              <NavItem>
+                <NavLink
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLogout();
+                  }}
+                >
+                  <i className="ni ni-user-run" />
+                  Logout
+                </NavLink>
+              </NavItem>
+            )}
+          </Nav>
           {/* Divider */}
           <hr className="my-3" />
-          {/* Heading */}
-          {/* <h6 className="navbar-heading text-muted">Documentation</h6> /}
-          {/* Navigation */}
-          {/*<Nav className="mb-md-3" navbar>
-            <NavItem>
-              <NavLink href="https://demos.creative-tim.com/argon-dashboard-react/#/documentation/overview?ref=adr-admin-sidebar">
-                <i className="ni ni-spaceship" />
-                Getting started
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://demos.creative-tim.com/argon-dashboard-react/#/documentation/colors?ref=adr-admin-sidebar">
-                <i className="ni ni-palette" />
-                Foundation
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://demos.creative-tim.com/argon-dashboard-react/#/documentation/alerts?ref=adr-admin-sidebar">
-                <i className="ni ni-ui-04" />
-                Components
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <Nav className="mb-md-3" navbar>
-            <NavItem className="active-pro active">
-              <NavLink href="https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=adr-admin-sidebar">
-                <i className="ni ni-spaceship" />
-                Upgrade to PRO
-              </NavLink>
-            </NavItem>
-          </Nav>*/}
         </Collapse>
       </Container>
     </Navbar>

@@ -42,6 +42,7 @@ var routes = [
       </ProtectedRoute>
     ),
     layout: "/admin",
+    showInSidebar: true,
   },
   {
     path: "/user-profile",
@@ -56,6 +57,7 @@ var routes = [
       </ProtectedRoute>
     ),
     layout: "/admin",
+    showInSidebar: true,
   },
   {
     path: "/call-centers",
@@ -67,6 +69,7 @@ var routes = [
       </ProtectedRoute>
     ),
     layout: "/admin",
+    showInSidebar: true,
   },
   {
     path: "/leads",
@@ -78,6 +81,7 @@ var routes = [
       </ProtectedRoute>
     ),
     layout: "/admin",
+    showInSidebar: true,
   },
   {
     path: "/logs",
@@ -89,6 +93,7 @@ var routes = [
       </ProtectedRoute>
     ),
     layout: "/admin",
+    showInSidebar: true
   },
   { 
     path: "/payment", 
@@ -99,6 +104,7 @@ var routes = [
         <Payment />
       </ProtectedRoute>,
     layout: "/admin",
+    showInSidebar: true,
   },
   { 
     path: "/validation", 
@@ -109,6 +115,7 @@ var routes = [
         <Validation />
       </ProtectedRoute>,
     layout: "/admin",
+    showInSidebar: false,
   },
   {
     path: "/login",
