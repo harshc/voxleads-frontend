@@ -91,7 +91,7 @@ var routes = [
     layout: "/admin",
   },
   { 
-    path: "/admin/payment", 
+    path: "/payment", 
     name: "Payment",
     icon: "ni ni-credit-card text-default",
     component: 
@@ -101,7 +101,7 @@ var routes = [
     layout: "/admin",
   },
   { 
-    path: "/admin/validation", 
+    path: "/validation", 
     name: "Payment Validation",
     icon: "ni ni-credit-card text-default",
     component: 
