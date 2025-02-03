@@ -50,7 +50,7 @@ const Validation = () => {
                             </div>
   
                             <div className="more-info mb-4">
-                              <h4 className="heading-small mb-2">Next Steps</h4>
+                              <h4 className="mb-2">Next Steps</h4>
                               <p className="mb-1">You will receive a confirmation email shortly at [Customer Email Address]. If you have any questions or need assistance, please contact our customer support team at [Customer Support Email/Phone Number].</p>
                             </div>
     
@@ -67,8 +67,8 @@ const Validation = () => {
                             <p>Unfortunately, we were unable to process your payment for order <b>#[Order Number]</b>.</p>
                             
                             <div className="more-info">
-                              <h4 className="heading-small mb-2">What to Do Next</h4>
-                              <ul className="list-unstyled mb-2 pl-2 text-sm">
+                              <h4 className="mb-2">What to Do Next</h4>
+                              <ul className="mb-2 pl-4 text-sm">
                                 <li className="mb-1">Check Your Payment Information: Verify that all details are correct and try again.</li>
                                 <li className="mb-1">Use a Different Payment Method: If possible, consider using an alternative payment method.</li>
                                 <li className="mb-1">Contact Your Bank: If you believe there should be sufficient funds, please reach out to your bank for further assistance.</li>
