@@ -316,6 +316,11 @@ const Leads = () => {
     }));
   };
 
+  const handleClose = () => {
+    setSelectedLead(null);
+    setEditMode(false);
+  };
+
   const handleStartCalls = async () => {
     setLoading(true);
     setMessage("");
@@ -534,6 +539,7 @@ const Leads = () => {
               </CardFooter>
             </Card>
             <hr className="my-4" />
+            {/* TODO: Unselect a lead for the close button */}
             {selectedLead && (
               
               <Card className="bg-secondary shadow">
@@ -556,11 +562,11 @@ const Leads = () => {
                       </div>
                       <div className="ml-2">
                         {!editMode ? (
-                            <Button color="light" size="sm">
+                            <Button color="light" size="sm" onclick={handleClose}>
                             Close
                             </Button>
                         ) : (
-                            <Button color="light" size="sm">
+                            <Button color="light" size="sm" onClick={() => setEditMode(false)} >
                             Cancel
                             </Button>
                         )}
