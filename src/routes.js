@@ -18,7 +18,6 @@
 import Index from "views/Index.js";
 import Profile from "views/components/Profile.js";
 import Centers from "views/components/Centers.js";
-import Agents from "views/components/Agents.js";
 import Leads from "views/components/Leads.js";
 import Clients from "views/components/Clients.js";
 import Logs from "views/components/Logs.js";
@@ -31,6 +30,7 @@ import UserHeader from "components/Headers/UserHeader";
 import ProtectedRoute from "components/ProtectedRoutes";
 import Payment from "views/components/Payment";
 import Validation from "views/components/Validation";
+import Agents from "views/components/Agents.js";
 
 var routes = [
   {
@@ -51,10 +51,8 @@ var routes = [
     icon: "ni ni-single-02 text-default",
     component: (
       <ProtectedRoute>
-        <>
           <UserHeader />
           <Profile />
-        </>
       </ProtectedRoute>
     ),
     layout: "/admin",
