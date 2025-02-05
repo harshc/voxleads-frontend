@@ -30,7 +30,6 @@ import UserHeader from "components/Headers/UserHeader";
 import ProtectedRoute from "components/ProtectedRoutes";
 import Payment from "views/components/Payment";
 import Validation from "views/components/Validation";
-import Agents from "views/components/Agents.js";
 
 var routes = [
   {
@@ -65,18 +64,6 @@ var routes = [
     component: (
       <ProtectedRoute>
         <Centers />
-      </ProtectedRoute>
-    ),
-    layout: "/admin",
-    showInSidebar: true,
-  },
-  {
-    path: "/agents",
-    name: "Agents",
-    icon: "ni ni-badge text-default",
-    component: (
-      <ProtectedRoute>
-        <Agents />
       </ProtectedRoute>
     ),
     layout: "/admin",
