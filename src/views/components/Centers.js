@@ -43,13 +43,13 @@ const Centers = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    phone_number: "",
     gst: "",
-    address: "",
+    street_address: "",
     city: "",
     state: "",
     country: "",
-    zip: "",
+    zip_code: "",
     manager_name: "",
     manager_email: "",
     manager_phone: "",
@@ -197,6 +197,20 @@ const Centers = () => {
                     <Row>
                       <Col lg="6"><FormGroup><label>Name</label><Input name="name" value={formData.name} onChange={handleInputChange} readOnly={!isEditing} /></FormGroup></Col>
                       <Col lg="6"><FormGroup><label>Email</label><Input type="email" name="email" value={formData.email} onChange={handleInputChange} readOnly={!isEditing} /></FormGroup></Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6"><FormGroup><label>Phone</label><Input name="phone_number" value={formData.phone_number} onChange={handleInputChange} readOnly={!isEditing} /></FormGroup></Col>
+                    </Row>
+                    <Row>
+                      <Col lg="12"><FormGroup><label>Address</label><Input name="street_address" value={formData.street_address} onChange={handleInputChange} readOnly={!isEditing} /></FormGroup></Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6"><FormGroup><label>City</label><Input name="city" value={formData.city} onChange={handleInputChange} readOnly={!isEditing} /></FormGroup></Col>
+                      <Col lg="6"><FormGroup><label>State</label><Input name="state" value={formData.state} onChange={handleInputChange} readOnly={!isEditing} /></FormGroup></Col>
+                    </Row>
+                    <Row>
+                      <Col lg="6"><FormGroup><label>Country</label><Input name="country" value={formData.country} onChange={handleInputChange} readOnly={!isEditing} /></FormGroup></Col>
+                      <Col lg="6"><FormGroup><label>ZipCode</label><Input name="zip_code" value={formData.zip_code} onChange={handleInputChange} readOnly={!isEditing} /></FormGroup></Col>
                     </Row>
                     <Row>
                       <Col lg="6"><FormGroup><label>Timezone</label><Input type="select" name="timezone" value={formData.timezone} onChange={handleInputChange} disabled={!isEditing}>{timeZones.map(tz => <option key={tz} value={tz}>{tz}</option>)}</Input></FormGroup></Col>
