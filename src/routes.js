@@ -18,6 +18,7 @@
 import Index from "views/Index.js";
 import Profile from "views/components/Profile.js";
 import Centers from "views/components/Centers.js";
+import Agents from "views/components/Agents.js";
 import Leads from "views/components/Leads.js";
 import Clients from "views/components/Clients.js";
 import Logs from "views/components/Logs.js";
@@ -66,6 +67,18 @@ var routes = [
     component: (
       <ProtectedRoute>
         <Centers />
+      </ProtectedRoute>
+    ),
+    layout: "/admin",
+    showInSidebar: true,
+  },
+  {
+    path: "/agents",
+    name: "Agents",
+    icon: "ni ni-badge text-default",
+    component: (
+      <ProtectedRoute>
+        <Agents />
       </ProtectedRoute>
     ),
     layout: "/admin",
@@ -127,7 +140,7 @@ var routes = [
   {
     path: "/register",
     name: "Register",
-    icon: "ni ni-badge text-default",
+    icon: "ni ni-circle-08 text-default",
     component: <Register />,
     layout: "/auth",
   }
