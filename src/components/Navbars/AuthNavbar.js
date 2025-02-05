@@ -37,7 +37,7 @@ const AdminNavbar = () => {
           <NavbarBrand to="/" tag={Link}>
             <img
               alt="..."
-              src={require("../../assets/img/brand/voxleads.png")}
+              src={require("../../assets/img/brand/voxleads-logo-white.png")}
             />
           </NavbarBrand>
           <button className="navbar-toggler" id="navbar-collapse-main">
@@ -50,7 +50,7 @@ const AdminNavbar = () => {
                   <Link to="/">
                     <img
                       alt="..."
-                      src={require("../../assets/img/brand/voxleads.png")}
+                      src={require("../../assets/img/brand/voxleads-logo.png")}
                     />
                   </Link>
                 </Col>
@@ -63,12 +63,14 @@ const AdminNavbar = () => {
               </Row>
             </div>
             <Nav className="ml-auto" navbar>
+              {/*
               <NavItem>
                 <NavLink className="nav-link-icon" to="/" tag={Link}>
                   <i className="ni ni-planet" />
                   <span className="nav-link-inner--text">Dashboard</span>
                 </NavLink>
               </NavItem>
+              */}
               <NavItem>
                 <NavLink
                   className="nav-link-icon"
@@ -85,6 +87,7 @@ const AdminNavbar = () => {
                   <span className="nav-link-inner--text">Login</span>
                 </NavLink>
               </NavItem>
+              {/*
               <NavItem>
                 <NavLink
                   className="nav-link-icon"
@@ -95,6 +98,7 @@ const AdminNavbar = () => {
                   <span className="nav-link-inner--text">Profile</span>
                 </NavLink>
               </NavItem>
+              */}
             </Nav>
           </UncontrolledCollapse>
         </Container>

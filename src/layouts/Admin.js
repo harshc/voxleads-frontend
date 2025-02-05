@@ -67,8 +67,8 @@ const Admin = (props) => {
         routes={routes}
         logo={{
           innerLink: "/admin/index",
-          imgSrc: require("../assets/img/brand/voxleads.png"),
-          imgAlt: "...",
+          imgSrc: require("../assets/img/brand/voxleads-logo.png"),
+          imgAlt: "Vox Leads",
         }}
       />
       <div className="main-content bg-gradient-default" ref={mainContent}>

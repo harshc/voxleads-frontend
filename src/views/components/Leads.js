@@ -413,7 +413,7 @@ const Leads = () => {
                     </Button>
                   </Col>
                   <Col xs="6" className="text-right">
-                    <Button color="white" className="border" href="#">
+                    <Button color="white" className="border text-xs" href="#">
                         Call Logs [COMING SOON]
                     </Button>
                   </Col>
@@ -783,13 +783,13 @@ const Leads = () => {
                         </div>
                         <div className="ml-2">
                           {!editMode ? (
-                              <Button color="light" size="sm">
-                              Close
-                              </Button>
+                            <Button color="light" size="sm" onclick={handleClose}>
+                            Close
+                            </Button>
                           ) : (
-                              <Button color="light" size="sm">
-                              Cancel
-                              </Button>
+                            <Button color="light" size="sm" onClick={() => setEditMode(false)} >
+                            Cancel
+                            </Button>
                           )}
                         </div>
                       </Col>
@@ -828,23 +828,26 @@ const Leads = () => {
                             accept=".csv"
                             onChange={handleFileUpload}
                           />
-                          <div className="mt-2 text-sm text-underline">
-                            <a href="#">
-                              Download an examples csv file
-                            </a>
-                          </div>
                         </FormGroup>
+                        <Button color="primary" href="#" onClick={handleUpload}>
+                          Upload
+                        </Button>
                       </Col>
                     </Row>
-                    <h6 className="heading-small text-muted">Expected CSV Format:</h6>
-                      <pre className="bg-white text-sm p-3 border">
-                        <p className="form-control-label mb-4">first_name,last_name,email,phone_number,notes,street_address,city,state,country,zip_code,status</p>
-                        <p className="mb-0">John,Doe,john.doe@example.com,1234567890,New lead,123 Main St,New York,NY,USA,10001,active</p>
-                      </pre>
                   </div>
-                  <Button color="primary" href="#" onClick={handleUpload}>
-                    Upload
-                  </Button>
+                  <hr className="my-4" />
+                  <h6 className="heading-small text-muted">Expected CSV Format:</h6>
+                  <div className="pl-lg-4">
+                    <pre className="bg-white p-3 border">
+                      <p className="form-control-label mb-4 text-sm">first_name,last_name,email,phone_number,notes,street_address,city,state,country,zip_code,status</p>
+                      <p className="mb-0 text-sm">John,Doe,john.doe@example.com,1234567890,New lead,123 Main St,New York,NY,USA,10001,active</p>
+                    </pre>
+                    <div className="mt-2 text-sm text-underline">
+                      <a href="#">
+                        Download an examples csv file
+                      </a>
+                    </div>
+                  </div>
                 </Form>
               </CardBody>
             </Card>

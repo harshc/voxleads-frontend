@@ -50,10 +50,8 @@ var routes = [
     icon: "ni ni-single-02 text-default",
     component: (
       <ProtectedRoute>
-        <>
           <UserHeader />
           <Profile />
-        </>
       </ProtectedRoute>
     ),
     layout: "/admin",
@@ -127,7 +125,7 @@ var routes = [
   {
     path: "/register",
     name: "Register",
-    icon: "ni ni-badge text-default",
+    icon: "ni ni-circle-08 text-default",
     component: <Register />,
     layout: "/auth",
   }
