@@ -211,7 +211,16 @@ const Centers = () => {
                       <Col lg="4"><Input type="select" value={formData.operational_hours[day].close} onChange={(e) => handleOperationalHoursChange(day, "close", e.target.value)} disabled={!isEditing}>{timeSlots.map((time) => (<option key={time} value={time}>{time}</option>))}</Input></Col>
                     </Row>
                   ))}
-                  {isEditing && <Button color="primary" type="submit">Save</Button>}
+                  {isEditing && (
+                    <Button color="primary" type="submit">Save</Button>
+                     <Button
+                      color="secondary"
+                      onClick={() => setIsEditing(false)}
+                      className="ml-2"
+                    >
+                      Cancel
+                    </Button>
+                  )}
                 </Form>
               </CardBody>
             </Card>
