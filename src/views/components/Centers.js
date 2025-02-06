@@ -100,16 +100,21 @@ const Centers = () => {
         // ✅ Ensure the correct UID is sent in the API request
         const response = await api.get(`/clients/${currentUser.uid}`);
     
-        if (response.data) {
-          console.log("Client data retrieved:", response.data);
-          setClientData(response.data);
+        if (response?.data?.data) {
+          console.log("Client data retrieved:", response.data.data);
+          setClientData(response.data.data);
           setFormData({
-            ...response.data,
-            operational_hours: response.data.operational_hours || formData.operational_hours,
+            ...response.data.data,
+            operational_hours: response.data.data.operational_hours || formData.operational_hours,
           });
         } else {
           console.log("No client data found.");
           setClientData(null);
+          // Optionally reset form data to defaults
+          setFormData({
+            ...formData,
+            operational_hours: formData.operational_hours,
+          });
         }
       } catch (error) {
         console.error("Error fetching company data:", error);
