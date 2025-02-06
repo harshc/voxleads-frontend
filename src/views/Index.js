@@ -167,46 +167,46 @@ const Index = (props) => {
               </CardHeader>
               <CardBody className="">
                 <Row>
-                <Col>
-                <h6 className="heading text-muted mb-4">
-                  Try a 5 minute call with one of our Agents
-                </h6>
-                </Col>
+                  <Col>
+                    <h6 className="heading text-muted mb-4">
+                      Try a 5 minute call with one of our Agents
+                    </h6>
+                  </Col>
                 </Row>
                 <Row>
-                <Col lg="6">
-                <Form onSubmit={handleTestCall}>
-                  <Row className="align-items-center">
-                    <Col lg="6">
-                    <FormGroup>
-                        <label
-                        className="form-control-label text-white"
-                        htmlFor="testPhone"
-                        >
-                        Your Registered Phone Number
-                        </label>
-                        <Input
-                        className="form-control-alternative"
-                        id="testPhone"
-                        placeholder="Your Phone Number"
-                        type="tel"
-                        value={userPhoneNumber}
-                        readOnly
-                        />
-                    </FormGroup>
-                    </Col>
-                    {/* If Call is Active */}
-                    <Col lg="6">
-                        <Button color="success">
-                        Active Call <span class="badge bg-secondary text-primary ml-4 text-xs">4:12:43 m</span>
-                        </Button>
-                    </Col>
-                  </Row>
-                  <Button color="primary" disabled={loading}>
-                    {loading ? "Calling..." : "Start Call"}
-                  </Button>
-                </Form>
-                </Col>
+                    <Col>
+                    <Form onSubmit={handleTestCall}>
+                      <Row className="align-items-end">
+                        <Col lg="6">
+                          <FormGroup className="mb-3">
+                              <label
+                              className="form-control-label text-white"
+                              htmlFor="testPhone"
+                              >
+                              Your Registered Phone Number
+                              </label>
+                              <Input
+                              className="form-control-alternative"
+                              id="testPhone"
+                              placeholder="Your Phone Number"
+                              type="tel"
+                              value={userPhoneNumber}
+                              readOnly
+                              />
+                          </FormGroup>
+                        </Col>
+                        {/* If Call is Active */}
+                        <Col lg="6">
+                          <Button color="success" className="mb-3">
+                            Active Call <span class="badge bg-secondary text-primary ml-4 text-xs">4:12:43 m</span>
+                          </Button>
+                        </Col>
+                      </Row>
+                      <Button color="primary" disabled={loading}>
+                        {loading ? "Calling..." : "Start Call"}
+                      </Button>
+                    </Form>
+                  </Col>
                 </Row>
               </CardBody>
             </Card>
