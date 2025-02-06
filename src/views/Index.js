@@ -139,8 +139,8 @@ const Index = (props) => {
       {/* Page content */}
       <Container className="mt--7" fluid>
         <Row>
-          <Col className="mb-5 mb-xl-0" xl="8">
-            <Card className="bg-gradient-default border border-secondary shadow">
+          <Col className="mb-5 mb-xl-0 d-flex align-items-stretch" xl="8">
+            <Card className="bg-gradient-default border border-secondary shadow w-100">
               <CardHeader className="bg-transparent">
                 <Row className="align-items-center">
                   <div className="col">
@@ -165,37 +165,47 @@ const Index = (props) => {
                   </div>
                 </Row>
               </CardHeader>
-              <CardBody>
+              <CardBody className="">
+                <Row>
+                <h6 className="heading text-muted mb-4">
+                  Try a 5 minute call with one of our Agents
+                </h6>
+                </Row>
+                <Row>
+                <Col lg="6">
                 <Form onSubmit={handleTestCall}>
-                  <h6 className="heading text-muted mb-4">
-                    Try a 5 minute call with one of our Agents
-                  </h6>
-                  <div>
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label
-                            className="form-control-label text-white"
-                            htmlFor="testPhone"
-                          >
-                          Your Registered Phone Number
-                          </label>
-                          <Input
-                            className="form-control-alternative"
-                            id="testPhone"
-                            placeholder="Your Phone Number"
-                            type="tel"
-                            value={userPhoneNumber}
-                            readOnly
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                  </div>
-                    <Button color="primary" disabled={loading}>
-                        {loading ? "Calling..." : "Start Call"}
-                    </Button>
+                  <Row>
+                    <Col>
+                    <FormGroup>
+                        <label
+                        className="form-control-label text-white"
+                        htmlFor="testPhone"
+                        >
+                        Your Registered Phone Number
+                        </label>
+                        <Input
+                        className="form-control-alternative"
+                        id="testPhone"
+                        placeholder="Your Phone Number"
+                        type="tel"
+                        value={userPhoneNumber}
+                        readOnly
+                        />
+                    </FormGroup>
+                    </Col>
+                  </Row>
+                  <Button color="primary" disabled={loading}>
+                    {loading ? "Calling..." : "Start Call"}
+                  </Button>
                 </Form>
+                </Col>
+                {/* If Call is Active */}
+                <Col lg="6">
+                    <Button color="success">
+                    Active Call <span class="badge bg-secondary text-primary ml-4 text-xs">4:12:43 m</span>
+                    </Button>
+                </Col>
+                </Row>
               </CardBody>
             </Card>
           </Col>
@@ -204,47 +214,57 @@ const Index = (props) => {
               <CardHeader className="bg-transparent">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h6 className="text-uppercase text-warning ls-1 mb-1">
-                      Attentions Required
-                    </h6>
                     <h2 className="mb-0">Account Status</h2>
+                    <h6 className="text-uppercase text-warning ls-1 mt-1">
+                      Action Required
+                    </h6>
                   </div>
                 </Row>
               </CardHeader>
-              <CardBody>
+              <CardBody className="py-2">
                 {/* Account Elements */}
                 <div className="">
                   <ul className="list-group list-group-flush">
+                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Complete User Profile</div>
                       </div>
-                      <i className="ni ni-single-02 text-success"></i>
+                      <i className="ni ni-check-bold text-lg text-success"></i>
                     </li>
+                    </a>
+                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Complete Company Profile</div>
                       </div>
-                      <i className="ni ni-headphones text-yellow"></i>
+                      <i className="ni ni-fat-add text-xl text-yellow"></i>
                     </li>
+                    </a>
+                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Configure Your Agents</div>
                       </div>
-                      <i className="ni ni-badge text-muted"></i>
+                      <i className="ni ni-fat-add text-xl text-muted"></i>
                     </li>
+                    </a>
+                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Add Leads</div>
                       </div>
-                      <i className="ni ni-collection text-muted"></i>
+                      <i className="ni ni-fat-add text-xl text-muted"></i>
                     </li>
+                    </a>
+                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
-                        <div className="fw-bold">Add Call Credits</div>
+                        <div className="fw-bold">Call Credits</div>
                       </div>
-                      <span className="badge text-bg-success rounded-pill">4000</span>
+                      <span className="badge bg-primary text-white rounded-pill">4000</span>
                     </li>
+                    </a>
                   </ul>
                 </div>
               </CardBody>
