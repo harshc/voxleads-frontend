@@ -200,39 +200,54 @@ const Index = (props) => {
             </Card>
           </Col>
           <Col xl="4">
-            <Card className="card-stats mb-4 mb-xl-0">
-                <CardBody>
-                    <Row>
-                    <div className="col">
-                    <CardTitle
-                    tag="h2"
-                    className="text-uppercase font-weight-bold mb-0"
-                    >
-                    Sara Doe
-                    </CardTitle>
-                    <div>
-                        <Badge color="" className="badge-dot">
-                            <i className="bg-success" />
-                            Online
-                        </Badge>
-                    </div>
-                    </div>
-                    <Col className="col-auto">
-                    <div className="company_logo avatar avatar-lg rounded-circle shadow">
-                        <img
-                        alt="..."
-                        className="rounded-circle"
-                        src="https://voxleads-api-stg-bv7a.uc.r.appspot.com/static/media/team-4-800x800.99c612eb60728a5aeeb0.jpg"
-                        />
-                    </div>
-                    </Col>
-                    </Row>
-                    <p className="mt-3 mb-0 text-sm">
-                    <a href="#">
-                        View Agent Details
-                    </a>
-                    </p>
-                </CardBody>
+            <Card className="shadow border">
+              <CardHeader className="bg-transparent">
+                <Row className="align-items-center">
+                  <div className="col">
+                    <h6 className="text-uppercase text-warning ls-1 mb-1">
+                      Attentions Required
+                    </h6>
+                    <h2 className="mb-0">Account Status</h2>
+                  </div>
+                </Row>
+              </CardHeader>
+              <CardBody>
+                {/* Account Elements */}
+                <div className="">
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item d-flex justify-content-between align-items-start">
+                      <div className="ms-2 me-auto">
+                        <div className="fw-bold">Complete User Profile</div>
+                      </div>
+                      <i className="ni ni-single-02 text-success"></i>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-between align-items-start">
+                      <div className="ms-2 me-auto">
+                        <div className="fw-bold">Complete Company Profile</div>
+                      </div>
+                      <i className="ni ni-headphones text-yellow"></i>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-between align-items-start">
+                      <div className="ms-2 me-auto">
+                        <div className="fw-bold">Configure Your Agents</div>
+                      </div>
+                      <i className="ni ni-badge text-muted"></i>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-between align-items-start">
+                      <div className="ms-2 me-auto">
+                        <div className="fw-bold">Add Leads</div>
+                      </div>
+                      <i className="ni ni-collection text-muted"></i>
+                    </li>
+                    <li className="list-group-item d-flex justify-content-between align-items-start">
+                      <div className="ms-2 me-auto">
+                        <div className="fw-bold">Add Call Credits</div>
+                      </div>
+                      <span className="badge text-bg-success rounded-pill">4000</span>
+                    </li>
+                  </ul>
+                </div>
+              </CardBody>
             </Card>
           </Col>
         </Row>
