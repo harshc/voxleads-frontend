@@ -167,15 +167,17 @@ const Index = (props) => {
               </CardHeader>
               <CardBody className="">
                 <Row>
+                <Col>
                 <h6 className="heading text-muted mb-4">
                   Try a 5 minute call with one of our Agents
                 </h6>
+                </Col>
                 </Row>
                 <Row>
                 <Col lg="6">
                 <Form onSubmit={handleTestCall}>
-                  <Row>
-                    <Col>
+                  <Row className="align-items-center">
+                    <Col lg="6">
                     <FormGroup>
                         <label
                         className="form-control-label text-white"
@@ -193,17 +195,17 @@ const Index = (props) => {
                         />
                     </FormGroup>
                     </Col>
+                    {/* If Call is Active */}
+                    <Col lg="6">
+                        <Button color="success">
+                        Active Call <span class="badge bg-secondary text-primary ml-4 text-xs">4:12:43 m</span>
+                        </Button>
+                    </Col>
                   </Row>
                   <Button color="primary" disabled={loading}>
                     {loading ? "Calling..." : "Start Call"}
                   </Button>
                 </Form>
-                </Col>
-                {/* If Call is Active */}
-                <Col lg="6">
-                    <Button color="success">
-                    Active Call <span class="badge bg-secondary text-primary ml-4 text-xs">4:12:43 m</span>
-                    </Button>
                 </Col>
                 </Row>
               </CardBody>
@@ -215,7 +217,7 @@ const Index = (props) => {
                 <Row className="align-items-center">
                   <div className="col">
                     <h2 className="mb-0">Account Status</h2>
-                    <h6 className="text-uppercase text-warning ls-1 mt-1">
+                    <h6 className="text-uppercase text-xs text-warning ls-1 mt-1 mb-0">
                       Action Required
                     </h6>
                   </div>
@@ -225,46 +227,36 @@ const Index = (props) => {
                 {/* Account Elements */}
                 <div className="">
                   <ul className="list-group list-group-flush">
-                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Complete User Profile</div>
                       </div>
                       <i className="ni ni-check-bold text-lg text-success"></i>
                     </li>
-                    </a>
-                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Complete Company Profile</div>
                       </div>
                       <i className="ni ni-fat-add text-xl text-yellow"></i>
                     </li>
-                    </a>
-                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Configure Your Agents</div>
                       </div>
                       <i className="ni ni-fat-add text-xl text-muted"></i>
                     </li>
-                    </a>
-                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Add Leads</div>
                       </div>
                       <i className="ni ni-fat-add text-xl text-muted"></i>
                     </li>
-                    </a>
-                    <a href="">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Call Credits</div>
                       </div>
                       <span className="badge bg-primary text-white rounded-pill">4000</span>
                     </li>
-                    </a>
                   </ul>
                 </div>
               </CardBody>
