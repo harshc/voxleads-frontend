@@ -25,14 +25,14 @@ const Header = () => {
       <div className="header bg-gradient-default pb-8 pt-5 pt-md-8">
         <Container fluid>
           <div className="header-body">
-            <Row className="border border-danger bg-warning opacity-5 px-3 py-2 align-items-center mb-4">
+            <Row className="border border-danger bg-warning px-0 py-2 w-100 mx-auto align-items-center mb-4">
               <Col className="col-auto">
-                <div className="icon shadow">
+                <div className="icon shadow d-flex align-items-center justify-content-center">
                   <i className="fas fa-triangle-exclamation text-white text-lg" />
                 </div>
               </Col>
               <Col>
-                <p className="form-control-label mb-0 text-white">ACTION REQUIRED: Please complete your <a href="/admin/user-profile" className="text-underline">User</a> and <a href="/admin/call-centers" className="text-underline">Company</a> profiles before adding Leads.</p>
+                <p className="form-control-label mb-0 text-white">ACTION REQUIRED: Please complete your <a href="/admin/user-profile" className="text-underline text-secondary">User</a> and <a href="/admin/call-centers" className="text-underline text-secondary">Company</a> profiles before adding Leads.</p>
               </Col>
             </Row>
             {/* Card stats */}
@@ -49,7 +49,7 @@ const Header = () => {
                           Call Credits
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">
-                          350 / 4000
+                          4000
                         </span>
                       </div>
                       <Col className="col-auto">
