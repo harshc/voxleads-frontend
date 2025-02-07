@@ -25,7 +25,7 @@ const Header = () => {
       <div className="header bg-gradient-default pb-8 pt-5 pt-md-8">
         <Container fluid>
           <div className="header-body">
-            <Row className="border border-danger bg-warning px-0 py-2 w-100 mx-auto align-items-center mb-4">
+            <Row className="border border-danger bg-warning px-0 py-2 w-100 mx-auto align-items-center mb-4 rounded">
               <Col className="col-auto">
                 <div className="icon shadow d-flex align-items-center justify-content-center">
                   <i className="fas fa-triangle-exclamation text-white text-lg" />
