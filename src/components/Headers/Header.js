@@ -25,6 +25,16 @@ const Header = () => {
       <div className="header bg-gradient-default pb-8 pt-5 pt-md-8">
         <Container fluid>
           <div className="header-body">
+            <Row className="border border-danger bg-warning opacity-5 px-3 py-2 align-items-center mb-4">
+              <Col className="col-auto">
+                <div className="icon shadow">
+                  <i className="fas fa-triangle-exclamation text-white text-lg" />
+                </div>
+              </Col>
+              <Col>
+                <p className="form-control-label mb-0 text-white">ACTION REQUIRED: Please complete your <a href="/admin/user-profile" className="text-underline">User</a> and <a href="/admin/call-centers" className="text-underline">Company</a> profiles before adding Leads.</p>
+              </Col>
+            </Row>
             {/* Card stats */}
             <Row>
               <Col lg="6" xl="3">
