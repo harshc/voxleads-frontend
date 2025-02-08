@@ -37,7 +37,7 @@ const Validation = () => {
         const response = await api.get(`/queues/stripe/session-status?session_id=${encodeURIComponent(sessionId)}`);
         
         if (response.data) {
-          setStatus(response.data.status == 'paid' ? 'complete' : 'failed');
+          setStatus(response.data.status === 'paid' ? 'complete' : 'failed');
           setCustomerEmail(response.data.customer_email);
           setOrderDetails(response.data);  // Assuming the API returns order details
         }
