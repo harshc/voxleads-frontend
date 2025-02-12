@@ -16,6 +16,7 @@
 
 */
 import { useState, useEffect } from "react";
+import { useAccount } from "../context/AccountContext";
 // node.js library that concatenates classes (strings)
 import classnames from "classnames";
 // javascipt plugin for creating charts
@@ -57,7 +58,13 @@ import { auth, db } from "../firebase-config";
 import { doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-const Index = (props) => {
+const Index = () => {
+  const { 
+    userProfileComplete, 
+    companyProfileComplete, 
+    subscriptionComplete,
+    loading: accountLoading 
+  } = useAccount();
   const [activeNav, setActiveNav] = useState(1);
   const [chartExample1Data, setChartExample1Data] = useState("data1");
   const [loading, setLoading] = useState(false);
@@ -229,27 +236,58 @@ const Index = (props) => {
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
-                        <div className="fw-bold">Complete User Profile</div>
+                        <div className="fw-bold">
+                          <a href="/admin/user-profile" className="text-default">Complete User Profile</a>
+                        </div>
                       </div>
-                      <i className="ni ni-check-bold text-lg text-success"></i>
+                      {accountLoading ? (
+                        <i className="ni ni-settings-gear-65 spin text-lg text-muted"></i>
+                      ) : userProfileComplete ? (
+                        <i className="ni ni-check-bold text-lg text-success"></i>
+                      ) : (
+                        <i className="ni ni-fat-add text-xl text-warning"></i>
+                      )}
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
-                        <div className="fw-bold">Complete Company Profile</div>
+                        <div className="fw-bold">
+                          <a href="/admin/call-centers" className="text-default">Complete Company Profile</a>
+                        </div>
                       </div>
-                      <i className="ni ni-fat-add text-xl text-yellow"></i>
+                      {accountLoading ? (
+                        <i className="ni ni-settings-gear-65 spin text-lg text-muted"></i>
+                      ) : companyProfileComplete ? (
+                        <i className="ni ni-check-bold text-lg text-success"></i>
+                      ) : (
+                        <i className="ni ni-fat-add text-xl text-warning"></i>
+                      )}
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
-                        <div className="fw-bold">Configure Your Agents</div>
+                        <div className="fw-bold">
+                          <a href="/admin/payment" className="text-default">Complete Payment Subscription</a>
+                        </div>
                       </div>
-                      <i className="ni ni-fat-add text-xl text-muted"></i>
+                      {accountLoading ? (
+                        <i className="ni ni-settings-gear-65 spin text-lg text-muted"></i>
+                      ) : subscriptionComplete ? (
+                        <i className="ni ni-check-bold text-lg text-success"></i>
+                      ) : (
+                        <i className="ni ni-fat-add text-xl text-warning"></i>
+                      )}
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">
                         <div className="fw-bold">Add Leads</div>
+                        <small className="text-muted">Complete the steps above first</small>
                       </div>
-                      <i className="ni ni-fat-add text-xl text-muted"></i>
+                      {accountLoading ? (
+                        <i className="ni ni-settings-gear-65 spin text-lg text-muted"></i>
+                      ) : userProfileComplete && companyProfileComplete && subscriptionComplete ? (
+                        <i className="ni ni-check-bold text-lg text-success"></i>
+                      ) : (
+                        <i className="ni ni-fat-remove text-xl text-muted"></i>
+                      )}
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-start">
                       <div className="ms-2 me-auto">

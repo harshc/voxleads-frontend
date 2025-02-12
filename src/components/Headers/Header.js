@@ -18,23 +18,52 @@
 
 // reactstrap components
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
+import { useAccount } from "../../context/AccountContext";
 
 const Header = () => {
+  const { 
+    userProfileComplete, 
+    companyProfileComplete, 
+    subscriptionComplete, 
+    loading 
+  } = useAccount();
+
+  const getWarningMessage = () => {
+    const incomplete = [];
+    if (!userProfileComplete) incomplete.push(<a key="user" href="/admin/user-profile" className="text-underline text-secondary">User Profile</a>);
+    if (!companyProfileComplete) incomplete.push(<a key="company" href="/admin/call-centers" className="text-underline text-secondary">Company Profile</a>);
+    if (!subscriptionComplete) incomplete.push(<a key="payment" href="/admin/payment" className="text-underline text-secondary">Payment Subscription</a>);
+    
+    if (incomplete.length === 0) return null;
+    
+    return (
+      <>
+        ACTION REQUIRED: Please complete your {incomplete.reduce((prev, curr, i) => [
+          prev,
+          i < incomplete.length - 1 ? (i === incomplete.length - 2 ? " and " : ", ") : "",
+          curr
+        ])} before adding Leads.
+      </>
+    );
+  };
+
   return (
     <>
       <div className="header bg-gradient-default pb-8 pt-5 pt-md-8">
         <Container fluid>
           <div className="header-body">
-            <Row className="border border-danger bg-warning px-0 py-2 w-100 mx-auto align-items-center mb-4 rounded">
-              <Col className="col-auto">
-                <div className="icon shadow d-flex align-items-center justify-content-center">
-                  <i className="fas fa-triangle-exclamation text-white text-lg" />
-                </div>
-              </Col>
-              <Col>
-                <p className="form-control-label mb-0 text-white">ACTION REQUIRED: Please complete your <a href="/admin/user-profile" className="text-underline text-secondary">User</a> and <a href="/admin/call-centers" className="text-underline text-secondary">Company</a> profiles before adding Leads.</p>
-              </Col>
-            </Row>
+            {!loading && getWarningMessage() && (
+              <Row className="border border-danger bg-warning px-0 py-2 w-100 mx-auto align-items-center mb-4 rounded">
+                <Col className="col-auto">
+                  <div className="icon shadow d-flex align-items-center justify-content-center">
+                    <i className="fas fa-triangle-exclamation text-white text-lg" />
+                  </div>
+                </Col>
+                <Col>
+                  <p className="form-control-label mb-0 text-white">{getWarningMessage()}</p>
+                </Col>
+              </Row>
+            )}
             {/* Card stats */}
             <Row>
               <Col lg="6" xl="3">

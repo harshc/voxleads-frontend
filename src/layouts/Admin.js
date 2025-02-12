@@ -16,6 +16,7 @@
 
 */
 import React from "react";
+import { useAccount } from "../context/AccountContext";
 import { useLocation, Route, Routes, Navigate } from "react-router-dom";
 // reactstrap components
 import { Container } from "reactstrap";
@@ -29,6 +30,7 @@ import routes from "routes.js";
 const Admin = (props) => {
   const mainContent = React.useRef(null);
   const location = useLocation();
+  const { userProfileComplete, companyProfileComplete, subscriptionComplete, loading } = useAccount();
 
   React.useEffect(() => {
     document.documentElement.scrollTop = 0;
@@ -64,7 +66,12 @@ const Admin = (props) => {
     <>
       <Sidebar
         {...props}
-        routes={routes}
+        routes={routes.map(route => ({
+          ...route,
+          showInSidebar: typeof route.showInSidebar === 'function' 
+            ? route.showInSidebar({ userProfileComplete, companyProfileComplete, subscriptionComplete })
+            : route.showInSidebar
+        }))}
         logo={{
           innerLink: "/admin/index",
           imgSrc: require("../assets/img/brand/voxleads-logo.png"),

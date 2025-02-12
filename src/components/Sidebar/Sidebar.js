@@ -106,12 +106,13 @@ const Sidebar = (props) => {
       ));
     }
 
-    // Filter out auth routes for authenticated users
+    // Filter out auth routes and respect dynamic showInSidebar
     const authenticatedRoutes = routes.filter(
       route => 
         !route.path.includes("login") && 
         !route.path.includes("register") &&
-        (route.showInSidebar !== false) // Show if showInSidebar is true or undefined
+        route.showInSidebar !== false && // Hide if explicitly set to false
+        (typeof route.showInSidebar !== 'boolean' || route.showInSidebar === true) // Show if true or undefined
     );
 
     return authenticatedRoutes.map((prop, key) => (
@@ -307,7 +308,7 @@ const Sidebar = (props) => {
           */}
           {/* Navigation */}
           <Nav navbar>
-            {createLinks(routes)}
+            {createLinks(props.routes)}
             {authUser && (
               <NavItem>
                 <NavLink

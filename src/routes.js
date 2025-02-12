@@ -16,6 +16,8 @@
 
 */
 import Index from "views/Index.js";
+import { useAccount } from "./context/AccountContext";
+import { Navigate } from "react-router-dom";
 import Profile from "views/components/Profile.js";
 import Centers from "views/components/Centers.js";
 import Leads from "views/components/Leads.js";
@@ -31,7 +33,12 @@ import ProtectedRoute from "components/ProtectedRoutes";
 import Payment from "views/components/Payment";
 import Validation from "views/components/Validation";
 
-var routes = [
+const RouteWrapper = ({ children }) => {
+  const { userProfileComplete, companyProfileComplete, subscriptionComplete } = useAccount();
+  return children({ userProfileComplete, companyProfileComplete, subscriptionComplete });
+};
+
+const routes = [
   {
     path: "/index",
     name: "Dashboard",
@@ -74,12 +81,21 @@ var routes = [
     name: "Leads",
     icon: "ni ni-collection text-default",
     component: (
-      <ProtectedRoute>
-        <Leads />
-      </ProtectedRoute>
+      <RouteWrapper>
+        {({ userProfileComplete, companyProfileComplete, subscriptionComplete }) => (
+          <ProtectedRoute>
+            {userProfileComplete && companyProfileComplete && subscriptionComplete ? (
+              <Leads />
+            ) : (
+              <Navigate to="/admin/index" replace />
+            )}
+          </ProtectedRoute>
+        )}
+      </RouteWrapper>
     ),
     layout: "/admin",
-    showInSidebar: true,
+    showInSidebar: ({ userProfileComplete, companyProfileComplete, subscriptionComplete }) => 
+      userProfileComplete && companyProfileComplete && subscriptionComplete,
   },
   {
     path: "/logs",

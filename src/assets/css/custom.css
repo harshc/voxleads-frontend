@@ -1,0 +1,20 @@
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+.text-muted {
+  color: #8898aa !important;
+}
+
+.text-success {
+  color: #2dce89 !important;
+}
