@@ -32,6 +32,7 @@ import UserHeader from "components/Headers/UserHeader";
 import ProtectedRoute from "components/ProtectedRoutes";
 import Payment from "views/components/Payment";
 import Validation from "views/components/Validation";
+import Agents from "views/components/Agents";
 
 const RouteWrapper = ({ children }) => {
   const { userProfileComplete, companyProfileComplete, subscriptionComplete } = useAccount();
@@ -75,6 +76,27 @@ const routes = [
     ),
     layout: "/admin",
     showInSidebar: true,
+  },
+  {
+    path: "/agents",
+    name: "Agents",
+    icon: "ni ni-single-02 text-default",
+    component: (
+      <RouteWrapper>
+        {({ userProfileComplete, companyProfileComplete, subscriptionComplete }) => (
+          <ProtectedRoute>
+            {userProfileComplete && companyProfileComplete && subscriptionComplete ? (
+              <Agents />
+            ) : (
+              <Navigate to="/admin/index" replace />
+            )}
+          </ProtectedRoute>
+        )}
+      </RouteWrapper>
+    ),
+    layout: "/admin",
+    showInSidebar: ({ userProfileComplete, companyProfileComplete, subscriptionComplete }) => 
+      userProfileComplete && companyProfileComplete && subscriptionComplete,
   },
   {
     path: "/leads",
