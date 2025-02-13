@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import classnames from "classnames";
 import {
   Button,
   Badge,
@@ -87,6 +88,8 @@ const Agents = () => {
   const navigate = useNavigate();
   const currentUser = auth.currentUser;
 
+  const [activeNav, setActiveNav] = useState(1);
+  const [chartExample1Data, setChartExample1Data] = useState("data1");
   const toggleNavs = (e, index) => {
     e.preventDefault();
     setActiveNav(index);
@@ -679,15 +682,15 @@ const Agents = () => {
                             </NavItem>
                             <NavItem>
                             <NavLink
-                              className={classnames("py-2 px-3", {
-                              active: activeNav === 2,
-                              })}
-                              data-toggle="tab"
-                              href="#"
+                                className={classnames("py-2 px-3", {
+                                active: activeNav === 2,
+                                })}
+                                data-toggle="tab"
+                                href="#"
                                 onClick={(e) => toggleNavs(e, 2)}
                             >
-                              <span className="d-none d-md-block">Call Queue</span>
-                              <span className="d-md-none">Queue</span>
+                                <span className="d-none d-md-block">Call Queue</span>
+                                <span className="d-md-none">Queue</span>
                             </NavLink>
                             </NavItem>
                         </Nav>
@@ -733,7 +736,7 @@ const Agents = () => {
                             <div className="avatar-group">
                                 <a
                                 className="avatar avatar-sm"
-                                href="#"
+                                href="#pablo"
                                 id="tooltip996637554"
                                 onClick={(e) => e.preventDefault()}
                                 >
@@ -755,7 +758,7 @@ const Agents = () => {
                             <UncontrolledDropdown>
                                 <DropdownToggle
                                 className="btn-icon-only"
-                                href="#"
+                                href="#pablo"
                                 role="button"
                                 size="sm"
                                 color=""
@@ -765,13 +768,13 @@ const Agents = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                 <DropdownItem
-                                    href="#"
+                                    href="#pablo"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     View Call Log
                                 </DropdownItem>
                                 <DropdownItem
-                                    href="#"
+                                    href="#pablo"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     Archive Call Log
@@ -808,7 +811,7 @@ const Agents = () => {
                             <div className="avatar-group">
                                 <a
                                 className="avatar avatar-sm"
-                                href="#"
+                                href="#pablo"
                                 id="tooltip996637554"
                                 onClick={(e) => e.preventDefault()}
                                 >
@@ -830,7 +833,7 @@ const Agents = () => {
                             <UncontrolledDropdown>
                                 <DropdownToggle
                                 className="btn-icon-only"
-                                href="#"
+                                href="#pablo"
                                 role="button"
                                 size="sm"
                                 color=""
@@ -840,13 +843,13 @@ const Agents = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                 <DropdownItem
-                                    href="#"
+                                    href="#pablo"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     View Call Log
                                 </DropdownItem>
                                 <DropdownItem
-                                    href="#"
+                                    href="#pablo"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     Archive Call Log
@@ -905,7 +908,7 @@ const Agents = () => {
                             <UncontrolledDropdown>
                                 <DropdownToggle
                                 className="btn-icon-only"
-                                href="#"
+                                href="#pablo"
                                 role="button"
                                 size="sm"
                                 color=""
@@ -915,7 +918,7 @@ const Agents = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                 <DropdownItem
-                                    href="#"
+                                    href="#pablo"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     View Call Log
