@@ -55,7 +55,7 @@ const Agents = () => {
     manager_phone: "",
     total_staff: "",
     services_offered: "",
-    timezone: "UTC+00:00",  Will be updated dynamically
+    timezone: "UTC+00:00",  //Will be updated dynamically
     description: "",
     operational_hours: {
       Monday: { open: "", close: "" },
