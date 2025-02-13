@@ -434,7 +434,7 @@ const Agents = () => {
                      </div>
                    </div>
                    <div className="pl-lg-4">
-                     <Row className="my-4">
+                     <Row className="my-4 align-items-center">
                        <Col lg="9">
                          <div>
                            <div className="form-control-label mb-4">
@@ -534,7 +534,7 @@ const Agents = () => {
                              Character Traits
                            </div>
                            <div>
-                             Detail-oriented, Enthusiastic, Knowledgeable, ...
+                             Detail-oriented, Enthusiastic, Knowledgeable, Optimistic, Warm
                            </div>
                          </div>
                        </Col>
@@ -703,7 +703,6 @@ const Agents = () => {
                             <th scope="col">Date</th>
                             <th scope="col">Minutes</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Agent</th>
                             <th scope="col">Actions</th>
                         </tr>
                         </thead>
@@ -732,28 +731,6 @@ const Agents = () => {
                                 In Progress
                             </Badge>
                             </td>
-                            <td>
-                            <div className="avatar-group">
-                                <a
-                                className="avatar avatar-sm"
-                                href="#pablo"
-                                id="tooltip996637554"
-                                onClick={(e) => e.preventDefault()}
-                                >
-                                <img
-                                    alt="..."
-                                    className="rounded-circle"
-                                    src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                                />
-                                </a>
-                                <UncontrolledTooltip
-                                delay={0}
-                                target="tooltip996637554"
-                                >
-                                Sara Doe
-                                </UncontrolledTooltip>
-                            </div>
-                            </td>
                             <td className="text-center">
                             <UncontrolledDropdown>
                                 <DropdownToggle
@@ -768,13 +745,13 @@ const Agents = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     View Call Log
                                 </DropdownItem>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     Archive Call Log
@@ -807,33 +784,11 @@ const Agents = () => {
                                 Completed
                             </Badge>
                             </td>
-                            <td>
-                            <div className="avatar-group">
-                                <a
-                                className="avatar avatar-sm"
-                                href="#pablo"
-                                id="tooltip996637554"
-                                onClick={(e) => e.preventDefault()}
-                                >
-                                <img
-                                    alt="..."
-                                    className="rounded-circle"
-                                    src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                                />
-                                </a>
-                                <UncontrolledTooltip
-                                delay={0}
-                                target="tooltip996637554"
-                                >
-                                Sara Doe
-                                </UncontrolledTooltip>
-                            </div>
-                            </td>
                             <td className="text-center">
                             <UncontrolledDropdown>
                                 <DropdownToggle
                                 className="btn-icon-only"
-                                href="#pablo"
+                                href="#"
                                 role="button"
                                 size="sm"
                                 color=""
@@ -843,13 +798,13 @@ const Agents = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     View Call Log
                                 </DropdownItem>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     Archive Call Log
@@ -882,28 +837,6 @@ const Agents = () => {
                                 Failed
                             </Badge>
                             </td>
-                            <td>
-                            <div className="avatar-group">
-                                <a
-                                className="avatar avatar-sm"
-                                href="#pablo"
-                                id="tooltip996637554"
-                                onClick={(e) => e.preventDefault()}
-                                >
-                                <img
-                                    alt="..."
-                                    className="rounded-circle"
-                                    src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                                />
-                                </a>
-                                <UncontrolledTooltip
-                                delay={0}
-                                target="tooltip996637554"
-                                >
-                                Sara Doe
-                                </UncontrolledTooltip>
-                            </div>
-                            </td>
                             <td className="text-center">
                             <UncontrolledDropdown>
                                 <DropdownToggle
@@ -918,13 +851,13 @@ const Agents = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     View Call Log
                                 </DropdownItem>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     Archive Call Log
@@ -987,12 +920,10 @@ const Agents = () => {
                        </Col>
                        <Col lg="6">
                         <FormGroup>
-                           <div className="input-group">
-                             <label className="form-control-label" htmlFor="agProfileImg">
-                               Profile Photo
-                             </label>
-                             <input type="file" className="form-control-alternative form-control" id="agProfileImg" />
-                           </div>
+                           <label className="form-control-label" htmlFor="agProfileImg">
+                             Profile Photo
+                           </label>
+                           <input type="file" className="form-control-alternative form-control" id="agProfileImg" />
                          </FormGroup>
                        </Col>
                      </Row>
@@ -1067,10 +998,10 @@ const Agents = () => {
                                  <option selected>Select one...</option>
                                  <option value="1">English</option>
                                  <option value="2">Spanish</option>
-                                 <option value="2">French</option>
-                                 <option value="2">Hindi</option>
-                                 <option value="2">Mandarin</option>
-                                 <option value="3">...</option>
+                                 <option value="3">French</option>
+                                 <option value="4">Hindi</option>
+                                 <option value="5">Mandarin</option>
+                                 <option value="6">...</option>
                              </select>
                          </FormGroup>
                        </Col>
@@ -1104,8 +1035,8 @@ const Agents = () => {
                                  <option selected>Select one...</option>
                                  <option value="1">Vocie 1</option>
                                  <option value="2">Voice 2</option>
-                                 <option value="2">Voice 3</option>
-                                 <option value="3">...</option>
+                                 <option value="3">Voice 3</option>
+                                 <option value="4">...</option>
                              </select>
                          </FormGroup>
                        </Col>
@@ -1121,8 +1052,8 @@ const Agents = () => {
                                  <option selected>Select one...</option>
                                  <option value="1">American (USA)</option>
                                  <option value="2">British (UK)</option>
-                                 <option value="2">Indian (INDIA)</option>
-                                 <option value="3">...</option>
+                                 <option value="3">Indian (INDIA)</option>
+                                 <option value="4">...</option>
                              </select>
                          </FormGroup>
                        </Col>
@@ -1147,7 +1078,7 @@ const Agents = () => {
                        </Col>
                      </Row>
                      <Row>
-                       <Col lg="6">
+                       <Col lg="5">
                          <FormGroup>
                              <label
                                className="form-control-label"
@@ -1157,41 +1088,80 @@ const Agents = () => {
                              </label>
                              <select className="form-control-alternative form-control" id="agSpeakingstyle">
                                  <option selected>Select one...</option>
-                                 <option value="1">Informative and Passionate</option>
-                                 <option value="2">Voice 2 (Male)</option>
-                                 <option value="3">...</option>
+                                 <option value="1">Clever and Methodical"</option>
+                                 <option value="2">Friendly and Easygoing</option>
+                                 <option value="3">Informative and Passionate</option>
+                                 <option value="4">...</option>
                              </select>
                          </FormGroup>
                        </Col>
-                       <Col lg="6">
+                       <Col lg="7">
                          <FormGroup>
-                             <label className="form-control-label">
-                               Character Traits
-                             </label>
-                             <div className="custom-control custom-control-alternative custom-checkbox">
+                           <label className="form-control-label">
+                             Character Traits
+                           </label>
+                          <Row>
+                            <Col lg="6">
+                              <div className="custom-control custom-control-alternative custom-checkbox">
                                 <input className="custom-control-input" id="agTrait1" type="checkbox" />
                                 <label className="custom-control-label" htmlFor="agTrait1">
-                                <span className="text-muted">
+                                <span className="text-default">
                                     Detail Oriented
                                 </span>
                                 </label>
-                            </div>
-                            <div className="custom-control custom-control-alternative custom-checkbox">
-                                <input className="custom-control-input" id="agTrait1" type="checkbox" />
-                                <label className="custom-control-label" htmlFor="agTrait1">
-                                <span className="text-muted">
+                              </div>
+                            </Col>
+                            <Col lg="6">
+                              <div className="custom-control custom-control-alternative custom-checkbox">
+                                <input className="custom-control-input" id="agTrait2" type="checkbox" />
+                                <label className="custom-control-label" htmlFor="agTrait2">
+                                <span className="text-default">
                                     Enthusiastic
                                 </span>
                                 </label>
-                            </div>
-                            <div className="custom-control custom-control-alternative custom-checkbox">
-                                <input className="custom-control-input" id="agTrait1" type="checkbox" />
-                                <label className="custom-control-label" htmlFor="agTrait1">
-                                <span className="text-muted">
+                              </div>
+                            </Col>
+                            <Col lg="6">
+                              <div className="custom-control custom-control-alternative custom-checkbox">
+                                <input className="custom-control-input" id="agTrait3" type="checkbox" />
+                                <label className="custom-control-label" htmlFor="agTrait3">
+                                <span className="text-default">
                                     Knowledgeable
                                 </span>
                                 </label>
-                            </div>
+                              </div>
+                            </Col>
+                            <Col lg="6">
+                              <div className="custom-control custom-control-alternative custom-checkbox">
+                                <input className="custom-control-input" id="agTrait4" type="checkbox" />
+                                <label className="custom-control-label" htmlFor="agTrait4">
+                                <span className="text-default">
+                                    Optimistic
+                                </span>
+                                </label>
+                              </div>
+                            </Col>
+                            <Col lg="6">
+                              <div className="custom-control custom-control-alternative custom-checkbox">
+                                <input className="custom-control-input" id="agTrait5" type="checkbox" />
+                                <label className="custom-control-label" htmlFor="agTrait5">
+                                <span className="text-default">
+                                    Outgoing
+                                </span>
+                                </label>
+                              </div>
+                            </Col>
+                            <Col lg="6">
+                              <div className="custom-control custom-control-alternative custom-checkbox">
+                                <input className="custom-control-input" id="agTrait6" type="checkbox" />
+                                <label className="custom-control-label" htmlFor="agTrait6">
+                                <span className="text-default">
+                                    Warm
+                                </span>
+                                </label>
+                              </div>
+                            </Col>
+                          </Row>
                          </FormGroup>
                        </Col>
                      </Row>
@@ -1206,24 +1176,24 @@ const Agents = () => {
                        <Col lg="12">
                          <FormGroup>
                              <div className="custom-control custom-control-alternative custom-checkbox">
-                                <input className="custom-control-input" id="agTrait1" type="checkbox" />
-                                <label className="custom-control-label" htmlFor="agTrait1">
+                                <input className="custom-control-input" id="agCompany1" type="checkbox" />
+                                <label className="custom-control-label" htmlFor="agCompany1">
                                 <span className="text-default">
                                     Company 1
                                 </span>
                                 </label>
                             </div>
                             <div className="custom-control custom-control-alternative custom-checkbox">
-                                <input className="custom-control-input" id="agTrait1" type="checkbox" />
-                                <label className="custom-control-label" htmlFor="agTrait1">
+                                <input className="custom-control-input" id="agCompany2" type="checkbox" />
+                                <label className="custom-control-label" htmlFor="agCompany2">
                                 <span className="text-default">
                                     Company 2
                                 </span>
                                 </label>
                             </div>
                             <div className="custom-control custom-control-alternative custom-checkbox">
-                                <input className="custom-control-input" id="agTrait1" type="checkbox" />
-                                <label className="custom-control-label" htmlFor="agTrait1">
+                                <input className="custom-control-input" id="agCompany3" type="checkbox" />
+                                <label className="custom-control-label" htmlFor="agCompany3">
                                 <span className="text-default">
                                     Company 3
                                 </span>
@@ -1242,10 +1212,10 @@ const Agents = () => {
                        <Col>
                          <FormGroup>
                              <div className="custom-control custom-control-alternative custom-checkbox">
-                                <input className="custom-control-input" id="agTrait1" type="checkbox" />
-                                <label className="custom-control-label" htmlFor="agTrait1">
+                                <input className="custom-control-input" id="agHoursCompany" type="checkbox" />
+                                <label className="custom-control-label" htmlFor="agHoursCompany">
                                 <span className="text-default">
-                                    Operate Within Company's Hours
+                                    Operate Within Selected Company Hours
                                 </span>
                                 </label>
                             </div>
