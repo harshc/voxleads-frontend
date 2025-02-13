@@ -10,9 +10,6 @@ import {
   FormGroup,
   Form,
   Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
   Container,
   Row,
   Col,
@@ -89,6 +86,12 @@ const Agents = () => {
 
   const navigate = useNavigate();
   const currentUser = auth.currentUser;
+
+  const toggleNavs = (e, index) => {
+    e.preventDefault();
+    setActiveNav(index);
+    setChartExample1Data("data" + index);
+  };
 
   return (
     <>
@@ -345,50 +348,44 @@ const Agents = () => {
                         className="pagination justify-content-end mb-0"
                         listClassName="justify-content-end mb-0"
                       >
-                        <PaginationItem disabled={currentPage === 1}>
+                        <PaginationItem className="disabled">
                           <PaginationLink
-                            href="#pablo"
-                            onClick={(e) => goToPage(currentPage-1)}
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
                             tabIndex="-1"
                           >
                             <i className="fas fa-angle-left" />
                             <span className="sr-only">Previous</span>
                           </PaginationLink>
                         </PaginationItem>
-                                    {/* Page Numbers (Show Only 2 Pages at a Time) */}
-                        {currentPage > 1 && (
-                          <PaginationItem key={currentPage-1}>
-                            <PaginationLink
-                              href="#pablo"
-                              onClick={() => goToPage(currentPage - 1)}>
-                                {currentPage - 1}
-                            </PaginationLink>
-                          </PaginationItem>
-                        )}
-                        <PaginationItem active>
+                        <PaginationItem className="active">
                           <PaginationLink
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              {currentPage}
-                            </PaginationLink>
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            1
+                          </PaginationLink>
                         </PaginationItem>
-
-                        {currentPage < totalPages && (
                         <PaginationItem>
                           <PaginationLink
-                              href="#pablo"
-                              onClick={() => goToPage(currentPage + 1)}>
-                                {currentPage + 1}
-                            </PaginationLink>
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            2 <span className="sr-only">(current)</span>
+                          </PaginationLink>
                         </PaginationItem>
-                        )}
-
-
-                        <PaginationItem disabled={currentPage >= totalPages}>
+                        <PaginationItem>
                           <PaginationLink
-                            href="#pablo"
-                            onClick={() => goToPage(currentPage + 1)}
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            3
+                          </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                          <PaginationLink
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
                           >
                             <i className="fas fa-angle-right" />
                             <span className="sr-only">Next</span>
@@ -682,15 +679,15 @@ const Agents = () => {
                             </NavItem>
                             <NavItem>
                             <NavLink
-                                className={classnames("py-2 px-3", {
-                                active: activeNav === 2,
-                                })}
-                                data-toggle="tab"
-                                href="#"
+                              className={classnames("py-2 px-3", {
+                              active: activeNav === 2,
+                              })}
+                              data-toggle="tab"
+                              href="#"
                                 onClick={(e) => toggleNavs(e, 2)}
                             >
-                                <span className="d-none d-md-block">Call Queue</span>
-                                <span className="d-md-none">Queue</span>
+                              <span className="d-none d-md-block">Call Queue</span>
+                              <span className="d-md-none">Queue</span>
                             </NavLink>
                             </NavItem>
                         </Nav>
@@ -736,7 +733,7 @@ const Agents = () => {
                             <div className="avatar-group">
                                 <a
                                 className="avatar avatar-sm"
-                                href="#pablo"
+                                href="#"
                                 id="tooltip996637554"
                                 onClick={(e) => e.preventDefault()}
                                 >
@@ -758,7 +755,7 @@ const Agents = () => {
                             <UncontrolledDropdown>
                                 <DropdownToggle
                                 className="btn-icon-only"
-                                href="#pablo"
+                                href="#"
                                 role="button"
                                 size="sm"
                                 color=""
@@ -768,13 +765,13 @@ const Agents = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     View Call Log
                                 </DropdownItem>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     Archive Call Log
@@ -811,7 +808,7 @@ const Agents = () => {
                             <div className="avatar-group">
                                 <a
                                 className="avatar avatar-sm"
-                                href="#pablo"
+                                href="#"
                                 id="tooltip996637554"
                                 onClick={(e) => e.preventDefault()}
                                 >
@@ -833,7 +830,7 @@ const Agents = () => {
                             <UncontrolledDropdown>
                                 <DropdownToggle
                                 className="btn-icon-only"
-                                href="#pablo"
+                                href="#"
                                 role="button"
                                 size="sm"
                                 color=""
@@ -843,13 +840,13 @@ const Agents = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     View Call Log
                                 </DropdownItem>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     Archive Call Log
@@ -908,7 +905,7 @@ const Agents = () => {
                             <UncontrolledDropdown>
                                 <DropdownToggle
                                 className="btn-icon-only"
-                                href="#pablo"
+                                href="#"
                                 role="button"
                                 size="sm"
                                 color=""
@@ -918,7 +915,7 @@ const Agents = () => {
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
                                 <DropdownItem
-                                    href="#pablo"
+                                    href="#"
                                     onClick={(e) => e.preventDefault()}
                                 >
                                     View Call Log
