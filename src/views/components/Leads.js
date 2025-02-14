@@ -577,47 +577,54 @@ const Leads = () => {
                 </CardHeader>
                 <CardBody>
                   <Form>
-                    <Row className="mb-3">
-                      {/* Status Toggle */}
-                      <Col lg="6">
-                        <div className="custom-control custom-control-alternative custom-checkbox">
-                          <input
-                            className="custom-control-input"
-                            type="checkbox"
-                            role="switch"
-                            id="leadOnOff"
-                            checked={selectedLead.status === "active"}
-                            onChange={handleStatusToggle}
-                            disabled={!editMode}
-                          />
-                          <label className="custom-control-label" htmlFor="leadOnOff">
-                            <Badge color="" className="badge-dot">
-                              <i className={`bg-${getStatusBadge(selectedLead.status)}`} />
-                              {selectedLead.status}
-                            </Badge>
-                          </label>
-                        </div>
-                      </Col>
-                      {/* Status Dropdown */}
-                      <Col lg="6">
-                        <FormGroup>
-                          <label>Status</label>
-                          <Input
-                            type="select"
-                            name="status"
-                            value={selectedLead.status}
-                            onChange={handleInputChange}
-                            disabled={!editMode}
-                          >
-                            <option value="active">Active</option>
-                            <option value="pending">Pending</option>
-                            <option value="flagged">Flagged</option>
-                            <option value="unsubscribed">Unsubscribed</option>
-                          </Input>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    
+
+                    <h6 className="heading-small text-muted mb-4">
+                        Status & Priority
+                    </h6>
+                    <div className="pl-lg-4">
+                        <Row className="mb-3">
+                        {/* Status Toggle */}
+                        <Col lg="6">
+                          <FormGroup>
+                            <div className="custom-control custom-control-alternative custom-checkbox">
+                            <input
+                                className="custom-control-input"
+                                type="checkbox"
+                                role="switch"
+                                id="leadOnOff"
+                                checked={selectedLead.status === "active"}
+                                onChange={handleStatusToggle}
+                                disabled={!editMode}
+                            />
+                            <label className="custom-control-label" htmlFor="leadOnOff">
+                                <Badge color="" className="badge-dot">
+                                <i className={`bg-${getStatusBadge(selectedLead.status)}`} />
+                                {selectedLead.status}
+                                </Badge>
+                            </label>
+                            </div>
+                          </FormGroup>
+                        </Col>
+                        {/* Status Dropdown */}
+                        <Col lg="6">
+                          <FormGroup>
+                            <Input
+                                type="select"
+                                name="status"
+                                value={selectedLead.status}
+                                onChange={handleInputChange}
+                                disabled={!editMode}
+                            >
+                                <option value="active">Active</option>
+                                <option value="pending">Pending</option>
+                                <option value="flagged">Flagged</option>
+                                <option value="unsubscribed">Unsubscribed</option>
+                            </Input>
+                          </FormGroup>
+                        </Col>
+                        </Row>
+                    </div>
+
                     <Row>
                       <Col lg="6">
                         <FormGroup>
@@ -642,7 +649,7 @@ const Leads = () => {
                                className="form-control-label"
                                htmlFor="leadCallbydate"
                              >
-                               Call By (Date)
+                               Call By Date
                              </label>
                              <Input
                                 className="form-control-alternative"
@@ -798,13 +805,11 @@ const Leads = () => {
                              >
                                Age
                              </label>
-                             <select className="form-control-alternative form-control" id="leadAge">
-                                 <option selected>Select one...</option>
-                                 <option value="1">Vocie 1</option>
-                                 <option value="2">Voice 2</option>
-                                 <option value="3">Voice 3</option>
-                                 <option value="4">...</option>
-                             </select>
+                             <Input
+                                className="form-control-alternative"
+                                id="leadAge"
+                                type="text"
+                             />
                          </FormGroup>
                        </Col>
                        <Col lg="6">
@@ -850,7 +855,7 @@ const Leads = () => {
                                className="form-control-label"
                                htmlFor="leadEthnicity"
                              >
-                               Gender
+                               Ethnicity
                              </label>
                              <select className="form-control-alternative form-control" id="leadEthnicity">
                                  <option selected>Select one...</option>
@@ -906,7 +911,102 @@ const Leads = () => {
                         </FormGroup>
                       </Col>
                     </Row>
-                    </div>    
+                    </div>
+
+                    <h6 className="heading-small text-muted mb-4">
+                        Call History
+                    </h6>
+                    <div className="pl-lg-4">
+                        <Table className="align-items-center table-flush table-secondary table-striped table-hover border" responsive>
+                            <thead className="thead-light">
+                            <tr>
+                                <th scope="col">Call ID</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Minutes</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Agent</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">
+                                <Media className="align-items-center">
+                                    <Media>
+                                    <span className="mb-0 text-sm">
+                                        <a href="#">
+                                        Call #123456
+                                        </a>
+                                    </span>
+                                    </Media>
+                                </Media>
+                                </th>
+                                <td>2025-01-27 08:26:49</td>         
+                                <td>
+                                <div className="time-amount">
+                                    04:12:34 m
+                                </div>
+                                </td>
+                                <td>
+                                <Badge color="" className="badge-dot">
+                                    <i className="bg-success" />
+                                    Completed
+                                </Badge>
+                                </td>
+                                <td>
+                                <div className="avatar-group">
+                                    <a
+                                    className="avatar avatar-sm"
+                                    href="#"
+                                    id="tooltip996637554"
+                                    onClick={(e) => e.preventDefault()}
+                                    >
+                                    <img
+                                        alt="..."
+                                        className="rounded-circle"
+                                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                    />
+                                    </a>
+                                    <UncontrolledTooltip
+                                    delay={0}
+                                    target="tooltip996637554"
+                                    >
+                                    Sara Doe
+                                    </UncontrolledTooltip>
+                                </div>
+                                </td>
+                                <td className="text-center">
+                                <UncontrolledDropdown>
+                                    <DropdownToggle
+                                    className="btn-icon-only"
+                                    href="#"
+                                    role="button"
+                                    size="sm"
+                                    color=""
+                                    onClick={(e) => e.preventDefault()}
+                                    >
+                                    <i className="fas fa-angle-down" />
+                                    </DropdownToggle>
+                                    <DropdownMenu className="dropdown-menu-arrow" right>
+                                    <DropdownItem
+                                        href="#"
+                                        onClick={(e) => e.preventDefault()}
+                                    >
+                                        View Call Log
+                                    </DropdownItem>
+                                    <DropdownItem
+                                        href="#"
+                                        onClick={(e) => e.preventDefault()}
+                                    >
+                                        Delete Call Log
+                                    </DropdownItem>
+                                    </DropdownMenu>
+                                </UncontrolledDropdown>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </Table>
+                    </div> 
 
                     {/* Save/Delete Buttons */}
                     <Row className="mt-4 justify-content-between align-items-center">
