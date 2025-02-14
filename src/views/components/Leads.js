@@ -4,6 +4,7 @@ import {
   Card,
   CardHeader,
   CardBody,
+  CardFooter,
   FormGroup,
   Form,
   Input,
@@ -12,6 +13,7 @@ import {
   Col,
   Nav,
   NavItem,
+  NavLink,
   Badge,
   CardFooter,
   DropdownMenu,
@@ -576,12 +578,12 @@ const Leads = () => {
                 </CardHeader>
                 <CardBody>
                   <Form>
-                    {/* Status Toggle */}
                     <Row className="mb-3">
-                      <Col>
-                        <div className="form-check form-switch">
+                      {/* Status Toggle */}
+                      <Col lg="6">
+                        <div className="custom-control custom-control-alternative custom-checkbox">
                           <input
-                            className="form-check-input"
+                            className="custom-control-input"
                             type="checkbox"
                             role="switch"
                             id="leadOnOff"
@@ -589,7 +591,7 @@ const Leads = () => {
                             onChange={handleStatusToggle}
                             disabled={!editMode}
                           />
-                          <label className="form-check-label" htmlFor="leadOnOff">
+                          <label className="custom-control-label" htmlFor="leadOnOff">
                             <Badge color="" className="badge-dot">
                               <i className={`bg-${getStatusBadge(selectedLead.status)}`} />
                               {selectedLead.status}
@@ -597,9 +599,7 @@ const Leads = () => {
                           </label>
                         </div>
                       </Col>
-                    </Row>
-                    {/* Status Dropdown */}
-                    <Row>
+                      {/* Status Dropdown */}
                       <Col lg="6">
                         <FormGroup>
                           <label>Status</label>
@@ -618,6 +618,46 @@ const Leads = () => {
                         </FormGroup>
                       </Col>
                     </Row>
+                    
+                    <Row>
+                      <Col lg="6">
+                        <FormGroup>
+                            <label
+                               className="form-control-label"
+                               htmlFor="leadUrgency"
+                             >
+                               Urgency Rating
+                             </label>
+                             <select className="form-control-alternative form-control" id="leadUrgency">
+                                 <option selected>Select one...</option>
+                                 <option value="1">Critical</option>
+                                 <option value="2">High</option>
+                                 <option value="3">Medium</option>
+                                 <option value="4">Low</option>
+                             </select>
+                        </FormGroup>
+                      </Col>
+                      <Col lg="6">
+                        <FormGroup>
+                            <label
+                               className="form-control-label"
+                               htmlFor="leadCallbydate"
+                             >
+                               Call By (Date)
+                             </label>
+                             <Input
+                                className="form-control-alternative"
+                                id="leadCallbydate"
+                                type="date"
+                             />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+
+                    <h6 className="heading-small text-muted mb-4">
+                        Contact Details
+                    </h6>
+                    <div className="pl-lg-4">
 
                     {/* Personal Details */}
                     <Row>
@@ -744,6 +784,114 @@ const Leads = () => {
                       </Col>
                     </Row>
 
+                    </div>
+
+                    <h6 className="heading-small text-muted mb-4">
+                        Demographics
+                    </h6>
+                    <div className="pl-lg-4">
+                     <Row>
+                       <Col lg="6">
+                         <FormGroup>
+                             <label
+                               className="form-control-label"
+                               htmlFor="leadAge"
+                             >
+                               Age
+                             </label>
+                             <select className="form-control-alternative form-control" id="leadAge">
+                                 <option selected>Select one...</option>
+                                 <option value="1">Vocie 1</option>
+                                 <option value="2">Voice 2</option>
+                                 <option value="3">Voice 3</option>
+                                 <option value="4">...</option>
+                             </select>
+                         </FormGroup>
+                       </Col>
+                       <Col lg="6">
+                         <FormGroup>
+                             <label
+                               className="form-control-label"
+                               htmlFor="leadGender"
+                             >
+                               Gender
+                             </label>
+                             <select className="form-control-alternative form-control" id="leadGender">
+                                 <option selected>Select one...</option>
+                                 <option value="1">Male</option>
+                                 <option value="2">Female</option>
+                                 <option value="3">Other</option>
+                                 <option value="4">...</option>
+                             </select>
+                         </FormGroup>
+                       </Col>
+                     </Row>
+
+                     <Row>
+                       <Col lg="6">
+                         <FormGroup>
+                             <label
+                               className="form-control-label"
+                               htmlFor="leadLanguage"
+                             >
+                               Language
+                             </label>
+                             <select className="form-control-alternative form-control" id="leadLanguage">
+                                 <option selected>Select one...</option>
+                                 <option value="1">English</option>
+                                 <option value="2">French</option>
+                                 <option value="3">Spanish</option>
+                                 <option value="4">...</option>
+                             </select>
+                         </FormGroup>
+                       </Col>
+                       <Col lg="6">
+                         <FormGroup>
+                             <label
+                               className="form-control-label"
+                               htmlFor="leadEthnicity"
+                             >
+                               Gender
+                             </label>
+                             <select className="form-control-alternative form-control" id="leadEthnicity">
+                                 <option selected>Select one...</option>
+                                 <option value="1">Caucasian</option>
+                                 <option value="2">African American</option>
+                                 <option value="3">Latino</option>
+                                 <option value="4">...</option>
+                             </select>
+                         </FormGroup>
+                       </Col>
+                     </Row>
+
+                     <Row>
+                       <Col lg="6">
+                         <FormGroup>
+                             <label
+                               className="form-control-label"
+                               htmlFor="leadLanguage"
+                             >
+                               Yearly Household Income
+                             </label>
+                             <select className="form-control-alternative form-control" id="leadLanguage">
+                                 <option selected>Select one...</option>
+                                 <option value="1">0-9,999</option>
+                                 <option value="2">10,000-24,999</option>
+                                 <option value="3">25,000-34,999</option>
+                                 <option value="4">35,000-49,999</option>
+                                 <option value="5">50,000-74,999</option>
+                                 <option value="6">75,000-99,999</option>
+                                 <option value="7">100,000+</option>
+                             </select>
+                         </FormGroup>
+                       </Col>
+                     </Row>
+                    </div>
+
+                    <h6 className="heading-small text-muted mb-4">
+                        Additional Information
+                    </h6>
+                    <div className="pl-lg-4">
                     {/* Notes */}
                     <Row>
                       <Col lg="12">
@@ -758,7 +906,8 @@ const Leads = () => {
                           />
                         </FormGroup>
                       </Col>
-                    </Row>        
+                    </Row>
+                    </div>    
 
                     {/* Save/Delete Buttons */}
                     <Row className="mt-4 justify-content-between align-items-center">
