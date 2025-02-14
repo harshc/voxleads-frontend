@@ -33,6 +33,7 @@ import ProtectedRoute from "components/ProtectedRoutes";
 import Payment from "views/components/Payment";
 import Validation from "views/components/Validation";
 import Agents from "views/components/Agents";
+import Bookings from "views/components/Bookings";
 
 const RouteWrapper = ({ children }) => {
   const { userProfileComplete, companyProfileComplete, subscriptionComplete } = useAccount();
@@ -126,6 +127,18 @@ const routes = [
     component: (
       <ProtectedRoute>
         <Logs />
+      </ProtectedRoute>
+    ),
+    layout: "/admin",
+    showInSidebar: true
+  },
+  {
+    path: "/bookings",
+    name: "Bookings",
+    icon: "ni ni-calendar-grid-58 text-default",
+    component: (
+      <ProtectedRoute>
+        <Bookings />
       </ProtectedRoute>
     ),
     layout: "/admin",
