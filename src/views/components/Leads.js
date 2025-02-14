@@ -577,12 +577,11 @@ const Leads = () => {
                 </CardHeader>
                 <CardBody>
                   <Form>
-
                     <h6 className="heading-small text-muted mb-4">
                         Status & Priority
                     </h6>
                     <div className="pl-lg-4">
-                        <Row className="mb-3">
+                      <Row className="mb-3 align-items-center">
                         {/* Status Toggle */}
                         <Col lg="6">
                           <FormGroup>
@@ -609,25 +608,24 @@ const Leads = () => {
                         <Col lg="6">
                           <FormGroup>
                             <Input
-                                type="select"
-                                name="status"
-                                value={selectedLead.status}
-                                onChange={handleInputChange}
-                                disabled={!editMode}
+                              type="select"
+                              name="status"
+                              value={selectedLead.status}
+                              onChange={handleInputChange}
+                              disabled={!editMode}
                             >
-                                <option value="active">Active</option>
-                                <option value="pending">Pending</option>
-                                <option value="flagged">Flagged</option>
-                                <option value="unsubscribed">Unsubscribed</option>
+                              <option value="active">Active</option>
+                              <option value="pending">Pending</option>
+                              <option value="flagged">Flagged</option>
+                              <option value="unsubscribed">Unsubscribed</option>
                             </Input>
                           </FormGroup>
                         </Col>
-                        </Row>
-                    </div>
+                      </Row>
 
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
                             <label
                                className="form-control-label"
                                htmlFor="leadUrgency"
@@ -635,16 +633,16 @@ const Leads = () => {
                                Urgency Rating
                              </label>
                              <select className="form-control-alternative form-control" id="leadUrgency">
-                                 <option selected>Select one...</option>
-                                 <option value="1">Critical</option>
-                                 <option value="2">High</option>
-                                 <option value="3">Medium</option>
-                                 <option value="4">Low</option>
+                               <option selected>Select one...</option>
+                               <option value="1">Critical</option>
+                               <option value="2">High</option>
+                               <option value="3">Medium</option>
+                               <option value="4">Low</option>
                              </select>
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
                             <label
                                className="form-control-label"
                                htmlFor="leadCallbydate"
@@ -656,142 +654,143 @@ const Leads = () => {
                                 id="leadCallbydate"
                                 type="date"
                              />
-                        </FormGroup>
-                      </Col>
-                    </Row>
+                          </FormGroup>
+                        </Col>
+                      </Row>
+                    </div>
 
+                    <hr className="my-4" />
                     <h6 className="heading-small text-muted mb-4">
                         Contact Details
                     </h6>
                     <div className="pl-lg-4">
-
-                    {/* Personal Details */}
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label>First Name</label>
-                          <Input
-                            type="text"
-                            name="first_name"
-                            value={selectedLead.first_name}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label>Last Name</label>
-                          <Input
-                            type="text"
-                            name="last_name"
-                            value={selectedLead.last_name}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label>Email</label>
-                          <Input
-                            type="email"
-                            name="email"
-                            value={selectedLead.email}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label>Phone Number</label>
-                          <Input
-                            type="text"
-                            name="phone_number"
-                            value={selectedLead.phone_number}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-
-                    {/* Address Fields */}
-                    <Row>
-                      <Col lg="12">
-                        <FormGroup>
-                          <label>Street Address</label>
-                          <Input
-                            type="text"
-                            name="street_address"
-                            value={selectedLead.street_address}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label>City</label>
-                          <Input
-                            type="text"
-                            name="city"
-                            value={selectedLead.city}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label>State</label>
-                          <Input
-                            type="text"
-                            name="state"
-                            value={selectedLead.state}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-
-                    <Row>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label>Country</label>
-                          <Input
-                            type="text"
-                            name="country"
-                            value={selectedLead.country}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col lg="6">
-                        <FormGroup>
-                          <label>Zip Code</label>
-                          <Input
-                            type="text"
-                            name="zip_code"
-                            value={selectedLead.zip_code}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-
+                      {/* Personal Details */}
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>First Name</label>
+                            <Input
+                              type="text"
+                              name="first_name"
+                              value={selectedLead.first_name}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Last Name</label>
+                            <Input
+                              type="text"
+                              name="last_name"
+                              value={selectedLead.last_name}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+  
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Email</label>
+                            <Input
+                              type="email"
+                              name="email"
+                              value={selectedLead.email}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Phone Number</label>
+                            <Input
+                              type="text"
+                              name="phone_number"
+                              value={selectedLead.phone_number}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+  
+                      {/* Address Fields */}
+                      <Row>
+                        <Col lg="12">
+                          <FormGroup>
+                            <label>Street Address</label>
+                            <Input
+                              type="text"
+                              name="street_address"
+                              value={selectedLead.street_address}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+  
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>City</label>
+                            <Input
+                              type="text"
+                              name="city"
+                              value={selectedLead.city}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>State</label>
+                            <Input
+                              type="text"
+                              name="state"
+                              value={selectedLead.state}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+  
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Country</label>
+                            <Input
+                              type="text"
+                              name="country"
+                              value={selectedLead.country}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Zip Code</label>
+                            <Input
+                              type="text"
+                              name="zip_code"
+                              value={selectedLead.zip_code}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
                     </div>
 
+                    <hr className="my-4" />
                     <h6 className="heading-small text-muted mb-4">
                         Demographics
                     </h6>
@@ -799,34 +798,34 @@ const Leads = () => {
                      <Row>
                        <Col lg="6">
                          <FormGroup>
-                             <label
-                               className="form-control-label"
-                               htmlFor="leadAge"
-                             >
-                               Age
-                             </label>
-                             <Input
-                                className="form-control-alternative"
-                                id="leadAge"
-                                type="text"
-                             />
+                           <label
+                             className="form-control-label"
+                             htmlFor="leadAge"
+                           >
+                             Age
+                           </label>
+                           <Input
+                              className="form-control-alternative"
+                              id="leadAge"
+                              type="text"
+                           />
                          </FormGroup>
                        </Col>
                        <Col lg="6">
                          <FormGroup>
-                             <label
-                               className="form-control-label"
-                               htmlFor="leadGender"
-                             >
-                               Gender
-                             </label>
-                             <select className="form-control-alternative form-control" id="leadGender">
-                                 <option selected>Select one...</option>
-                                 <option value="1">Male</option>
-                                 <option value="2">Female</option>
-                                 <option value="3">Other</option>
-                                 <option value="4">...</option>
-                             </select>
+                           <label
+                             className="form-control-label"
+                             htmlFor="leadGender"
+                           >
+                             Gender
+                           </label>
+                           <select className="form-control-alternative form-control" id="leadGender">
+                             <option selected>Select one...</option>
+                             <option value="1">Male</option>
+                             <option value="2">Female</option>
+                             <option value="3">Other</option>
+                             <option value="4">...</option>
+                           </select>
                          </FormGroup>
                        </Col>
                      </Row>
@@ -841,11 +840,11 @@ const Leads = () => {
                                Language
                              </label>
                              <select className="form-control-alternative form-control" id="leadLanguage">
-                                 <option selected>Select one...</option>
-                                 <option value="1">English</option>
-                                 <option value="2">French</option>
-                                 <option value="3">Spanish</option>
-                                 <option value="4">...</option>
+                               <option selected>Select one...</option>
+                               <option value="1">English</option>
+                               <option value="2">French</option>
+                               <option value="3">Spanish</option>
+                               <option value="4">...</option>
                              </select>
                          </FormGroup>
                        </Col>
@@ -858,11 +857,11 @@ const Leads = () => {
                                Ethnicity
                              </label>
                              <select className="form-control-alternative form-control" id="leadEthnicity">
-                                 <option selected>Select one...</option>
-                                 <option value="1">Caucasian</option>
-                                 <option value="2">African American</option>
-                                 <option value="3">Latino</option>
-                                 <option value="4">...</option>
+                               <option selected>Select one...</option>
+                               <option value="1">Caucasian</option>
+                               <option value="2">African American</option>
+                               <option value="3">Latino</option>
+                               <option value="4">...</option>
                              </select>
                          </FormGroup>
                        </Col>
@@ -871,113 +870,113 @@ const Leads = () => {
                      <Row>
                        <Col lg="6">
                          <FormGroup>
-                             <label
-                               className="form-control-label"
-                               htmlFor="leadLanguage"
-                             >
-                               Yearly Household Income
-                             </label>
-                             <select className="form-control-alternative form-control" id="leadLanguage">
-                                 <option selected>Select one...</option>
-                                 <option value="1">0-9,999</option>
-                                 <option value="2">10,000-24,999</option>
-                                 <option value="3">25,000-34,999</option>
-                                 <option value="4">35,000-49,999</option>
-                                 <option value="5">50,000-74,999</option>
-                                 <option value="6">75,000-99,999</option>
-                                 <option value="7">100,000+</option>
-                             </select>
+                           <label
+                             className="form-control-label"
+                             htmlFor="leadLanguage"
+                           >
+                             Yearly Household Income
+                           </label>
+                           <select className="form-control-alternative form-control" id="leadLanguage">
+                             <option selected>Select one...</option>
+                             <option value="1">0-9,999</option>
+                             <option value="2">10,000-24,999</option>
+                             <option value="3">25,000-34,999</option>
+                             <option value="4">35,000-49,999</option>
+                             <option value="5">50,000-74,999</option>
+                             <option value="6">75,000-99,999</option>
+                             <option value="7">100,000+</option>
+                           </select>
                          </FormGroup>
                        </Col>
                      </Row>
                     </div>
 
+                    <hr className="my-4" />
                     <h6 className="heading-small text-muted mb-4">
                         Additional Information
                     </h6>
                     <div className="pl-lg-4">
-                    {/* Notes */}
-                    <Row>
-                      <Col lg="12">
-                        <FormGroup>
-                          <label>Notes</label>
-                          <Input
-                            type="textarea"
-                            name="notes"
-                            value={selectedLead.notes}
-                            onChange={handleInputChange}
-                            readOnly={!editMode}
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
+                      {/* Notes */}
+                      <Row>
+                        <Col lg="12">
+                          <FormGroup>
+                            <label>Notes</label>
+                            <Input
+                              type="textarea"
+                              name="notes"
+                              value={selectedLead.notes}
+                              onChange={handleInputChange}
+                              readOnly={!editMode}
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
                     </div>
 
+                    <hr className="my-4" />
                     <h6 className="heading-small text-muted mb-4">
                         Call History
                     </h6>
                     <div className="pl-lg-4">
-                        <Table className="align-items-center table-flush table-secondary table-striped table-hover border" responsive>
-                            <thead className="thead-light">
-                            <tr>
-                                <th scope="col">Call ID</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Minutes</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Agent</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <th scope="row">
+                      <Table className="align-items-center table-flush table-secondary table-striped table-hover border" responsive>
+                        <thead className="thead-light">
+                          <tr>
+                            <th scope="col">Call ID</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Minutes</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Agent</th>
+                            <th scope="col">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                              <th scope="row">
                                 <Media className="align-items-center">
-                                    <Media>
-                                    <span className="mb-0 text-sm">
-                                        <a href="#">
-                                        Call #123456
-                                        </a>
-                                    </span>
-                                    </Media>
+                                  <span className="mb-0 text-sm">
+                                      <a href="#">
+                                      Call #123456
+                                      </a>
+                                  </span>
                                 </Media>
-                                </th>
-                                <td>2025-01-27 08:26:49</td>         
-                                <td>
+                              </th>
+                              <td>2025-01-27 08:26:49</td>         
+                              <td>
                                 <div className="time-amount">
-                                    04:12:34 m
+                                  04:12:34 m
                                 </div>
-                                </td>
-                                <td>
+                              </td>
+                              <td>
                                 <Badge color="" className="badge-dot">
-                                    <i className="bg-success" />
-                                    Completed
+                                  <i className="bg-success" />
+                                  Completed
                                 </Badge>
-                                </td>
-                                <td>
+                              </td>
+                              <td>
                                 <div className="avatar-group">
-                                    <a
-                                    className="avatar avatar-sm"
-                                    href="#"
-                                    id="tooltip996637554"
-                                    onClick={(e) => e.preventDefault()}
-                                    >
-                                    <img
-                                        alt="..."
-                                        className="rounded-circle"
-                                        src={require("../../assets/img/theme/team-4-800x800.jpg")}
-                                    />
-                                    </a>
-                                    <UncontrolledTooltip
-                                    delay={0}
-                                    target="tooltip996637554"
-                                    >
-                                    Sara Doe
-                                    </UncontrolledTooltip>
+                                  <a
+                                  className="avatar avatar-sm"
+                                  href="#"
+                                  id="tooltip996637554"
+                                  onClick={(e) => e.preventDefault()}
+                                  >
+                                  <img
+                                    alt="..."
+                                    className="rounded-circle"
+                                    src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                  />
+                                  </a>
+                                  <UncontrolledTooltip
+                                  delay={0}
+                                  target="tooltip996637554"
+                                  >
+                                  Sara Doe
+                                  </UncontrolledTooltip>
                                 </div>
-                                </td>
-                                <td className="text-center">
+                              </td>
+                              <td className="text-center">
                                 <UncontrolledDropdown>
-                                    <DropdownToggle
+                                  <DropdownToggle
                                     className="btn-icon-only"
                                     href="#"
                                     role="button"
@@ -985,9 +984,9 @@ const Leads = () => {
                                     color=""
                                     onClick={(e) => e.preventDefault()}
                                     >
-                                    <i className="fas fa-angle-down" />
-                                    </DropdownToggle>
-                                    <DropdownMenu className="dropdown-menu-arrow" right>
+                                  <i className="fas fa-angle-down" />
+                                  </DropdownToggle>
+                                  <DropdownMenu className="dropdown-menu-arrow" right>
                                     <DropdownItem
                                         href="#"
                                         onClick={(e) => e.preventDefault()}
@@ -1000,21 +999,21 @@ const Leads = () => {
                                     >
                                         Delete Call Log
                                     </DropdownItem>
-                                    </DropdownMenu>
+                                  </DropdownMenu>
                                 </UncontrolledDropdown>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </Table>
+                              </td>
+                          </tr>
+                        </tbody>
+                      </Table>
                     </div> 
 
                     {/* Save/Delete Buttons */}
                     <Row className="mt-4 justify-content-between align-items-center">
                       <Col xs="6" className="">
                         <div>
-                            <Button color="danger" size="sm" onClick={handleDelete}>
+                          <Button color="danger" size="sm" onClick={handleDelete}>
                             Delete
-                            </Button>
+                          </Button>
                         </div>
                       </Col>
                       <Col xs="6" className="d-flex justify-content-end">
