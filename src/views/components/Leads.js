@@ -15,7 +15,6 @@ import {
   NavItem,
   NavLink,
   Badge,
-  CardFooter,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
