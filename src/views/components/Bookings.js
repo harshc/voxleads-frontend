@@ -109,6 +109,18 @@ const Bookings = () => {
                           href="#"
                           onClick={(e) => e.preventDefault()}
                         >
+                          Newest First
+                        </DropdownItem>
+                        <DropdownItem
+                          href="#"
+                          onClick={(e) => e.preventDefault()}
+                        >
+                          Oldest First
+                        </DropdownItem>
+                        <DropdownItem
+                          href="#"
+                          onClick={(e) => e.preventDefault()}
+                        >
                           All
                         </DropdownItem>
                         <DropdownItem
@@ -128,18 +140,6 @@ const Bookings = () => {
                           onClick={(e) => e.preventDefault()}
                         >
                           Pending
-                        </DropdownItem>
-                        <DropdownItem
-                          href="#"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Newest First
-                        </DropdownItem>
-                        <DropdownItem
-                          href="#"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Oldest First
                         </DropdownItem>
                       </DropdownMenu>
                     </UncontrolledDropdown>
@@ -178,14 +178,27 @@ const Bookings = () => {
                     <NavItem>
                       <NavLink
                         className={classnames("py-2 px-3", {
-                          active: activeNav === 2,
+                          active: activeNav === 3,
                         })}
                         data-toggle="tab"
                         href="#"
-                        onClick={(e) => toggleNavs(e, 2)}
+                        onClick={(e) => toggleNavs(e, 3)}
                       >
                         <span className="d-none d-md-block">Opened</span>
                         <span className="d-md-none">Opened</span>
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        className={classnames("py-2 px-3", {
+                          active: activeNav === 4,
+                        })}
+                        data-toggle="tab"
+                        href="#"
+                        onClick={(e) => toggleNavs(e, 4)}
+                      >
+                        <span className="d-none d-md-block">Pending</span>
+                        <span className="d-md-none">Pending</span>
                       </NavLink>
                     </NavItem>
                   </Nav>
@@ -196,7 +209,7 @@ const Bookings = () => {
                   <tr>
                     <th scope="col">Call ID</th>
                     <th scope="col">Booking Date</th>
-                    <th scope="col">Booking Time</th>
+                    <th scope="col">Lead</th>
                     <th scope="col">Location</th>
                     <th scope="col">Status</th>
                     <th scope="col">Actions</th>
@@ -243,6 +256,12 @@ const Bookings = () => {
                           <i className="fas fa-angle-down" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
+                          <DropdownItem
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            View Booking
+                          </DropdownItem>
                           <DropdownItem
                             href="#"
                             onClick={(e) => e.preventDefault()}
@@ -309,6 +328,12 @@ const Bookings = () => {
                             href="#"
                             onClick={(e) => e.preventDefault()}
                           >
+                            View Booking
+                          </DropdownItem>
+                          <DropdownItem
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                          >
                             View Call Log
                           </DropdownItem>
                           <DropdownItem
@@ -367,6 +392,12 @@ const Bookings = () => {
                           <i className="fas fa-angle-down" />
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-arrow" right>
+                          <DropdownItem
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                          >
+                            View Booking
+                          </DropdownItem>
                           <DropdownItem
                             href="#"
                             onClick={(e) => e.preventDefault()}
@@ -433,6 +464,12 @@ const Bookings = () => {
                             href="#"
                             onClick={(e) => e.preventDefault()}
                           >
+                            View Booking
+                          </DropdownItem>
+                          <DropdownItem
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                          >
                             View Call Log
                           </DropdownItem>
                           <DropdownItem
@@ -467,7 +504,7 @@ const Bookings = () => {
                       >
                         <PaginationItem className="disabled">
                           <PaginationLink
-                            href="#pablo"
+                            href="#"
                             onClick={(e) => e.preventDefault()}
                             tabIndex="-1"
                           >
@@ -477,7 +514,7 @@ const Bookings = () => {
                         </PaginationItem>
                         <PaginationItem className="active">
                           <PaginationLink
-                            href="#pablo"
+                            href="#"
                             onClick={(e) => e.preventDefault()}
                           >
                             1
@@ -485,7 +522,7 @@ const Bookings = () => {
                         </PaginationItem>
                         <PaginationItem>
                           <PaginationLink
-                            href="#pablo"
+                            href="#"
                             onClick={(e) => e.preventDefault()}
                           >
                             2 <span className="sr-only">(current)</span>
@@ -493,7 +530,7 @@ const Bookings = () => {
                         </PaginationItem>
                         <PaginationItem>
                           <PaginationLink
-                            href="#pablo"
+                            href="#"
                             onClick={(e) => e.preventDefault()}
                           >
                             3
@@ -501,7 +538,7 @@ const Bookings = () => {
                         </PaginationItem>
                         <PaginationItem>
                           <PaginationLink
-                            href="#pablo"
+                            href="#"
                             onClick={(e) => e.preventDefault()}
                           >
                             <i className="fas fa-angle-right" />
