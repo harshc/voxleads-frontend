@@ -415,7 +415,7 @@ const Agents = () => {
                         </Button>
                       </div>
                       <div className="ml-2">
-                        <Button color="light">
+                        <Button color="light" size="sm">
                           Close
                         </Button>
                       </div>
@@ -460,35 +460,34 @@ const Agents = () => {
                      </Row>
                    </div>
                    <hr className="my-4" />
-                   <Row className="align-items-center">
-                    <Col lg="4">
-                      <h6 className="heading-small text-muted mb-4">
-                        Call Statistics
-                      </h6>
-                    </Col>
-                    <Col lg="8" className="d-flex justify-content-end align-items-center">
-                      <h6 className="heading-small text-muted my-1">
-                        Date Range: 
-                      </h6>
-                      <div className="mx-2">
+                   <h6 className="heading-small text-muted mb-4">
+                     Call Statistics
+                   </h6>
+                   <Row className="align-items-center mb-2">
+                      <Col className="mr-1 col-auto">
+                        <h6 className="heading-small text-muted my-1">
+                          Date Range: 
+                        </h6>
+                      </Col>
+                      <Col className="my-1 col-auto">
                         <Input
                         className="form-control-alternative"
                         id="statsStartDate"
                         type="date"
                         />
-                      </div>
-                      <div>
+                      </Col>
+                      <Col className="my-1 col-auto">
                         <Input
                         className="form-control-alternative"
                         id="statsEndDate"
                         type="date"
                         />
-                      </div>
+                      </Col>
                     </Col>
                    </Row>
-                   <div className="pl-lg-4 py-2 bg-white rounded border shadow">
-                     <Row className="my-4">
-                       <Col lg="6">
+                   <div className="px-4 py-2 bg-white rounded border shadow">
+                     <Row>
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Total Calls
@@ -498,7 +497,7 @@ const Agents = () => {
                            </div>
                          </div>
                        </Col>
-                       <Col lg="6">
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Calls Completed
@@ -509,8 +508,8 @@ const Agents = () => {
                          </div>
                        </Col>
                      </Row>
-                     <Row className="my-4">
-                       <Col lg="6">
+                     <Row>
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Total Minutes
@@ -520,7 +519,7 @@ const Agents = () => {
                            </div>
                          </div>
                        </Col>
-                       <Col lg="6">
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Average Call Time
@@ -531,8 +530,8 @@ const Agents = () => {
                          </div>
                        </Col>
                      </Row>
-                     <Row className="my-4">
-                       <Col lg="6">
+                     <Row>
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Bookings
@@ -542,7 +541,7 @@ const Agents = () => {
                            </div>
                          </div>
                        </Col>
-                       <Col lg="6">
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Bookings Percent
@@ -559,8 +558,8 @@ const Agents = () => {
                      Voice & Personality
                    </h6>
                    <div className="pl-lg-4">
-                     <Row className="my-4">
-                       <Col lg="6">
+                     <Row>
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Laguage
@@ -570,7 +569,7 @@ const Agents = () => {
                            </div>
                          </div>
                        </Col>
-                       <Col lg="6">
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Gender
@@ -581,8 +580,8 @@ const Agents = () => {
                          </div>
                        </Col>
                      </Row>
-                     <Row className="my-4">
-                       <Col lg="6">
+                     <Row>
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Voice Selected
@@ -592,7 +591,7 @@ const Agents = () => {
                            </div>
                          </div>
                        </Col>
-                       <Col lg="6">
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Accent
@@ -603,8 +602,8 @@ const Agents = () => {
                          </div>
                        </Col>
                      </Row>
-                     <Row className="my-4">
-                       <Col lg="12">
+                     <Row>
+                       <Col lg="12" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Agent Persona
@@ -615,8 +614,8 @@ const Agents = () => {
                          </div>
                        </Col>
                      </Row>
-                     <Row className="my-4">
-                       <Col lg="6">
+                     <Row>
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Speaking Style
@@ -626,7 +625,7 @@ const Agents = () => {
                            </div>
                          </div>
                        </Col>
-                       <Col lg="6">
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="form-control-label">
                              Character Traits
@@ -658,8 +657,8 @@ const Agents = () => {
                      Working Hours
                    </h6>
                    <div className="pl-lg-4">
-                     <Row className="my-4">
-                       <Col lg="6" className="mb-4">
+                     <Row>
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div>
                            <div className="align-items-center d-flex mb-2">
                              <div>Time Zone:</div>
@@ -670,7 +669,7 @@ const Agents = () => {
                            <div className="text-xs">Current time is: 14:36:34</div>
                          </div>
                        </Col>
-                       <Col lg="6">
+                       <Col lg="6" className="mb-2 mb-lg-4>
                          <div className="d-flex align-items-center my-1">
                            <div>Monday:</div>
                            <div className="form-control-label px-2">
@@ -760,14 +759,13 @@ const Agents = () => {
                                 href="#"
                                 onClick={(e) => toggleNavs(e, 1)}
                               >
-                                <span className="d-none d-md-block">Call History</span>
-                                <span className="d-md-none">History</span>
+                                <span>Call History</span>
                               </NavLink>
                             </NavItem>
                             <NavItem>
-                              <NavLink>
+                              <div className="py-2 px-3">
                                 <span>Showing last 5 calls</span>
-                              </NavLink>
+                              </div>
                             </NavItem>
                         </Nav>
                       </Col>
