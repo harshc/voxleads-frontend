@@ -400,23 +400,26 @@ const Agents = () => {
                 </Row>
               </CardFooter>
             </Card>
+            {/* View Agent Profile */}
              <hr className="my-4" />
              <Card className="bg-secondary shadow">
                <CardHeader className="bg-white border-0">
                  <Row className="align-items-center">
-                   <Col xs="8">
+                   <Col xs="6">
                      <h3 className="mb-0">Agent Profile</h3>
                    </Col>
-                   <Col className="text-right" xs="4">
-                     <Button
-                       color="primary"
-                       href="#"
-                       onClick={(e) => e.preventDefault()}
-                       size="sm"
-                     >
-                       Edit
-                     </Button>
-                   </Col>
+                   <Col xs="6" className="d-flex justify-content-end">
+                      <div>
+                        <Button color="primary" size="sm">
+                          Edit
+                        </Button>
+                      </div>
+                      <div className="ml-2">
+                        <Button color="light">
+                          Close
+                        </Button>
+                      </div>
+                    </Col>
                  </Row>
                </CardHeader>
                <CardBody>
@@ -453,6 +456,101 @@ const Agents = () => {
                                src={require("../../assets/img/theme/team-4-800x800.jpg")}
                              />
                            </div>
+                       </Col>
+                     </Row>
+                   </div>
+                   <hr className="my-4" />
+                   <Row className="align-items-center">
+                    <Col lg="4">
+                      <h6 className="heading-small text-muted mb-4">
+                        Call Statistics
+                      </h6>
+                    </Col>
+                    <Col lg="8" className="d-flex justify-content-end align-items-center">
+                      <h6 className="heading-small text-muted my-1">
+                        Date Range: 
+                      </h6>
+                      <div className="mx-2">
+                        <Input
+                        className="form-control-alternative"
+                        id="statsStartDate"
+                        type="date"
+                        />
+                      </div>
+                      <div>
+                        <Input
+                        className="form-control-alternative"
+                        id="statsEndDate"
+                        type="date"
+                        />
+                      </div>
+                    </Col>
+                   </Row>
+                   <div className="pl-lg-4 py-2 bg-white rounded border shadow">
+                     <Row className="my-4">
+                       <Col lg="6">
+                         <div>
+                           <div className="form-control-label">
+                             Total Calls
+                           </div>
+                           <div>
+                             435
+                           </div>
+                         </div>
+                       </Col>
+                       <Col lg="6">
+                         <div>
+                           <div className="form-control-label">
+                             Calls Completed
+                           </div>
+                           <div>
+                             235
+                           </div>
+                         </div>
+                       </Col>
+                     </Row>
+                     <Row className="my-4">
+                       <Col lg="6">
+                         <div>
+                           <div className="form-control-label">
+                             Total Minutes
+                           </div>
+                           <div>
+                             235 min 6 sec
+                           </div>
+                         </div>
+                       </Col>
+                       <Col lg="6">
+                         <div>
+                           <div className="form-control-label">
+                             Average Call Time
+                           </div>
+                           <div>
+                             1 min 03 sec
+                           </div>
+                         </div>
+                       </Col>
+                     </Row>
+                     <Row className="my-4">
+                       <Col lg="6">
+                         <div>
+                           <div className="form-control-label">
+                             Bookings
+                           </div>
+                           <div>
+                             27
+                           </div>
+                         </div>
+                       </Col>
+                       <Col lg="6">
+                         <div>
+                           <div className="form-control-label">
+                             Bookings Percent
+                           </div>
+                           <div>
+                             10%
+                           </div>
+                         </div>
                        </Col>
                      </Row>
                    </div>
@@ -561,7 +659,7 @@ const Agents = () => {
                    </h6>
                    <div className="pl-lg-4">
                      <Row className="my-4">
-                       <Col lg="12">
+                       <Col lg="6" className="mb-4">
                          <div>
                            <div className="align-items-center d-flex mb-2">
                              <div>Time Zone:</div>
@@ -572,10 +670,8 @@ const Agents = () => {
                            <div className="text-xs">Current time is: 14:36:34</div>
                          </div>
                        </Col>
-                     </Row>
-                     <Row className="my-4">
-                       <Col lg="12" className="my-1">
-                         <div className="d-flex align-items-center">
+                       <Col lg="6">
+                         <div className="d-flex align-items-center my-1">
                            <div>Monday:</div>
                            <div className="form-control-label px-2">
                              8:00
@@ -585,9 +681,7 @@ const Agents = () => {
                              17:00
                            </div>
                          </div>
-                       </Col>
-                       <Col lg="12" className="my-1">
-                         <div className="d-flex align-items-center">
+                         <div className="d-flex align-items-center my-1">
                            <div>Tuesday:</div>
                            <div className="form-control-label px-2">
                              8:00
@@ -597,9 +691,7 @@ const Agents = () => {
                              17:00
                            </div>
                          </div>
-                       </Col>
-                       <Col lg="12" className="my-1">
-                         <div className="d-flex align-items-center">
+                         <div className="d-flex align-items-center my-1">
                            <div>Wednesday:</div>
                            <div className="form-control-label px-2">
                              8:00
@@ -609,9 +701,7 @@ const Agents = () => {
                              17:00
                            </div>
                          </div>
-                       </Col>
-                       <Col lg="12" className="my-1">
-                         <div className="d-flex align-items-center">
+                         <div className="d-flex align-items-center my-1">
                            <div>Thursday:</div>
                            <div className="form-control-label px-2">
                              8:00
@@ -621,9 +711,7 @@ const Agents = () => {
                              17:00
                            </div>
                          </div>
-                       </Col>
-                       <Col lg="12" className="my-1">
-                         <div className="d-flex align-items-center">
+                         <div className="d-flex align-items-center my-1">
                            <div>Friday:</div>
                            <div className="form-control-label px-2">
                              8:00
@@ -633,9 +721,7 @@ const Agents = () => {
                              17:00
                            </div>
                          </div>
-                       </Col>
-                       <Col lg="12" className="my-1">
-                         <div className="d-flex align-items-center">
+                         <div className="d-flex align-items-center my-1">
                            <div>Saturday:</div>
                            <div className="form-control-label px-2">
                              9:00
@@ -645,9 +731,7 @@ const Agents = () => {
                              15:00
                            </div>
                          </div>
-                       </Col>
-                       <Col lg="12" className="my-1">
-                         <div className="d-flex align-items-center">
+                         <div className="d-flex align-items-center my-1">
                            <div>Sunday:</div>
                            <div className="form-control-label px-2">
                              10:00
@@ -662,36 +746,28 @@ const Agents = () => {
                    </div>
                    <hr className="my-4" />
                    <h6 className="heading-small text-muted mb-4">
-                     Recent Calls
+                     Call Logs
                    </h6>
                    <div className="pl-lg-4">
                     <Row className="mb-3">
                       <Col>    
                         <Nav className="justify-content-start" pills>
                             <NavItem className="mr-2 mr-md-0">
-                            <NavLink
+                              <NavLink
                                 className={classnames("py-2 px-3", {
                                 active: activeNav === 1,
                                 })}
                                 href="#"
                                 onClick={(e) => toggleNavs(e, 1)}
-                            >
+                              >
                                 <span className="d-none d-md-block">Call History</span>
                                 <span className="d-md-none">History</span>
-                            </NavLink>
+                              </NavLink>
                             </NavItem>
                             <NavItem>
-                            <NavLink
-                                className={classnames("py-2 px-3", {
-                                active: activeNav === 2,
-                                })}
-                                data-toggle="tab"
-                                href="#"
-                                onClick={(e) => toggleNavs(e, 2)}
-                            >
-                                <span className="d-none d-md-block">Call Queue</span>
-                                <span className="d-md-none">Queue</span>
-                            </NavLink>
+                              <NavLink>
+                                <span>Showing last 5 calls</span>
+                              </NavLink>
                             </NavItem>
                         </Nav>
                       </Col>
@@ -870,12 +946,34 @@ const Agents = () => {
                     </Table>
                     <Row>
                       <Col className="text-sm mt-2">
-                        <a href="#">View full Call Log for Sara_Agent</a>
+                        <a href="#" className="text-underline">View full Call Log for Sara_Agent</a>
                       </Col>
                     </Row>
                    </div>
                </CardBody>
+               <CardFooter className="py-3">
+                <Row className="d-flex justify-content-between align-items-center">
+                  <Col xs="5">
+                    <Button color="danger" size="sm">
+                      Delete
+                    </Button>
+                  </Col>
+                  <Col xs="7" className="d-flex justify-content-end">
+                    <div>
+                      <Button color="primary" size="sm">
+                        Edit
+                      </Button>
+                    </div>
+                    <div className="ml-2">
+                      <Button color="light" size="sm">
+                        Close
+                      </Button>
+                    </div>
+                  </Col>
+                </Row>
+               </CardFooter>
              </Card>
+             {/* Edit Agent Profile */}
              <hr className="my-4" />
              <Card className="bg-secondary shadow">
                <CardHeader className="bg-white border-0">
@@ -1459,7 +1557,25 @@ const Agents = () => {
                        </Col>
                      </Row>
                    </div>
-                   <hr className="my-4" />
+                   <Row className="d-flex justify-content-between align-items-center py-3">
+                    <Col xs="5">
+                        <Button color="danger" size="sm">
+                        Delete
+                        </Button>
+                    </Col>
+                    <Col xs="7" className="d-flex justify-content-end">
+                        <div>
+                        <Button color="primary" size="sm">
+                            Save
+                        </Button>
+                        </div>
+                        <div className="ml-2">
+                        <Button color="light" size="sm">
+                            Cancel
+                        </Button>
+                        </div>
+                    </Col>
+                   </Row>
                  </Form>
                </CardBody>
              </Card>
