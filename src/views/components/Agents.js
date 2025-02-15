@@ -439,32 +439,27 @@ const Agents = () => {
                    <div className="pl-lg-4">
                      <Row className="my-4 align-items-center">
                        <Col lg="9">
-                            <Row>
-                                <Col lg="6" className="mb-3 mb-lg-4 px-0">
-                                <div>
-                                    <div className="form-control-label">
-                                        Name
-                                    </div>
-                                    <div>
-                                        Sara
-                                    </div>
-                                </div>
-                                </Col>
-                                <Col lg="6" className="mb-3 mb-lg-4 px-0">
-                                <div>
-                                    <div className="form-control-label">
-                                        Active Since
-                                    </div>
-                                    <div>
-                                        February 8, 2025 at 5:53:59 PM UTC-5
-                                    </div>
-                                </div>
-                                </Col>
-                            </Row>
+                          <Row>
+                            <Col lg="6" className="mb-3 mb-lg-4 px-0">
+                              <div className="form-control-label">
+                                Name
+                              </div>
+                              <div>
+                                Sara
+                              </div>
+                            </Col>
+                            <Col lg="6" className="mb-3 mb-lg-4 px-0">
+                              <div className="form-control-label">
+                                Active Since
+                              </div>
+                              <div>
+                                February 8, 2025 at 5:53:59 PM UTC-5
+                              </div>
+                            </Col>
+                          </Row>
                            <div className="form-control-label">
                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                            </div>
-                         </div>
                        </Col>
                        <Col lg="3" className="px-6 mt-4 px-lg-0 mt-lg-0">
                            <div className="company_logo p-3 p-lg-2 rounded-circle shadow">
