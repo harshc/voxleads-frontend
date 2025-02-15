@@ -440,7 +440,7 @@ const Agents = () => {
                      <Row className="my-4 align-items-center">
                        <Col lg="9">
                           <Row>
-                            <Col lg="6" className="mb-3 mb-lg-4 px-0">
+                            <Col lg="6" className="mb-3 mb-lg-4">
                               <div className="form-control-label">
                                 Name
                               </div>
@@ -448,12 +448,12 @@ const Agents = () => {
                                 Sara
                               </div>
                             </Col>
-                            <Col lg="6" className="mb-3 mb-lg-4 px-0">
+                            <Col lg="6" className="mb-3 mb-lg-4">
                               <div className="form-control-label">
                                 Active Since
                               </div>
                               <div>
-                                February 8, 2025 at 5:53:59 PM UTC-5
+                                February 8, 2025
                               </div>
                             </Col>
                           </Row>
@@ -482,14 +482,14 @@ const Agents = () => {
                           Date Range: 
                         </h6>
                       </Col>
-                      <Col className="my-1 col-auto">
+                      <Col lg="4" className="my-1">
                         <Input
                         className="form-control-alternative"
                         id="statsStartDate"
                         type="date"
                         />
                       </Col>
-                      <Col className="my-1 col-auto">
+                      <Col lg="4" className="my-1">
                         <Input
                         className="form-control-alternative"
                         id="statsEndDate"
@@ -497,7 +497,7 @@ const Agents = () => {
                         />
                       </Col>
                    </Row>
-                   <div className="px-4 py-2 bg-white rounded border shadow">
+                   <div className="px-4 pt-4 pb-2 bg-white rounded border shadow">
                      <Row>
                        <Col lg="6" className="mb-3 mb-lg-4">
                          <div>
@@ -961,7 +961,7 @@ const Agents = () => {
                     </Row>
                    </div>
                </CardBody>
-               <CardFooter className="py-3">
+               <CardFooter className="py-4">
                 <Row className="d-flex justify-content-between align-items-center">
                   <Col xs="5">
                     <Button color="danger" size="sm">
@@ -1567,7 +1567,7 @@ const Agents = () => {
                        </Col>
                      </Row>
                    </div>
-                   <Row className="d-flex justify-content-between align-items-center py-3">
+                   <Row className="d-flex justify-content-between align-items-center mt-4">
                     <Col xs="5">
                         <Button color="danger" size="sm">
                         Delete
