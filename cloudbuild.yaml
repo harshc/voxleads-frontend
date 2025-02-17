@@ -19,7 +19,7 @@ steps:
   args:
     - '-c'
     - |
-      versions=$(gcloud app versions list --sort-by '~version' --format 'value(version.id)' | tail -n +11)
+      versions=$(gcloud app versions list -service default --sort-by '~version' --format 'value(version.id)' | tail -n +11)
       if [ ! -z "$versions" ]; then
         gcloud app versions delete $versions --quiet
       fi
