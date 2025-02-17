@@ -14,6 +14,16 @@ steps:
   entrypoint: 'gcloud'
   args: ['app', 'deploy', '--quiet']
 
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      versions=$(gcloud app versions list --sort-by '~version' --format 'value(version.id)' | tail -n +11)
+      if [ ! -z "$versions" ]; then
+        gcloud app versions delete $versions --quiet
+      fi
+
 options:
   logging: CLOUD_LOGGING_ONLY 
 
