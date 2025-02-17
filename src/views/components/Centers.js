@@ -202,13 +202,13 @@ const Centers = () => {
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <label className="custom-control-label">Name</label>
+                          <label className="form-control-label">Name</label>
                           <Input name="name" className="form-control-alternative form-control" value={formData.name} onChange={handleInputChange} readOnly={!isEditing} />
                         </FormGroup>
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <label className="custom-control-label">Email</label>
+                          <label className="form-control-label">Email</label>
                           <Input type="email" name="email" className="form-control-alternative form-control" value={formData.email} onChange={handleInputChange} readOnly={!isEditing} />
                         </FormGroup>
                       </Col>
@@ -216,7 +216,7 @@ const Centers = () => {
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <label className="custom-control-label">Phone</label>
+                          <label className="form-control-label">Phone Number</label>
                           <Input name="phone_number" className="form-control-alternative form-control" value={formData.phone_number} onChange={handleInputChange} readOnly={!isEditing} />
                         </FormGroup>
                       </Col>
@@ -224,7 +224,7 @@ const Centers = () => {
                     <Row>
                       <Col lg="12">
                         <FormGroup>
-                          <label className="custom-control-label">Address</label>
+                          <label className="form-control-label">Address</label>
                           <Input name="street_address" className="form-control-alternative form-control" value={formData.street_address} onChange={handleInputChange} readOnly={!isEditing} />
                         </FormGroup>
                       </Col>
@@ -232,13 +232,13 @@ const Centers = () => {
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <label className="custom-control-label">City</label>
+                          <label className="form-control-label">City</label>
                           <Input name="city" className="form-control-alternative form-control" value={formData.city} onChange={handleInputChange} readOnly={!isEditing} />
                         </FormGroup>
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <label className="custom-control-label">State</label>
+                          <label className="form-control-label">State</label>
                           <Input name="state" className="form-control-alternative form-control" value={formData.state} onChange={handleInputChange} readOnly={!isEditing} />
                         </FormGroup>
                       </Col>
@@ -246,13 +246,13 @@ const Centers = () => {
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <label className="custom-control-label">Country</label>
+                          <label className="form-control-label">Country</label>
                           <Input name="country" className="form-control-alternative form-control" value={formData.country} onChange={handleInputChange} readOnly={!isEditing} />
                         </FormGroup>
                       </Col>
                       <Col lg="6">
                         <FormGroup>
-                          <label className="custom-control-label">ZipCode</label>
+                          <label className="form-control-label">ZipCode</label>
                           <Input name="zip_code" className="form-control-alternative form-control" value={formData.zip_code} onChange={handleInputChange} readOnly={!isEditing} /> 
                         </FormGroup>
                       </Col>
@@ -260,7 +260,7 @@ const Centers = () => {
                     <Row>
                       <Col lg="12">
                         <FormGroup>
-                          <label className="custom-control-label">Description</label>
+                          <label className="form-control-label">Description</label>
                           <Input type="textarea" name="description" className="form-control-alternative form-control" value={formData.description} onChange={handleInputChange} readOnly={!isEditing} />
                         </FormGroup>
                       </Col>
@@ -271,20 +271,20 @@ const Centers = () => {
                     <Row>
                       <Col lg="6">
                         <FormGroup>
-                          <label className="custom-control-label">Timezone</label>
+                          <label className="form-control-label">Timezone</label>
                           <Input type="select" name="timezone" className="form-control-alternative form-control" value={formData.timezone} onChange={handleInputChange} disabled={!isEditing}>{timeZones.map(tz => <option key={tz} value={tz}>{tz}</option>)}</Input>
                         </FormGroup>
                       </Col>
                     </Row>
                     {Object.keys(formData.operational_hours).map((day) => (
                       <Row key={day} className="my-2">
-                        <Col className="col-auto">
-                          <label className="custom-control-label">{day}:</label>
+                        <Col lg="2">
+                          <label className="form-control-label">{day}:</label>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="4" className="mb-2 mb-lg-0">
                           <Input type="select" className="form-control-alternative form-control mx-lg-2" value={formData.operational_hours[day].open} onChange={(e) => handleOperationalHoursChange(day, "open", e.target.value)} disabled={!isEditing}>{timeSlots.map((time) => (<option key={time} value={time}>{time}</option>))}</Input>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="4" className="mb-2 mb-lg-0">
                           <Input type="select" className="form-control-alternative form-control mx-lg-2" value={formData.operational_hours[day].close} onChange={(e) => handleOperationalHoursChange(day, "close", e.target.value)} disabled={!isEditing}>{timeSlots.map((time) => (<option key={time} value={time}>{time}</option>))}</Input>
                         </Col>
                       </Row>
