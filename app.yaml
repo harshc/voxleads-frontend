@@ -1,4 +1,4 @@
-runtime: nodejs22  # Use the appropriate Node.js runtime version
+runtime: nodejs18  # Use the appropriate Node.js runtime version
 instance_class: F2  # Specify instance class
 
 env_variables:
