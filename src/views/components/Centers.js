@@ -223,13 +223,42 @@ const Centers = () => {
                     </Row>
                   </div>
                   <h6 className="heading-small text-muted mb-4">Operational Hours</h6>
-                  {Object.keys(formData.operational_hours).map((day) => (
-                    <Row key={day} className="my-2">
-                      <Col lg="4"><label>{day}:</label></Col>
-                      <Col lg="4"><Input type="select" value={formData.operational_hours[day].open} onChange={(e) => handleOperationalHoursChange(day, "open", e.target.value)} disabled={!isEditing}>{timeSlots.map((time) => (<option key={time} value={time}>{time}</option>))}</Input></Col>
-                      <Col lg="4"><Input type="select" value={formData.operational_hours[day].close} onChange={(e) => handleOperationalHoursChange(day, "close", e.target.value)} disabled={!isEditing}>{timeSlots.map((time) => (<option key={time} value={time}>{time}</option>))}</Input></Col>
-                    </Row>
-                  ))}
+                  {Object.entries(formData.operational_hours)
+                    .sort((a, b) => {
+                      const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                      return days.indexOf(a[0]) - days.indexOf(b[0]);
+                    })
+                    .map(([day, hours]) => (
+                      <Row key={day} className="my-2">
+                        <Col lg="4"><label>{day}:</label></Col>
+                        <Col lg="4">
+                          <Input 
+                            type="select" 
+                            value={hours.open} 
+                            onChange={(e) => handleOperationalHoursChange(day, "open", e.target.value)} 
+                            disabled={!isEditing}
+                          >
+                            <option value="">Select opening time</option>
+                            {timeSlots.map((time) => (
+                              <option key={time} value={time}>{time}</option>
+                            ))}
+                          </Input>
+                        </Col>
+                        <Col lg="4">
+                          <Input 
+                            type="select" 
+                            value={hours.close} 
+                            onChange={(e) => handleOperationalHoursChange(day, "close", e.target.value)} 
+                            disabled={!isEditing}
+                          >
+                            <option value="">Select closing time</option>
+                            {timeSlots.map((time) => (
+                              <option key={time} value={time}>{time}</option>
+                            ))}
+                          </Input>
+                        </Col>
+                      </Row>
+                    ))}
                   {isEditing && <Button color="primary" type="submit">Save</Button>}
                 </Form>
               </CardBody>

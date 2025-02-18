@@ -19,6 +19,7 @@
 // reactstrap components
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 import { useAccount } from "../../context/AccountContext";
+import { useTime } from "../../context/TimeContext";
 
 const Header = () => {
   const { 
@@ -27,6 +28,7 @@ const Header = () => {
     subscriptionComplete, 
     loading 
   } = useAccount();
+  const { formattedTime, timezone } = useTime();
 
   const getWarningMessage = () => {
     const incomplete = [];
@@ -52,6 +54,11 @@ const Header = () => {
       <div className="header bg-gradient-default pb-8 pt-5 pt-md-8">
         <Container fluid>
           <div className="header-body">
+            <div className="text-right mb-3">
+              <span className="text-white">
+                {formattedTime} ({timezone})
+              </span>
+            </div>
             {!loading && getWarningMessage() && (
               <Row className="border border-danger bg-warning px-0 py-2 w-100 mx-auto align-items-center mb-4 rounded">
                 <Col className="col-auto">

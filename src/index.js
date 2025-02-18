@@ -28,19 +28,22 @@ import AdminLayout from "layouts/Admin.js";
 import AuthLayout from "layouts/Auth.js";
 import { AuthProvider } from "components/AuthContext";
 import { AccountProvider } from "./context/AccountContext";
+import { TimeProvider } from "./context/TimeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <AuthProvider>
     <AccountProvider>
-      <BrowserRouter>
+      <TimeProvider>
+        <BrowserRouter>
       <Routes>
         <Route path="/admin/*" element={<AdminLayout />} />
         <Route path="/auth/*" element={<AuthLayout />} />
         <Route path="*" element={<Navigate to="/admin/index" replace />} />
       </Routes>
-      </BrowserRouter>
+        </BrowserRouter>
+      </TimeProvider>
     </AccountProvider>
   </AuthProvider>
 );
