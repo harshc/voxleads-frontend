@@ -228,6 +228,15 @@ const Agents = () => {
                     agents.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((agent) => (
                       <tr key={agent.id}>
                         <th scope="row">
+                          <div>
+                          <img
+                              alt={selectedAgent?.name || "Agent"}
+                              className="rounded-circle img-fluid mx-auto"
+                              src={selectedAgent?.photo_url ? `${process.env.REACT_APP_API_URL}${selectedAgent.photo_url}` : require("../../assets/img/theme/team-4-800x800.jpg")}
+                            />
+                          </div>
+                        </th>
+                        <th scope="row">
                           <Media className="align-items-center">
                             <span className="mb-0 text-sm">
                               <a href="#" onClick={(e) => {
