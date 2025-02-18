@@ -4,3 +4,10 @@ package-lock.json
 /build
 .eslintcache
 .DS_Store
+
+# Environment files
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local

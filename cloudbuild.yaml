@@ -8,8 +8,19 @@ steps:
 - name: 'node:18'
   entrypoint: 'npm'
   args: ['run', 'build']
+  env:
+    - 'NODE_ENV=production'
+    - 'REACT_APP_API_URL=${_API_URL}'
 
-# Step 3: Deploy the app to Google App Engine
+# Step 3: Copy appropriate app.yaml based on environment
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      cp app.${_DEPLOY_ENV}.yaml app.yaml
+
+# Step 4: Deploy the app to Google App Engine
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
   args: ['app', 'deploy', '--quiet']
@@ -27,8 +38,10 @@ steps:
 options:
   logging: CLOUD_LOGGING_ONLY 
 
-# Specify the App Engine service account if necessary
+# Specify substitutions
 substitutions:
+  _DEPLOY_ENV: 'staging'  # Default to staging if not provided
   _APP_ENGINE_SERVICE_ACCOUNT: 'cloudbuild@voxleads-api-stg-bv7a.iam.gserviceaccount.com'
+  _API_URL: 'https://voxleads-api-dot-voxleads-api-stg-bv7a.uc.r.appspot.com/api/v1'  # Default to staging API
 
 timeout: '1200s'
