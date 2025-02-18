@@ -230,9 +230,9 @@ const Agents = () => {
                         <th scope="row">
                           <div>
                           <img
-                              alt={selectedAgent?.name || "Agent"}
+                              alt={agent.custom_parameters?.agent_name || "Agent"}
                               className="rounded-circle img-fluid mx-auto"
-                              src={selectedAgent?.photo_url ? `${process.env.REACT_APP_API_URL}${selectedAgent.photo_url}` : require("../../assets/img/theme/team-4-800x800.jpg")}
+                              src={agent?.photo_url ? `${process.env.REACT_APP_API_URL}${agent.photo_url}` : require("../../assets/img/theme/team-4-800x800.jpg")}
                             />
                           </div>
                         </th>
