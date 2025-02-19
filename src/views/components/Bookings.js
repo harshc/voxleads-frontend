@@ -561,12 +561,12 @@ const Bookings = () => {
                     </Col>
                     <Col xs="6" className="d-flex justify-content-end">
                       <div>
-                        <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
+                        <Button color="primary" size="sm">
                         Edit
                         </Button>
                       </div>
                       <div className="ml-2">
-                        <Button color="light" size="sm" onclick={handleClose}>
+                        <Button color="light" size="sm">
                         Close
                         </Button>
                       </div>
@@ -926,12 +926,12 @@ const Bookings = () => {
                       </Col>
                       <Col xs="6" className="d-flex justify-content-end">
                         <div>
-                            <Button color="primary" size="sm" onClick={() => setEditMode(true)}>
+                            <Button color="primary" size="sm">
                             Edit
                             </Button>
                         </div>
                         <div className="ml-2">
-                            <Button color="light" size="sm" onclick={handleClose}>
+                            <Button color="light" size="sm">
                             Close
                             </Button>
                         </div>
