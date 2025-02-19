@@ -324,56 +324,56 @@ const Agents = () => {
                 <CardFooter className="py-4">
                 {agents.length > itemsPerPage && (
                     <Row className="d-flex justify-content-between align-items-center">
-                        <Col md="5" className="text-sm mb-3 mb-md-0">
+                      <Col md="5" className="text-sm mb-3 mb-md-0">
                         Showing <strong>{(currentPage - 1) * itemsPerPage + 1} - {Math.min(currentPage * itemsPerPage, agents.length)}</strong> of {agents.length}
-                        </Col>
-                        <Col md="7">
+                      </Col>
+                      <Col md="7">
                         <nav aria-label="...">
-                            <Pagination
-                            className="pagination justify-content-end mb-0"
-                            listClassName="justify-content-end mb-0"
-                            >
-                            <PaginationItem disabled={currentPage === 1}>
-                                <PaginationLink
-                                href="#"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setCurrentPage(prev => Math.max(prev - 1, 1));
-                                }}
-                                tabIndex="-1"
-                                >
-                                <i className="fas fa-angle-left" />
-                                <span className="sr-only">Previous</span>
-                                </PaginationLink>
-                            </PaginationItem>
-                            {[...Array(Math.ceil(agents.length / itemsPerPage))].map((_, i) => (
-                                <PaginationItem key={i + 1} active={currentPage === i + 1}>
-                                <PaginationLink
-                                    href="#"
-                                    onClick={(e) => {
-                                    e.preventDefault();
-                                    setCurrentPage(i + 1);
-                                    }}
-                                >
-                                    {i + 1}
-                                </PaginationLink>
-                                </PaginationItem>
-                            ))}
-                            <PaginationItem disabled={currentPage === Math.ceil(agents.length / itemsPerPage)}>
-                                <PaginationLink
-                                href="#"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setCurrentPage(prev => Math.min(prev + 1, Math.ceil(agents.length / itemsPerPage)));
-                                }}
-                                >
-                                <i className="fas fa-angle-right" />
-                                <span className="sr-only">Next</span>
-                                </PaginationLink>
-                            </PaginationItem>
-                            </Pagination>
+                          <Pagination
+                          className="pagination justify-content-end mb-0"
+                          listClassName="justify-content-end mb-0"
+                          >
+                          <PaginationItem disabled={currentPage === 1}>
+                              <PaginationLink
+                              href="#"
+                              onClick={(e) => {
+                                  e.preventDefault();
+                                  setCurrentPage(prev => Math.max(prev - 1, 1));
+                              }}
+                              tabIndex="-1"
+                              >
+                              <i className="fas fa-angle-left" />
+                              <span className="sr-only">Previous</span>
+                              </PaginationLink>
+                          </PaginationItem>
+                          {[...Array(Math.ceil(agents.length / itemsPerPage))].map((_, i) => (
+                              <PaginationItem key={i + 1} active={currentPage === i + 1}>
+                              <PaginationLink
+                                  href="#"
+                                  onClick={(e) => {
+                                  e.preventDefault();
+                                  setCurrentPage(i + 1);
+                                  }}
+                              >
+                                  {i + 1}
+                              </PaginationLink>
+                              </PaginationItem>
+                          ))}
+                          <PaginationItem disabled={currentPage === Math.ceil(agents.length / itemsPerPage)}>
+                              <PaginationLink
+                              href="#"
+                              onClick={(e) => {
+                                  e.preventDefault();
+                                  setCurrentPage(prev => Math.min(prev + 1, Math.ceil(agents.length / itemsPerPage)));
+                              }}
+                              >
+                              <i className="fas fa-angle-right" />
+                              <span className="sr-only">Next</span>
+                              </PaginationLink>
+                          </PaginationItem>
+                          </Pagination>
                         </nav>
-                        </Col>
+                      </Col>
                     </Row>
                 )}
                 </CardFooter>
@@ -443,9 +443,9 @@ const Agents = () => {
                                 Voice
                               </div>
                               <div>
-                                <div>{agent.voice_config?.name || 'N/A'}</div>
+                                <div>{selectedAgent?.voice_config?.name || 'N/A'}</div>
                                 <small className="text-muted">
-                                {agent.voice_config?.language_code || 'N/A'} ({agent.voice_config?.ssml_gender || 'N/A'})
+                                {selectedAgent?.voice_config?.language_code || 'N/A'} ({selectedAgent?.voice_config?.ssml_gender || 'N/A'})
                                 </small>
                               </div>
                             </Col>
@@ -454,9 +454,9 @@ const Agents = () => {
                                 Personality
                               </div>
                               <div>
-                                <div>{agent.custom_parameters?.agent_persona || 'N/A'}</div>
+                                <div>{selectedAgent?.custom_parameters?.agent_persona || 'N/A'}</div>
                                 <small className="text-muted">
-                                {agent.custom_parameters?.speaking_style || 'N/A'}
+                                {selectedAgent?.custom_parameters?.speaking_style || 'N/A'}
                                 </small>
                               </div>
                             </Col>
