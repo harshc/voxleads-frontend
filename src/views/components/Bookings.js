@@ -551,6 +551,380 @@ const Bookings = () => {
                 </Row>
               </CardFooter>
             </Card>
+            {/* Booking Details */}
+            <hr className="my-4" />
+            <Card className="bg-secondary shadow">
+                <CardHeader className="bg-white border-0">
+                  <Row className="align-items-center">
+                    <Col xs="6">
+                      <h3 className="mb-0">Booking Details</h3>
+                    </Col>
+                    <Col xs="6" className="d-flex justify-content-end">
+                      <div>
+                        <Button color="primary" size="sm">
+                        Edit
+                        </Button>
+                      </div>
+                      <div className="ml-2">
+                        <Button color="light" size="sm">
+                        Close
+                        </Button>
+                      </div>
+                    </Col>
+                  </Row>
+                </CardHeader>
+                <CardBody>
+                  <Form>
+                    <Card className="card-stats mb-4 border-success shadow">
+                      <CardBody>
+                        <Row>
+                          <Col>
+                            <h4 className="text-uppercase font-weight-bold mb-2">
+                                Date & Time
+                            </h4>
+                          </Col>
+                        </Row>
+                        <Row className="align-items-center">
+                          <Col>
+                            <div className="text-sm form-control-label">
+                                March 3, 2025
+                            </div>
+                            <Badge color="success" className="text-sm text-white bg-success">
+                              2:00 PM
+                            </Badge>
+                          </Col>
+                          <Col className="col-auto text-center">
+                            <h6 className="heading-small text-muted mb-1">
+                              Booked By
+                            </h6>
+                            <div className="company_logo avatar avatar-sm rounded-circle shadow">
+                                <img
+                                alt="..."
+                                className="rounded-circle"
+                                src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                />
+                            </div>
+                          </Col>
+                        </Row>
+                      </CardBody>
+                    </Card>
+
+                    <h6 className="heading-small text-muted mb-4">
+                        Status & Priority
+                    </h6>
+                    <div className="pl-lg-4">
+                      <Row className="align-items-center">
+                        {/* Status Dropdown */}
+                        <Col lg="6">
+                          <FormGroup>
+                            <div className="d-flex align-items-center justify-content-between">
+                              <label className="form-control-label" htmlFor="status">
+                                 Status
+                              </label>
+                              <Badge color="" className="badge-dot">
+                                <i className="bg-yellow" />
+                              </Badge>
+                            </div>
+                            <Input type="select" name="status">
+                              <option value="unread" selected>Unread</option>
+                              <option value="responded">Responded</option>
+                              <option value="pending">Pending</option>
+                              <option value="cancelled">Cancelled</option>
+                            </Input>
+                          </FormGroup>
+                        </Col>
+                        {/* Ugency Dropdown */}
+                        <Col lg="6">
+                          <FormGroup>
+                            <label
+                               className="form-control-label"
+                               htmlFor="leadUrgency"
+                             >
+                               Urgency
+                             </label>
+                             <select className="form-control-alternative form-control" id="leadUrgency">
+                               <option selected>Select one...</option>
+                               <option value="1">Critical</option>
+                               <option value="2">High</option>
+                               <option value="3">Medium</option>
+                               <option value="4">Low</option>
+                             </select>
+                          </FormGroup>
+                        </Col>
+                      </Row>
+
+                      <Row className="align-items-center">
+                        <Col lg="12">
+                          <span className="form-control-label">
+                             Last Updated On: 
+                           </span>
+                           <span className="ml-1">
+                             02/26/2025
+                           </span>
+                        </Col>
+                      </Row>
+                    </div>
+
+                    <hr className="my-4" />
+                    <h6 className="heading-small text-muted mb-4">
+                        Lead Details
+                    </h6>
+                    <div className="pl-lg-4">
+                      {/* Lead Details */}
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>First Name</label>
+                            <Input
+                              type="text"
+                              name="first_name"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Last Name</label>
+                            <Input
+                              type="text"
+                              name="last_name"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+  
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Email</label>
+                            <Input
+                              type="email"
+                              name="email"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Phone Number</label>
+                            <Input
+                              type="text"
+                              name="phone_number"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+  
+                      {/* Address Fields */}
+                      <Row>
+                        <Col lg="12">
+                          <FormGroup>
+                            <label>Street Address</label>
+                            <Input
+                              type="text"
+                              name="street_address"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+  
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>City</label>
+                            <Input
+                              type="text"
+                              name="city"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>State</label>
+                            <Input
+                              type="text"
+                              name="state"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+  
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Country</label>
+                            <Input
+                              type="text"
+                              name="country"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                        <Col lg="6">
+                          <FormGroup>
+                            <label>Zip Code</label>
+                            <Input
+                              type="text"
+                              name="zip_code"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+
+                      <Row>
+                        <Col>
+                          <div className="mt-2 text-lg-sm text-underline">
+                            <a href="#">View Lead's full details</a>
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
+
+                    <hr className="my-4" />
+                    <h6 className="heading-small text-muted mb-4">
+                        Additional Information
+                    </h6>
+                    <div className="pl-lg-4">
+                      {/* Booking Notes */}
+                      <Row>
+                        <Col lg="12">
+                          <FormGroup>
+                            <label>Booking Notes</label>
+                            <Input
+                              type="textarea"
+                              name="notes"
+                              readOnly
+                            />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+                    </div>
+
+                    <hr className="my-4" />
+                    <h6 className="heading-small text-muted mb-4">
+                        Call Information
+                    </h6>
+                    <div className="pl-lg-4">
+                      <Table className="align-items-center table-flush table-secondary table-striped table-hover border" responsive>
+                        <thead className="thead-light">
+                          <tr>
+                            <th scope="col">Call ID</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Minutes</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Agent</th>
+                            <th scope="col">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                              <th scope="row">
+                                <Media className="align-items-center">
+                                  <span className="mb-0 text-sm">
+                                      <a href="#">
+                                      Call #123456
+                                      </a>
+                                  </span>
+                                </Media>
+                              </th>
+                              <td>2025-01-27 08:26:49</td>         
+                              <td>
+                                <div className="time-amount">
+                                  04:12:34 m
+                                </div>
+                              </td>
+                              <td>
+                                <Badge color="" className="badge-dot">
+                                  <i className="bg-success" />
+                                  Completed
+                                </Badge>
+                              </td>
+                              <td>
+                                <div className="avatar-group">
+                                  <a
+                                  className="avatar avatar-sm"
+                                  href="#"
+                                  id="tooltip996637554"
+                                  onClick={(e) => e.preventDefault()}
+                                  >
+                                  <img
+                                    alt="..."
+                                    className="rounded-circle"
+                                    src={require("../../assets/img/theme/team-4-800x800.jpg")}
+                                  />
+                                  </a>
+                                  <UncontrolledTooltip
+                                  delay={0}
+                                  target="tooltip996637554"
+                                  >
+                                  Sara Doe
+                                  </UncontrolledTooltip>
+                                </div>
+                              </td>
+                              <td className="text-center">
+                                <UncontrolledDropdown>
+                                  <DropdownToggle
+                                    className="btn-icon-only"
+                                    href="#"
+                                    role="button"
+                                    size="sm"
+                                    color=""
+                                    onClick={(e) => e.preventDefault()}
+                                    >
+                                  <i className="fas fa-angle-down" />
+                                  </DropdownToggle>
+                                  <DropdownMenu className="dropdown-menu-arrow" right>
+                                    <DropdownItem
+                                        href="#"
+                                        onClick={(e) => e.preventDefault()}
+                                    >
+                                        View Call Log
+                                    </DropdownItem>
+                                    <DropdownItem
+                                        href="#"
+                                        onClick={(e) => e.preventDefault()}
+                                    >
+                                        Delete Call Log
+                                    </DropdownItem>
+                                  </DropdownMenu>
+                                </UncontrolledDropdown>
+                              </td>
+                          </tr>
+                        </tbody>
+                      </Table>
+                    </div> 
+
+                    {/* Save/Delete Buttons */}
+                    <Row className="mt-4 justify-content-between align-items-center">
+                      <Col xs="6" className="">
+                        <div>
+                          <Button color="danger" size="sm">
+                            Delete
+                          </Button>
+                        </div>
+                      </Col>
+                      <Col xs="6" className="d-flex justify-content-end">
+                        <div>
+                          <Button color="primary" size="sm">
+                          Edit
+                          </Button>
+                        </div>
+                        <div className="ml-2">
+                          <Button color="light" size="sm">
+                          Close
+                          </Button>
+                        </div>
+                      </Col>
+                    </Row>
+                  </Form>
+                </CardBody>
+            </Card>
           </Col>
         </Row>
       </Container>
