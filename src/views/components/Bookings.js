@@ -579,14 +579,7 @@ const Bookings = () => {
                       <CardBody>
                         <Row className="align-items-center">
                           <Col>
-                            <CardTitle tag="h4" className="text-uppercase font-weight-bold mb-4">
-                                Booking Information
-                            </CardTitle>
-                          </Col>
-                        </Row>
-                        <Row className="align-items-center">
-                          <Col>
-                            <h5 className="text-uppercase font-weight-bold mb-0">
+                            <h5 className="text-uppercase font-weight-bold mb-2">
                                 Date & Time
                             </h5>
                             <div className="text-sm form-control-label">
@@ -596,7 +589,7 @@ const Bookings = () => {
                               2:00 PM
                             </Badge>
                           </Col>
-                          <Col className="col-auto">
+                          <Col className="col-auto text-center">
                             <h6 className="heading-small text-muted mb-1">
                               Booked By
                             </h6>
@@ -606,9 +599,6 @@ const Bookings = () => {
                                 className="rounded-circle"
                                 src={require("../../assets/img/theme/team-4-800x800.jpg")}
                                 />
-                            </div>
-                            <div className="text-center text-xs mt-1">
-                              <a href="">Sara</a>
                             </div>
                           </Col>
                         </Row>
@@ -620,34 +610,21 @@ const Bookings = () => {
                     </h6>
                     <div className="pl-lg-4">
                       <Row className="mb-3 align-items-center">
-                        {/* Status Toggle */}
-                        <Col lg="6">
-                          <FormGroup>
-                            <div className="custom-control custom-control-alternative custom-checkbox">
-                              <Badge color="" className="badge-dot custom-control-label">
-                                <i className="bg-info" />
-                                Unread
-                              </Badge>
-                            </div>
-                          </FormGroup>
-                        </Col>
                         {/* Status Dropdown */}
                         <Col lg="6">
                           <FormGroup>
-                            <Input
-                              type="select"
-                              name="status"
-                            >
-                              <option value="unread">Unread</option>
+                            <label className="form-control-label" htmlFor="status">
+                               Status <i className="bg-yellow" />
+                             </label>
+                            <Input type="select" name="status">
+                              <option value="unread" selected>Unread</option>
                               <option value="responded">Responded</option>
                               <option value="pending">Pending</option>
                               <option value="cancelled">Cancelled</option>
                             </Input>
                           </FormGroup>
                         </Col>
-                      </Row>
-
-                      <Row>
+                        {/* Ugency Dropdown */}
                         <Col lg="6">
                           <FormGroup>
                             <label
@@ -665,17 +642,16 @@ const Bookings = () => {
                              </select>
                           </FormGroup>
                         </Col>
-                        <Col lg="6">
-                          <FormGroup>
-                            <label
-                               className="form-control-label"
-                             >
-                               Last Updated On
-                             </label>
-                             <div>
+                      </Row>
+
+                      <Row className="align-items-center">
+                        <Col lg="12">
+                            <span className="form-control-label">
+                               Last Updated On: 
+                             </span>
+                             <span className="ml-1">
                                02/26/2025
-                             </div>
-                          </FormGroup>
+                             </span>
                         </Col>
                       </Row>
                     </div>
@@ -794,7 +770,7 @@ const Bookings = () => {
 
                       <Row>
                         <Col>
-                          <div className="mt-4 text-sm text-underline">
+                          <div className="mt-2 text-sm text-underline">
                             <a href="#">View Lead's full details</a>
                           </div>
                         </Col>
