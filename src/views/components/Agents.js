@@ -228,18 +228,15 @@ const Agents = () => {
                     agents.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).map((agent) => (
                       <tr key={agent.id}>
                         <th scope="row">
-                          
-                        </th>
-                        <th scope="row">
                           <a href="#" onClick={(e) => {
                             e.preventDefault();
                             setSelectedAgent(agent);
                           }}>
                           <Media className="align-items-center">
-                            <div>
+                            <div className="mr-2">
                                 <img
                                 alt={agent.custom_parameters?.agent_name || "Agent"}
-                                className="rounded-circle img-fluid mx-auto"
+                                className="rounded-circle avatar avatar-sm mx-auto"
                                 src={agent?.photo_url ? `${process.env.REACT_APP_API_URL}${agent.photo_url}` : require("../../assets/img/theme/team-4-800x800.jpg")}
                                 />
                             </div>
@@ -324,56 +321,56 @@ const Agents = () => {
                 <CardFooter className="py-4">
                 {agents.length > itemsPerPage && (
                     <Row className="d-flex justify-content-between align-items-center">
-                      <Col md="5" className="text-sm mb-3 mb-md-0">
+                        <Col md="5" className="text-sm mb-3 mb-md-0">
                         Showing <strong>{(currentPage - 1) * itemsPerPage + 1} - {Math.min(currentPage * itemsPerPage, agents.length)}</strong> of {agents.length}
-                      </Col>
-                      <Col md="7">
+                        </Col>
+                        <Col md="7">
                         <nav aria-label="...">
-                          <Pagination
-                          className="pagination justify-content-end mb-0"
-                          listClassName="justify-content-end mb-0"
-                          >
-                          <PaginationItem disabled={currentPage === 1}>
-                              <PaginationLink
-                              href="#"
-                              onClick={(e) => {
-                                  e.preventDefault();
-                                  setCurrentPage(prev => Math.max(prev - 1, 1));
-                              }}
-                              tabIndex="-1"
-                              >
-                              <i className="fas fa-angle-left" />
-                              <span className="sr-only">Previous</span>
-                              </PaginationLink>
-                          </PaginationItem>
-                          {[...Array(Math.ceil(agents.length / itemsPerPage))].map((_, i) => (
-                              <PaginationItem key={i + 1} active={currentPage === i + 1}>
-                              <PaginationLink
-                                  href="#"
-                                  onClick={(e) => {
-                                  e.preventDefault();
-                                  setCurrentPage(i + 1);
-                                  }}
-                              >
-                                  {i + 1}
-                              </PaginationLink>
-                              </PaginationItem>
-                          ))}
-                          <PaginationItem disabled={currentPage === Math.ceil(agents.length / itemsPerPage)}>
-                              <PaginationLink
-                              href="#"
-                              onClick={(e) => {
-                                  e.preventDefault();
-                                  setCurrentPage(prev => Math.min(prev + 1, Math.ceil(agents.length / itemsPerPage)));
-                              }}
-                              >
-                              <i className="fas fa-angle-right" />
-                              <span className="sr-only">Next</span>
-                              </PaginationLink>
-                          </PaginationItem>
-                          </Pagination>
+                            <Pagination
+                            className="pagination justify-content-end mb-0"
+                            listClassName="justify-content-end mb-0"
+                            >
+                            <PaginationItem disabled={currentPage === 1}>
+                                <PaginationLink
+                                href="#"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setCurrentPage(prev => Math.max(prev - 1, 1));
+                                }}
+                                tabIndex="-1"
+                                >
+                                <i className="fas fa-angle-left" />
+                                <span className="sr-only">Previous</span>
+                                </PaginationLink>
+                            </PaginationItem>
+                            {[...Array(Math.ceil(agents.length / itemsPerPage))].map((_, i) => (
+                                <PaginationItem key={i + 1} active={currentPage === i + 1}>
+                                <PaginationLink
+                                    href="#"
+                                    onClick={(e) => {
+                                    e.preventDefault();
+                                    setCurrentPage(i + 1);
+                                    }}
+                                >
+                                    {i + 1}
+                                </PaginationLink>
+                                </PaginationItem>
+                            ))}
+                            <PaginationItem disabled={currentPage === Math.ceil(agents.length / itemsPerPage)}>
+                                <PaginationLink
+                                href="#"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setCurrentPage(prev => Math.min(prev + 1, Math.ceil(agents.length / itemsPerPage)));
+                                }}
+                                >
+                                <i className="fas fa-angle-right" />
+                                <span className="sr-only">Next</span>
+                                </PaginationLink>
+                            </PaginationItem>
+                            </Pagination>
                         </nav>
-                      </Col>
+                        </Col>
                     </Row>
                 )}
                 </CardFooter>
@@ -443,7 +440,7 @@ const Agents = () => {
                                 Voice
                               </div>
                               <div>
-                                <div>{selectedAgent?.voice_config?.name || 'N/A'}</div>
+                                <div className="text-sm">{selectedAgent?.voice_config?.name || 'N/A'}</div>
                                 <small className="text-muted">
                                 {selectedAgent?.voice_config?.language_code || 'N/A'} ({selectedAgent?.voice_config?.ssml_gender || 'N/A'})
                                 </small>
@@ -454,7 +451,7 @@ const Agents = () => {
                                 Personality
                               </div>
                               <div>
-                                <div>{selectedAgent?.custom_parameters?.agent_persona || 'N/A'}</div>
+                                <div className="text-sm">{selectedAgent?.custom_parameters?.agent_persona || 'N/A'}</div>
                                 <small className="text-muted">
                                 {selectedAgent?.custom_parameters?.speaking_style || 'N/A'}
                                 </small>
