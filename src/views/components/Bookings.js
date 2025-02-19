@@ -575,13 +575,17 @@ const Bookings = () => {
                 </CardHeader>
                 <CardBody>
                   <Form>
-                    <Card className="card-stats mb-4 mb-lg-0 border-success shadow">
+                    <Card className="card-stats mb-4 border-success shadow">
                       <CardBody>
+                        <Row>
+                          <Col>
+                            <h4 className="text-uppercase font-weight-bold mb-2">
+                                Date & Time
+                            </h4>
+                          </Col>
+                        </Row>
                         <Row className="align-items-center">
                           <Col>
-                            <h5 className="text-uppercase font-weight-bold mb-2">
-                                Date & Time
-                            </h5>
                             <div className="text-sm form-control-label">
                                 March 3, 2025
                             </div>
@@ -609,13 +613,18 @@ const Bookings = () => {
                         Status & Priority
                     </h6>
                     <div className="pl-lg-4">
-                      <Row className="mb-3 align-items-center">
+                      <Row className="align-items-center">
                         {/* Status Dropdown */}
                         <Col lg="6">
                           <FormGroup>
-                            <label className="form-control-label" htmlFor="status">
-                               Status <i className="bg-yellow" />
-                             </label>
+                            <div className="d-flex align-items-center justify-content-between">
+                              <label className="form-control-label" htmlFor="status">
+                                 Status
+                              </label>
+                              <Badge color="" className="badge-dot">
+                                <i className="bg-yellow" />
+                              </Badge>
+                            </div>
                             <Input type="select" name="status">
                               <option value="unread" selected>Unread</option>
                               <option value="responded">Responded</option>
@@ -646,12 +655,12 @@ const Bookings = () => {
 
                       <Row className="align-items-center">
                         <Col lg="12">
-                            <span className="form-control-label">
-                               Last Updated On: 
-                             </span>
-                             <span className="ml-1">
-                               02/26/2025
-                             </span>
+                          <span className="form-control-label">
+                             Last Updated On: 
+                           </span>
+                           <span className="ml-1">
+                             02/26/2025
+                           </span>
                         </Col>
                       </Row>
                     </div>
@@ -770,7 +779,7 @@ const Bookings = () => {
 
                       <Row>
                         <Col>
-                          <div className="mt-2 text-sm text-underline">
+                          <div className="mt-2 text-lg-sm text-underline">
                             <a href="#">View Lead's full details</a>
                           </div>
                         </Col>
@@ -902,14 +911,14 @@ const Bookings = () => {
                       </Col>
                       <Col xs="6" className="d-flex justify-content-end">
                         <div>
-                            <Button color="primary" size="sm">
-                            Edit
-                            </Button>
+                          <Button color="primary" size="sm">
+                          Edit
+                          </Button>
                         </div>
                         <div className="ml-2">
-                            <Button color="light" size="sm">
-                            Close
-                            </Button>
+                          <Button color="light" size="sm">
+                          Close
+                          </Button>
                         </div>
                       </Col>
                     </Row>
