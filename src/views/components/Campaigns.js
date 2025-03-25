@@ -96,7 +96,7 @@ const Campaigns = () => {
                   <Col className="text-right" xs="6">
                     <div>
                       <Button color="primary" size="sm">
-                        Edit
+                        Add New
                       </Button>
                     </div>
                   </Col>
@@ -152,6 +152,19 @@ const Campaigns = () => {
                         data-toggle="tab"
                         href="#"
                         onClick={(e) => toggleNavs(e, 4)}
+                      >
+                        <span className="d-none d-md-block">Scheduled</span>
+                        <span className="d-md-none">Scheduled</span>
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        className={classnames("py-2 px-3", {
+                          active: activeNav === 5,
+                        })}
+                        data-toggle="tab"
+                        href="#"
+                        onClick={(e) => toggleNavs(e, 5)}
                       >
                         <span className="d-none d-md-block">Pending</span>
                         <span className="d-md-none">Pending</span>
@@ -521,12 +534,28 @@ const Campaigns = () => {
                         </Col>
                         <Col lg="5">
                           <FormGroup>
+                            <label>Description</label>
+                            <Input
+                              type="textarea"
+                              name="campaign_description"
+                              rows="6"
+                            />
+                            <span class="text-xs">For admin use only</span>
+                          </FormGroup>
+                        </Col>
+                      </Row>
+
+                      <Row>
+                        <Col lg="6">
+                          <FormGroup>
                             <label>Start Date & Time</label>
                             <Input
                               type="datetime-local"
                               name="campaign_start"
                             />
                           </FormGroup>
+                        </Col>
+                        <Col lg="6">
                           <FormGroup>
                             <label>End Date & Time</label>
                             <Input
@@ -547,7 +576,7 @@ const Campaigns = () => {
                         <Col>
                           <FormGroup>
                             <div className="custom-control custom-control-alternative custom-checkbox">
-                              <input className="custom-control-input" id="agHoursCompany" type="checkbox" />
+                              <input className="custom-control-input" id="agHoursCompany" type="checkbox" checked />
                               <label className="custom-control-label" htmlFor="agHoursCompany">
                               <span className="text-default">
                                 Operate Within Selected Company Hours
@@ -803,29 +832,29 @@ const Campaigns = () => {
                       {/* Lead Details */}
                       <Row>
                         <Col lg="12">
-                          <div className="form-check form-switch">
-                            <Input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                            <label className="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-                            </div>
-                            <div className="form-check form-switch">
-                            <Input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
-                            <label className="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-                            </div>
-                            <div className="form-check form-switch">
-                            <Input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled" disabled />
-                            <label className="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
-                            </div>
-                            <div class="form-check form-switch">
-                            <Input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled />
-                            <label className="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <Input className="custom-control-input" type="checkbox" role="switch" id="group1" checked />
+                            <label className="form-check-label" for="group1">Group 1</label>
+                          </div>
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <Input className="custom-control-input" type="checkbox" role="switch" id="group2" checked />
+                            <label className="form-check-label" for="group2">Group 2</label>
+                          </div>
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <Input className="custom-control-input" type="checkbox" role="switch" id="group3" />
+                            <label className="form-check-label" for="group3">Group 3</label>
+                          </div>
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <Input className="custom-control-input" type="checkbox" role="switch" id="group4" />
+                            <label className="form-check-label" for="group4">Group 4</label>
                           </div>
                         </Col>
                       </Row>
 
                       <Row>
                         <Col>
-                          <div className="mt-2 text-lg-sm text-underline">
-                            <a href="#">View All Lead Groups</a>
+                          <div className="mt-2 text-sm text-underline">
+                            <a href="#">Edit Lead Groups</a>
                           </div>
                         </Col>
                       </Row>
@@ -836,24 +865,44 @@ const Campaigns = () => {
                         Agents
                     </h6>
                     <div className="pl-lg-4">
-                      {/* Booking Notes */}
+                      {/* Agents */}
                       <Row>
                         <Col lg="12">
-                          <FormGroup>
-                            <label>Booking Notes</label>
-                            <Input
-                              type="textarea"
-                              name="notes"
-                              readOnly
-                            />
-                          </FormGroup>
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent1" checked />
+                            <label className="form-check-label" for="agent1">Agent 1</label>
+                          </div>
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent2" checked />
+                            <label className="form-check-label" for="agent2">Agent 2</label>
+                          </div>
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent3" checked />
+                            <label className="form-check-label" for="agent3">Agent 3</label>
+                          </div>
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent4" checked />
+                            <label className="form-check-label" for="agent4">Agent 4</label>
+                          </div>
+                          <div className="custom-control custom-control-alternative custom-checkbox">
+                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent5" checked />
+                            <label className="form-check-label" for="agent5">Agent 5</label>
+                          </div>
+                        </Col>
+                      </Row>
+
+                      <Row>
+                        <Col>
+                          <div className="mt-2 text-sm text-underline">
+                            <a href="#">Edit Agents</a>
+                          </div>
                         </Col>
                       </Row>
                     </div>
 
                     <hr className="my-4" />
                     <h6 className="heading-small text-muted mb-4">
-                        Call Log
+                        Call Logs
                     </h6>
                     <div className="pl-lg-4">
                       <Row className="mb-3 mt-4">
@@ -1201,6 +1250,14 @@ const Campaigns = () => {
                             </tr>
                             </tbody>
                         </Table>
+
+                        <Row>
+                          <Col>
+                            <div className="mt-2 text-sm text-underline">
+                                <a href="#">View All Call Logs</a>
+                            </div>
+                          </Col>
+                        </Row>
                     </div> 
 
                     {/* Save/Delete Buttons */}
