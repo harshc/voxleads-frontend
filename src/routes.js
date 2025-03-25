@@ -28,12 +28,13 @@ import Register from "views/components/Register.js";
 import Login from "views/components/Login.js";
 import Tables from "views/components/Tables.js";
 import Icons from "views/components/Icons.js";
-import UserHeader from "components/Headers/UserHeader";
-import ProtectedRoute from "components/ProtectedRoutes";
-import Payment from "views/components/Payment";
-import Validation from "views/components/Validation";
-import Agents from "views/components/Agents";
-import Bookings from "views/components/Bookings";
+import UserHeader from "components/Headers/UserHeader.js";
+import ProtectedRoute from "components/ProtectedRoutes.js";
+import Payment from "views/components/Payment.js";
+import Validation from "views/components/Validation.js";
+import Agents from "views/components/Agents.js";
+import Bookings from "views/components/Bookings.js";
+import Campaigns from "views/components/Campaigns.js";
 
 const RouteWrapper = ({ children }) => {
   const { userProfileComplete, companyProfileComplete, subscriptionComplete } = useAccount();
@@ -127,6 +128,18 @@ const routes = [
     component: (
       <ProtectedRoute>
         <Logs />
+      </ProtectedRoute>
+    ),
+    layout: "/admin",
+    showInSidebar: true
+  },
+  {
+    path: "/campaigns",
+    name: "Campaigns",
+    icon: "ni ni-notification-70 text-default",
+    component: (
+      <ProtectedRoute>
+        <Campaigns />
       </ProtectedRoute>
     ),
     layout: "/admin",
