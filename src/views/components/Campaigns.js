@@ -492,17 +492,17 @@ const Campaigns = () => {
                         Status & Description
                     </h6>
                     <div className="pl-lg-4">
-                      <Row className="align-items-center">
+                      <Row className="align-items-center mb-5">
                         {/* Status Dropdown */}
                         <Col xs="6">
-                          <Badge color="success" className="text-sm text-white bg-success">
-                            Active
+                          <Badge color="primary" className="px-4 text-sm bg-secondary border border-primary">
+                            Pending
                           </Badge>
                         </Col>
                         <Col xs="6" className="d-flex justify-content-end">
                           <div>
-                            <Button color="success" size="sm">
-                              Published
+                            <Button color="success" size="sm" className="bg-secondary text-success">
+                              Publish
                             </Button>
                           </div>
                           <div className="ml-2">
