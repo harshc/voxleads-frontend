@@ -494,28 +494,27 @@ const Campaigns = () => {
                     <div className="pl-lg-4">
                       <Row className="align-items-center">
                         {/* Status Dropdown */}
-                        <Col lg="6">
-                          <FormGroup>
-                            <div className="d-flex align-items-center justify-content-between">
-                              <label className="form-control-label" htmlFor="campaign_status">
-                                 Status
-                              </label>
-                              <Badge color="" className="badge-dot">
-                                <i className="bg-success" />
-                              </Badge>
-                            </div>
-                            <Input type="select" name="campaign_status">
-                              <option value="active" selected>Active</option>
-                              <option value="scheduled">Scheduled</option>
-                              <option value="completed">Completed</option>
-                              <option value="pending">Pending</option>
-                            </Input>
-                          </FormGroup>
+                        <Col xs="6">
+                          <Badge color="success" className="text-sm text-white bg-success">
+                            Active
+                          </Badge>
+                        </Col>
+                        <Col xs="6" className="d-flex justify-content-end">
+                          <div>
+                            <Button color="success" size="sm">
+                              Published
+                            </Button>
+                          </div>
+                          <div className="ml-2">
+                            <Button color="danger" size="sm">
+                              Stop
+                            </Button>
+                          </div>
                         </Col>
                       </Row>
 
                       <Row>
-                        <Col lg="7">
+                        <Col lg="6">
                           <FormGroup>
                             <label>Campaign Name</label>
                             <Input
@@ -523,6 +522,8 @@ const Campaigns = () => {
                               name="campaign_name"
                             />
                           </FormGroup>
+                        </Col>
+                        <Col lg="6">
                           <FormGroup>
                             <label className="form-control-label" htmlFor="dialog_flow">
                                 Dialog Flow
@@ -530,17 +531,6 @@ const Campaigns = () => {
                             <Input type="select" name="dialog_flow">
                               <option value="companyname" selected>Company Name</option>
                             </Input>
-                          </FormGroup>
-                        </Col>
-                        <Col lg="5">
-                          <FormGroup>
-                            <label>Description</label>
-                            <Input
-                              type="textarea"
-                              name="campaign_description"
-                              rows="4"
-                            />
-                            <span class="text-xs">For admin use only</span>
                           </FormGroup>
                         </Col>
                       </Row>
@@ -562,6 +552,20 @@ const Campaigns = () => {
                               type="datetime-local"
                               name="campaign_end"
                             />
+                          </FormGroup>
+                        </Col>
+                      </Row>
+
+                      <Row>
+                        <Col lg="12">
+                          <FormGroup>
+                            <label>Description</label>
+                            <Input
+                              type="textarea"
+                              name="campaign_description"
+                              rows="2"
+                            />
+                            <span class="text-xs">For admin use only</span>
                           </FormGroup>
                         </Col>
                       </Row>
