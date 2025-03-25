@@ -538,7 +538,7 @@ const Campaigns = () => {
                             <Input
                               type="textarea"
                               name="campaign_description"
-                              rows="6"
+                              rows="4"
                             />
                             <span class="text-xs">For admin use only</span>
                           </FormGroup>
@@ -833,20 +833,36 @@ const Campaigns = () => {
                       <Row>
                         <Col lg="12">
                           <div className="custom-control custom-control-alternative custom-checkbox">
-                            <Input className="custom-control-input" type="checkbox" role="switch" id="group1" checked />
-                            <label className="form-check-label" for="group1">Group 1</label>
+                            <input className="custom-control-input" id="group1" type="checkbox" checked />
+                            <label className="custom-control-label" htmlFor="group1">
+                            <span className="text-default">
+                              Group 1
+                            </span>
+                            </label>
                           </div>
                           <div className="custom-control custom-control-alternative custom-checkbox">
-                            <Input className="custom-control-input" type="checkbox" role="switch" id="group2" checked />
-                            <label className="form-check-label" for="group2">Group 2</label>
+                            <input className="custom-control-input" id="group2" type="checkbox" checked />
+                            <label className="custom-control-label" htmlFor="group2">
+                            <span className="text-default">
+                              Group 2
+                            </span>
+                            </label>
                           </div>
                           <div className="custom-control custom-control-alternative custom-checkbox">
-                            <Input className="custom-control-input" type="checkbox" role="switch" id="group3" />
-                            <label className="form-check-label" for="group3">Group 3</label>
+                            <input className="custom-control-input" id="group3" type="checkbox" />
+                            <label className="custom-control-label" htmlFor="group3">
+                            <span className="text-default">
+                              Group 3
+                            </span>
+                            </label>
                           </div>
                           <div className="custom-control custom-control-alternative custom-checkbox">
-                            <Input className="custom-control-input" type="checkbox" role="switch" id="group4" />
-                            <label className="form-check-label" for="group4">Group 4</label>
+                            <input className="custom-control-input" id="group4" type="checkbox" />
+                            <label className="custom-control-label" htmlFor="group4">
+                            <span className="text-default">
+                              Group 4
+                            </span>
+                            </label>
                           </div>
                         </Col>
                       </Row>
@@ -869,24 +885,44 @@ const Campaigns = () => {
                       <Row>
                         <Col lg="12">
                           <div className="custom-control custom-control-alternative custom-checkbox">
-                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent1" checked />
-                            <label className="form-check-label" for="agent1">Agent 1</label>
+                            <input className="custom-control-input" id="agent1" type="checkbox" checked />
+                            <label className="custom-control-label" htmlFor="agent1">
+                            <span className="text-default">
+                              Agent 1
+                            </span>
+                            </label>
                           </div>
                           <div className="custom-control custom-control-alternative custom-checkbox">
-                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent2" checked />
-                            <label className="form-check-label" for="agent2">Agent 2</label>
+                            <input className="custom-control-input" id="agent2" type="checkbox" checked />
+                            <label className="custom-control-label" htmlFor="agent2">
+                            <span className="text-default">
+                              Agent 2
+                            </span>
+                            </label>
                           </div>
                           <div className="custom-control custom-control-alternative custom-checkbox">
-                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent3" checked />
-                            <label className="form-check-label" for="agent3">Agent 3</label>
+                            <input className="custom-control-input" id="agent3" type="checkbox" checked />
+                            <label className="custom-control-label" htmlFor="agent3">
+                            <span className="text-default">
+                              Agent 3
+                            </span>
+                            </label>
                           </div>
                           <div className="custom-control custom-control-alternative custom-checkbox">
-                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent4" checked />
-                            <label className="form-check-label" for="agent4">Agent 4</label>
+                            <input className="custom-control-input" id="agent4" type="checkbox" checked />
+                            <label className="custom-control-label" htmlFor="agent4">
+                            <span className="text-default">
+                              Agent 4
+                            </span>
+                            </label>
                           </div>
                           <div className="custom-control custom-control-alternative custom-checkbox">
-                            <Input className="custom-control-input" type="checkbox" role="switch" id="agent5" checked />
-                            <label className="form-check-label" for="agent5">Agent 5</label>
+                            <input className="custom-control-input" id="agent5" type="checkbox" checked />
+                            <label className="custom-control-label" htmlFor="agent5">
+                            <span className="text-default">
+                              Agent 5
+                            </span>
+                            </label>
                           </div>
                         </Col>
                       </Row>
